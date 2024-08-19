@@ -1,0 +1,392 @@
+body, html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden; /* Mencegah halaman bergeser secara horizontal */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Memastikan main memiliki tinggi penuh viewport */
+}
+
+
+
+
+
+/* navbar */
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 25rem;
+    margin-top: 1.5rem;
+}
+
+nav>a>img{
+    width: 70%;
+    margin-bottom: 1rem;
+}
+
+nav > ul {
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+nav > ul > li {
+    display: inline-block;
+    margin-left: 2rem;
+}
+
+nav > ul > li:hover{
+   text-decoration: underline;
+   color: darkgoldenrod;
+}
+
+
+.menu-icon{
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    margin-top: 10px;
+}
+
+.menu-icon>.bar{
+    width: 25px;    
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+@media(max-width:768px) {
+    .menu-icon{
+        display: flex;
+    }
+
+    .nav-links{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #05352E;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        height: 50vh;
+    }
+
+    .nav-links.show{
+        display: flex;
+        z-index: 100;
+        position: fixed;
+    }
+
+    .nav-links li{
+        text-align: left;
+        margin: 10px 0;
+        color: white;
+    }
+}
+
+/* end navbar */
+
+
+
+
+
+/* banner website */
+
+.categoribanner{
+    background-color: #80C678;
+    width: 54rem;
+    height: 18rem;
+    border-radius: 1rem;
+}
+
+.categoribanner>h1{
+    display: flex;
+    justify-content: center;
+    padding-top: 4rem;
+    color: white;
+}
+
+.categoribanner2{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.categoribanner2>input{
+    width: 18rem;
+    border-radius: 2rem;
+}
+
+.categoribanner2>a{
+    width: 6rem;
+    background-color: #05352E;
+    color: white;
+    border-radius: 2rem;
+}
+
+.categoribanner2>a:hover{
+   background-color: aqua;
+
+}
+
+/* end banner website */
+
+
+/* bagian tersehat 1 */
+
+.tersehat1{
+    display: flex;
+    gap: 65rem;
+    margin-top: 5rem;
+    justify-content: center;
+}
+
+.tersehat1>h4{
+    font-size: 2rem;
+}
+
+.tersehat1>img{
+    width: 40px;
+}
+
+
+.tersehat2{
+    display: flex;
+    margin-top: 3rem;
+    gap: 1.5rem;    
+}
+
+.tersehat2>.cardsehat1>.card{
+    border-radius: 1.2rem;
+    background-color: #F3F4D6;
+}
+
+.tersehat2>.cardsehat1>.card:hover{
+    transition: 0.90s;
+    color: white;
+    background-color: salmon;
+}
+
+.tersehat2>.cardsehat1>.card>img{
+    width: 90%;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
+
+.tersehat2>.cardsehat1>.card>img:hover{
+    transition: 0.90s;
+    transform: translateY(-50px);
+}
+
+.sehat1p{
+    margin-top: 2.5rem;
+}
+
+/* end bagian tersehat 1 */
+
+
+
+
+
+/* bagian tersehat 2 */
+
+.tersehat-2{
+    display: flex;
+    gap: 65rem;
+    margin-top: 5rem;
+    justify-content: center;
+}
+
+.tersehat-2>h4{
+    font-size: 2rem;
+}
+
+.tersehat-2>img{
+    width: 40px;
+}
+
+
+.tersehat3{
+    display: flex;
+    margin-top: 3rem;
+    gap: 1.5rem;    
+}
+
+.tersehat3>.cardsehat2>.card{
+    border-radius: 1.2rem;
+    background-color: #F3F4D6;
+}
+
+.tersehat3>.cardsehat2>.card:hover{
+    transition: 0.90s;
+    color: white;
+   background-color: salmon;
+}
+
+.tersehat3>.cardsehat2>.card>img{
+    width: 90%;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
+
+.tersehat3>.cardsehat2>.card>img:hover{
+    transition: 0.90s;
+    transform: translateY(-50px);
+}
+
+
+.sehat-2p{
+    margin-top: 2.5rem;
+}
+
+
+
+
+
+/* end bagian tersehat 2 */
+
+
+/* bagian tersehat 3 */
+
+.tersehat-3{
+    display: flex;
+    gap: 65rem;
+    margin-top: 5rem;
+    justify-content: center;
+}
+
+.tersehat-3>h4{
+    font-size: 2rem;
+}
+
+.tersehat-3>img{
+    width: 40px;
+}
+
+
+.tersehat4{
+    display: flex;
+    margin-top: 3rem;
+    gap: 1.5rem;    
+}
+
+.tersehat4>.cardsehat3>.card{
+    border-radius: 1.2rem;
+    background-color: #F3F4D6;
+}
+
+.tersehat4>.cardsehat3>.card:hover{
+    transition: 0.90s;
+    color: white;
+   background-color: salmon;
+}
+
+.tersehat4>.cardsehat3>.card>img{
+    width: 90%;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
+
+.tersehat4>.cardsehat3>.card>img:hover{
+    transition: 0.90s;
+    transform: translateY(-50px);
+}
+
+
+.sehat-3p{
+    margin-top: 2.5rem;
+}
+
+
+
+
+
+/* end bagian tersehat 3  */
+
+
+
+
+
+/* bagian tersehat 4 */
+
+.tersehat-4{
+    display: flex;
+    gap: 55rem;
+    margin-top: 5rem;
+    justify-content: center;
+}
+
+.tersehat-4>h4{
+    font-size: 2rem;
+}
+
+.tersehat-4>img{
+    width: 40px;
+}
+
+
+.tersehat5{
+    display: flex;
+    margin-top: 3rem;
+    gap: 1.5rem;    
+}
+
+.tersehat5>.cardsehat4>.card{
+    border-radius: 1.2rem;
+    background-color: #F3F4D6;
+}
+
+.tersehat5>.cardsehat4>.card:hover{
+    transition: 0.90s;
+    color: white;
+   background-color: salmon;
+}
+
+.tersehat5>.cardsehat4>.card>img{
+    width: 90%;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
+
+.tersehat5>.cardsehat4>.card>img:hover{
+    transition: 0.90s;
+    transform: translateY(-50px);
+}
+
+
+.sehat-4p{
+    margin-top: 2.5rem;
+}
+
+
+
+
+
+/* end bagian tersehat 4  */
+
+
+
+footer{
+    background-color: #05352E;
+    width: 100%;
+    height: 70vh;
+    margin-top: 4rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}

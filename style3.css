@@ -1,0 +1,242 @@
+body, html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden; /* Mencegah halaman bergeser secara horizontal */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Memastikan main memiliki tinggi penuh viewport */
+}
+
+/* navbar */
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 25rem;
+    margin-top: 1.5rem;
+}
+
+nav>a>img{
+    width: 70%;
+    margin-bottom: 1rem;
+}
+
+nav > ul {
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+nav > ul > li {
+    display: inline-block;
+    margin-left: 2rem;
+}
+
+nav > ul > li:hover{
+   text-decoration: underline;
+   color: darkgoldenrod;
+}
+
+.menu-icon{
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    margin-top: 10px;
+}
+
+.menu-icon>.bar{
+    width: 25px;    
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+@media(max-width:768px) {
+    .menu-icon{
+        display: flex;
+    }
+
+    .nav-links{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #05352E;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        height: 50vh;
+    }
+
+    .nav-links.show{
+        display: flex;
+        z-index: 100;
+        position: fixed;
+    }
+
+    .nav-links li{
+        text-align: left;
+        margin: 10px 0;
+        color: white;
+    }
+}
+
+/* end navbar */
+
+
+/* header */
+
+header{
+    width: 100%;
+    height: 100vh;
+}
+
+.bannerblog{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+}
+
+.bannerblog img{
+    max-width: 80%;
+    height: auto;
+    border-radius: 1rem;    
+}
+
+/*  end header */
+
+
+
+/* blog nav */
+
+.blogbagian1{
+    margin-top: -30rem;
+    display: flex;
+    gap: 25rem;
+}
+
+.navblog>a{
+    margin-left: 5px;
+}
+
+/* end blog nav */
+
+
+/* blog section 1 */
+
+.bagiancard1{
+    margin-top: -25rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.bagiancard1>.card1>.card{
+    border-radius: 1rem;
+    border: none;
+}
+
+.bagiancard1>.card1>.card>img{
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.bagiancard1>.card1>.card>.card-body>.paragrafcard1{
+    margin-top: 2.6rem;
+}
+
+.bagiancard1>.card1>.card>.card-body>.buttoncard1{
+   margin-top: 10px;
+}
+
+
+.bagiancard1{
+    margin-top: -25rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.bagiancard1>.card2>.card{
+    border-radius: 1rem;
+    border: none;
+}
+
+.bagiancard1>.card2>.card>img{
+    border-radius: 1rem;
+    width: 100%;
+}
+
+
+.bagiancard1{
+    margin-top: -25rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.bagiancard1>.card3>.card{
+    border-radius: 1rem;
+    border: none;
+}
+
+.bagiancard1>.card3>.card>.card-body>.paragrafcard3{
+    margin-top: 4rem;
+}
+
+.bagiancard1>.card3>.card>.card-body>.buttoncard1{
+    margin-top: 1rem;
+}
+
+.bagiancard1>.card3>.card>img{
+    border-radius: 1rem;
+    width: 100%;
+}
+
+
+
+
+.bagiancard1{
+    margin-top: -25rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.bagiancard1>.card4>.card{
+    border-radius: 1rem;
+    border: none;
+}
+
+.bagiancard1>.card4>.card>.card-body>.paragrafcard4{
+    margin-top: 2.2rem;
+}
+
+.bagiancard1>.card4>.card>.card-body>.buttoncard1{
+    margin-top: 1rem;
+}
+
+.bagiancard1>.card4>.card>img{
+    border-radius: 1rem;
+    width: 100%;
+}
+
+
+/* end blog section 1 */
+
+
+footer{
+    background-color: #05352E;
+    width: 100%;
+    height: 70vh;
+    margin-top: 4rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
