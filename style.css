@@ -1,8 +1,9 @@
-body, html {
+body,
+html {
     padding: 0;
     margin: 0;
-    height: 100%;
-    overflow-x: hidden; /* Mencegah halaman bergeser secara horizontal */
+    height: auto;
+    /* Mencegah halaman bergeser secara horizontal */
 }
 
 
@@ -11,43 +12,62 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Memastikan main memiliki tinggi penuh viewport */
+    /* Memastikan main memiliki tinggi penuh viewport */
 }
 
+section {
+    width: 100%;
+    overflow: hidden;
+}
 
 
 
 
 /* start navbar */
 
-nav {
+nav{
     display: flex;
-    justify-content: center;
-    gap: 25rem;
-    margin-top: 1.5rem;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+    padding-top: 1rem;
+    transition: background-color 0.4s ease-in-out;
 }
 
-nav>a>img{
+nav>a {
+    margin-left: 1.5rem;
+}
+
+nav>.nav-links {
+    margin-right: 2rem;
+}
+
+nav>a>img {
     width: 70%;
     margin-bottom: 1rem;
 }
 
-nav > ul {
+nav>ul {
     display: inline-block;
     margin-top: 0.5rem;
 }
 
-nav > ul > li {
+nav>ul>a>li{
     display: inline-block;
-    margin-left: 2rem;
+    margin-left: 2rem;  
+    transition: color 0.4s ease-in-out;
+    color: black;
 }
 
-nav > ul > li:hover{
-   text-decoration: underline;
-   color: darkgoldenrod;
+nav>ul>a>li:hover {
+    text-decoration: underline;
+    color: darkgoldenrod;
 }
 
-.menu-icon{
+.menu-icon {
     display: none;
     cursor: pointer;
     flex-direction: column;
@@ -56,19 +76,26 @@ nav > ul > li:hover{
     margin-top: 10px;
 }
 
-.menu-icon>.bar{
-    width: 25px;    
+.menu-icon>.bar {
+    width: 25px;
     height: 3px;
     background-color: #333;
     border-radius: 2px;
 }
 
-@media(max-width:768px) {
-    .menu-icon{
-        display: flex;
+
+
+
+@media only screen and (max-width: 450px) {
+
+    /* bagian navbar */
+
+    nav>a>img {
+        margin-bottom: 1rem;
+        margin-left: 2rem;
     }
 
-    .nav-links{
+    .nav-links {
         display: none;
         flex-direction: column;
         width: 100%;
@@ -81,17 +108,189 @@ nav > ul > li:hover{
         height: 50vh;
     }
 
-    .nav-links.show{
+    .nav-links.show {
         display: flex;
         z-index: 100;
         position: fixed;
     }
 
-    .nav-links li{
+    .nav-links li {
         text-align: left;
         margin: 10px 0;
         color: white;
     }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .menu-icon>.bar {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        border-radius: 2px;
+        margin-right: 2rem;
+    }
+
+    /* bagian slider banner */
+
+    .slides img {
+        width: 100%;
+        height: 18rem;
+    }
+
+    .prev {
+        font-size: 2rem;
+        margin-left: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
+
+    .next {
+        font-size: 2rem;
+        margin-right: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
+
+    .slide-content {
+        position: absolute;
+        top: 50%;
+        /* Posisi tengah vertikal */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Menggeser konten ke tengah */
+        color: white;
+        z-index: 1;
+        /* Agar konten berada di atas gambar */
+        width: 100%;
+    }
+
+    .slide-title {
+        font-size: 1.5rem;
+        margin: 0 0 90px;
+        /* Jarak antara judul dan teks */
+        text-align: left;
+        margin-left: 4.8rem;
+        width: 60%;
+    }
+
+    .slide-text {
+        font-size: 10px;
+        width: 70%;
+        /* Contoh width yang lebih lebar agar teks tidak terpotong */
+        text-align: left;
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+
+    .sectionpertama {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media(min-width:650px) and (max-width:770px) {  
+     /* bagian navbar */
+
+     nav{
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 100;
+        padding-top: 1rem;
+        transition: background-color 0.4s ease-in-out;
+    }
+    
+    nav>a {
+        margin-left: 1.5rem;
+    }
+    
+    nav>.nav-links {
+        margin-right: 2rem;
+    }
+    
+    nav>a>img {
+        width: 70%;
+        margin-bottom: 1rem;
+    }
+    
+    nav>ul {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+    
+    nav>ul>a>li{
+        display: inline-block;
+        margin-left: 2rem;  
+        transition: color 0.4s ease-in-out;
+        color: black;
+    }
+    
+    nav>ul>a>li:hover {
+        text-decoration: underline;
+        color: darkgoldenrod;
+    }
+
+    /* bagian slider banner */
+
+    .slides img {
+        width: 100%;
+        height: 18rem;
+    }
+
+    .prev {
+        font-size: 2rem;
+        margin-left: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
+
+    .next {
+        font-size: 2rem;
+        margin-right: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
+
+    .slide-content {
+        position: absolute;
+        top: 50%;
+        /* Posisi tengah vertikal */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Menggeser konten ke tengah */
+        color: white;
+        z-index: 1;
+        /* Agar konten berada di atas gambar */
+        width: 100%;
+    }
+
+    .slide-title {
+        font-size: 1.5rem;
+        margin: 0 0 90px;
+        /* Jarak antara judul dan teks */
+        text-align: left;
+        margin-left: 4.8rem;
+        width: 60%;
+    }
+
+    .slide-text {
+        font-size: 10px;
+        width: 70%;
+        /* Contoh width yang lebih lebar agar teks tidak terpotong */
+        text-align: left;
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+
+    .sectionpertama {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
 }
 
 /* end navbar */
@@ -100,169 +299,2579 @@ nav > ul > li:hover{
 
 
 
+/* css buat banner */
+
+.d-block {
+    height: 40rem;
+    filter: brightness(0.7);
+}
+
+.sliderteks1,.sliderteks2,.sliderteks3{
+    padding-bottom: 15rem;
+}
+
+.sliderteks1>h2{
+    text-align: left;
+    max-width: 60%;
+    margin-left: 15rem;
+    font-size: 3rem;
+}
+
+.sliderteks1>p{
+    text-align: left;
+    max-width: 55%;
+    margin-left: 15rem;
+}
+
+.sliderteks2>h2{
+    text-align: left;
+    max-width: 60%;
+    margin-left: 15rem;
+    font-size: 3rem;
+}
+
+.sliderteks2>p{
+    text-align: left;
+    max-width: 55%;
+    margin-left: 15rem;
+}
+
+.sliderteks3>h2{
+    text-align: left;
+    max-width: 60%;
+    margin-left: 15rem;
+    font-size: 3rem;
+}
+
+.sliderteks3>p{
+    text-align: left;
+    max-width: 55%;
+    margin-left: 15rem;
+}
+
+@media(max-width:450px) {
+    .d-block {
+        height: 35rem;
+        filter: brightness(0.5);
+    }
+
+    .carousel-caption {
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    .sliderteks1>h2,
+    .sliderteks2>h2,
+    .sliderteks3>h2 {
+        font-size: 1.5rem;
+        max-width: 100%;
+        margin-left: 1rem;
+        color: #fff; /* Pastikan teks memiliki warna yang kontras */
+    }
+
+    .sliderteks1>p,
+    .sliderteks2>p,
+    .sliderteks3>p {
+        font-size: 1rem;
+        margin-left: 1rem;
+        max-width: 100%;
+        color: #fff; /* Pastikan teks memiliki warna yang kontras */
+    }
+
+    .carousel-caption{
+        margin-bottom: -11rem;
+    }
+
+    .carousel-control-prev{
+        margin-top: 26rem;
+    }
+
+    .carousel-control-next{
+        margin-top: 26rem;
+    }
+}
+
+
+
+@media(min-width:650px) and (max-width:770px) {
+    .d-block {
+        height: 35rem;
+        filter: brightness(0.5);
+    }
+
+    .carousel-caption {
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    .sliderteks1>h2,
+    .sliderteks2>h2,
+    .sliderteks3>h2 {
+        font-size: 1.5rem;
+        max-width: 100%;
+        margin-left: 1rem;
+        color: #fff; /* Pastikan teks memiliki warna yang kontras */
+    }
+
+    .sliderteks1>p,
+    .sliderteks2>p,
+    .sliderteks3>p {
+        font-size: 1rem;
+        margin-left: 1rem;
+        max-width: 90%;
+        color: #fff; /* Pastikan teks memiliki warna yang kontras */
+    }
+
+    .carousel-caption{
+        margin-bottom: -3rem;
+    }
+}
+
+@media(min-width:780px) and (max-width:850px) {
+    .d-block {
+        height: 35rem;
+        filter: brightness(0.5);
+    }
+
+    .carousel-caption {
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    .sliderteks1>h2,
+    .sliderteks2>h2,
+    .sliderteks3>h2 {
+        font-size: 1.5rem;
+        max-width: 100%;
+        margin-left: 1rem;
+        color: #fff; /* Pastikan teks memiliki warna yang kontras */
+    }
+
+    .sliderteks1>p,
+    .sliderteks2>p,
+    .sliderteks3>p {
+        font-size: 1rem;
+        margin-left: 1rem;
+        max-width: 90%;
+        color: #fff; /* Pastikan teks memiliki warna yang kontras */
+    }
+
+    .carousel-caption{
+        margin-bottom: -3rem;
+    }
+}
+
+/* end banner */
+
+
+
+
+
+
+
+
+
 /* CSS untuk card */
+
 .sectionpertama {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Membuat 3 kolom dengan lebar yang sama */
-    gap: 1rem; /* Jarak antar card */
-    margin-top: 7rem; /* Margin atas untuk jarak dari elemen sebelumnya */
+    grid-template-columns: repeat(3, 1fr);
+    /* Membuat 3 kolom dengan lebar yang sama */
+    gap: 1rem;
+    /* Jarak antar card */
+    margin-top: 4rem;
+    /* Margin atas untuk jarak dari elemen sebelumnya */
+
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Memusatkan card secara horizontal */
-    justify-content: center; /* Memusatkan card secara vertikal */
-    border: none;   
+    align-items: center;
+    /* Memusatkan card secara horizontal */
+    justify-content: center;
+    /* Memusatkan card secara vertikal */
+    border: none;
 }
 
 .card-img-top {
-    width: 100%; /* Memastikan gambar card lebar penuh container */
-    height: auto; /* Tinggi otomatis sesuai gambar */
+    width: 100%;
+    /* Memastikan gambar card lebar penuh container */
+    height: auto;
+    /* Tinggi otomatis sesuai gambar */
 }
 
-.card-body {
-    text-align: center; /* Memusatkan teks dalam card */
+.card-bodysectionpertama{
+    text-align: center;
+    /* Memusatkan teks dalam card */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%; /* Mengisi tinggi card */
+    height: 100%;
+    /* Mengisi tinggi card */
 }
 
-.card-title {
-    margin-bottom: 0.5rem; /* Jarak antara judul dan teks */
+.card-bodysectionpertama1{
+    text-align: center;
+    /* Memusatkan teks dalam card */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* Mengisi tinggi card */
 }
 
-.card-text {
-    margin-top: 0; /* Jarak antara teks dan elemen di atasnya */
+.titlesectionpertama{
+    margin-bottom: 0.5rem;
+    /* Jarak antara judul dan teks */
+}
+
+.textsectionpertama{
+    margin-top: 0;
+    /* Jarak antara teks dan elemen di atasnya */
 }
 
 .gambarcard1,
 .gambarcard2,
 .gambarcard3 {
-    width: 80px; /* Ukuran gambar card */
+    width: 80px;
+    /* Ukuran gambar card */
     background-color: #DFFFDB;
     border-radius: 1rem;
 }
 
-.gambarcard1:hover{
-    background-color: darkcyan;
-    transition: 1s;
-    transform: translateY(-20px);
+.kartu1{
+    margin-top: 1.2rem;
 }
 
-.gambarcard2:hover{
-    background-color: darkcyan;
-    transition: 1s;
-    transform: translateY(-20px);
-}
-
-.gambarcard3:hover{
-    background-color: darkcyan;
-    transition: 1s;
-    transform: translateY(-20px);
+.kartu1>img{
+    margin-top: 1rem;
 }
 
 
-.kartu2{
-    margin-bottom: 2rem;
+.kartu2 {
+    margin-bottom: 5rem;
 }
 
-.pertama{
+.kartu2>img{
+    margin-bottom: 5rem;
+}
+
+.kartu3>img{
+    margin-top: 2.5rem;
+}
+
+.kartu3>.card-bodysectionpertama{
+        margin-bottom: 1rem;
+}
+
+
+.kartu3>.card-bodysectionpertama1{
+    margin-bottom: 1rem;
+}
+
+
+.card-textsectionpertama1{
+    max-width: 60%;
+}
+
+.card-textsectionpertama2{
+    max-width: 60%;
+}
+
+.card-textsectionpertama3{
+    max-width: 60%;
+}
+
+@media(max-width:450px) {
+    .sectionpertama {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .kartu1 {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .kartu2 {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .kartu2 {
+        margin-bottom: 1rem;
+    }
+    
+    .kartu2>img{
+        margin-bottom: 1rem;
+    }
+
+    .kartu3 {
+        display: flex;
+        flex-direction: row;
+    }
+
+
+    .card-bodysectionpertama{
+        text-align: center;
+    }
+
+    .card-bodysectionpertama1{
+        text-align: center;
+    }
+
+    .card-textsectionpertama{
+        font-size: 1rem;
+        max-width: 60%;
+    }
+
+    .card-textsectionpertama1{
+        font-size: 1rem;
+        max-width: 60%;
+    }
+
+    .card-textsectionpertama3{
+        font-size: 1rem;
+        max-width: 60%;
+    }
+
+    .card-titlesectionpertama{
+        font-size: 1rem;
+        max-width: 50%;
+    }
+
+    .card-titlesectionpertama2 {
+        font-size: 1rem;
+        max-width: 50%;
+    }
+
+    .card-titlesectionpertama3 {
+        font-size: 1rem;
+        max-width: 50%;
+    }
+
+    .gambarcard1 {
+        width: 30%;
+        height: auto;
+        margin-left: 3rem;
+    }
+
+    .gambarcard2 {
+        width: 30%;
+        height: auto;
+        margin-right: 4rem;
+    }
+
+    .gambarcard3 {
+        width: 30%;
+        height: auto;
+        margin-left: 3rem;
+    }
+}
+
+
+@media(min-width:650px) and (max-width:770px)  {
+    .sectionpertama {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* Membuat 3 kolom dengan lebar yang sama */
+        gap: 1rem;
+        /* Jarak antar card */
+        margin-top: 4rem;
+        /* Margin atas untuk jarak dari elemen sebelumnya */
+    
+    }
+
+    .card-titlesectionpertama2{
+        margin-top: 1rem;
+    }
+    
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Memusatkan card secara horizontal */
+        justify-content: center;
+        /* Memusatkan card secara vertikal */
+        border: none;
+    }
+    
+    .card-img-top {
+        width: 100%;
+        /* Memastikan gambar card lebar penuh container */
+        height: auto;
+        /* Tinggi otomatis sesuai gambar */
+    }
+    
+    .card-bodysectionpertama{
+        text-align: center;
+        /* Memusatkan teks dalam card */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        /* Mengisi tinggi card */
+    }
+
+    .card-bodysectionpertama1{
+        text-align: center;
+        /* Memusatkan teks dalam card */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin-top:1.3rem;
+        /* Mengisi tinggi card */
+    }
+
+    .card-titlesectionpertama{
+        max-width: 45%;
+    }
+
+    .card-titlesectionpertama2{
+        max-width: 55%;
+    }
+
+    .card-titlesectionpertama3{
+        max-width: 50%;
+    }
+    
+    .titlesectionpertama{
+        margin-bottom: 0.5rem;
+        /* Jarak antara judul dan teks */
+    }
+    
+    .textsectionpertama{
+        margin-top: 0;
+        /* Jarak antara teks dan elemen di atasnya */
+    }
+    
+    .gambarcard1,
+    .gambarcard2,
+    .gambarcard3 {
+        width: 80px;
+        /* Ukuran gambar card */
+        background-color: #DFFFDB;
+        border-radius: 1rem;
+    }
+    
+    .kartu1{
+        margin-top: 1.2rem;
+    }
+    
+    .kartu1>img{
+        margin-top: 1rem;
+    }
+    
+    
+    .kartu2 {
+        margin-bottom: 5rem;
+    }
+    
+    .kartu2>img{
+        margin-bottom: 5rem;
+    }
+    
+    .kartu3>img{
+        margin-top: 2.5rem;
+    }
+    
+    .kartu3>.card-bodysectionpertama{
+            margin-bottom: 1rem;
+    }
+    
+    .kartu3>.card-bodysectionpertama1{
+        margin-bottom: 1rem;
+}
+    
+    .card-textsectionpertama1{
+        font-size: 14px;
+        max-width: 60%;
+        text-align:center;
+        margin-top: 10px;
+    }
+    
+    .card-textsectionpertama2{
+        max-width: 60%;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    
+    .card-textsectionpertama3{
+        max-width: 60%;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+}
+
+
+@media(min-width:770px) and (max-width:850px) {
+    .sectionpertama {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* Membuat 3 kolom dengan lebar yang sama */
+        gap: 1rem;
+        /* Jarak antar card */
+        margin-top: 4rem;
+        /* Margin atas untuk jarak dari elemen sebelumnya */
+    
+    }
+
+    .card-titlesectionpertama2{
+        margin-top: 1rem;
+    }
+    
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Memusatkan card secara horizontal */
+        justify-content: center;
+        /* Memusatkan card secara vertikal */
+        border: none;
+    }
+    
+    .card-img-top {
+        width: 100%;
+        /* Memastikan gambar card lebar penuh container */
+        height: auto;
+        /* Tinggi otomatis sesuai gambar */
+    }
+    
+    .card-bodysectionpertama{
+        text-align: center;
+        /* Memusatkan teks dalam card */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        /* Mengisi tinggi card */
+    }
+
+    .card-bodysectionpertama1{
+        text-align: center;
+        /* Memusatkan teks dalam card */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin-top:1.3rem;
+        /* Mengisi tinggi card */
+    }
+
+    .card-titlesectionpertama{
+        max-width: 45%;
+    }
+
+    .card-titlesectionpertama2{
+        max-width: 50%;
+    }
+
+    .card-titlesectionpertama3{
+        max-width: 50%;
+    }
+    
+    .titlesectionpertama{
+        margin-bottom: 0.5rem;
+        /* Jarak antara judul dan teks */
+    }
+    
+    .textsectionpertama{
+        margin-top: 0;
+        /* Jarak antara teks dan elemen di atasnya */
+    }
+    
+    .gambarcard1,
+    .gambarcard2,
+    .gambarcard3 {
+        width: 80px;
+        /* Ukuran gambar card */
+        background-color: #DFFFDB;
+        border-radius: 1rem;
+    }
+    
+    .kartu1{
+        margin-top: 1.2rem;
+    }
+    
+    .kartu1>img{
+        margin-top: 1rem;
+    }
+    
+    
+    .kartu2 {
+        margin-bottom: 5rem;
+    }
+    
+    .kartu2>img{
+        margin-bottom: 5rem;
+    }
+    
+    .kartu3>img{
+        margin-top: 2.5rem;
+    }
+    
+    .kartu3>.card-bodysectionpertama{
+            margin-bottom: 1rem;
+    }
+    
+    .kartu3>.card-bodysectionpertama1{
+        margin-bottom: 1rem;
+}
+    
+    .card-textsectionpertama1{
+        font-size: 14px;
+        max-width: 60%;
+        text-align:center;
+        margin-top: 10px;
+    }
+    
+    .card-textsectionpertama2{
+        max-width: 60%;
+        font-size: 14px;
+        margin-top: 12px;
+    }
+    
+    .card-textsectionpertama3{
+        max-width: 60%;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+}
+
+
+
+
+/* end css untuk card */
+
+
+
+
+
+
+
+
+/* section pertama */
+.pertama {
     display: flex;
     margin-top: 4.5rem;
+    justify-content: space-between;
 }
 
-.pertama>a>img{
+.pertama>a>img {
     width: 2.6rem;
     height: 3rem;
-    margin-left: 3.5rem;
+    margin-right: 2rem;
 }
 
-.kedua{
-    margin-right: 25rem;
-    margin-left: 1rem;
+.pertama>.kedua {
+    margin-left: 3rem;
 }
 
-.bagiansehat1{
+.bagiansehat1 {
     margin-top: 4rem;
     display: flex;
     gap: 1.1rem;
+    margin-left: 2rem;
 }
 
 .cardmask1,
 .cardmask2,
 .cardmask3,
-.cardmask4{
+.cardmask4,  
+.cardmask5,
+.cardmask6,
+.cardmask7,
+.cardmask8{
     background-color: #F3F4D6;
     border-radius: 1rem;
+    width: 18rem;
 }
 
-.cardmask1:hover{
+.img-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+  
+.cardimage1{
+    width: 17rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+
+.cardimage2{
+    width: 17rem;
+    margin-top: 1rem;
+    padding-left: 1rem;
+}
+
+.cardimage3{
+    width: 17rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+
+.cardimage4{
+    width: 17rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+}  
+
+.cardimage5{
+    width: 17rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+}
+
+.cardimage6{
+    width: 17rem;
+    padding-top: 1px;
+    padding-bottom: 3rem;
+    padding-left: 1rem;
+}
+
+.cardimage7{
+    width: 17rem;
+    padding-top: 1px;
+    padding-bottom: 3rem;
+    padding-left: 1rem;
+}
+
+.cardimage8{
+    width: 17rem;
+    padding-top: 1px;
+    padding-bottom: 3rem;
+    padding-left: 1rem;
+}
+
+.overlay-img {
+    position: absolute;
+    top: 25px; /* Atur posisi atas */
+    right: 29px; /* Atur posisi kanan */
+    width: 50px; /* Ukuran gambar overlay */
+    height: auto;
+}
+
+.cardmask1:hover {
     background-color: darksalmon;
     transition: 1s;
     color: white;
 }
 
-.cardmask1>img:hover{
-    transform: translateY(-50px);
-    transition: 0.90s;
-}
-
-.cardmask2:hover{
+.cardmask2:hover {
     background-color: darksalmon;
     transition: 1s;
     color: white;
 }
 
-.cardmask2>img:hover{
-    transform: translateY(-50px);
-    transition: 0.90s;
-}
-
-.cardmask3:hover{
+.cardmask3:hover {
     background-color: darksalmon;
     transition: 1s;
     color: white;
 }
 
-.cardmask3>img:hover{
-    transform: translateY(-50px);
-    transition: 0.90s;
-}
-
-
-.cardmask4:hover{
+.cardmask4:hover {
     background-color: darksalmon;
     transition: 1s;
     color: white;
 }
 
-.cardmask4>img:hover{
-    transform: translateY(-50px);
-    transition: 0.90s;
+.cardmask5:hover {
+    background-color: darksalmon;
+    transition: 1s;
+    color: white;
 }
 
-.cardmask1>img{
-    width: 16rem;
-    padding-top: 1rem;
+.cardmask6:hover {
+    background-color: darksalmon;
+    transition: 1s;
+    color: white;
 }
 
-.cardmask2>img{
-    width: 16rem;
-    padding-top: 1rem;
+.cardmask7:hover {
+    background-color: darksalmon;
+    transition: 1s;
+    color: white;
 }
 
-.cardmask3>img{
-    width: 16rem;
-    padding-top: 1rem;
+.cardmask8:hover {
+    background-color: darksalmon;
+    transition: 1s;
+    color: white;
 }
 
-.cardmask4>img{
-    width: 16rem;
-    padding-top: 1rem;
+.overlay-img1 {
+    position: absolute;
+    right: 34px; /* Atur posisi kanan */
+    top: 30px; /* Atur posisi atas */
+    width: 50px; /* Ukuran gambar overlay */
+    height: auto;
 }
+
+.overlay-img5 {
+    position: absolute;
+    top: 30px; /* Atur posisi atas */
+    right: 34px; /* Atur posisi kanan */
+    width: 50px; /* Ukuran gambar overlay */
+    height: auto;
+}
+
+.overlay-img6{
+    position: absolute;
+    top: 20px; /* Atur posisi atas */
+    right: 34px; /* Atur posisi kanan */
+    width: 50px; /* Ukuran gambar overlay */
+    height: auto;
+}
+
+.overlay-img7{
+    position: absolute;
+    top: 20px; /* Atur posisi atas */
+    right: 34px; /* Atur posisi kanan */
+    width: 50px; /* Ukuran gambar overlay */
+    height: auto;
+}
+
+.overlay-img8{
+    position: absolute;
+    top: 20px; /* Atur posisi atas */
+    right: 34px; /* Atur posisi kanan */
+    width: 50px; /* Ukuran gambar overlay */
+    height: auto;
+}
+
+.cardbody1{
+    width: 100%;
+    text-align: left;   
+    margin-right:auto;
+    margin-left: 1rem;
+}
+
+.cardbody1>.cardtitle1{
+    width: 100%;
+    text-align: left;
+    margin-right:auto;
+    margin-top: 1rem;
+}
+
+.cardbody1>.cardtext1{
+    width: 100%;
+    text-align: left;
+    margin-right:auto;
+    font-size: 14px;
+}
+
+.cardbody1>.cardtext11{
+    width: 100%;
+    text-align: left;
+    margin-right:auto;
+    margin-top: 70px;
+}
+
+.cardbody2{
+    width: 100%;
+    text-align: left;   
+    margin-right:auto;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.cardbody2>.cardtitle2{
+    width: 100%;
+    text-align: left;
+    margin-right:auto;
+}
+
+.cardbody2>.cardtext2{
+    width: 100%;
+    text-align: left;
+    margin-right:auto;      
+    font-size: 14px;
+}
+
+.cardbody2>.cardtext22{
+    width: 100%;
+    text-align: left;
+    margin-right:auto;      
+    margin-top: 3.1rem;
+}
+
+
+.cardbody3{
+    width: 100%;
+    text-align: left;   
+    margin-right:auto;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.cardbody3>.cardtitle3{
+    width: 100%;
+    text-align: left;
+    margin-right:auto;
+}
+
+.cardbody3>.cardtext3{
+    width: 100%;
+    text-align: left;
+    margin-right:auto;      
+    font-size: 14px;
+}
+
+.cardbody3>.cardtext33{
+    width: 100%;
+    text-align: left;
+    margin-right:auto;      
+    margin-top: 3.1rem;
+}
+
+
+.cardbody4{
+    width: 100%;
+    text-align: left;   
+    margin-right:auto;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.cardbody4>.cardtitle4{
+    width: 100%;
+    text-align: left;
+    margin-right:auto;
+}
+
+.cardbody4>.cardtext4{
+    width: 100%;
+    text-align: left;
+    margin-right:auto;      
+    font-size: 14px;
+}
+
+.cardbody4>.cardtext44{
+    width: 100%;
+    text-align: left;
+    margin-right:auto;      
+    margin-top: 4rem;
+}
+
+
+.cardbody5{
+    width: 100%;
+    text-align: left;   
+    margin-right:auto;
+    margin-left: 1rem;
+}
+
+.cardbody5>.cardtitle5{
+    width: 100%;
+    text-align: left;
+    margin-right:auto;
+    margin-top: -1rem;
+}
+
+.cardbody5>.cardtext5{
+    width: 100%;
+    text-align: left;
+    margin-right:auto;      
+    font-size: 14px;
+}
+
+.cardbody5>.cardtext55{
+    width: 100%;
+    text-align: left;
+    margin-right:auto;      
+    margin-top: 4.5rem;
+    margin-bottom: 1rem;
+}
+
+
+.cardbody6{
+    width: 100%;
+    text-align: left;   
+    margin-right:auto;
+    margin-left: 1rem;
+}
+
+.cardbody6>.cardtitle6{
+    width: 100%;
+    text-align: left;
+    margin-right:auto;
+    margin-top: -2.5rem;
+}
+
+.cardbody6>.cardtext6{
+    width: 80%;
+    text-align: left;
+    margin-right:auto;      
+    font-size: 14px;
+
+}
+
+.cardbody6>.cardtext66{
+    text-align: left;
+    margin-right:auto;      
+    margin-top: 2.9rem;
+    margin-bottom: 1rem;
+}
+
+
+.cardbody7{
+    width: 100%;
+    text-align: left;   
+    margin-right:auto;
+    margin-left: 1rem;
+}
+
+.cardbody7>.cardtitle7{
+    width: 100%;
+    text-align: left;
+    margin-right:auto;
+    margin-top: -2.5rem;
+}
+
+.cardbody7>.cardtext7{
+    width: 80%;
+    text-align: left;
+    margin-right:auto;      
+    font-size: 14px;
+
+}
+
+.cardbody7>.cardtext77{
+    text-align: left;
+    margin-right:auto;      
+    margin-top: 4.1rem;
+    margin-bottom: 1rem;
+}
+
+
+.cardbody8{
+    width: 100%;
+    text-align: left;   
+    margin-right:auto;
+    margin-left: 1rem;
+}
+
+.cardbody8>.cardtitle8{
+    width: 100%;
+    text-align: left;
+    margin-right:auto;
+    margin-top: -2.5rem;
+}
+
+.cardbody8>.cardtext8{
+    width: 80%;
+    text-align: left;
+    margin-right:auto;      
+    font-size: 14px;
+
+}
+
+.cardbody8>.cardtext88{
+    text-align: left;
+    margin-right:auto;      
+    margin-top: 4.1rem;
+    margin-bottom: 1rem;
+}
+
+
+
+
+@media(max-width:450px) {
+    .pertama>a>img {
+        width: 2.6rem;
+        height: 3rem;
+        margin-right: 1rem;
+    }
+
+    .pertama>.kedua {
+        margin-left: 1rem;
+    }
+
+    .bungkussehatcard>.bungkussehat{
+        display: flex;
+    }
+
+    .bungkussehat{
+        width: 100%;
+        padding-top:0;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+    .bungkussehat::-webkit-scrollbar{
+        display: none;
+    }
+
+    .cardmask1,
+    .cardmask2,
+    .cardmask3,
+    .cardmask4,  
+    .cardmask5,
+    .cardmask6,
+    .cardmask7,
+    .cardmask8{
+    background-color: #F3F4D6;
+    border-radius: 1rem;
+    width: 11rem;
+    height: 16rem;
+    }
+
+    .cardimage1{
+        width: 10rem;
+        padding-top: 1px;
+        padding-left: 1rem;
+    }
+    
+    .cardimage2{
+        width: 10rem;
+        padding-top: 1px;
+        padding-left: 1rem;
+    }
+    
+    .cardimage3{
+        width: 10rem;
+        padding-top: 1.1rem;
+        padding-left: 1rem;
+    }
+    
+    .cardimage4{
+        width: 10rem;
+        padding-top: 1.1rem;
+        padding-left: 1rem;
+    }  
+    
+    .cardimage5{
+        width: 10rem;
+        padding-top: 10px;
+        padding-left: 1rem;
+    }
+    
+    .cardimage6{
+        width: 10rem;
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+        padding-left: 1rem;
+    }
+    
+    .cardimage7{
+        width: 10rem;
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+        padding-left: 1rem;
+    }
+    
+    .cardimage8{
+        width: 10rem;
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+        padding-left: 1rem;
+    }
+    
+    .overlay-img {
+        position: absolute;
+        top: 25px; /* Atur posisi atas */
+        right: 29px; /* Atur posisi kanan */
+        width: 40px; /* Ukuran gambar overlay */
+        height: auto;
+    }
+
+    .overlay-img1 {
+        position: absolute;
+        top: 13px; /* Atur posisi atas */
+        right: 29px; /* Atur posisi kanan */
+        width: 40px; /* Ukuran gambar overlay */
+        height: auto;
+    }
+
+    .overlay-img5 {
+        position: absolute;
+        top: 15px; /* Atur posisi atas */
+        right: 29px; /* Atur posisi kanan */
+        width: 40px; /* Ukuran gambar overlay */
+        height: auto;
+    }
+
+    .overlay-img6 {
+        position: absolute;
+        top: 90px; /* Atur posisi atas */
+        right: 29px; /* Atur posisi kanan */
+        width: 40px; /* Ukuran gambar overlay */
+        height: auto;
+    }
+
+    .overlay-img7 {
+        position: absolute;
+        top: 70px; /* Atur posisi atas */
+        right: 29px; /* Atur posisi kanan */
+        width: 40px; /* Ukuran gambar overlay */
+        height: auto;
+    }
+
+    .overlay-img8 {
+        position: absolute;
+        top: 70px; /* Atur posisi atas */
+        right: 29px; /* Atur posisi kanan */
+        width: 40px; /* Ukuran gambar overlay */
+        height: auto;
+    }
+
+
+
+    .cardbody1{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-left: 1rem;
+    }
+    
+    .cardbody1>.cardtitle1{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        margin-top: 1rem;
+        font-size: 16px;
+    }
+    
+    .cardbody1>.cardtext1{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 12px;
+        margin-bottom: 3rem;
+    }
+    
+    .cardbody1>.cardtext11{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        margin-bottom: -5px;
+    }
+    
+    .cardbody2{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-top: 1rem;
+        margin-left: 1rem;
+    }
+    
+    .cardbody2>.cardtitle2{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 16px;
+    }
+    
+    .cardbody2>.cardtext2{
+        max-width: 80%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 12px;
+    }
+    
+    .cardbody2>.cardtext22{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        margin-top: 30px;
+    }
+    
+    
+    .cardbody3{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-top: 1rem;
+        margin-left: 1rem;
+    }
+    
+    .cardbody3>.cardtitle3{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 16px;
+    }
+    
+    .cardbody3>.cardtext3{
+        max-width: 70%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 12px;
+    }
+    
+    .cardbody3>.cardtext33{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        margin-top: 5px;
+    }
+    
+    
+    .cardbody4{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-top: 1rem;
+        margin-left: 1rem;
+    }
+    
+    .cardbody4>.cardtitle4{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 16px;
+    }
+    
+    .cardbody4>.cardtext4{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 14px;
+    }
+    
+    .cardbody4>.cardtext44{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        margin-top: 3rem;
+    }
+    
+    
+    .cardbody5{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-top: 1rem;
+        margin-left: 1rem;
+    }
+    
+    .cardbody5>.cardtitle5{
+        width: 100%;
+        text-align: left;
+        padding-top: 1rem;
+        margin-right:auto;
+        font-size: 16px;
+    }
+    
+    .cardbody5>.cardtext5{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 14px;
+    }
+    
+    .cardbody5>.cardtext55{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+    }
+    
+    
+    .cardbody6{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-left: 1rem;
+    }
+    
+    .cardbody6>.cardtitle6{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        padding-top: 1rem;
+        font-size: 16px;
+    }
+    
+    .cardbody6>.cardtext6{
+        width: 90%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 14px;
+    }
+    
+    .cardbody6>.cardtext66{
+        text-align: left;
+        margin-right:auto;      
+        padding-top: 10px;
+        padding-bottom: 1rem;
+    }
+    
+    
+    .cardbody7{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-left: 1rem;
+    }
+    
+    .cardbody7>.cardtitle7{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        padding-top: 25px;
+        font-size: 16px;
+    }
+    
+    .cardbody7>.cardtext7{
+        width: 80%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 14px;
+    
+    }
+    
+    .cardbody7>.cardtext77{
+        text-align: left;
+        margin-right:auto;      
+        padding-top: 10px;;
+        margin-bottom: 4rem;
+    }
+    
+    
+    .cardbody8{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-left: 1rem;
+    }
+    
+    .cardbody8>.cardtitle8{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        padding-top: 10px;
+        font-size: 16px;
+    }
+    
+    .cardbody8>.cardtext8{
+        width: 80%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 14px;
+    
+    }
+    
+    .cardbody8>.cardtext88{
+        text-align: left;
+        margin-right:auto;      
+        padding-top: 1rem;
+        margin-bottom: 1rem;
+    }   
+
+}
+
+
+@media(max-width:480px) {
+    .pertama>a>img {
+        width: 2.6rem;
+        height: 3rem;
+        margin-right: 1rem;
+    }
+
+    .pertama>.kedua {
+        margin-left: 1rem;
+    }
+
+    .bungkussehatcard>.bungkussehat{
+        display: flex;
+    }
+
+    .bungkussehat{
+        width: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+    .bungkussehat::-webkit-scrollbar{
+        display: none;
+    }
+
+    .cardmask1,
+    .cardmask2,
+    .cardmask3,
+    .cardmask4,  
+    .cardmask5,
+    .cardmask6,
+    .cardmask7,
+    .cardmask8{
+    background-color: #F3F4D6;
+    border-radius: 1rem;
+    width: 11rem;
+    height: 16rem;
+    }
+
+    .cardmask1>img {
+        width: 9rem;
+        padding-top: 1.4rem;
+    }
+    
+    .cardmask2>img {
+        width: 9rem;
+        margin-top: 1.4rem;
+    }
+    
+    .cardmask3>img {
+        width: 9rem;
+        padding-top: 1rem;
+    }
+    
+    .cardmask4>img {
+        width: 9rem;
+        padding-top: 1rem;
+    }
+    
+    .cardmask5>img {
+        width: 9rem;
+        padding-top: 1rem;
+        padding-bottom: 4rem;
+    }
+    
+    .cardmask6>img {
+        width: 9rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    
+    .cardmask7>img {
+        width: 9rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    
+    }
+    
+    .cardmask8>img {
+        width: 9rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    
+    }
+
+    .cardbody1{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-left: 1rem;
+    }
+    
+    .cardbody1>.cardtitle1{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        margin-top: 1rem;
+        font-size: 16px;
+    }
+    
+    .cardbody1>.cardtext1{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 12px;
+    }
+    
+    .cardbody1>.cardtext11{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        margin-top: 40px;
+    }
+    
+    .cardbody2{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-top: 1rem;
+        margin-left: 1rem;
+    }
+    
+    .cardbody2>.cardtitle2{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 16px;
+    }
+    
+    .cardbody2>.cardtext2{
+        max-width: 80%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 12px;
+    }
+    
+    .cardbody2>.cardtext22{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        margin-top: 30px;
+    }
+    
+    
+    .cardbody3{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-top: 1rem;
+        margin-left: 1rem;
+    }
+    
+    .cardbody3>.cardtitle3{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 16px;
+    }
+    
+    .cardbody3>.cardtext3{
+        max-width: 70%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 12px;
+    }
+    
+    .cardbody3>.cardtext33{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        margin-top: 5px;
+    }
+    
+    
+    .cardbody4{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-top: 1rem;
+        margin-left: 1rem;
+    }
+    
+    .cardbody4>.cardtitle4{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 16px;
+    }
+    
+    .cardbody4>.cardtext4{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 14px;
+    }
+    
+    .cardbody4>.cardtext44{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        margin-top: 3rem;
+    }
+    
+    
+    .cardbody5{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-left: 1rem;
+    }
+    
+    .cardbody5>.cardtitle5{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        margin-top: -3rem;
+        font-size: 16px;
+    }
+    
+    .cardbody5>.cardtext5{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 14px;
+    }
+    
+    .cardbody5>.cardtext55{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        margin-top: 2.5rem;
+    }
+    
+    
+    .cardbody6{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-left: 1rem;
+    }
+    
+    .cardbody6>.cardtitle6{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        margin-top: -3rem;
+        font-size: 16px;
+    }
+    
+    .cardbody6>.cardtext6{
+        width: 90%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 14px;
+    }
+    
+    .cardbody6>.cardtext66{
+        text-align: left;
+        margin-right:auto;      
+        margin-top: 1rem;
+        margin-bottom: 4rem;
+    }
+    
+    
+    .cardbody7{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-left: 1rem;
+    }
+    
+    .cardbody7>.cardtitle7{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        margin-top: -2.5rem;
+        font-size: 16px;
+    }
+    
+    .cardbody7>.cardtext7{
+        width: 80%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 14px;
+    
+    }
+    
+    .cardbody7>.cardtext77{
+        text-align: left;
+        margin-right:auto;      
+        margin-top:1rem;
+        margin-bottom: 4rem;
+    }
+    
+    
+    .cardbody8{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-left: 1rem;
+    }
+    
+    .cardbody8>.cardtitle8{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        margin-top: -2.5rem;
+        font-size: 16px;
+    }
+    
+    .cardbody8>.cardtext8{
+        width: 80%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 14px;
+    
+    }
+    
+    .cardbody8>.cardtext88{
+        text-align: left;
+        margin-right:auto;      
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+    }   
+    
+}
+
+@media(min-width:650px) and (max-width:770px) {
+    .bungkussehatcard{
+        margin-left: 2rem; 
+    }
+
+    .pertama {
+        display: flex;
+        margin-top: 4.5rem;
+        justify-content: center;
+        margin-right: 1rem;
+    }
+
+    .pertama>a>img {
+        width: 2.6rem;
+        height: 3rem;
+        margin-right: 1rem;
+    }
+
+    .pertama>.kedua>h2{
+        margin-right: 17rem;
+    }
+
+    .pertama>.kedua>p{
+        max-width: 88%;
+    }
+
+    .cardmask1,
+    .cardmask2,
+    .cardmask3,
+    .cardmask4,  
+    .cardmask5,
+    .cardmask6,
+    .cardmask7,
+    .cardmask8{
+    background-color: #F3F4D6;
+    border-radius: 1rem;
+    width: 11rem;
+    height: 16rem;
+    }
+
+    .cardimage1{
+        width: 10rem;
+        padding-top: 22px;
+        padding-left: 1rem;
+    }
+    
+    .cardimage2{
+        width: 10rem;
+        padding-top: 1px;
+        padding-left: 1rem;
+    }
+    
+    .cardimage3{
+        width: 10rem;
+        padding-top: 1.1rem;
+        padding-left: 1rem;
+    }
+    
+    .cardimage4{
+        width: 10rem;
+        padding-top: 1.1rem;
+        padding-left: 1rem;
+    }  
+    
+    .cardimage5{
+        width: 10rem;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding-left: 1rem;
+    }
+    
+    .cardimage6{
+        width: 10rem;
+        padding-left: 1rem;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .cardimage7{
+        width: 10rem;
+        padding-left: 1rem;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .cardimage8{
+        width: 10rem;
+        margin-top: 25px;
+        margin-bottom: 20px;
+        padding-left: 1rem;
+    }
+    
+    .overlay-img {
+        position: absolute;
+        top: 25px; /* Atur posisi atas */
+        right: 29px; /* Atur posisi kanan */
+        width: 40px; /* Ukuran gambar overlay */
+        height: auto;
+    }
+
+    .overlay-img1 {
+        position: absolute;
+        top: 13px; /* Atur posisi atas */
+        right: 29px; /* Atur posisi kanan */
+        width: 40px; /* Ukuran gambar overlay */
+        height: auto;
+    }
+
+    .overlay-img5 {
+        position: absolute;
+        top: 30px; /* Atur posisi atas */
+        right: 29px; /* Atur posisi kanan */
+        width: 40px; /* Ukuran gambar overlay */
+        height: auto;
+    }
+
+    .overlay-img6 {
+        position: absolute;
+        top: 20px; /* Atur posisi atas */
+        right: 29px; /* Atur posisi kanan */
+        width: 40px; /* Ukuran gambar overlay */
+        height: auto;
+    }
+
+    .overlay-img7 {
+        position: absolute;
+        top: 20px; /* Atur posisi atas */
+        right: 29px; /* Atur posisi kanan */
+        width: 40px; /* Ukuran gambar overlay */
+        height: auto;
+    }
+
+    .overlay-img8 {
+        position: absolute;
+        top:35px; /* Atur posisi atas */
+        right: 29px; /* Atur posisi kanan */
+        width: 40px; /* Ukuran gambar overlay */
+        height: auto;
+    }
+
+
+
+    .cardbody1{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-left: 1rem;
+    }
+    
+    .cardbody1>.cardtitle1{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        margin-top: 1rem;
+        font-size: 16px;
+    }
+    
+    .cardbody1>.cardtext1{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 12px;
+        margin-bottom: 3rem;
+    }
+    
+    .cardbody1>.cardtext11{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        margin-top: -4px;
+    }
+    
+    .cardbody2{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-top: 1rem;
+        margin-left: 1rem;
+    }
+    
+    .cardbody2>.cardtitle2{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 16px;
+    }
+    
+    .cardbody2>.cardtext2{
+        max-width: 80%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 12px;
+    }
+    
+    .cardbody2>.cardtext22{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        margin-top: 30px;
+    }
+    
+    
+    .cardbody3{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-top: 1rem;
+        margin-left: 1rem;
+    }
+    
+    .cardbody3>.cardtitle3{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 16px;
+    }
+    
+    .cardbody3>.cardtext3{
+        max-width: 70%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 12px;
+    }
+    
+    .cardbody3>.cardtext33{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        margin-top: 5px;
+    }
+    
+    
+    .cardbody4{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-top: 1rem;
+        margin-left: 1rem;
+    }
+    
+    .cardbody4>.cardtitle4{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 16px;
+    }
+    
+    .cardbody4>.cardtext4{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 14px;
+    }
+    
+    .cardbody4>.cardtext44{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        margin-top: 3rem;
+    }
+    
+    
+    .cardbody5{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-left: 1rem;
+    }
+    
+    .cardbody5>.cardtitle5{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 16px;
+    }
+    
+    .cardbody5>.cardtext5{
+        width: 90%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 14px;
+    }
+    
+    .cardbody5>.cardtext55{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        margin-top: 30px;
+        margin-bottom: 35px;
+    }
+    
+    
+    .cardbody6{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-left: 1rem;
+    }
+    
+    .cardbody6>.cardtitle6{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 16px;
+        
+    }
+    
+    .cardbody6>.cardtext6{
+        width: 90%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 14px;
+    }
+    
+    .cardbody6>.cardtext66{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;  
+        margin-top: 15px;    
+    }
+    
+    
+    .cardbody7{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-left: 1rem;  
+    }
+    
+    .cardbody7>.cardtitle7{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 16px;
+    }
+    
+    .cardbody7>.cardtext7{
+        width: 90%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 14px;
+    }
+    
+    .cardbody7>.cardtext77{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;  
+        margin-top: 15px;  
+    }
+    
+    
+    .cardbody8{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-left: 1rem;
+    }
+    
+    .cardbody8>.cardtitle8{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 16px;
+    }
+    
+    .cardbody8>.cardtext8{
+        width: 90%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 14px;
+    }
+    
+    .cardbody8>.cardtext88{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        margin-top: 30px;
+        margin-bottom: 35px;
+    }   
+}
+
+
+
+@media(min-width:790px) and (max-width:835px) {
+    .bungkussehatcard{
+        margin-left: 15px;
+    }
+
+    .pertama {
+        display: flex;
+        margin-top: 4.5rem;
+        justify-content: center;
+    }
+
+    .pertama>a>img {
+        width: 2.6rem;
+        height: 3rem;
+        margin-right: 1rem;
+    }
+
+    .pertama>.kedua>h2 {
+       margin-right: 16rem;
+    }
+
+    .pertama>.kedua>p{
+        max-width: 88%;
+    }
+
+    .pertama>a>img{
+        margin-right: 3rem;
+    }
+
+    .cardmask1,
+    .cardmask2,
+    .cardmask3,
+    .cardmask4,  
+    .cardmask5,
+    .cardmask6,
+    .cardmask7,
+    .cardmask8{
+    background-color: #F3F4D6;
+    border-radius: 1rem;
+    width: 12rem;
+    height: 16rem;
+    }
+
+    .cardimage1{
+        width: 11rem;
+        padding-top: 22px;
+        padding-left: 1rem;
+    }
+    
+    .cardimage2{
+        width: 11rem;
+        padding-top: 1px;
+        padding-left: 1rem;
+    }
+    
+    .cardimage3{
+        width: 11rem;
+        padding-top: 1.1rem;
+        padding-left: 1rem;
+    }
+    
+    .cardimage4{
+        width: 11rem;
+        padding-top: 1.1rem;
+        padding-left: 1rem;
+    }  
+    
+    .cardimage5{
+        width: 11rem;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding-left: 1rem;
+    }
+    
+    .cardimage6{
+        width: 11rem;
+        padding-left: 1rem;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .cardimage7{
+        width: 11rem;
+        padding-left: 1rem;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .cardimage8{
+        width: 11rem;
+        margin-top: 25px;
+        margin-bottom: 20px;
+        padding-left: 1rem;
+    }
+    
+    .overlay-img {
+        position: absolute;
+        top: 25px; /* Atur posisi atas */
+        right: 29px; /* Atur posisi kanan */
+        width: 40px; /* Ukuran gambar overlay */
+        height: auto;
+    }
+
+    .overlay-img1 {
+        position: absolute;
+        top: 13px; /* Atur posisi atas */
+        right: 29px; /* Atur posisi kanan */
+        width: 40px; /* Ukuran gambar overlay */
+        height: auto;
+    }
+
+    .overlay-img5 {
+        position: absolute;
+        top: 30px; /* Atur posisi atas */
+        right: 29px; /* Atur posisi kanan */
+        width: 40px; /* Ukuran gambar overlay */
+        height: auto;
+    }
+
+    .overlay-img6 {
+        position: absolute;
+        top: 20px; /* Atur posisi atas */
+        right: 29px; /* Atur posisi kanan */
+        width: 40px; /* Ukuran gambar overlay */
+        height: auto;
+    }
+
+    .overlay-img7 {
+        position: absolute;
+        top: 20px; /* Atur posisi atas */
+        right: 29px; /* Atur posisi kanan */
+        width: 40px; /* Ukuran gambar overlay */
+        height: auto;
+    }
+
+    .overlay-img8 {
+        position: absolute;
+        top:35px; /* Atur posisi atas */
+        right: 29px; /* Atur posisi kanan */
+        width: 40px; /* Ukuran gambar overlay */
+        height: auto;
+    }
+
+
+
+    .cardbody1{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-left: 1rem;
+    }
+    
+    .cardbody1>.cardtitle1{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        margin-top: 1rem;
+        font-size: 16px;
+    }
+    
+    .cardbody1>.cardtext1{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 12px;
+        margin-bottom: 3rem;
+    }
+    
+    .cardbody1>.cardtext11{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        margin-top: -4px;
+    }
+    
+    .cardbody2{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-top: 1rem;
+        margin-left: 1rem;
+    }
+    
+    .cardbody2>.cardtitle2{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 16px;
+    }
+    
+    .cardbody2>.cardtext2{
+        max-width: 80%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 12px;
+    }
+    
+    .cardbody2>.cardtext22{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        margin-top: 30px;
+    }
+    
+    
+    .cardbody3{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-top: 1rem;
+        margin-left: 1rem;
+    }
+    
+    .cardbody3>.cardtitle3{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 16px;
+    }
+    
+    .cardbody3>.cardtext3{
+        max-width: 70%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 12px;
+    }
+    
+    .cardbody3>.cardtext33{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        margin-top: 5px;
+    }
+    
+    
+    .cardbody4{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-top: 1rem;
+        margin-left: 1rem;
+    }
+    
+    .cardbody4>.cardtitle4{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 16px;
+    }
+    
+    .cardbody4>.cardtext4{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 14px;
+    }
+    
+    .cardbody4>.cardtext44{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        margin-top: 3rem;
+    }
+    
+    
+    .cardbody5{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-left: 1rem;
+    }
+    
+    .cardbody5>.cardtitle5{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 16px;
+    }
+    
+    .cardbody5>.cardtext5{
+        width: 90%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 14px;
+    }
+    
+    .cardbody5>.cardtext55{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        margin-top: 30px;
+        margin-bottom: 35px;
+    }
+    
+    
+    .cardbody6{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-left: 1rem;
+    }
+    
+    .cardbody6>.cardtitle6{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 16px;
+        
+    }
+    
+    .cardbody6>.cardtext6{
+        width: 90%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 14px;
+    }
+    
+    .cardbody6>.cardtext66{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;  
+        margin-top: 15px;    
+    }
+    
+    
+    .cardbody7{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-left: 1rem;  
+    }
+    
+    .cardbody7>.cardtitle7{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 16px;
+    }
+    
+    .cardbody7>.cardtext7{
+        width: 90%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 14px;
+    }
+    
+    .cardbody7>.cardtext77{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;  
+        margin-top: 15px;  
+    }
+    
+    
+    .cardbody8{
+        width: 100%;
+        text-align: left;   
+        margin-right:auto;
+        margin-left: 1rem;
+    }
+    
+    .cardbody8>.cardtitle8{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;
+        font-size: 16px;
+    }
+    
+    .cardbody8>.cardtext8{
+        width: 90%;
+        text-align: left;
+        margin-right:auto;      
+        font-size: 14px;
+    }
+    
+    .cardbody8>.cardtext88{
+        width: 100%;
+        text-align: left;
+        margin-right:auto;      
+        margin-top: 30px;
+        margin-bottom: 35px;
+    }   
+}
+
+/* end section pertama */
+
+
+
+
+
 
 
 
@@ -270,18 +2879,23 @@ nav > ul > li:hover{
 
 
 /* home kategori */
-.kategori1{
+.kategori1 {
     display: flex;
-    gap: 60rem;
+    justify-content: space-between;
     margin-top: 5rem;
 }
 
-.gambarpanahkat{
-    width: 2.6rem;
-    height: 3rem;
+.kategori1>h3{
+    margin-left: 2.5rem;
 }
 
-.kategori2{
+.gambarpanahkat {
+    width: 2.6rem;
+    height: 3rem;
+    margin-right: 2rem;
+}
+
+.kategori2 {
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -289,121 +2903,135 @@ nav > ul > li:hover{
 }
 
 
-.kategori2>.kotak1{
+.kategori2>.kotak1 {
     width: 7rem;
     height: 6rem;
     background-color: #D7DF23;
     border-radius: 9px;
 }
 
-
-.kategori2>.kotak1>img{
-   transform: translate(30px,15px);
+.kategori2>.kotak1>img {
+    transform: translate(30px, 15px);
 }
-.kategori2>.kotak1>p{
-    transform: translate(30px,15px);
-}
- 
 
-.kategori2>.kotak2{
+.kategori2>.kotak1>p {
+    transform: translate(30px, 15px);
+}
+
+
+.kategori2>.kotak2 {
     width: 7rem;
     height: 6rem;
     background-color: #D7DF23;
     border-radius: 9px;
 }
-.kategori2>.kotak2>img{
-    transform: translate(30px,15px);
-} 
-.kategori2>.kotak2>p{
-     transform: translate(20px,15px);
-     color: black;
+
+.kategori2>.kotak2>img {
+    transform: translate(30px, 15px);
+}
+
+.kategori2>.kotak2>p {
+    transform: translate(20px, 15px);
+    color: black;
 }
 
 
-.kategori2>.kotak3{
+.kategori2>.kotak3 {
     width: 7rem;
     height: 6rem;
     background-color: #D7DF23;
     border-radius: 9px;
 }
-.kategori2>.kotak3>img{
-    transform: translate(35px,15px);
-} 
-.kategori2>.kotak3>p{
-     transform: translate(35px,15px);
+
+.kategori2>.kotak3>img {
+    transform: translate(35px, 15px);
+}
+
+.kategori2>.kotak3>p {
+    transform: translate(35px, 15px);
 }
 
 
-.kategori2>.kotak4{
+.kategori2>.kotak4 {
     width: 7rem;
     height: 6rem;
     background-color: #D7DF23;
     border-radius: 9px;
 }
-.kategori2>.kotak4>img{
-    transform: translate(35px,15px);
+
+.kategori2>.kotak4>img {
+    transform: translate(35px, 15px);
 }
-.kategori2>.kotak4>p{
-     transform: translate(35px,15px);
+
+.kategori2>.kotak4>p {
+    transform: translate(35px, 15px);
 }
 
 
-.kategori2>.kotak5{
+.kategori2>.kotak5 {
     width: 7rem;
     height: 6rem;
     background-color: #D7DF23;
     border-radius: 9px;
 }
-.kategori2>.kotak5>img{
-    transform: translate(30px,15px);
+
+.kategori2>.kotak5>img {
+    transform: translate(30px, 15px);
 }
-.kategori2>.kotak5>p{
-     transform: translate(30px,15px);
+
+.kategori2>.kotak5>p {
+    transform: translate(30px, 15px);
 }
 
 
-.kategori2>.kotak6{
+.kategori2>.kotak6 {
     width: 7rem;
     height: 6rem;
     background-color: #D7DF23;
     border-radius: 9px;
 }
-.kategori2>.kotak6>img{
-    transform: translate(30px,15px);
+
+.kategori2>.kotak6>img {
+    transform: translate(30px, 15px);
 }
-.kategori2>.kotak6>p{
-     transform: translate(13px,15px);
+
+.kategori2>.kotak6>p {
+    transform: translate(13px, 15px);
 }
 
 
-.kategori2>.kotak7{
+.kategori2>.kotak7 {
     width: 7rem;
     height: 6rem;
     background-color: #D7DF23;
     border-radius: 9px;
 }
-.kategori2>.kotak7>img{
-    transform: translate(30px,15px);
+
+.kategori2>.kotak7>img {
+    transform: translate(30px, 15px);
 }
-.kategori2>.kotak7>p{
-     transform: translate(42px,15px);
+
+.kategori2>.kotak7>p {
+    transform: translate(42px, 15px);
 }
 
 
-.kategori2>.kotak8{
+.kategori2>.kotak8 {
     width: 7rem;
     height: 6rem;
     background-color: #D7DF23;
     border-radius: 9px;
 }
-.kategori2>.kotak8>img{
-    transform: translate(30px,15px);
-}
-.kategori2>.kotak8>p{
-     transform: translate(39px,15px);
+
+.kategori2>.kotak8>img {
+    transform: translate(30px, 15px);
 }
 
-.kategori3{
+.kategori2>.kotak8>p {
+    transform: translate(39px, 15px);
+}
+
+.kategori3 {
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -414,122 +3042,926 @@ nav > ul > li:hover{
 .gambar-gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem; /* Jarak antara gambar */
-    justify-content: center; /* Pusatkan gallery secara horizontal */
-  }
-  
-  .gambar-container {
+    gap: 2rem;
+    /* Jarak antara gambar */
+    justify-content: center;
+    /* Pusatkan gallery secara horizontal */
+}
+
+.gambar-container {
     position: relative;
-    width: 250px; /* Atur lebar kotak gambar */
-    height: 190px; /* Atur tinggi kotak gambar */
-    overflow: hidden; /* Pastikan gambar tidak meluap keluar kotak */
-    background-color: #f0f0f0; /* Warna latar belakang default */
+    width: 250px;
+    /* Atur lebar kotak gambar */
+    height: 190px;
+    /* Atur tinggi kotak gambar */
+    overflow: hidden;
+    /* Pastikan gambar tidak meluap keluar kotak */
+    background-color: #f0f0f0;
+    /* Warna latar belakang default */
     border-radius: 1rem;
-  }
-  
-  .gambarcat31 {
-    display: block; /* Menghilangkan jarak di bawah gambar */
-    width: 100%; /* Pastikan gambar mengisi kontainer */
-    height: 100%; /* Pastikan gambar mengisi kontainer secara vertikal */
-    object-fit: cover; /* Pastikan gambar mengisi kotak tanpa merubah rasio */
-    transition: opacity 0.3s ease; /* Transisi untuk efek hover */
-  }
-  
-  .overlay1{
+}
+
+.gambarcat31 {
+    display: block;
+    /* Menghilangkan jarak di bawah gambar */
+    width: 100%;
+    /* Pastikan gambar mengisi kontainer */
+    height: 100%;
+    /* Pastikan gambar mengisi kontainer secara vertikal */
+    object-fit: cover;
+    /* Pastikan gambar mengisi kotak tanpa merubah rasio */
+    transition: opacity 0.3s ease;
+    /* Transisi untuk efek hover */
+}
+
+.overlay1 {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: greenyellow; /* Warna latar belakang gelap semi-transparan */
+    background-color: #10a000;
+    /* Warna latar belakang gelap semi-transparan */
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0; /* Sembunyikan overlay secara default */
-    transition: opacity 0.3s ease; /* Transisi untuk efek hover */
-  }
-  
+    opacity: 0;
+    /* Sembunyikan overlay secara default */
+    transition: opacity 0.3s ease;
+    /* Transisi untuk efek hover */
+}
+
 .text {
-    color: black; /* Warna teks terang */
-    font-weight: 500;
-    font-size: 1.5em; /* Ukuran teks */
-    text-align: center; /* Pusatkan teks */
-}
-  
-.gambar-container:hover .overlay1{
-    opacity: 0.5; /* Tampilkan overlay saat hover */
+    color: white;
+    /* Warna teks terang */
+    font-weight: 900;
+    font-size: 1.5em;
+    /* Ukuran teks */
+    text-align: center;
+    /* Pusatkan teks */
 }
 
-.overlay2{
+.gambar-container:hover .overlay1 {
+    opacity: 0.5;
+    /* Tampilkan overlay saat hover */
+}
+
+.overlay2 {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: yellow; /* Warna latar belakang gelap semi-transparan */
+    background-color: #929a00;
+    /* Warna latar belakang gelap semi-transparan */
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0; /* Sembunyikan overlay secara default */
-    transition: opacity 0.3s ease; /* Transisi untuk efek hover */
-  }
+    opacity: 0;
+    /* Sembunyikan overlay secara default */
+    transition: opacity 0.3s ease;
+    /* Transisi untuk efek hover */
+}
 
-.gambar-container:hover .overlay2{
-    opacity: 0.5; /* Tampilkan overlay saat hover */
+.gambar-container:hover .overlay2 {
+    opacity: 0.5;
+    /* Tampilkan overlay saat hover */
 }
 
 
-.overlay3{
+.overlay3 {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: green; /* Warna latar belakang gelap semi-transparan */
+    background-color: #0F9288;
+    /* Warna latar belakang gelap semi-transparan */
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0; /* Sembunyikan overlay secara default */
-    transition: opacity 0.3s ease; /* Transisi untuk efek hover */
-  }
+    opacity: 0;
+    /* Sembunyikan overlay secara default */
+    transition: opacity 0.3s ease;
+    /* Transisi untuk efek hover */
+}
 
-.gambar-container:hover .overlay3{
-    opacity: 0.6; /* Tampilkan overlay saat hover */
+.gambar-container:hover .overlay3 {
+    opacity: 0.6;
+    /* Tampilkan overlay saat hover */
 }
 
 
-.overlay4{
+.overlay4 {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: crimson; /* Warna latar belakang gelap semi-transparan */
+    background-color: #05352E;
+    /* Warna latar belakang gelap semi-transparan */
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0; /* Sembunyikan overlay secara default */
-    transition: opacity 0.3s ease; /* Transisi untuk efek hover */
-  }
+    opacity: 0;
+    /* Sembunyikan overlay secara default */
+    transition: opacity 0.3s ease;
+    /* Transisi untuk efek hover */
+}
 
-.gambar-container:hover .overlay4{
-    opacity: 0.6; /* Tampilkan overlay saat hover */
+.gambar-container:hover .overlay4 {
+    opacity: 0.6;
+    /* Tampilkan overlay saat hover */
 }
 
 .gambar-container:hover .gambarcat31 {
-    opacity: 1; /* Pastikan gambar tetap terlihat saat hover */
+    opacity: 1;
+    /* Pastikan gambar tetap terlihat saat hover */
 }
+
+@media(max-width:450px) {
+    .bungkussehat{
+        max-height: max-content;
+    }
+
+    .kategori1>h3{
+        margin-left: 1rem;
+    }
+    
+    .gambarpanahkat {
+        width: 2.6rem;
+        height: 3rem;
+        margin-right: 1.3rem;
+    }
+
+    .bungkuskategori2 {
+        width: 100%;
+        overflow-x: scroll;
+        margin-left:1rem;
+    }
+    
+    .bungkuskategori2::-webkit-scrollbar {
+        display: none;
+    }    
+    
+    .gambar-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        /* Jarak antara gambar */
+        justify-content: center;
+        /* Pusatkan gallery secara horizontal */
+    }
+    
+    .gambar-container {
+        position: relative;
+        width: 150px;
+        /* Atur lebar kotak gambar */
+        height: 150px;
+        /* Atur tinggi kotak gambar */
+        overflow: hidden;
+        /* Pastikan gambar tidak meluap keluar kotak */
+        background-color: #f0f0f0;
+        /* Warna latar belakang default */
+        border-radius: 1rem;
+    }
+    
+    .text {
+        color: white;
+        /* Warna teks terang */
+        font-weight: 700;
+        font-size: 1em;
+        /* Ukuran teks */
+        text-align: center;
+        /* Pusatkan teks */
+    }
+}
+
+
+
+@media(max-width:480px) {
+    .kategori1>h3{
+        margin-left: 1rem;
+    }
+    
+    .gambarpanahkat {
+        width: 2.6rem;
+        height: 3rem;
+        margin-right: 1.3rem;
+    }
+
+    .bungkuskategori2 {
+        width: 100%;
+        overflow-x: scroll;
+        margin-left:1rem;
+    }
+    
+    .bungkuskategori2::-webkit-scrollbar {
+        display: none;
+    }
+
+    .kategori2 {
+        display: flex;
+        width: max-content;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .gambar-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        /* Jarak antara gambar */
+        justify-content: center;
+        /* Pusatkan gallery secara horizontal */
+    }
+    
+    .gambar-container {
+        position: relative;
+        width: 150px;
+        /* Atur lebar kotak gambar */
+        height: 150px;
+        /* Atur tinggi kotak gambar */
+        overflow: hidden;
+        /* Pastikan gambar tidak meluap keluar kotak */
+        background-color: #f0f0f0;
+        /* Warna latar belakang default */
+        border-radius: 1rem;
+    }
+    
+    .text {
+        color: white;
+        /* Warna teks terang */
+        font-weight: 700;
+        font-size: 1em;
+        /* Ukuran teks */
+        text-align: center;
+        /* Pusatkan teks */
+    }
+    
+}
+
+
+
+@media(min-width:650px) and (max-width:770px) {
+    .kategori1 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5rem;
+    }
+    
+    .kategori1>h3{
+        margin-left: 3.5rem;
+    }
+    
+    .gambarpanahkat {
+        width: 2.6rem;
+        height: 3rem;
+        margin-right: 2.5rem;
+    }
+    
+    .kategori2 {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 3rem;
+    }
+    
+    
+    .kategori2>.kotak1 {
+        width: 6rem;
+        height: 5rem;
+        background-color: #D7DF23;
+        border-radius: 9px;
+    }
+    
+    .kategori2>.kotak1>img {
+        transform: translate(23px, 13px);
+        width: 50%;
+    }
+    
+    .kategori2>.kotak1>p {
+        transform: translate(28px, 16px);
+        font-size: 13px;
+    }
+    
+    
+    .kategori2>.kotak2 {
+        width: 6rem;
+        height: 5rem;
+        background-color: #D7DF23;
+        border-radius: 9px;
+    }
+    
+    .kategori2>.kotak2>img {
+        transform: translate(27px, 11px);
+        width: 40%;
+    }
+    
+    .kategori2>.kotak2>p {
+        transform: translate(14px, 10px);
+        font-size: 13px;
+    }
+    
+    
+    .kategori2>.kotak3 {
+        width: 6rem;
+        height: 5rem;
+        background-color: #D7DF23;
+        border-radius: 9px;
+    }
+    
+    .kategori2>.kotak3>img {
+        transform: translate(23px, 15px);
+        width: 50%;
+    }
+    
+    .kategori2>.kotak3>p {
+        transform: translate(30px, 13px);
+        font-size:13px ;
+    }
+    
+    
+    .kategori2>.kotak4 {
+        width: 6rem;
+        height: 5rem;
+        background-color: #D7DF23;
+        border-radius: 9px;
+    }
+    
+    .kategori2>.kotak4>img {
+        transform: translate(20px, 7px);
+        width: 50%;
+    }
+    
+    .kategori2>.kotak4>p {
+        transform: translate(28px, 6px);
+        font-size:13px ;
+    }
+    
+    
+    .kategori2>.kotak5 {
+        width: 6rem;
+        height: 5rem;
+        background-color: #D7DF23;
+        border-radius: 9px;
+    }
+    
+    .kategori2>.kotak5>img {
+        transform: translate(20px, 10px);
+        width: 50%;
+    }
+    
+    .kategori2>.kotak5>p {
+        transform: translate(24px, 13px);
+        font-size:13px ;
+    }
+    
+    
+    .kategori2>.kotak6 {
+        width: 6rem;
+        height: 5rem;
+        background-color: #D7DF23;
+        border-radius: 9px;
+    }
+    
+    .kategori2>.kotak6>img {
+        transform: translate(25px, 10px);
+        width: 50%;
+    }
+    
+    .kategori2>.kotak6>p {
+        transform: translate(8px, 15px);
+        font-size:13px;
+    }
+    
+    
+    .kategori2>.kotak7 {
+        width: 6rem;
+        height: 5rem;
+        background-color: #D7DF23;
+        border-radius: 9px;
+    }
+    
+    .kategori2>.kotak7>img {
+        transform: translate(22px, 15px);
+        width: 50%;
+    }
+    
+    .kategori2>.kotak7>p {
+        transform: translate(32px, 20px);
+        font-size:13px;
+    }
+    
+    
+    .kategori2>.kotak8 {
+        width: 6rem;
+        height: 5rem;
+        background-color: #D7DF23;
+        border-radius: 9px;
+    }
+    
+    .kategori2>.kotak8>img {
+        transform: translate(30px, 15px);
+        width: 50%;
+    }
+    
+    .kategori2>.kotak8>p {
+        transform: translate(33px, 18px);
+        font-size:13px;
+    }
+    
+    .kategori3 {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 3.5rem;
+    }
+    
+    
+    .gambar-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        /* Jarak antara gambar */
+        justify-content: center;
+        /* Pusatkan gallery secara horizontal */
+    }
+    
+    .gambar-container {
+        position: relative;
+        width: 170px;
+        /* Atur lebar kotak gambar */
+        height: 160px;
+        /* Atur tinggi kotak gambar */
+        overflow: hidden;
+        /* Pastikan gambar tidak meluap keluar kotak */
+        background-color: #f0f0f0;
+        /* Warna latar belakang default */
+        border-radius: 1rem;
+    }
+    
+    .gambarcat31 {
+        display: block;
+        /* Menghilangkan jarak di bawah gambar */
+        width: 100%;
+        /* Pastikan gambar mengisi kontainer */
+        height: 100%;
+        /* Pastikan gambar mengisi kontainer secara vertikal */
+        object-fit: cover;
+        /* Pastikan gambar mengisi kotak tanpa merubah rasio */
+        transition: opacity 0.3s ease;
+        /* Transisi untuk efek hover */
+    }
+    
+    .overlay1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #10a000;
+        /* Warna latar belakang gelap semi-transparan */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        /* Sembunyikan overlay secara default */
+        transition: opacity 0.3s ease;
+        /* Transisi untuk efek hover */
+    }
+    
+    .text {
+        color: white;
+        /* Warna teks terang */
+        font-weight: 900;
+        font-size: 1.5em;
+        /* Ukuran teks */
+        text-align: center;
+        /* Pusatkan teks */
+    }
+    
+    .gambar-container:hover .overlay1 {
+        opacity: 0.5;
+        /* Tampilkan overlay saat hover */
+    }
+    
+    .overlay2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #575c01;
+        /* Warna latar belakang gelap semi-transparan */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        /* Sembunyikan overlay secara default */
+        transition: opacity 0.3s ease;
+        filter: brightness(0.9);
+        /* Transisi untuk efek hover */
+    }
+    
+    .gambar-container:hover .overlay2 {
+        opacity: 0.5;
+        /* Tampilkan overlay saat hover */
+    }
+    
+    
+    .overlay3 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0F9288;
+        /* Warna latar belakang gelap semi-transparan */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        /* Sembunyikan overlay secara default */
+        transition: opacity 0.3s ease;
+        /* Transisi untuk efek hover */
+    }
+    
+    .gambar-container:hover .overlay3 {
+        opacity: 0.6;
+        /* Tampilkan overlay saat hover */
+    }
+    
+    
+    .overlay4 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #05352E;
+        /* Warna latar belakang gelap semi-transparan */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        /* Sembunyikan overlay secara default */
+        transition: opacity 0.3s ease;
+        /* Transisi untuk efek hover */
+    }
+    
+    .gambar-container:hover .overlay4 {
+        opacity: 0.6;
+        /* Tampilkan overlay saat hover */
+    }
+    
+    .gambar-container:hover .gambarcat31 {
+        opacity: 1;
+        /* Pastikan gambar tetap terlihat saat hover */
+    }
+    
+    
+}
+
+
+@media(min-width:790px) and (max-width:835px) {
+    .kategori1 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5rem;
+    }
+    
+    .kategori1>h3{
+        margin-left: 4.3rem;
+    }
+    
+    .gambarpanahkat {
+        width: 2.6rem;
+        height: 3rem;
+        margin-right: 4rem;
+    }
+    
+    .kategori2 {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 3rem;
+    }
+    
+    
+    .kategori2>.kotak1 {
+        width: 6rem;
+        height: 5rem;
+        background-color: #D7DF23;
+        border-radius: 9px;
+    }
+    
+    .kategori2>.kotak1>img {
+        transform: translate(25px, 15px);
+        width: 50%;
+    }
+    
+    .kategori2>.kotak1>p {
+        transform: translate(30px, 15px);
+        font-size: 13px;
+    }
+    
+    
+    .kategori2>.kotak2 {
+        width: 6rem;
+        height: 5rem;
+        background-color: #D7DF23;
+        border-radius: 9px;
+    }
+    
+    .kategori2>.kotak2>img {
+        transform: translate(23px, 13px);
+        width: 40%;
+    }
+    
+    .kategori2>.kotak2>p {
+        transform: translate(15px, 9px);
+        font-size: 13px;
+    }
+    
+    
+    .kategori2>.kotak3 {
+        width: 6rem;
+        height: 5rem;
+        background-color: #D7DF23;
+        border-radius: 9px;
+    }
+    
+    .kategori2>.kotak3>img {
+        transform: translate(23px, 15px);
+        width: 50%;
+    }
+    
+    .kategori2>.kotak3>p {
+        transform: translate(30px, 12px);
+        font-size:13px ;
+    }
+    
+    
+    .kategori2>.kotak4 {
+        width: 6rem;
+        height: 5rem;
+        background-color: #D7DF23;
+        border-radius: 9px;
+    }
+    
+    .kategori2>.kotak4>img {
+        transform: translate(20px, 7px);
+        width: 50%;
+    }
+    
+    .kategori2>.kotak4>p {
+        transform: translate(30px, 6px);
+        font-size:13px ;
+    }
+    
+    
+    .kategori2>.kotak5 {
+        width: 6rem;
+        height: 5rem;
+        background-color: #D7DF23;
+        border-radius: 9px;
+    }
+    
+    .kategori2>.kotak5>img {
+        transform: translate(20px, 10px);
+        width: 50%;
+    }
+    
+    .kategori2>.kotak5>p {
+        transform: translate(25px, 13px);
+        font-size:13px ;
+    }
+    
+    
+    .kategori2>.kotak6 {
+        width: 6rem;
+        height: 5rem;
+        background-color: #D7DF23;
+        border-radius: 9px;
+    }
+    
+    .kategori2>.kotak6>img {
+        transform: translate(25px, 10px);
+        width: 50%;
+    }
+    
+    .kategori2>.kotak6>p {
+        transform: translate(8px, 15px);
+        font-size:13px;
+    }
+    
+    
+    .kategori2>.kotak7 {
+        width: 6rem;
+        height: 5rem;
+        background-color: #D7DF23;
+        border-radius: 9px;
+    }
+    
+    .kategori2>.kotak7>img {
+        transform: translate(22px, 15px);
+        width: 50%;
+    }
+    
+    .kategori2>.kotak7>p {
+        transform: translate(32px, 20px);
+        font-size:13px;
+    }
+    
+    
+    .kategori2>.kotak8 {
+        width: 6rem;
+        height: 5rem;
+        background-color: #D7DF23;
+        border-radius: 9px;
+    }
+    
+    .kategori2>.kotak8>img {
+        transform: translate(30px, 15px);
+        width: 50%;
+    }
+    
+    .kategori2>.kotak8>p {
+        transform: translate(33px, 15px);
+        font-size:13px;
+    }
+    
+    .kategori3 {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 3.5rem;
+    }
+    
+    
+    .gambar-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        /* Jarak antara gambar */
+        justify-content: center;
+        /* Pusatkan gallery secara horizontal */
+    }
+    
+    .gambar-container {
+        position: relative;
+        width: 190px;
+        /* Atur lebar kotak gambar */
+        height: 160px;
+        /* Atur tinggi kotak gambar */
+        overflow: hidden;
+        /* Pastikan gambar tidak meluap keluar kotak */
+        background-color: #f0f0f0;
+        /* Warna latar belakang default */
+        border-radius: 1rem;
+    }
+    
+    .gambarcat31 {
+        display: block;
+        /* Menghilangkan jarak di bawah gambar */
+        width: 100%;
+        /* Pastikan gambar mengisi kontainer */
+        height: 100%;
+        /* Pastikan gambar mengisi kontainer secara vertikal */
+        object-fit: cover;
+        /* Pastikan gambar mengisi kotak tanpa merubah rasio */
+        transition: opacity 0.3s ease;
+        /* Transisi untuk efek hover */
+    }
+    
+    .overlay1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #10a000;
+        /* Warna latar belakang gelap semi-transparan */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        /* Sembunyikan overlay secara default */
+        transition: opacity 0.3s ease;
+        /* Transisi untuk efek hover */
+    }
+    
+    .text {
+        color: white;
+        /* Warna teks terang */
+        font-weight: 900;
+        font-size: 1.5em;
+        /* Ukuran teks */
+        text-align: center;
+        /* Pusatkan teks */
+    }
+    
+    .gambar-container:hover .overlay1 {
+        opacity: 0.5;
+        /* Tampilkan overlay saat hover */
+    }
+    
+    .overlay2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #929a00;
+        /* Warna latar belakang gelap semi-transparan */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        /* Sembunyikan overlay secara default */
+        transition: opacity 0.3s ease;
+        /* Transisi untuk efek hover */
+    }
+    
+    .gambar-container:hover .overlay2 {
+        opacity: 0.5;
+        /* Tampilkan overlay saat hover */
+    }
+    
+    
+    .overlay3 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0F9288;
+        /* Warna latar belakang gelap semi-transparan */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        /* Sembunyikan overlay secara default */
+        transition: opacity 0.3s ease;
+        /* Transisi untuk efek hover */
+    }
+    
+    .gambar-container:hover .overlay3 {
+        opacity: 0.6;
+        /* Tampilkan overlay saat hover */
+    }
+    
+    
+    .overlay4 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #05352E;
+        /* Warna latar belakang gelap semi-transparan */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        /* Sembunyikan overlay secara default */
+        transition: opacity 0.3s ease;
+        /* Transisi untuk efek hover */
+    }
+    
+    .gambar-container:hover .overlay4 {
+        opacity: 0.6;
+        /* Tampilkan overlay saat hover */
+    }
+    
+    .gambar-container:hover .gambarcat31 {
+        opacity: 1;
+        /* Pastikan gambar tetap terlihat saat hover */
+    }
+}
+
+/* end kategori */
 
 
 
 /* home resep */
-.resep1{
+.resep1 {
     display: flex;
-    gap: 60rem;
+    justify-content: space-between;
     margin-top: 5rem;
 }
 
-.resep2{
+.resep1>h3{
+  margin-left: 3rem;
+}
+
+.resep1>a>img{
+ margin-right: 2rem;
+}
+
+.resep2 {
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -537,42 +3969,17 @@ nav > ul > li:hover{
 }
 
 
-.gambarresep1{
-    position: relative;
-    overflow: hidden; /* Memastikan elemen tidak melampaui batas */
-}
-
-.gambarresep1>img{
-    border-radius: 1rem;
-}
-
-.gambarresep1>figcaption{
-    position: absolute;
-    bottom: -1.5rem;
-    background-color: #D7DF23;
-    width: 100%;
-    text-align: center;
-}
-
-.gambarresep1:hover figcaption{
-    bottom: 1px;
-    border-radius: 10px;    
-    transition: 0.90s;
-}
-
-
-
-
-.gambarresep2{
+.gambarresep1 {
     position: relative;
     overflow: hidden;
+    /* Memastikan elemen tidak melampaui batas */
 }
 
-.gambarresep2>img{
+.gambarresep1>img {
     border-radius: 1rem;
 }
 
-.gambarresep2>figcaption{
+.gambarresep1>figcaption {
     position: absolute;
     bottom: -1.5rem;
     background-color: #D7DF23;
@@ -580,33 +3987,7 @@ nav > ul > li:hover{
     text-align: center;
 }
 
-.gambarresep2:hover figcaption{
-    bottom: 1px;
-    border-radius: 10px;    
-    transition: 0.90s;
-}
-
-
-
-
-.gambarresep3{
-    position: relative;
-    overflow: hidden;
-}
-
-.gambarresep3>img{
-    border-radius: 1rem;
-}
-
-.gambarresep3>figcaption{
-    position: absolute;
-    bottom: -1.5rem;
-    background-color: #D7DF23;
-    width: 100%;
-    text-align: center;
-}
-
-.gambarresep3:hover figcaption{
+.gambarresep1:hover figcaption {
     bottom: 1px;
     border-radius: 10px;
     transition: 0.90s;
@@ -614,16 +3995,17 @@ nav > ul > li:hover{
 
 
 
-.gambarresep4{
+
+.gambarresep2 {
     position: relative;
     overflow: hidden;
 }
 
-.gambarresep4>img{
+.gambarresep2>img {
     border-radius: 1rem;
 }
 
-.gambarresep4>figcaption{
+.gambarresep2>figcaption {
     position: absolute;
     bottom: -1.5rem;
     background-color: #D7DF23;
@@ -631,116 +4013,923 @@ nav > ul > li:hover{
     text-align: center;
 }
 
-.gambarresep4:hover figcaption{
+.gambarresep2:hover figcaption {
     bottom: 1px;
     border-radius: 10px;
     transition: 0.90s;
 }
+
+
+
+
+.gambarresep3 {
+    position: relative;
+    overflow: hidden;
+}
+
+.gambarresep3>img {
+    border-radius: 1rem;
+}
+
+.gambarresep3>figcaption {
+    position: absolute;
+    bottom: -1.5rem;
+    background-color: #D7DF23;
+    width: 100%;
+    text-align: center;
+}
+
+.gambarresep3:hover figcaption {
+    bottom: 1px;
+    border-radius: 10px;
+    transition: 0.90s;
+}
+
+
+
+.gambarresep4 {
+    position: relative;
+    overflow: hidden;
+}
+
+.gambarresep4>img {
+    border-radius: 1rem;
+}
+
+.gambarresep4>figcaption {
+    position: absolute;
+    bottom: -1.5rem;
+    background-color: #D7DF23;
+    width: 100%;
+    text-align: center;
+}
+
+.gambarresep4:hover figcaption {
+    bottom: 1px;
+    border-radius: 10px;
+    transition: 0.90s;
+}
+
+@media(max-width:450px) {
+    .resep1 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5rem;
+    }
+      
+      .resep1>a>img{
+       margin-right: 1rem;
+      }
+
+      .resep2scroll{
+        width: 100%;
+        overflow-x: scroll;
+        scrollbar-color: transparent transparent;
+      }
+
+      .resep2scroll::-webkit-scrollbar{
+        display: none;
+      }
+
+      .resep2{
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        width: max-content;
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }    
+}
+
+@media(max-width:480px) {
+    .resep1 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5rem;
+    }
+
+      .resep1>h3{
+        margin-left: 1rem;
+      }
+      
+      .resep1>a>img{
+       margin-right: 1rem;
+      }
+}
+
+
+@media(min-width:650px) and (max-width:770px){
+
+    .resep2 {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 3.5rem;
+    }
+    
+    .resep1>h3{
+      margin-left: 3.5rem;
+    }
+    
+    .resep1>a>img{
+     margin-right: 2.4rem;
+    }    
+    
+    .gambarresep1 {
+        position: relative;
+        overflow: hidden;
+        width: 30%;
+        background-size: cover;
+        border-radius: 1rem;
+        /* Memastikan elemen tidak melampaui batas */
+    }
+
+    .gambarresep2 {
+        position: relative;
+        overflow: hidden;
+        width: 30%;
+        background-size: cover;
+        border-radius: 1rem;
+    }
+
+    .gambarresep3 {
+        position: relative;
+        overflow: hidden;
+        width: 30%;
+        background-size: cover;
+        border-radius: 1rem;
+    }
+
+    .gambarresep4 {
+        position: relative;
+        overflow: hidden;
+        width: 30%;
+        background-size: cover;
+        border-radius: 1rem;
+    }
+}
+
+
+@media(min-width:790px) and (max-width:835px)  {
+    .resep2 {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 3.5rem;
+        overflow: hidden;
+    }
+    
+    .resep1>h3{
+      margin-left: 4.3rem;
+    }
+    
+    .resep1>a>img{
+     margin-right:3.7rem;
+    }    
+    
+    .gambarresep1 {
+        position: relative;
+        overflow: hidden;
+        width: 25%;
+        background-size: cover;
+        border-radius: 1rem;
+        /* Memastikan elemen tidak melampaui batas */
+    }
+
+    .gambarresep2 {
+        position: relative;
+        overflow: hidden;
+        width: 25%;
+        background-size: cover;
+        border-radius: 1rem;
+    }
+
+    .gambarresep3 {
+        position: relative;
+        overflow: hidden;
+        width: 25%;
+        background-size: cover;
+        border-radius: 1rem;
+    }
+
+    .gambarresep4 {
+        position: relative;
+        overflow: hidden;
+        width: 25%;
+        background-size: cover;
+        border-radius: 1rem;
+    }
+}
+
+
+/* end resep */
 
 
 /* home blog */
-.blog1{
+.blog1 {
     display: flex;
-    gap: 60rem;
+    justify-content: space-between;
     margin-top: 5rem;
-}   
-
-.blog1>h3{
-    margin-left: 1.4rem;
 }
 
-.blog1>a>img{
-    margin-left: 7.6rem;
+
+.blogcard1,.blogcard2,.blogcard3,.blogcard4{
+    width: 18rem;
+}
+.blog1>h3 {
+    margin-left: 3.2rem;
 }
 
-.blog2{
+.blog1>a>img {
+    margin-right: 1.8rem;
+}
+
+.blogparagraf1{
+   margin-top: 2.6rem;
+}
+
+.blogparagraf3{
+    margin-top: 2.6rem;
+}
+
+.blog2 {
     margin-top: 5rem;
-
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
-.blogcard1>img{
+.blogcard1>img {
     border-radius: 1rem;
 }
 
-.blogcard2>img{
+.blogcard2>img {
     border-radius: 1rem;
 }
 
-.blogcard3>img{
+.blogcard3>img {
     border-radius: 1rem;
 }
 
-.blogcard3>img{
+.blogcard4>img {
     border-radius: 1rem;
 }
 
-.tombolblog1{
-    margin-top: 2.5rem;
+.tombolblog1 {
+    margin-top: -2px;
+    display: flex;
+    gap: 13px;
 }
 
-.tombolblog3{
-    margin-top: 2.5rem;
+.tombolblog1>.history:hover{
+    background-color: darkgoldenrod;
+    color: white;
+}
+
+.tombolblog1>.healty:hover{
+    background-color: darkgoldenrod;
+    color: white;
+}
+
+.tombolblog2 {
+    margin-top: -2px;
+    display: flex;
+    gap: 13px;
+}
+
+.tombolblog2>.history:hover{
+    background-color: darkgoldenrod;
+    color: white;
+}
+
+.tombolblog2>.healty:hover{
+    background-color: darkgoldenrod;
+    color: white;
+}
+
+.tombolblog3 {
+    margin-top: -2px;
+    display: flex;
+    gap: 13px;
+}
+
+.tombolblog3>.history:hover{
+    background-color: darkgoldenrod;
+    color: white;
+}
+
+.tombolblog3>.healty:hover{
+    background-color: darkgoldenrod;
+    color: white;
+}
+
+.tombolblog4 {
+    margin-top: -2px;
+    display: flex;
+    gap: 13px;
+}
+
+.tombolblog4>.history:hover{
+    background-color: darkgoldenrod;
+    color: white;
+    display: flex;
+}
+
+.tombolblog4>.healty:hover{
+    background-color: darkgoldenrod;
+    color: white;
+}
+
+@media(max-width:450px) {
+    .blog1 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+    }
+
+    .blog1>h3{
+        margin-left: 20px;
+    }
+
+    .blog1>a>.gambarpanahkat{
+        margin-right: 20px;
+    }
+
+    .scroollblog{
+        width: 100%;
+        overflow-x: scroll;
+    }
+
+    .scroollblog::-webkit-scrollbar{
+        display: none;
+    }
+    
+    .blog2 {
+        margin-top: 3rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        width: max-content;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .blogcard1,.blogcard2,.blogcard3,.blogcard4{
+        width: 12rem;
+    }
+
+    .tombolblog1>.history{
+       width: max-content;
+       height: max-content;
+       font-size: 13px;
+    }
+
+    .tombolblog1>.healty{
+        width: max-content;
+        height: max-content;
+        font-size: 13px;
+     }
+    
+    .tombolblog2 {
+        margin-top: -2px;
+        display: flex;
+        gap: 13px;
+    }
+    
+    
+    .tombolblog2>.history{
+        width: max-content;
+        height: max-content;
+        font-size: 13px;
+     }
+ 
+     .tombolblog2>.healty{
+         width: max-content;
+         height: max-content;
+         font-size: 13px;
+      }
+    
+    .tombolblog3 {
+        margin-top: -2px;
+        display: flex;
+        gap: 13px;
+    }
+    
+    
+    .tombolblog3>.history{
+        width: max-content;
+        height: max-content;
+        font-size: 13px;
+     }
+ 
+     .tombolblog3>.healty{
+         width: max-content;
+         height: max-content;
+         font-size: 13px;
+      }
+    
+    .tombolblog4 {
+        margin-top: -2px;
+        display: flex;
+        gap: 13px;
+    }
+    
+    
+    .tombolblog4>.history{
+        width: max-content;
+        height: max-content;
+        font-size: 13px;
+     }
+ 
+     .tombolblog4>.healty{
+         width: max-content;
+         height: max-content;
+         font-size: 13px;
+      }
+}
+
+
+@media(min-width:650px) and (max-width:770px) {   
+    .blogcard1,.blogcard2,.blogcard3,.blogcard4{
+        width: 12rem;
+    }
+    .blog1>h3 {
+        margin-left: 3.8rem;
+    }
+    
+    .blog1>a>img {
+        margin-right: 2.5rem;
+    }
+    
+    .blogparagraf1{
+       margin-top: 2.6rem;
+    }
+    
+    .blogparagraf3{
+        margin-top: 2.6rem;
+    }
+    
+    .blog2 {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .blogcard1>img {
+        border-radius: 1rem;
+    }
+    
+    .blogcard2>img {
+        border-radius: 1rem;
+    }
+    
+    .blogcard3>img {
+        border-radius: 1rem;
+    }
+    
+    .blogcard4>img {
+        border-radius: 1rem;
+    }
+
+
+    .tombolblog1 {
+        margin-top: -2px;
+        display: flex;
+        gap: 13px;
+        height: auto;
+    }
+
+        
+    .tombolblog1>a {
+        margin-top: -2px;
+        display: flex;
+        gap: 13px;
+        width: 5rem;
+        height: auto;
+        font-size: 10px;
+        text-align: center;
+    }
+    
+    .tombolblog2 {
+        margin-top: -2px;
+        display: flex;
+        gap: 13px;
+    }
+
+        
+    .tombolblog2>a {
+        margin-top: -2px;
+        display: flex;
+        gap: 13px;
+        width: 5rem;
+        height: auto;
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .tombolblog3 {
+        margin-top: -2px;
+        display: flex;
+        gap: 13px;
+    }
+
+        
+    .tombolblog3>a {
+        margin-top: -2px;
+        display: flex;
+        gap: 13px;
+        width: 5rem;
+        height: auto;
+        font-size: 10px;
+        text-align: center;
+    }
+    
+    .tombolblog4 {
+        margin-top: -2px;
+        display: flex;
+        gap: 13px;
+    }
+
+        
+    .tombolblog4>a {
+        margin-top: -2px;
+        display: flex;
+        gap: 13px;
+        width: 5rem;
+        height: auto;
+        font-size: 10px;
+        text-align: center;
+    }
+}
+
+@media(min-width:790px) and (max-width:835px)  {
+    .blogcard1,.blogcard2,.blogcard3,.blogcard4{
+        width: 12rem;
+    }
+    .blog1>h3 {
+        margin-left: 3.8rem;
+    }
+    
+    .blog1>a>img {
+        margin-right: 2.5rem;
+    }
+    
+    .blogparagraf1{
+       margin-top: 2.6rem;
+    }
+    
+    .blogparagraf3{
+        margin-top: 2.6rem;
+    }
+    
+    .blog2 {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .blogcard1>img {
+        border-radius: 1rem;
+    }
+    
+    .blogcard2>img {
+        border-radius: 1rem;
+    }
+    
+    .blogcard3>img {
+        border-radius: 1rem;
+    }
+    
+    .blogcard4>img {
+        border-radius: 1rem;
+    }
+
+
+    .tombolblog1 {
+        margin-top: -2px;
+        display: flex;
+        gap: 13px;
+        height: auto;
+    }
+
+        
+    .tombolblog1>a {
+        margin-top: -2px;
+        display: flex;
+        gap: 13px;
+        width: 5rem;
+        height: auto;
+        font-size: 10px;
+        text-align: center;
+    }
+    
+    .tombolblog2 {
+        margin-top: -2px;
+        display: flex;
+        gap: 13px;
+    }
+
+        
+    .tombolblog2>a {
+        margin-top: -2px;
+        display: flex;
+        gap: 13px;
+        width: 5rem;
+        height: auto;
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .tombolblog3 {
+        margin-top: -2px;
+        display: flex;
+        gap: 13px;
+    }
+
+        
+    .tombolblog3>a {
+        margin-top: -2px;
+        display: flex;
+        gap: 13px;
+        width: 5rem;
+        height: auto;
+        font-size: 10px;
+        text-align: center;
+    }
+    
+    .tombolblog4 {
+        margin-top: -2px;
+        display: flex;
+        gap: 13px;
+    }
+
+        
+    .tombolblog4>a {
+        margin-top: -2px;
+        display: flex;
+        gap: 13px;
+        width: 5rem;
+        height: auto;
+        font-size: 10px;
+        text-align: center;
+    }
 }
 
 
 /* gallery */
-.gallery1{
+.gallery1 {
     margin-top: 7rem;
 }
 
-.gallery1>.gallery2>.gallery3>img{
-    margin-top: 5rem;
-}
-
-.gallery1>.gallery2>.gallery3>img:hover{
+.gallery1>.gallery2>.gallery3>img:hover {
     transform: scale(1.1);
     transition: 1s;
     box-shadow: 0 4px 8px yellow;
 }
 
-.loadgallery{
+.gallery1>.gallery4>.gallery5>img:hover {
+    transform: scale(1.1);
+    transition: 1s;
+    box-shadow: 0 4px 8px yellow;
+}
+
+.gallery2{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.gallery4{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.loadgallery {
     display: flex;
     justify-content: center;
     margin-top: 3rem;
 }
 
-.loadgallery>a{
+.loadgallery>a {
     width: 12rem;
     height: 3rem;
     border-radius: 3rem;
     padding-top: 0.7rem;
 }
 
+.loadgallery>a:hover {
+    background-color: darkgreen;
+}
+
+
+@media(max-width:450px) {
+    .gallery2>.gallery3>img{
+        width: 140px;
+    }
+
+    .gallery4>.gallery5>img{
+        width: 140px;
+    }
+
+    .gallery2{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 2rem;
+    }
+    
+    .gallery4{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    
+    .gallery3 {
+        flex: 0 0 28%; /* Atur lebar agar dua gambar bisa muat dalam satu baris */
+        max-width: 48%;
+        margin: 1%; /* Jarak antar gambar, tetap kecil agar tidak turun */
+        box-sizing: border-box;
+        margin-top: 0;
+
+    }
+    
+    .gallery3 img {
+        width: 100%; /* Pastikan gambar memenuhi kolomnya */
+        height: auto; /* Agar gambar tidak terdistorsi */
+    }
+
+    .gallery5 {
+        flex: 0 0 28%; /* Atur lebar agar dua gambar bisa muat dalam satu baris */
+        max-width: 48%;
+        margin: 1%; /* Jarak antar gambar, tetap kecil agar tidak turun */
+        box-sizing: border-box;
+        margin-top: 0;
+
+    }
+
+    .gallery1>.gallery2>.gallery3>img:hover {
+        transform: scale(1.1);
+        transition: 1s;
+        box-shadow: 0 4px 8px yellow;
+    }
+    
+    .gallery1>.gallery4>.gallery5>img:hover {
+        transform: scale(1.1);
+        transition: 1s;
+        box-shadow: 0 4px 8px yellow;
+    }
+}
+
+@media(min-width:650px) and (max-width:770px) {
+    
+    .gallery2{
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    
+    .gallery4{
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .gallery3>img{
+        width: 95%;
+    }
+    
+    .gallery5>img{
+        width: 95%;
+    }
+
+    .loadgallery {
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+    }
+    
+    .loadgallery>a {
+        width: 12rem;
+        height: 3rem;
+        border-radius: 3rem;
+        padding-top: 0.7rem;
+    }
+    
+    .loadgallery>a:hover {
+        background-color: darkgreen;
+    }
+    
+}
+
+@media(min-width:790px) and (max-width:835px) {
+    .gallery2{
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    
+    .gallery4{
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .gallery3>img{
+        width: 95%;
+    }
+    
+    .gallery5>img{
+        width: 95%;
+    }
+
+    .loadgallery {
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+    }
+    
+    .loadgallery>a {
+        width: 12rem;
+        height: 3rem;
+        border-radius: 3rem;
+        padding-top: 0.7rem;
+    }
+    
+    .loadgallery>a:hover {
+        background-color: darkgreen;
+    }
+}
+
+
+
 
 /* vidio fresyapp */
-.vidio-fresyapp{
+.vidio-fresyapp {
     margin-top: 4rem;
 }
 
-.vidio-fresyapp>.video-container>iframe{
+.vidio-fresyapp>.video-container>iframe {
     margin-top: 2rem;
 }
 
+.vidio-fresyapp>.video-container{
+    display: flex;
+    justify-content: center;
+}
+
+@media(max-width:450px) {
+    .vidio-fresyapp>.video-container>iframe {
+        margin-top: 2rem;
+        width: 80%;
+    }
+    
+}
 
 /*  ---------- */
-.why1{
+.why1 {
     margin-top: 8rem;
     margin-left: 2rem;
 }
 
-.why2>p{
+.why2>p {
     margin-top: 2.5rem;
     font-size: 14.19px;
 }
 
-.why3>img{
+.why3>img {
     width: 50%;
     margin-left: 2rem;
 }
 
+@media(max-width:450px) {
+    .why1 {
+        margin-top: 8rem;
+        margin-left: 6px;
+    }
+
+    .why3>img {
+        width: 60%;
+        margin-left: 2rem;
+    }
+    
+}
 
 
-footer{
+/* start footer */
+
+footer {
     background-color: #05352E;
     width: 100%;
     height: 70vh;
@@ -748,220 +4937,297 @@ footer{
     border-top-right-radius: 2rem;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* responsive mobile */
-
-@media only screen and (max-width: 480px) {
-
-/* bagian navbar */
-    
-nav>a>img{
-    width: 250%;
-    margin-bottom: 1rem;
-    margin-left: 2rem;
-}
-
-.nav-links{
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background-color: #05352E;
-    border-bottom-left-radius: 2rem;
-    border-bottom-right-radius: 2rem;
-    height: 50vh;
-}
-
-.nav-links.show{
-    display: flex;
-    z-index: 100;
-    position: fixed;
-}
-
-.nav-links li{
-    text-align: left;
-    margin: 10px 0;
-    color: white;
-}
-
-.menu-icon>.bar{
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    border-radius: 2px;
-    margin-right: 2rem;
-}   
-
-/* bagian slider banner */
-
-.slides img {
-    width: 100%;
-    height: 18rem;
-}
-     
-.prev{
-    font-size: 2rem;
-    margin-left: 2rem;
-    background: none;
-    margin-top: 3.5rem;
-}
-
-.next{
-    font-size: 2rem;
-    margin-right: 2rem;
-    background: none;
-    margin-top: 3.5rem;
-}
-
-.slide-content {
-    position: absolute;
-    top: 50%; /* Posisi tengah vertikal */
-    left: 50%;
-    transform: translate(-50%, -50%); /* Menggeser konten ke tengah */
-    color: white;
-    z-index: 1; /* Agar konten berada di atas gambar */
-    width: 100%;
-}
-
-.slide-title {
-    font-size: 1.5rem;
-    margin: 0 0 50px; /* Jarak antara judul dan teks */
-    text-align: left;
-    margin-left: 4.8rem;
-    width: 60%;
-}
-
-.slide-text {
-    font-size: 10px;
-    width: 70%; /* Contoh width yang lebih lebar agar teks tidak terpotong */
-    text-align: left;
-    max-width: 100%;    
     margin-top: 2rem;
 }
 
-}
-
-
-
-
-
-
-
-
-@media only screen and (max-width: 450px) {
-
-/* bagian navbar */
-    
-nav>a>img{
-    width:250%;
-    margin-bottom: 1rem;
-    margin-left: 2rem;
-}
-
-.nav-links{
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background-color: #05352E;
-    border-bottom-left-radius: 2rem;
-    border-bottom-right-radius: 2rem;
-    height: 50vh;
-}
-
-.nav-links.show{
+.footer1 {
     display: flex;
-    z-index: 100;
-    position: fixed;
+    gap: 11rem;
 }
 
-.nav-links li{
-    text-align: left;
-    margin: 10px 0;
+.footer1>.footer2>img {
+    margin-top: 3rem;
+    width: 45%;
+}
+
+.footer1>.footer2>.paragraffooter1 {
     color: white;
-}
-
-.menu-icon>.bar{
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    border-radius: 2px;
-    margin-right: 2rem;
-}   
-
-/* bagian slider banner */
-
-.slides img {
-    width: 100%;
-    height: 18rem;
-}
-     
-.prev{
-    font-size: 2rem;
-    margin-left: 2rem;
-    background: none;
-    margin-top: 3.5rem;
-}
-
-.next{
-    font-size: 2rem;
-    margin-right: 2rem;
-    background: none;
-    margin-top: 3.5rem;
-}
-
-.slide-content {
-    position: absolute;
-    top: 50%; /* Posisi tengah vertikal */
-    left: 50%;
-    transform: translate(-50%, -50%); /* Menggeser konten ke tengah */
-    color: white;
-    z-index: 1; /* Agar konten berada di atas gambar */
-    width: 100%;
-}
-
-.slide-title {
-    font-size: 1.5rem;
-    margin: 0 0 90px; /* Jarak antara judul dan teks */
-    text-align: left;
-    margin-left: 4.8rem;
-    width: 60%;
-}
-
-.slide-text {
-    font-size: 10px;
-    width: 70%; /* Contoh width yang lebih lebar agar teks tidak terpotong */
-    text-align: left;
-    max-width: 100%;    
     margin-top: 2rem;
+    max-width: 28rem;
+}
+
+.footer1>.footer2>.paragraffooter2 {
+    color: #D7DF23;
+
+}
+
+.footer1>.footer2>.iconsosmed {
+    display: flex;
+    gap: 10px;
+    color: white;
+    width: 20px;
+}
+
+.footer3 {
+    margin-top: 2.5rem;
+    margin-left: 10rem;
+}
+
+
+.footer3>p {
+    color: #D7DF23;
+}
+
+.footer3>.inputan {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer3>.inputan>input {
+    width: 16rem;
+    border-radius: 1.5rem;
+}
+
+.footer3>.inputan>button {
+    background-color: #D7DF23;
+    width: 8rem;
+    border-radius: 1rem;
+}
+
+.footer3>.inputan>button:hover {
+    background-color: darkcyan;
+    color: white;
+}
+
+.footer3>.lastfooter{
+    color: white;
+    width: 180%;
+    margin-left: -18rem;
+    font-size: 13px;
+    margin-top: 3rem;
+}
+
+.footer3>.footer4{
+    display: flex;
+    margin-top: 2.8rem;
+}
+
+.footer3>.footer4>.footer5{
+    display: block;
+}
+
+.footer3>.footer4>.footer5>h6{
+    color: #D7DF23;
+}
+
+
+.footer3>.footer4>.footer6>h6{
+    color: #D7DF23;
 }
 
 
 
+.footer5>ul>li{
+    list-style: none;
 }
+
+.footer5>ul{
+    margin-left: -2rem;
+}
+
+.footer5>ul>li>a{
+    text-decoration: none;
+    color: white;
+    margin-right: 3rem;
+}
+
+.footer5>ul>li>a:hover{
+    border-bottom: 2px dashed  burlywood;
+}
+
+.footer6{
+    margin-left: 3rem;
+}
+
+.footer6>ul>li{
+    list-style: none;
+}
+
+.footer6>ul{
+    margin-left: -2rem;
+}
+
+.footer6>ul>li>a{
+    text-decoration: none;
+    color: white;
+    margin-right: 3rem;
+}
+
+.footer6>ul>li>a:hover{
+    border-bottom: 2px dashed  burlywood;
+}
+
+
+
+
+@media(max-width:450px) {
+    footer {
+        background-color: #05352E;
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        margin-top: 2rem;
+    }
+    
+    .footer1 {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .footer2{
+        margin-left: 1px;
+    }
+    
+    .footer1>.footer2>img {
+        margin-top: 3rem;
+        width: 33%;
+    }
+    
+    .footer1>.footer2>.paragraffooter1 {
+        color: white;
+        margin-top: 2rem;
+        max-width: 28rem;
+    }
+    
+    .footer1>.footer2>.paragraffooter2 {
+        color: #D7DF23;
+        bottom: 0;
+    }
+    
+    .footer1>.footer2>.iconsosmed {
+        display: flex;
+        gap: 10px;
+        color: white;
+        width: 20px;
+    }
+    
+    .footer3 {
+        margin-top: 1rem;
+        margin-left: 1px;
+    }
+    
+    
+    .footer3>p {
+        color: #D7DF23;
+    }
+    
+    .footer3>.inputan {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .footer3>.inputan>input {
+        width: 16rem;
+        border-radius: 1.5rem;
+    }
+    
+    .footer3>.inputan>button {
+        background-color: #D7DF23;
+        width: 6rem;
+        border-radius: 1rem;
+    }
+    
+    .footer3>.inputan>button:hover {
+        background-color: darkcyan;
+        color: white;
+    }
+    
+    .footer3>.lastfooter{
+        color: white;
+        width: 180%;
+        margin-left: 7rem;
+        font-size: 10px;
+        margin-top: 2rem;
+        max-width: 60%;
+    }
+    
+    .footer4{
+        margin-left: 6px;
+    }
+
+    .footer3>.footer4{
+        display: flex;
+        margin-top: 2.8rem;
+    }
+    
+    .footer3>.footer4>.footer5{
+        display: block;
+    }
+    
+    .footer3>.footer4>.footer5>h6{
+        color: #D7DF23;
+    }
+    
+    
+    .footer3>.footer4>.footer6>h6{
+        color: #D7DF23;
+    }
+    
+    
+    
+    .footer5>ul>li{
+        list-style: none;
+    }
+    
+    .footer5>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer5>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+    }
+
+    .footer5>ul>li>a:hover{
+        border-bottom: 2px dashed  burlywood;
+    }
+    
+    
+    .footer6{
+        margin-left: 3rem;
+    }
+    
+    .footer6>ul>li{
+        list-style: none;
+    }
+    
+    .footer6>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer6>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+    }
+
+    .footer6>ul>li>a:hover{
+        border-bottom: 2px dashed  burlywood;
+     }
+    
+}
+
+/* end footer */
+
+
+
+
+
+
+
+

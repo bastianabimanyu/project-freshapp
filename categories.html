@@ -5,21 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Kategori</title>
 
-
-    <link rel="stylesheet" href="style2.css">
+        <!-- link css -->
+        <link rel="stylesheet" href="style2.css">
 
         <!-- link bootstrapp -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+
+         <!-- link font awesome -->
+         <link rel="stylesheet" href="font-awesome/css/all.min.css" />
 </head>
 <body>
-    <div id="navbar"></div>
+  <nav id="navbar">
+    <a href="#">
+      <img src="gambar/Frame 8 (1).png" alt="homeimage" class="gambarnav" />
+    </a>
+    <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">
+      <div class="bar" id="bar1"></div>
+      <div class="bar" id="bar2"></div>
+      <div class="bar" id="bar3"></div>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <a href="index.html"><li id="navbar">Home</li></a>
+      <a href="#"><li id="navbar">Section</li></a>
+      <a href="categories.html"><li id="navbar">Categories</li></a>
+      <a href="blog.html"><li id="navbar">Blog</li></a>
+      <a href="aboutus.html"><li id="navbar">About us</li></a>
+    </ul>
+  </nav>
+  
 
     <main>
         <header>
             <div class="categoribanner">
                 <h1>Cari makanan atau resto</h1>
                 <div class="categoribanner2">
-                    <input type="text" placeholder="Makanan Sehat">
+                    <input type="text" placeholder="Makanan Sehat" style="padding-left: 12px;">
                     <a href="#" class="btn">Cari</a>
                 </div>    
             </div>
@@ -29,167 +49,270 @@
         <section>
             <div class="bagiantersehat1">
                 <div class="tersehat1">
-                    <h4>Tersehat</h4>
-                    <img src="gambar/grup4.png" alt="..">
+                    <h4>Honey</h4>
+                    <a href="categories2.html"><img src="gambar/grup4.png" alt=".."></a>
                 </div>
 
-                <div class="tersehat2">
-                    <div class="cardsehat1">
-                        <div class="card" style="width: 18rem;">
-                            <img src="gambarkategori/tersehat1.svg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Salad Point ID</h5>
-                              <p class="card-text">FRESH &LOCALLY SOURCED</p>
-                              <p class="sehat1p">Bogor, Jawa Barat</p>
-                            </div>
-                          </div>
-                    </div>
+                      <div class="tersehat22">
+                        <div class="tersehat2">
+                              <div class="cardsehat1">
+                                  <div class="card">  
+                                      <div class="img-wrapper">
+                                          <img src="gambarkategori/tersehat1.svg" class="card-img-top gambar1" alt="...">
 
-                    <div class="cardsehat1">
-                        <div class="card" style="width: 18rem;">
-                            <img src="gambarkategori/tersehat2.svg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Rok n Rol Farm</h5>
-                              <p class="card-text">WHERE FARMING CAN BE ORGANICALLY AWESOME</p>
-                              <p>Bogor, Jawa Barat</p>
-                            </div>
-                          </div>
-                    </div>
+                                          <img
+                                            src="gambar/logotulisan-honey.svg"
+                                            class="overlay-img"
+                                            alt="..."
+                                          />
+                                      </div>
+                                      <div class="card-body">
+                                        <h5 class="card-title">Madu Murni</h5>
+                                        <p class="card-text">FRESH &LOCALLY SOURCED</p>
+                                        <p class="sehat1p">Bogor, Jawa Barat</p>  
+                                      </div>
+                                  </div>
+                              </div>
+                          
+                            <div class="cardsehat1">
+                                <div class="card">
+                                    <div class="img-wrapper">
+                                        <img src="gambarkategori/tersehat2.svg" class="card-img-top gambar2" alt="...">
 
-                    <div class="cardsehat1">
-                        <div class="card" style="width: 18rem;">
-                            <img src="gambarkategori/tersehat3.svg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Madu Tava Jakarta</h5>
-                              <p class="card-text">MADU MURNI TAVA 100% RAW HONEY INDONESIA</p>
-                              <p>Jakarta Barat</p>
+                                        <img
+                                        src="gambar/logotulisan-honey.svg"
+                                        class="overlay-img"
+                                        alt="..."
+                                      />
+                                    </div>
+                                    <div class="card-body">
+                                      <h5 class="card-title">Madu Eliad Miel</h5>
+                                      <p class="card-text">WHERE FARMING CAN BE ORGANICALLY AWESOME</p>
+                                      <p class="sehat2p">Bogor, Jawa Barat</p>
+                                    </div>
+                                  </div>
                             </div>
-                          </div>
-                    </div>
 
-                    <div class="cardsehat1">
-                        <div class="card" style="width: 18rem;">
-                            <img src="gambarkategori/tersehat4.svg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Sari Organik</h5>
-                              <p class="card-text">Healthy Store in Bogor</p>
-                              <p class="sehat1p">Bogor, Jawa Barat</p>
+                            <div class="cardsehat1">
+                                <div class="card">
+                                    <div class="img-wrapper">
+                                        <img src="gambarkategori/tersehat3.svg" class="card-img-top gambar3" alt="...">
+
+                                        <img
+                                          src="gambar/logotulisan-honey.svg"
+                                          class="overlay-img"
+                                          alt="..."
+                                        />
+                                    </div>
+                                    <div class="card-body">
+                                      <h5 class="card-title">Madu Tava Jakarta</h5>
+                                      <p class="card-text">MADU MURNI TAVA 100% RAW HONEY INDONESIA</p>
+                                      <p class="sehat3p"></p>Jakarta Barat</p>
+                                    </div>
+                                  </div>
                             </div>
-                          </div>
-                    </div>
-                </div>
+
+
+                            <div class="cardsehat1">
+                                <div class="card">
+                                    <div class="img-wrapper">
+                                        <img src="gambarkategori/tersehat4.svg" class="card-img-top gambar4" alt="...">
+
+                                        <img
+                                          src="gambar/logotulisan-honey.svg"
+                                          class="overlay-img"
+                                          alt="..."
+                                        />
+                                    </div>
+                                    <div class="card-body">
+                                      <h5 class="card-title">Sari Madu Organik</h5>
+                                      <p class="card-text">Healthy Store in Bogor</p>
+                                      <p class="sehat4p">Bogor, Jawa Barat</p>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                      </div>
             </div>
         </section>
 
 
         <section>
-            <div class="bagiantersehat2">
-                <div class="tersehat-2">
-                    <h4>Tersehat</h4>
-                    <img src="gambar/grup4.png" alt="..">
-                </div>
+              <div class="bagiantersehat2">
+                  <div class="tersehat-2">
+                      <h4>Vegetables</h4>
+                      <a href="categories2.html"><img src="gambar/grup4.png" alt=".."></a>
+                  </div>
 
-                <div class="tersehat3">
-                    <div class="cardsehat2">
-                        <div class="card" style="width: 18rem;">
-                            <img src="gambarkategori/tersehat5.svg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Dayang Umbi</h5>
-                              <p class="card-text">Ubi Oven Madu Cilembu</p>
-                              <p class="sehat-2p">Bogor, Jawa Barat</p>
-                            </div>
-                          </div>
-                    </div>
+                  <div class="tersehat33">
+                      <div class="tersehat3">
+                          <div class="cardsehat2">
+                              <div class="card">
+                                <div class="img-wrapper">
+                                      <img src="gambarkategori/tersehat5.svg" class="card-img-top gambar5" alt="...">
 
-                    <div class="cardsehat2">
-                        <div class="card" style="width: 18rem;">
-                            <img src="gambarkategori/tersehat6.svg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Burgreens</h5>
-                              <p class="card-text">Leading plant-based food chain in Indonesia</p>
-                              <p>Jakarta Selatan</p>
-                            </div>
+                                      <img
+                                      src="gambar/logotulisan-salad.svg"
+                                      class="overlay-img"
+                                      alt="..."
+                                      />
+                                </div>
+                                  <div class="card-body">
+                                    <h5 class="card-title">Salad Point ID</h5>
+                                    <p class="card-text">FRESH &LOCALLY SOURCED</p>
+                                    <p class="sehat-2pp">Bogor, Jawa Barat</p>
+                                  </div>
+                                </div>
                           </div>
-                    </div>
 
-                    <div class="cardsehat2">
-                        <div class="card" style="width: 18rem;">
-                            <img src="gambarkategori/tersehat7.svg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">akkar Juice Bar</h5>
-                              <p class="card-text">Jogja's Best Juice Bar 🍉🥕🍋</p>
-                              <p class="sehat-2p">DI Yogyakarta</p>
-                            </div>
-                          </div>
-                    </div>
+                          <div class="cardsehat2">
+                              <div class="card">
+                                  <div class="img-wrapper">
+                                      <img src="gambarkategori/tersehat6.svg" class="card-img-top gambar6" alt="...">
 
-                    <div class="cardsehat2">
-                        <div class="card" style="width: 18rem;">
-                            <img src="gambarkategori/tersehat8.svg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">BOGOR FRESH.ID</h5>
-                              <p class="card-text">FRESH & FROZEN</p>
-                              <p class="sehat-2p">Bogor, Jawa Barat</p>
-                            </div>
+                                      <img
+                                      src="gambar/logotulisan-farm.svg"
+                                      class="overlay-img"
+                                      alt="..."
+                                      />
+                                  </div>
+                                  <div class="card-body">
+                                    <h5 class="card-title">Rok n Rol Farm</h5>
+                                    <p class="card-text">WHERE FARMING CAN BE ORGANICALLY AWESOME</p>
+                                    <p>Bogor, Jawa Barat</p>
+                                  </div>
+                                </div>
                           </div>
-                    </div>
-                </div>
-            </div>
+
+                          <div class="cardsehat2">
+                              <div class="card">
+                                  <div class="img-wrapper">
+                                      <img src="gambarkategori/tersehat7.svg" class="card-img-top gambar7" alt="...">
+
+                                      <img
+                                        src="gambar/logotulisan-honey.svg"
+                                        class="overlay-img"
+                                        alt="..."
+                                      />
+                                  </div>
+                                  <div class="card-body">
+                                    <h5 class="card-title">Madu Tava Jakarta</h5>
+                                    <p class="card-text">MADU MURNI TAVA 100% RAW HONEY INDONESIA</p>
+                                    <p class="sehat-2p">Jakarta Barat</p>
+                                  </div>
+                                </div>
+                          </div>
+
+                          <div class="cardsehat2">
+                              <div class="card">
+                                  <div class="img-wrapper">
+                                      <img src="gambarkategori/tersehat8.svg" class="card-img-top gambar8" alt="...">
+
+                                      <img
+                                        src="gambarkategori/organic-store.svg"
+                                        class="overlay-img8"
+                                        alt="..."
+                                      />
+                                  </div>
+                                  <div class="card-body">
+                                    <h5 class="card-title">Sari Organik</h5>
+                                    <p class="card-text">Healthy Store in Bogor</p>
+                                    <p class="sehat-2pp">Bogor, Jawa Barat</p>
+                                  </div>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
         </section>
 
 
         <section>
           <div class="bagiantersehat3">
               <div class="tersehat-3">
-                  <h4>Tersehat</h4>
-                  <img src="gambar/grup4.png" alt="..">
+                  <h4>Fish</h4>
+                  <a href="categories2.html"><img src="gambar/grup4.png" alt=".."></a>
               </div>
 
-              <div class="tersehat4">
-                  <div class="cardsehat3">
-                      <div class="card" style="width: 18rem;">
-                          <img src="gambarkategori/tersehat9.svg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">Salad Point ID</h5>
-                            <p class="card-text">FRESH &LOCALLY SOURCED</p>
-                            <p class="sehat-3p">Bogor, Jawa Barat</p>
-                          </div>
-                        </div>
-                  </div>
+                <div class="tersehat44">
+                  <div class="tersehat4">
+                      <div class="cardsehat3">
+                          <div class="card">
+                              <div class="img-wrapper">
+                                  <img src="gambarkategori/tersehat9.svg" class="card-img-top gambar9" alt="...">
 
-                  <div class="cardsehat3">
-                      <div class="card" style="width: 18rem;">
-                          <img src="gambarkategori/tersehat10.svg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">Rok n Rol Farm</h5>
-                            <p class="card-text">WHERE FARMING CAN BE ORGANICALLY AWESOME</p>
-                            <p>Bogor, Jawa Barat</p>
-                          </div>
-                        </div>
-                  </div>
+                                  <img
+                                  src="gambar/logotulisan-salad.svg"
+                                  class="overlay-img"
+                                  alt="..."
+                                  />
+                              </div>
+                              <div class="card-body">
+                                <h5 class="card-title">Ikan Tongkol</h5>
+                                <p class="card-text">FRESH &LOCALLY SOURCED</p>
+                                <p class="sehat-3p">Bogor, Jawa Barat</p>
+                              </div>
+                            </div>
+                      </div>
 
-                  <div class="cardsehat3">
-                      <div class="card" style="width: 18rem;">
-                          <img src="gambarkategori/tersehat11.svg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">Madu Tava Jakarta</h5>
-                            <p class="card-text">MADU MURNI TAVA 100% RAW HONEY INDONESIA</p>
-                            <p>Jakarta Barat</p>
-                          </div>
-                        </div>
-                  </div>
+                      <div class="cardsehat3">
+                          <div class="card">
+                                <div class="img-wrapper">
+                                  <img src="gambarkategori/tersehat10.svg" class="card-img-top gambar10" alt="...">
 
-                  <div class="cardsehat3">
-                      <div class="card" style="width: 18rem;">
-                          <img src="gambarkategori/tersehat12.svg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">Sari Organik</h5>
-                            <p class="card-text">Healthy Store in Bogor</p>
-                            <p class="sehat-3p">Bogor, Jawa Barat</p>
-                          </div>
-                        </div>
+                                  <img
+                                  src="gambar/logotulisan-farm.svg"
+                                  class="overlay-img"
+                                  alt="..."
+                                  />
+                                </div>
+                              <div class="card-body">
+                                <h5 class="card-title">Ikan Kakap</h5>
+                                <p class="card-text">WHERE FARMING CAN BE ORGANICALLY AWESOME</p>
+                                <p class="sehat-3pp">Bogor, Jawa Barat</p>
+                              </div>
+                            </div>
+                      </div>
+
+                      <div class="cardsehat3">
+                          <div class="card">
+                            <div class="img-wrapper">
+                                  <img src="gambarkategori/tersehat11.svg" class="card-img-top gambar11" alt="...">
+
+                                  <img
+                                  src="gambar/logotulisan-honey.svg"
+                                  class="overlay-img"
+                                  alt="..."
+                                  />
+                            </div>
+                              <div class="card-body">
+                                <h5 class="card-title">Ikan Kembung Banjar</h5>
+                                <p class="card-text">MADU MURNI TAVA 100% RAW HONEY INDONESIA</p>
+                                <p class="sehat-3ppp">Jakarta Barat</p>
+                              </div>
+                            </div>
+                      </div>
+
+                      <div class="cardsehat3">
+                          <div class="card">
+                              <div class="img-wrapper">
+                                  <img src="gambarkategori/tersehat12.svg" class="card-img-top gambar12" alt="...">
+
+                                  <img
+                                  src="gambarkategori/organic-store.svg"
+                                  class="overlay-img8"
+                                  alt="..."
+                                  />
+                              </div>
+                              <div class="card-body">
+                                <h5 class="card-title">Ikan Tenggiri</h5>
+                                <p class="card-text">Healthy Store in Bogor</p>
+                                <p class="sehat-3pppp">Bogor, Jawa Barat</p>
+                              </div>
+                            </div>
+                      </div>
                   </div>
-              </div>
+                </div>
           </div>
       </section>
 
@@ -197,65 +320,238 @@
       <section>
         <div class="bagiantersehat4">
             <div class="tersehat-4">
-                <h4>Resto sehat Terdekat</h4>
-                <img src="gambar/grup4.png" alt="..">
+                <h4>Juice</h4>
+                <a href="categories2.html"><img src="gambar/grup4.png" alt=".."></a>
             </div>
 
-            <div class="tersehat5">
-                <div class="cardsehat4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="gambarkategori/tersehat9.svg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Salad Point ID</h5>
-                          <p class="card-text">FRESH &LOCALLY SOURCED</p>
-                          <p class="sehat-4p">Bogor, Jawa Barat</p>
-                        </div>
-                      </div>
-                </div>
+              <div class="tersehat55">
+                <div class="tersehat5">
+                    <div class="cardsehat4">
+                        <div class="card">
+                          <div class="img-wrapper">
+                                <img src="gambarkategori/tersehat13.svg" class="card-img-top gambar13" alt="...">
 
-                <div class="cardsehat4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="gambarkategori/tersehat10.svg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Rok n Rol Farm</h5>
-                          <p class="card-text">WHERE FARMING CAN BE ORGANICALLY AWESOME</p>
-                          <p>Bogor, Jawa Barat</p>
-                        </div>
-                      </div>
-                </div>
+                                <img
+                                src="gambar/logotulisan-salad.svg"
+                                class="overlay-img"
+                                alt="..."
+                                />
+                          </div>
+                            <div class="card-body">
+                              <h5 class="card-title">Aneka Mix Jus</h5>
+                              <p class="card-text">FRESH &LOCALLY SOURCED</p>
+                              <p class="sehat-4p">Bogor, Jawa Barat</p>
+                            </div>
+                          </div>
+                    </div>
 
-                <div class="cardsehat4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="gambarkategori/tersehat11.svg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Madu Tava Jakarta</h5>
-                          <p class="card-text">MADU MURNI TAVA 100% RAW HONEY INDONESIA</p>
-                          <p>Jakarta Barat</p>
-                        </div>
-                      </div>
-                </div>
+                    <div class="cardsehat4">
+                        <div class="card">
+                          <div class="img-wrapper">
+                                <img src="gambarkategori/tersehat14.svg" class="card-img-top gambar14" alt="...">
 
-                <div class="cardsehat4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="gambarkategori/tersehat12.svg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Sari Organik</h5>
-                          <p class="card-text">Healthy Store in Bogor</p>
-                          <p class="sehat-4p">Bogor, Jawa Barat</p>
-                        </div>
-                      </div>
+                                <img
+                                src="gambar/logotulisan-farm.svg"
+                                class="overlay-img"
+                                alt="..."
+                                />
+                          </div>
+                            <div class="card-body">
+                              <h5 class="card-title">Jus Semangka</h5>
+                              <p class="card-text">WHERE FARMING CAN BE ORGANICALLY AWESOME</p>
+                              <p class="sehat-4pp">Bogor, Jawa Barat</p>
+                            </div>
+                          </div>
+                    </div>
+
+                    <div class="cardsehat4">
+                        <div class="card">
+                          <div class="img-wrapper">
+                                <img src="gambarkategori/tersehat15.svg" class="card-img-top gambar15" alt="...">
+
+                                <img
+                                src="gambar/logotulisan-honey.svg"
+                                class="overlay-img"
+                                alt="..."
+                                />
+                          </div>
+                            <div class="card-body">
+                              <h5 class="card-title">Jus Apple</h5>
+                              <p class="card-text">MADU MURNI TAVA 100% RAW HONEY INDONESIA</p>
+                              <p class="sehat-4ppp">Jakarta Barat</p>
+                            </div>
+                          </div>
+                    </div>
+
+                    <div class="cardsehat4">
+                        <div class="card">
+                          <div class="img-wrapper">
+                                <img src="gambarkategori/tersehat16.svg" class="card-img-top gambar16" alt="...">
+
+                                <img
+                                src="gambarkategori/organic-store.svg"
+                                class="overlay-img8"
+                                alt="..."
+                                />
+                          </div>
+                            <div class="card-body">
+                              <h5 class="card-title">Jus Tomat</h5>
+                              <p class="card-text">Healthy Store in Bogor</p>
+                              <p class="sehat-4pppp">Bogor, Jawa Barat</p>
+                            </div>
+                          </div>
+                    </div>
                 </div>
-            </div>
+              </div>
         </div>
     </section>
+
+    <section>
+      <div class="bagiantersehat5">
+          <div class="tersehat-5">
+              <h4>Tersehat</h4>
+              <a href="categories2.html"><img src="gambar/grup4.png" alt=".."></a>
+          </div>
+
+            <div class="tersehat66">
+              <div class="tersehat6">
+                  <div class="cardsehat5">
+                      <div class="card">
+                          <div class="img-wrapper">
+                              <img src="gambarkategori/tersehat17.svg" class="card-img-top gambar17" alt="...">
+
+                              <img
+                              src="gambar/logotulisan-salad.svg"
+                              class="overlay-img"
+                              alt="..."
+                              />
+                          </div>
+                          <div class="card-body">
+                            <h5 class="card-title">Salad Point ID</h5>
+                            <p class="card-text5p">FRESH &LOCALLY SOURCED</p>
+                            <p class="sehat-5p">Bogor, Jawa Barat</p>
+                          </div>
+                        </div>
+                  </div>
+
+                  <div class="cardsehat5">
+                      <div class="card">
+                          <div class="img-wrapper">
+                              <img src="gambarkategori/tersehat18.svg" class="card-img-top gambar18" alt="...">
+
+                              <img
+                              src="gambar/logotulisan-farm.svg"
+                              class="overlay-img"
+                              alt="..."
+                              />
+                          </div>
+                          <div class="card-body">
+                            <h5 class="card-title">Avocado Salad</h5>
+                            <p class="card-text5pp">WHERE FARMING CAN BE ORGANICALLY AWESOME</p>
+                            <p  class="sehat-5pp">Bogor, Jawa Barat</p>
+                          </div>
+                        </div>
+                  </div>
+
+                  <div class="cardsehat5">
+                      <div class="card">
+                          <div class="img-wrapper">
+                              <img src="gambarkategori/tersehat19.svg" class="card-img-top gambar19" alt="...">
+
+                              <img
+                              src="gambar/logotulisan-honey.svg"
+                              class="overlay-img"
+                              alt="..."
+                              />
+                          </div>
+                          <div class="card-body">
+                            <h5 class="card-title">Salad Alpukat dan kacang hitam</h5>
+                            <p class="card-text">MADU MURNI TAVA 100% RAW HONEY INDONESIA</p>
+                            <p  class="sehat-5ppp">Jakarta Barat</p>
+                          </div>
+                        </div>
+                  </div>
+
+                  <div class="cardsehat5">
+                      <div class="card">
+                          <div class="img-wrapper">
+                              <img src="gambarkategori/tersehat20.svg" class="card-img-top gambar20" alt="...">
+
+                              <img
+                              src="gambarkategori/organic-store.svg"
+                              class="overlay-img8"
+                              alt="..."
+                              />
+                          </div>
+                          <div class="card-body">
+                            <h5 class="card-title">Salad Keju dan Ayam</h5>
+                            <p class="card-text5pppp">Healthy Store in Bogor</p>
+                            <p  class="sehat-5pppp">Bogor, Jawa Barat</p>
+                          </div>
+                        </div>
+                  </div>
+              </div>
+            </div>
+      </div>
+  </section>
 
         
     </main>
 
 
+    <footer>
+      <div class="container">
+        <div class="footer1">
+          <div class="footer2">
+            <img src="gambar/footer.svg" alt="..." />
+            <p class="paragraffooter1">
+              First Indonesian Green Food Directory, platform berusaha menjadi
+              bagian kecil yang dapat memudahkan masyarakat untuk akses
+              informasi makanan sehat serta mendukung Indonesia sebagai negara
+              lumbung pangan 2024.
+            </p>
+            <p class="paragraffooter2">Follow us On</p>
+            <div class="iconsosmed">
+              <i class="fa-brands fa-instagram sosmedig"></i>
+              <i class="fa-brands fa-facebook sosmedfb"></i>
+              <i class="fa-brands fa-twitter sosmedtwid"></i>
+              <i class="fa-brands fa-linkedin sosmedlinked"></i>
+              <i class="fa-brands fa-telegram sosmedtele"></i>
+            </div>
+          </div>
 
-
-    <div id="footer"></div>
+          <div class="footer3">
+            <p>Subscribe to FreshyApp newsletter</p>
+            <div class="inputan">
+              <input type="text" placeholder="Email" style="padding-left: 12px;" />
+              <button href="#" class="btn">SubScribe</button>
+            </div>
+            <div class="footer4">
+              <div class="footer5">
+                <h6>Infomasi</h6>
+                <ul>
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                  <li><a href="aboutus.html">About Us</a></li>
+                </ul>
+              </div>
+              <div class="footer6">
+                <h6>Bantuan</h6>
+                <ul>
+                  <li><a href="bantuan.html">Bantuan</a></li>
+                  <li><a href="mitra.html">Jasa Mitra Whatsapp</a></li>
+                  <li><a href="faq2.html">FAQ</a></li>
+                </ul>
+              </div>
+            </div>
+            <p class="lastfooter">
+              ©2022. FreshyApp, All Rights Reservedz | Ketentuan Layanan |
+              Kebijakan Privasi | Part of Hijr Group (PT Hijr Group Global)
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- link bootstrapp -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

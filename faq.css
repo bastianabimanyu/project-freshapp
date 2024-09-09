@@ -1,0 +1,571 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden;
+    /* Mencegah halaman bergeser secara horizontal */
+}
+
+
+/* start navbar */
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+    padding-top: 1rem;
+    transition: background-color 0.4s ease-in-out;
+}
+
+nav.scrolled{
+    background-color: white;
+    opacity: 1;
+    position: fixed;
+}
+
+nav.scrolled2{
+    background-color: white;
+    opacity: 0.50;
+    position: fixed;
+}
+
+nav>a {
+    margin-left: 1.5rem;
+}
+
+nav>.nav-links {
+    margin-right: 2rem;
+}
+
+nav>a>img {
+    width: 70%;
+    margin-bottom: 1rem;
+}
+
+nav>ul {
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+nav>ul>a>li{
+    display: inline-block;
+    margin-left: 2rem;  
+    transition: color 0.4s ease-in-out;
+    color: black;
+}
+
+nav.scrolled ul li{
+    color: black;
+}
+
+nav.scrolled2 ul li{
+    color: black;
+}
+
+nav>ul>a>li:hover {
+    text-decoration: underline;
+    color: darkgoldenrod;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    margin-top: 10px;
+}
+
+.menu-icon>.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+
+@media only screen and (max-width: 450px) {
+
+    /* bagian navbar */
+
+    nav>a>img {
+        margin-bottom: 1rem;
+        margin-left: 2rem;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #05352E;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        height: 50vh;
+    }
+
+    .nav-links.show {
+        display: flex;
+        z-index: 100;
+        position: fixed;
+    }
+
+    .nav-links li {
+        text-align: left;
+        margin: 10px 0;
+        color: white;
+    }
+
+    .menu-icon>.bar {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        border-radius: 2px;
+        margin-right: 2rem;
+    }
+
+    /* bagian slider banner */
+
+    .slides img {
+        width: 100%;
+        height: 18rem;
+    }
+
+    .prev {
+        font-size: 2rem;
+        margin-left: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
+
+    .next {
+        font-size: 2rem;
+        margin-right: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
+
+    .slide-content {
+        position: absolute;
+        top: 50%;
+        /* Posisi tengah vertikal */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Menggeser konten ke tengah */
+        color: white;
+        z-index: 1;
+        /* Agar konten berada di atas gambar */
+        width: 100%;
+    }
+
+    .slide-title {
+        font-size: 1.5rem;
+        margin: 0 0 90px;
+        /* Jarak antara judul dan teks */
+        text-align: left;
+        margin-left: 4.8rem;
+        width: 60%;
+    }
+
+    .slide-text {
+        font-size: 10px;
+        width: 70%;
+        /* Contoh width yang lebih lebar agar teks tidak terpotong */
+        text-align: left;
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+
+    .sectionpertama {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+}
+
+@media(max-width:768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    .menu-icon>.bar {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        border-radius: 2px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #05352E;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        height: 50vh;
+    }
+
+    .nav-links.show {
+        display: flex;
+        z-index: 100;
+        position: fixed;
+    }
+
+    .nav-links li {
+        text-align: left;
+        margin: 10px 0;
+        color: white;
+    }
+}
+
+/* end navbar */
+
+
+
+/* bagian faq utama */
+
+.judulfaq1{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.judulfaq2{
+    text-align: center;
+}
+
+.judulfaq2>.judulfaq3>h1{
+    text-align: center;
+    font-size: 4rem;
+    font-family: Quicksand;
+    font-weight: 700;
+    color: #80C678;
+    max-width: 95%;
+}
+
+.judulfaq2>p{
+    font-size: 24.92px;
+    width: 97%;
+    font-family: Quicksand;
+    margin-top: 2rem;
+}
+
+.gabungankotakbaris1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto; /* Tambahkan ini untuk memastikan kontainer berada di tengah layar */
+    max-width: 100%; /* Pastikan kontainer tidak terlalu lebar */
+}
+
+.kotakfaq1,.kotakfaq2{
+    width: 40%; /* Kurangi sedikit lebar agar muat di tengah */
+    margin: 1rem; /* Beri jarak antar kotak */
+}
+
+.kotakfaq11{
+    background-color: #80C678;
+    width: 100%; /* Sesuaikan lebar agar mengisi penuh kotak pembungkus */
+    height: 15rem;
+    border-radius: 1rem;
+}
+
+.kotakfaq22{
+    background-color: #D7DF23;
+    width: 100%; /* Sesuaikan lebar agar mengisi penuh kotak pembungkus */
+    height: 15rem;
+    border-radius: 1rem;
+}
+
+.kotakfaq11>h5{
+    font-size: 2rem;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    font-family: Inter;
+    font-weight: 600;
+}
+
+.kotakfaq22>h5 {
+    font-size: 2rem;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    font-family: Inter;
+    font-weight: 600;
+}
+
+.kotakfaq11>p{
+    max-width: 70%;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    font-family: Inter;
+    font-weight: 500;
+}
+
+
+.kotakfaq22>p {
+    max-width: 60%;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    font-family: Inter;
+    font-weight: 500;
+}
+
+
+.gabungankotakbaris2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto; /* Tambahkan ini untuk memastikan kontainer berada di tengah layar */
+    max-width: 100%; /* Pastikan kontainer tidak terlalu lebar */
+}
+
+.kotakfaq3,.kotakfaq4{
+    width: 40%; /* Kurangi sedikit lebar agar muat di tengah */
+    margin: 1rem; /* Beri jarak antar kotak */
+}
+
+.kotakfaq33{
+    background-color: #0F9288;
+    width: 100%; /* Sesuaikan lebar agar mengisi penuh kotak pembungkus */
+    height: 15rem;
+    border-radius: 1rem;
+}
+
+.kotakfaq44{
+    background-color: #05352E;
+    width: 100%; /* Sesuaikan lebar agar mengisi penuh kotak pembungkus */
+    height: 15rem;
+    border-radius: 1rem;
+}
+
+.kotakfaq33>h5{
+    font-size: 2rem;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    font-family: Inter;
+    font-weight: 600;
+    color: white;
+}
+
+.kotakfaq44>h5{
+    font-size: 2rem;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    font-family: Inter;
+    font-weight: 600;
+    color: white;
+}
+
+.kotakfaq33>p{
+    max-width: 60%;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    font-family: Inter;
+    font-weight: 500;
+    color: white;
+}
+
+.kotakfaq44>p {
+    max-width: 60%;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    font-family: Inter;
+    font-weight: 500;
+    color: white;
+}
+
+
+.kotakterakhirfaq{
+    background-color: #F3F4D6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto; /* Tambahkan ini untuk memastikan kontainer berada di tengah layar */
+    max-width: 82%; /* Pastikan kontainer tidak terlalu lebar */
+    height: 30rem;
+    margin-top: 3rem;
+    border-radius: 1rem;
+}
+
+
+.kotakterakhir2 {
+    width: 100%; /* Sesuaikan agar mengisi penuh kontainer */
+}
+
+.kotakterakhir3{
+    display: flex;
+    flex-direction: column; /* Menyusun teks dan judul secara vertikal */
+    justify-content: center; /* Menempatkan konten di tengah secara vertikal */
+    align-items: center; /* Menempatkan konten di tengah secara horizontal */
+    width: 100%;
+    height: 100%;
+   margin-bottom: 15rem;
+}
+
+
+.kotakterakhir3>h5{
+    width: 100%;
+    text-align: center ;
+    font-size: 2rem;
+    font-family: Inter;
+    font-weight: 600;
+    margin-top: 4rem;
+}
+
+.kotakterakhir3>p{
+    font-size: 1.1rem;
+    font-family: Inter;
+    font-weight: 500;
+    max-width: 80%;
+    margin-top: 2rem;
+}
+/* end bagian faq utama */
+
+
+
+
+
+
+/* start footer */
+
+footer {
+    background-color: #05352E;
+    width: 100%;
+    height: 70vh;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-top: 2rem;
+}
+
+.footer1 {
+    display: flex;
+    gap: 11rem;
+}
+
+.footer1>.footer2>img {
+    margin-top: 3rem;
+    width: 45%;
+}
+
+.footer1>.footer2>.paragraffooter1 {
+    color: white;
+    margin-top: 2rem;
+    max-width: 28rem;
+}
+
+.footer1>.footer2>.paragraffooter2 {
+    color: #D7DF23;
+
+}
+
+.footer1>.footer2>.iconsosmed {
+    display: flex;
+    gap: 10px;
+    color: white;
+    width: 20px;
+}
+
+.footer3 {
+    margin-top: 2.5rem;
+    margin-left: 10rem;
+}
+
+
+.footer3>p {
+    color: #D7DF23;
+}
+
+.footer3>.inputan {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer3>.inputan>input {
+    width: 16rem;
+    border-radius: 1.5rem;
+}
+
+.footer3>.inputan>button {
+    background-color: #D7DF23;
+    width: 8rem;
+    border-radius: 1rem;
+}
+
+.footer3>.inputan>button:hover {
+    background-color: darkcyan;
+    color: white;
+}
+
+.footer3>.lastfooter{
+    color: white;
+    width: 180%;
+    margin-left: -18rem;
+    font-size: 13px;
+    margin-top: 3rem;
+}
+
+.footer3>.footer4{
+    display: flex;
+    margin-top: 2.8rem;
+}
+
+.footer3>.footer4>.footer5{
+    display: block;
+}
+
+.footer3>.footer4>.footer5>h6{
+    color: #D7DF23;
+}
+
+
+.footer3>.footer4>.footer6>h6{
+    color: #D7DF23;
+}
+
+
+
+.footer5>ul>li{
+    list-style: none;
+}
+
+.footer5>ul{
+    margin-left: -2rem;
+}
+
+.footer5>ul>li>a{
+    text-decoration: none;
+    color: white;
+    margin-right: 3rem;
+}
+
+.footer6{
+    margin-left: 3rem;
+}
+
+.footer6>ul>li{
+    list-style: none;
+}
+
+.footer6>ul{
+    margin-left: -2rem;
+}
+
+.footer6>ul>li>a{
+    text-decoration: none;
+    color: white;
+    margin-right: 3rem;
+}
+
+/* end footer */

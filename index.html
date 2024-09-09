@@ -11,54 +11,136 @@
     <!-- link css -->
     <link rel="stylesheet" href="style.css" />
 
+    <!-- link font awesome -->
+    <link rel="stylesheet" href="font-awesome/css/all.min.css" />
+
     <title>Home Page</title>
   </head>
   <body>
-    <div id="navbar"></div>
+    <nav id="navbar">
+      <a href="#">
+        <img src="gambar/Frame 8 (1).png" alt="homeimage" class="gambarnav" />
+      </a>
+      <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">
+        <div class="bar" id="bar1"></div>
+        <div class="bar" id="bar2"></div>
+        <div class="bar" id="bar3"></div>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <a href="index.html"><li id="navbar">Home</li></a>
+        <a href="#"><li id="navbar">Section</li></a>
+        <a href="categories.html"><li id="navbar">Categories</li></a>
+        <a href="blog.html"><li id="navbar">Blog</li></a>
+        <a href="aboutus.html"><li id="navbar">About us</li></a>
+      </ul>
+    </nav>
 
     <main>
       <header>
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-bs-ride="true"
+          class="head2"
+        >
           <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="gambar/banner.png" class="d-block w-100" alt="...">
+              <img
+                src="gambar/banner.png"
+                class="d-block w-100 img-fluid"
+                alt="..."
+              />
+              <div class="carousel-caption d-none d-md-block sliderteks1">
+                <h2>Be The Fastest To Know Your Healthy Food</h2>
+                <p>Yuk Dicek koleksi makanan sehat favorit dan daftar makanan sehat
+                  lainnya di Lokasimu!</p>
+              </div>
             </div>
             <div class="carousel-item">
-              <img src="gambar/banner.png" class="d-block w-100" alt="...">
+              <img
+                src="gambar/banner.png"
+                class="d-block w-100 img-fluid"
+                alt="..."
+              />
+              <div class="carousel-caption d-none d-md-block sliderteks2">
+                <h2>Be The Fastest To Know Your Healthy Food</h2>
+                <p>Yuk Dicek koleksi makanan sehat favorit dan daftar makanan sehat
+                  lainnya di Lokasimu!</p>
+              </div>
             </div>
             <div class="carousel-item">
-              <img src="gambar/banner.png" class="d-block w-100" alt="...">
+              <img
+                src="gambar/banner.png"
+                class="d-block w-100 img-fluid"
+                alt="..."
+              />
+              <div class="carousel-caption d-none d-md-block sliderteks3">
+                <h2>Be The Fastest To Know Your Healthy Food</h2>
+                <p>Yuk Dicek koleksi makanan sehat favorit dan daftar makanan sehat
+                  lainnya di Lokasimu!</p>
+              </div>
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
         </div>
       </header>
-    
 
+
+      
       <section>
         <div class="sectionpertama">
-          <div class="card">
+          <div class="card kartu1">
             <img
               src="gambar/grup1.png"
               class="card-img-top gambarcard1"
               alt="..."
             />
-            <div class="card-body">
-              <h5 class="card-title">Aneka Jenis Makanan Sehat</h5>
-              <p class="card-text">
-                Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet
+            <div class="card-bodysectionpertama1">
+              <h5 class="card-titlesectionpertama">
+                Aneka Jenis Makanan Sehat
+              </h5>
+              <p class="card-textsectionpertama1">
+                Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem
+                Ipsum dolor sit amet
               </p>
             </div>
           </div>
@@ -68,23 +150,29 @@
               class="card-img-top gambarcard2"
               alt="..."
             />
-            <div class="card-body">
-              <h5 class="card-title">Berbagai Tempat Dan Toko Organik</h5>
-              <p class="card-text">
-                Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet
+            <div class="card-bodysectionpertama">
+              <h5 class="card-titlesectionpertama2">
+                Berbagai Tempat Dan Toko Organik
+              </h5>
+              <p class="card-textsectionpertama2">
+                Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem
+                Ipsum dolor sit amet
               </p>
             </div>
           </div>
-          <div class="card">
+          <div class="card kartu3">
             <img
               src="gambar/grup3.png"
               class="card-img-top gambarcard3"
               alt="..."
             />
-            <div class="card-body">
-              <h5 class="card-title">Farm Yang Dapat Dikunjungi</h5>
-              <p class="card-text">
-                Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet
+            <div class="card-bodysectionpertama1">
+              <h5 class="card-titlesectionpertama3">
+                Farm Yang Dapat Dikunjungi
+              </h5>
+              <p class="card-textsectionpertama3">
+                Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem
+                Ipsum dolor sit amet
               </p>
             </div>
           </div>
@@ -104,127 +192,179 @@
             ><img src="gambar/grup4.png" alt="..."
           /></a>
         </div>
+        <div class="bungkussehatcard">
+          <div class="bungkussehat">
+            <div class="bagiansehat1">
+              <div class="card cardmask1">
+                <div class="img-wrapper">
+                  <img
+                    src="gambar/gambarmakanansehat/Maskgroup1.png"
+                    class="card-img-top cardimage1"
+                    alt="..."
+                  />
 
-        <div class="bagiansehat1">
-          <div class="card cardmask1" style="width: 18rem">
-            <img
-              src="gambar/gambarmakanansehat/Maskgroup1.png"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
+                  <img
+                    src="gambar/logotulisan-salad.svg"
+                    class="overlay-img1"
+                    alt="..."
+                  />
+                </div>
+                <div class="cardbody1">
+                  <h5 class="cardtitle1">Salad Point ID</h5>
+                  <p class="cardtext1">FRESH &LOCALLY SOURCED</p>
+                  <p class="cardtext11">Bogor, Jawa Barat</p>
+                </div>
+              </div>
+
+              <div class="card cardmask2">
+                <div class="img-wrapper">
+                    <img
+                      src="gambar/gambarmakanansehat/Maskgroup2.png"
+                      class="card-img-top cardimage2"
+                      alt="..."
+                    />
+
+                    <img
+                    src="gambar/logotulisan-farm.svg"
+                    class="overlay-img"
+                    alt="..."
+                  />
+                </div>
+                <div class="cardbody2">
+                  <h5 class="cardtitle2">Rok n Rol Farm</h5>
+                  <p class="cardtext2">
+                    WHERE FARMING CAN BE ORGANICALLY AWESOME
+                  </p>
+                  <p class="cardtext22">Bogor, Jawa Barat</p>
+                </div>
+              </div>
+
+              <div class="card cardmask3">
+                <div class="img-wrapper">
+                    <img
+                      src="gambar/gambarmakanansehat/Maskgroup3.png"
+                      class="card-img-top cardimage3"
+                      alt="..."
+                    />
+
+                    <img
+                    src="gambar/logotulisan-honey.svg"
+                    class="overlay-img"
+                    alt="..."
+                  />
+                </div>
+                <div class="cardbody3">
+                  <h5 class="cardtitle3">Madu Tava Jakarta</h5>
+                  <p class="cardtext3">
+                    MADU MURNI TAVA 100% RAW HONEY INDONESIA
+                  </p>
+                  <p class="cardtext33">Jakarta Barat</p>
+                </div>
+              </div>
+
+              <div class="card cardmask4">
+                <div class="img-wrapper">
+                  <img
+                    src="gambar/gambarmakanansehat/Maskgroup4.png"
+                    class="card-img-top cardimage4"
+                    alt="..."
+                  />
+
+                  <img
+                  src="gambar/logotulisan-honey.svg"
+                  class="overlay-img"
+                  alt="..."/>
+                </div>
+                <div class="cardbody4">
+                  <h5 class="cardtitle4">Sari Organik</h5>
+                  <p class="cardtext4">Healthy Store in Bogor</p>
+                  <p class="cardtext44">Bogor, Jawa Barat</p>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div class="card cardmask2" style="width: 18rem">
-            <img
-              src="gambar/gambarmakanansehat/Maskgroup2.png"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
+            <div class="bagiansehat1">
+              <div class="card cardmask5">
+                <div class="img-wrapper">
+                  <img
+                    src="gambar/gambarmakanansehat/Maskgroup5.png"
+                    class="card-img-top cardimage5"
+                    alt="..."
+                  />
 
-          <div class="card cardmask3" style="width: 18rem">
-            <img
-              src="gambar/gambarmakanansehat/Maskgroup3.png"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
+                  <img
+                  src="gambar/logotulisan-ubi.svg"
+                  class="overlay-img5"
+                  alt="..."/>
+                </div>
+                <div class="cardbody5">
+                  <h5 class="cardtitle5">Dayang Umbi</h5>
+                  <p class="cardtext5">Ubi Oven Madu Cilembu</p>
+                  <p class="cardtext55">Bogor, Jawa Barat</p>
+                </div>
+              </div>
 
-          <div class="card cardmask4" style="width: 18rem">
-            <img
-              src="gambar/gambarmakanansehat/Maskgroup4.png"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
+              <div class="card cardmask6">
+                <div class="img-wrapper">
+                  <img
+                    src="gambar/gambarmakanansehat/Maskgroup6.png"
+                    class="card-img-top cardimage6"
+                    alt="..."
+                  />
 
-        <div class="bagiansehat1">
-          <div class="card cardmask1" style="width: 18rem">
-            <img
-              src="gambar/gambarmakanansehat/Maskgroup5.png"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
+                  <img
+                  src="gambar/logotulisan-plantbased.svg"
+                  class="overlay-img6"
+                  alt="..."/>
+                </div>
+                <div class="cardbody6">
+                  <h5 class="cardtitle6">Burgreens</h5>
+                  <p class="cardtext6">
+                    Leading plant-based food chain in Indonesia
+                  </p>
+                  <p class="cardtext66">Jakarta Selatan</p>
+                </div>
+              </div>
 
-          <div class="card cardmask2" style="width: 18rem">
-            <img
-              src="gambar/gambarmakanansehat/Maskgroup6.png"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
+              <div class="card cardmask7">
+                <div class="img-wrapper">
+                  <img
+                    src="gambar/gambarmakanansehat/Maskgroup7.png"
+                    class="card-img-top cardimage7"
+                    alt="..."
+                  />
 
-          <div class="card cardmask3" style="width: 18rem">
-            <img
-              src="gambar/gambarmakanansehat/Maskgroup7.png"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
+                  <img
+                  src="gambar/logotulisan-juice.svg"
+                  class="overlay-img7"
+                  alt="..."/>
+                </div>
+                <div class="cardbody7">
+                  <h5 class="cardtitle7">akkar Juice Bar</h5>
+                  <p class="cardtext7">Jogja's Best Juice Bar 🍉🥕🍋</p>
+                  <p class="cardtext77">DI Yogyakarta</p>
+                </div>
+              </div>
 
-          <div class="card cardmask4" style="width: 18rem">
-            <img
-              src="gambar/gambarmakanansehat/Maskgroup8.png"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
+              <div class="card cardmask8">
+                <div class="img-wrapper">
+                  <img
+                    src="gambar/gambarmakanansehat/Maskgroup8.png"
+                    class="card-img-top cardimage8"
+                    alt="..."
+                  />
+
+                  <img
+                  src="gambar/logotulisan-store.svg"
+                  class="overlay-img8"
+                  alt="..."/>
+                </div>
+                <div class="cardbody8">
+                  <h5 class="cardtitle8">BOGOR FRESH.ID</h5>
+                  <p class="cardtext8">FRESH & FROZEN</p>
+                  <p class="cardtext88">Bogor, Jawa Barat</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -237,38 +377,43 @@
             ><img src="gambar/grup4.png" alt="..." class="gambarpanahkat"
           /></a>
         </div>
-        <div class="kategori2">
-          <div class="kotak1">
-            <img src="gambar/gambarcategori/gambar-kotakcat1.svg" alt="..." />
-            <p>Honey</p>
-          </div>
-          <div class="kotak2">
-            <img src="gambar/gambarcategori/gambar-kotakcat2.svg" alt="..." />
-            <p>Vegetables</p>
-          </div>
-          <div class="kotak3">
-            <img src="gambar/gambarcategori/gambar-kotakcat3.svg" alt="..." />
-            <p>Juice</p>
-          </div>
-          <div class="kotak4">
-            <img src="gambar/gambarcategori/gambar-kotakcat4.svg" alt="... " />
-            <p>Salad</p>
-          </div>
-          <div class="kotak5">
-            <img src="gambar/gambarcategori/gambar-kotakcat5.svg" alt="..." />
-            <p>Potatos</p>
-          </div>
-          <div class="kotak6">
-            <img src="gambar/gambarcategori/gambar-kotakcat6.svg" alt="..." />
-            <p>Plant Bassed</p>
-          </div>
-          <div class="kotak7">
-            <img src="gambar/gambarcategori/gambar-kotakcat7.svg" alt="..." />
-            <p>Fish</p>
-          </div>
-          <div class="kotak8">
-            <img src="gambar/gambarcategori/gambar-kotakcat8.svg" alt="..." />
-            <p>Meat</p>
+        <div class="bungkuskategori2">
+          <div class="kategori2">
+            <div class="kotak1">
+              <img src="gambar/gambarcategori/gambar-kotakcat1.svg" alt="..." />
+              <p>Honey</p>
+            </div>
+            <div class="kotak2">
+              <img src="gambar/gambarcategori/gambar-kotakcat2.svg" alt="..." />
+              <p>Vegetables</p>
+            </div>
+            <div class="kotak3">
+              <img src="gambar/gambarcategori/gambar-kotakcat3.svg" alt="..." />
+              <p>Juice</p>
+            </div>
+            <div class="kotak4">
+              <img
+                src="gambar/gambarcategori/gambar-kotakcat4.svg"
+                alt="... "
+              />
+              <p>Salad</p>
+            </div>
+            <div class="kotak5">
+              <img src="gambar/gambarcategori/gambar-kotakcat5.svg" alt="..." />
+              <p>Potatos</p>
+            </div>
+            <div class="kotak6">
+              <img src="gambar/gambarcategori/gambar-kotakcat6.svg" alt="..." />
+              <p>Plant Bassed</p>
+            </div>
+            <div class="kotak7">
+              <img src="gambar/gambarcategori/gambar-kotakcat7.svg" alt="..." />
+              <p>Fish</p>
+            </div>
+            <div class="kotak8">
+              <img src="gambar/gambarcategori/gambar-kotakcat8.svg" alt="..." />
+              <p>Meat</p>
+            </div>
           </div>
         </div>
 
@@ -321,28 +466,30 @@
       <section>
         <div class="resep1">
           <h3>Resep Terbaru</h3>
-          <a href="https://docs.google.com/"
+          <a href="resep.html"
             ><img src="gambar/grup4.png" alt="..." class="gambarpanahkat"
           /></a>
         </div>
 
-        <div class="resep2">
-          <figure class="gambarresep1">
-            <img src="gambar/gambarresep/gambar-resep1.png" alt="..." />
-            <figcaption>Resep Salad Sayur</figcaption>
-          </figure>
-          <figure class="gambarresep2">
-            <img src="gambar/gambarresep/gambar-resep2.png" alt="..." />
-            <figcaption>Resep Oat Panggang</figcaption>
-          </figure>
-          <figure class="gambarresep3">
-            <img src="gambar/gambarresep/gambar-resep3.png" alt="..." />
-            <figcaption>Resep Pasta Salad</figcaption>
-          </figure>
-          <figure class="gambarresep4">
-            <img src="gambar/gambarresep/gambar-resep4.png" alt="..." />
-            <figcaption>Resep Brokoli & Ayam</figcaption>
-          </figure>
+        <div class="resep2scroll">
+          <div class="resep2">
+            <figure class="gambarresep1">
+              <img src="gambar/gambarresep/gambar-resep1.png" alt="..." />
+              <figcaption>Resep Salad Sayur</figcaption>
+            </figure>
+            <figure class="gambarresep2">
+              <img src="gambar/gambarresep/gambar-resep2.png" alt="..." />
+              <figcaption>Resep Oat Panggang</figcaption>
+            </figure>
+            <figure class="gambarresep3">
+              <img src="gambar/gambarresep/gambar-resep3.png" alt="..." />
+              <figcaption>Resep Pasta Salad</figcaption>
+            </figure>
+            <figure class="gambarresep4">
+              <img src="gambar/gambarresep/gambar-resep4.png" alt="..." />
+              <figcaption>Resep Brokoli & Ayam</figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
@@ -353,112 +500,106 @@
             ><img src="gambar/grup4.png" alt="..." class="gambarpanahkat"
           /></a>
         </div>
-        <div class="row blog2">
-          <div class="col-md-3">
-            <div class="blogcard1" style="width: 18rem">
-              <img
-                src="gambar/gambarblog/home-blog1.svg"
-                class="card-img-top"
-                alt="..."
-              />
-              <p class="card-text">
-                Bubur Sumsum Daun Suji, Mudah Dibuat Cocok untuk Menu Sarapan
-              </p>
-              <p class="blogparagraf1">2 Days Ago</p>
-              <div class="tombolblog1">
-                <a href="#" class="btn btn btn-warning">Go somewhere</a>
-                <a href="#" class="btn btn btn-warning">Go somewhere</a>
+          <div class="scroollblog">
+            <div class="blog2">
+              <div class="blogcard1">
+                <img
+                  src="gambar/gambarblog/home-blog1.svg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <p class="card-text">
+                  Bubur Sumsum Daun Suji, Mudah Dibuat Cocok untuk Menu Sarapan
+                </p>
+                <p class="blogparagraf1">2 Days Ago</p>
+                <div class="tombolblog1">
+                  <a href="#" class="btn btn btn-warning history">History</a>
+                  <a href="#" class="btn btn btn-warning healty">Healthy Life</a>
+                </div>
+              </div>
+              <div class="blogcard2">
+                <img
+                  src="gambar/gambarblog/home-blog2.svg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <p class="card-text">
+                  3 Menu Olahan Tahu yang Enak dan Praktis, Cocok untuk Anak Kos di
+                  Tanggal Tua.
+                </p>
+                <p>2 Days Ago</p>
+                <div class="tombolblog2">
+                  <a href="#" class="btn btn btn-warning history">History</a>
+                  <a href="#" class="btn btn btn-warning healty">Healthy Life</a>
+                </div>
+              </div>
+              <div class="blogcard3">
+                <img
+                  src="gambar/gambarblog/home-blog3.svg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <p class="card-text">
+                  Bubur Sumsum Daun Suji, Mudah Dibuat Cocok untuk Menu Sarapan
+                </p>
+                <p class="blogparagraf3">2 Days Ago</p>
+                <div class="tombolblog3">
+                  <a href="#" class="btn btn btn-warning history">History</a>
+                  <a href="#" class="btn btn btn-warning healty">Healthy Life</a>
+                </div>
+              </div>
+              <div class="blogcard4">
+                <img
+                  src="gambar/gambarblog/home-blog4.svg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the
+                  bulk of the card's content.
+                </p>
+                <p>2 Days Ago</p>
+                <div class="tombolblog4">
+                  <a href="#" class="btn btn btn-warning history">History</a>
+                  <a href="#" class="btn btn btn-warning healty">Healthy Life</a>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-md-3">
-            <div class="blogcard2" style="width: 18rem">
-              <img
-                src="gambar/gambarblog/home-blog2.svg"
-                class="card-img-top"
-                alt="..."
-              />
-              <p class="card-text">
-                3 Menu Olahan Tahu yang Enak dan Praktis, Cocok untuk Anak Kos
-                di Tanggal Tua.
-              </p>
-              <p>2 Days Ago</p>
-              <div class="tombolblog2">
-                <a href="#" class="btn btn btn-warning">Go somewhere</a>
-                <a href="#" class="btn btn btn-warning">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="blogcard3" style="width: 18rem">
-              <img
-                src="gambar/gambarblog/home-blog3.svg"
-                class="card-img-top"
-                alt="..."
-              />
-              <p class="card-text">
-                Bubur Sumsum Daun Suji, Mudah Dibuat Cocok untuk Menu Sarapan
-              </p>
-              <p>2 Days Ago</p>
-              <div class="tombolblog3">
-                <a href="#" class="btn btn btn-warning">Go somewhere</a>
-                <a href="#" class="btn btn btn-warning">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="blogcard4" style="width: 18rem">
-              <img
-                src="gambar/gambarblog/home-blog4.svg"
-                class="card-img-top"
-                alt="..."
-              />
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <p>2 Days Ago</p>
-              <div class="tombolblog4">
-                <a href="#" class="btn btn btn-warning">Go somewhere</a>
-                <a href="#" class="btn btn btn-warning">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
 
       <section>
         <div class="gallery1">
           <h2 style="text-align: center">Insta Gallery</h2>
-          <div class="row gallery2">
-            <div class="col-md-3 gallery3">
-              <img src="gambar/gambargallery/gambar-gallery1.svg" alt="..." />
-            </div>
+          <div class="gallery2">
+                <div class="gallery3" data-aos="fade-up">
+                  <img src="gambar/gambargallery/gambar-gallery1.svg" alt="..." />
+                </div>
 
-            <div class="col-md-3 gallery3">
-              <img src="gambar/gambargallery/gambar-gallery2.svg" alt="..." />
-            </div>
+                <div class="gallery3" data-aos="fade-up">
+                  <img src="gambar/gambargallery/gambar-gallery2.svg" alt="..." />
+                </div>
 
-            <div class="col-md-3 gallery3">
-              <img src="gambar/gambargallery/gambar-gallery3.svg" alt="..." />
-            </div>
+                <div class="gallery3" data-aos="fade-up">
+                  <img src="gambar/gambargallery/gambar-gallery3.svg" alt="..." />
+                </div>
 
-            <div class="col-md-3 gallery3">
-              <img src="gambar/gambargallery/gambar-gallery4.svg" alt="..." />
-            </div>
+                <div class="gallery3" data-aos="fade-up">
+                  <img src="gambar/gambargallery/gambar-gallery4.svg" alt="..." />
+                </div>
           </div>
 
-          <div class="row gallery2">
-            <div class="col-md-3 gallery3">
+          <div class="gallery4">
+            <div class="gallery5">
               <img src="gambar/gambargallery/gambar-gallery5.svg" alt="..." />
             </div>
-            <div class="col-md-3 gallery3">
+            <div class="gallery5">
               <img src="gambar/gambargallery/gambar-gallery6.svg" alt="..." />
             </div>
-            <div class="col-md-3 gallery3">
+            <div class=" gallery5">
               <img src="gambar/gambargallery/gambar-gallery7.svg" alt="..." />
             </div>
-            <div class="col-md-3 gallery3">
+            <div class=" gallery5">
               <img src="gambar/gambargallery/gambar-gallery8.svg" alt="..." />
             </div>
           </div>
@@ -504,73 +645,63 @@
       </section>
     </main>
 
-    <div id="footer"></div>
+    <footer>
+      <div class="container">
+        <div class="footer1">
+          <div class="footer2">
+            <img src="gambar/footer.svg" alt="..." />
+            <p class="paragraffooter1">
+              First Indonesian Green Food Directory, platform berusaha menjadi
+              bagian kecil yang dapat memudahkan masyarakat untuk akses
+              informasi makanan sehat serta mendukung Indonesia sebagai negara
+              lumbung pangan 2024.
+            </p>
+            <p class="paragraffooter2">Follow us On</p>
+            <div class="iconsosmed">
+              <i class="fa-brands fa-instagram sosmedig"></i>
+              <i class="fa-brands fa-facebook sosmedfb"></i>
+              <i class="fa-brands fa-twitter sosmedtwid"></i>
+              <i class="fa-brands fa-linkedin sosmedlinked"></i>
+              <i class="fa-brands fa-telegram sosmedtele"></i>
+            </div>
+          </div>
 
-    <script type="text/babel">
-      const { useEffect } = React;
-
-      function ImageSlider() {
-        useEffect(() => {
-          // Initialize Swiper
-          const swiper = new Swiper(".swiper", {
-            loop: true,
-            pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
-            },
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            },
-          });
-        }, []);
-
-        return (
-          <div className="swiper">
-            <div className="swiper-wrapper">
-              <div className="swiper-slide">
-                <img src="gambar/banner.png" alt="Slide 1" />
-                <div className="slide-text">
-                  <h2>Be The Fastest To Know Your Healthy Food</h2>
-                  <p>
-                    Yuk Dicek koleksi makanan sehat favorit dan daftar makanan
-                    sehat lainnya di Lokasimu!
-                  </p>
-                </div>
+          <div class="footer3">
+            <p>Subscribe to FreshyApp newsletter</p>
+            <div class="inputan">
+              <input type="text" placeholder="Email" style="padding-left: 12px;" />
+              <button href="#" class="btn">SubScribe</button>
+            </div>
+            <div class="footer4">
+              <div class="footer5">
+                <h6>Infomasi</h6>
+                <ul>
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                  <li><a href="aboutus.html">About Us</a></li>
+                </ul>
               </div>
-              <div className="swiper-slide">
-                <img src="gambar/banner.png" alt="Slide 2" />
-                <div className="slide-text">
-                  <h2>Be The Fastest To Know Your Healthy Food</h2>
-                  <p>
-                    Yuk Dicek koleksi makanan sehat favorit dan daftar makanan
-                    sehat lainnya di Lokasimu!
-                  </p>
-                </div>
-              </div>
-              <div className="swiper-slide">
-                <img src="gambar/banner.png" alt="Slide 3" />
-                <div className="slide-text">
-                  <h2>Be The Fastest To Know Your Healthy Food</h2>
-                  <p>
-                    Yuk Dicek koleksi makanan sehat favorit dan daftar makanan
-                    sehat lainnya di Lokasimu!
-                  </p>
-                </div>
+              <div class="footer6">
+                <h6>Bantuan</h6>
+                <ul>
+                  <li><a href="bantuan.html">Bantuan</a></li>
+                  <li><a href="mitra.html">Jasa Mitra Whatsapp</a></li>
+                  <li><a href="faq2.html">FAQ</a></li>
+                </ul>
               </div>
             </div>
-            <div className="swiper-pagination"></div>
-            <div className="swiper-button-next"></div>
-            <div className="swiper-button-prev"></div>
+            <p class="lastfooter">
+              ©2022. FreshyApp, All Rights Reservedz | Ketentuan Layanan |
+              Kebijakan Privasi | Part of Hijr Group (PT Hijr Group Global)
+            </p>
           </div>
-        );
-      }
+        </div>
+      </div>
+    </footer>
 
-      ReactDOM.render(<ImageSlider />, document.getElementById("root"));
-    </script>
+    <!-- link js bootstrapp -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="script.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

@@ -1,0 +1,716 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden;
+    /* Mencegah halaman bergeser secara horizontal */
+}
+
+main {
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* Memastikan main memiliki tinggi penuh viewport */
+}
+
+
+/* start navbar */
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+    padding-top: 1rem;
+    transition: background-color 0.4s ease-in-out;
+}
+
+nav.scrolled{
+    background-color: black;
+    opacity: 0.98;
+}
+
+nav>a {
+    margin-left: 1.5rem;
+}
+
+nav>.nav-links {
+    margin-right: 2rem;
+}
+
+nav>a>img {
+    width: 70%;
+    margin-bottom: 1rem;
+}
+
+nav>ul {
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+nav>ul>a>li{
+    display: inline-block;
+    margin-left: 2rem;  
+    transition: color 0.4s ease-in-out;
+    color: black;
+}
+
+nav.scrolled ul li{
+    color: white;
+}
+
+nav>ul>a>li:hover {
+    text-decoration: underline;
+    color: darkgoldenrod;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    margin-top: 10px;
+}
+
+.menu-icon>.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+@media(max-width:768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #05352E;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        height: 50vh;
+    }
+
+    .nav-links.show {
+        display: flex;
+        z-index: 100;
+        position: fixed;
+    }
+
+    .nav-links li {
+        text-align: left;
+        margin: 10px 0;
+        color: white;
+    }
+}
+
+/* end navbar */
+
+/* header */
+
+header {
+    width: 100%;
+}
+
+.bannerdetailkategori1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+}
+
+.bannerdetailkategori1>img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+/*  end header */
+
+
+
+/* bagian pertama detail kategori */
+.boxkategori{
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+
+.boxkategori1{
+    background-color: #F3F4D6;
+    padding: 1rem;
+    max-width: 18rem;
+    border-radius: 1rem;
+}
+
+.boxkategori1>.datakategori1{
+    display: flex;
+    margin-top: -4.6rem;
+}
+
+.boxkategori1>img{
+    padding-left: 10px;
+}
+
+.boxkategori1>.datakategori1>p{
+    margin-left: 10px;
+    margin-top: 5.5rem;
+    max-width: 100%;
+    font-weight: bold;
+}
+
+.boxkategori1>.datakategori2{
+    display: flex;
+    margin-top: -0.8rem;
+}
+
+.boxkategori1>.datakategori2>p{
+   margin-top: 1rem;
+   margin-left: 0.5rem;
+}
+
+.boxkategori1>.datakategori3{
+    display: flex;
+    margin-top: -1.2rem;
+}
+
+.boxkategori1>.datakategori3>p{
+   margin-top: 1rem;
+   margin-left: 0.5rem;
+}
+
+
+.boxkategori1>.datakategori4{
+    display: flex;
+    margin-top: -1.2rem;
+}
+
+.boxkategori1>.datakategori4>p{
+   margin-top: 1rem;
+   margin-left: 0.5rem;
+   font-weight: bold;
+}
+
+
+
+.boxkategori3{
+    background-color: #05352E;
+    color: white;
+    max-width: 50rem;
+    margin-left: 2rem;
+    border-radius: 1rem;
+    height: 17rem;
+}
+
+.boxkategori3>.boxkategori4>p{
+    max-width: 80%;
+    font-size: 15px;
+}
+
+.boxkategori4{
+    margin-left: 3rem;
+    padding-top: 1rem;
+}
+
+.boxkategori3>.boxkategori4>.detaildeskripsi{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+
+.boxkategori3>.boxkategori4>.detaildeskripsi>.waktu{
+    display: flex;
+    margin-top: -1.5rem;
+}
+
+.boxkategori3>.boxkategori4>.detaildeskripsi>.waktu>img{
+    width: 25px;
+}
+
+.boxkategori3>.boxkategori4>.detaildeskripsi>.waktu>p{
+    padding-top: 1.2rem;
+    padding-left: 10px;
+}
+
+.boxkategori3>.boxkategori4>.detaildeskripsi>.bintang{
+    display: flex;
+    padding-right: 5rem;
+    margin-top: -2rem;
+}
+
+.boxkategori3>.boxkategori4>.detaildeskripsi>.bintang>img{
+    width: 25px;
+}
+
+.boxkategori3>.boxkategori4>.detaildeskripsi>.bintang>p{
+    padding-top: 1.5rem;
+    padding-left: 10px;
+}
+
+
+
+.boxkategori5{
+    background-color: #80C678;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    height: 12rem;
+}
+
+.boxkategori5>h5{
+    text-align: center;
+    padding-top: 2rem;
+    color: white;
+}
+
+.boxkategori5>.detailsosmed-button{
+    display: flex;
+    margin-left: 1rem;
+    margin-top: 3rem;
+    justify-content: center;
+}
+
+.boxkategori5>.detailsosmed-button>.buttonsosmed-kat1{
+    margin-left: 1rem;
+}
+
+.boxkategori5>.detailsosmed-button>.buttonsosmed-kat2{
+    margin-left: 1rem;
+}
+
+.boxkategori5>.detailsosmed-button>.buttonsosmed-kat3{
+    margin-left: 1rem;
+}
+
+.boxkategori5>.detailsosmed-button>.buttonsosmed-kat4{
+    margin-left: 1rem;
+}
+
+.boxkategori5>.detailsosmed-button>.buttonsosmed-kat1>.website-detailbutton{
+    display: flex;
+    color: white;
+    justify-content: center;
+}
+
+.boxkategori5>.detailsosmed-button>.buttonsosmed-kat2>.website-detailbutton{
+    display: flex;
+    color: white;
+    justify-content: center;
+}
+
+.boxkategori5>.detailsosmed-button>.buttonsosmed-kat3>.website-detailbutton{
+    display: flex;
+    color: white;
+    justify-content: center;
+}
+
+.boxkategori5>.detailsosmed-button>.buttonsosmed-kat4>.website-detailbutton{
+    display: flex;
+    color: white;
+    justify-content: center;
+}
+
+.boxkategori5>.detailsosmed-button>.buttonsosmed-kat1>.website-detailbutton>p{
+   margin-left: 10px;
+   margin-top: 10px;
+   color: white;
+}
+
+.boxkategori5>.detailsosmed-button>.buttonsosmed-kat2>.website-detailbutton>p{
+   margin-left: 10px;
+   margin-top: 10px;
+   color: white;
+}
+
+.boxkategori5>.detailsosmed-button>.buttonsosmed-kat3>.website-detailbutton>p{
+   margin-left: 10px;
+   margin-top: 10px;
+   color: white;
+}
+
+.boxkategori5>.detailsosmed-button>.buttonsosmed-kat4>.website-detailbutton>p{
+   margin-left: 10px;
+   margin-top: 10px;
+   color: white;
+}
+
+.boxkategori5>.detailsosmed-button>.buttonsosmed-kat1,.buttonsosmed-kat2,.buttonsosmed-kat3,.buttonsosmed-kat4{
+    text-decoration: none;
+    background-color: #05352E;
+    border-radius: 2rem;
+    width: 9rem;
+    height: 3rem;
+}
+
+.boxkategori5>.detailsosmed-button>.buttonsosmed-kat1:hover{
+    background-color: blue;
+    transition: 0.50s;
+}
+
+.boxkategori5>.detailsosmed-button>.buttonsosmed-kat2:hover{
+    background-color: red;
+    transition: 0.50s;
+}
+
+.boxkategori5>.detailsosmed-button>.buttonsosmed-kat3:hover{
+    background-color: orange;
+    transition: 0.50s;
+}
+
+.boxkategori5>.detailsosmed-button>.buttonsosmed-kat4:hover{
+    background-color: green;
+    transition: 0.50s;
+}
+
+
+/* end bagian detail kategori */
+
+
+/* galleri detail kategori */
+
+.card-wrapper{
+    padding-left: 25px;
+}
+
+.card-list{
+    margin-top: 3rem;
+}
+
+.swiper-pagination{
+    display: block;
+    position: relative; /* Pastikan tidak absolute atau fixed */
+    margin-top: 20px;
+}
+
+.swiper-button-prev{
+    color: black;
+    margin-right: 20px; /* Sesuaikan nilai ini untuk mengatur jarak */
+    font-weight: 700;
+    background-size: 20px 20px; /* Sesuaikan ukuran panah */
+    width: 30px;  /* Mengubah lebar tombol */
+    height: 30px; /* Mengubah tinggi tombol */
+}
+
+.swiper-button-prev::after, .swiper-button-next::after {
+    font-size: 25px; /* Sesuaikan ukuran ini jika pakai SVG atau ikon font */
+    font-weight: bold;
+    color: black;
+}
+
+.card-image{
+    width: 270px;
+}
+
+.juduldetailgallery{
+    margin-left: 5rem;
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+/* end galleri detail kategori */
+
+/* start footer */
+footer {
+    background-color: #05352E;
+    width: 100%;
+    height: 70vh;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-top: 2rem;
+}
+
+.footer1 {
+    display: flex;
+    gap: 11rem;
+}
+
+.footer1>.footer2>img {
+    margin-top: 3rem;
+    width: 45%;
+}
+
+.footer1>.footer2>.paragraffooter1 {
+    color: white;
+    margin-top: 2rem;
+    max-width: 28rem;
+}
+
+.footer1>.footer2>.paragraffooter2 {
+    color: #D7DF23;
+
+}
+
+.footer1>.footer2>.iconsosmed {
+    display: flex;
+    gap: 10px;
+    color: white;
+    width: 20px;
+}
+
+.footer3 {
+    margin-top: 2.5rem;
+    margin-left: 10rem;
+}
+
+
+.footer3>p {
+    color: #D7DF23;
+}
+
+.footer3>.inputan {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer3>.inputan>input {
+    width: 16rem;
+    border-radius: 1.5rem;
+}
+
+.footer3>.inputan>button {
+    background-color: #D7DF23;
+    width: 8rem;
+    border-radius: 1rem;
+}
+
+.footer3>.inputan>button:hover {
+    background-color: darkcyan;
+    color: white;
+}
+
+.footer3>.lastfooter{
+    color: white;
+    width: 180%;
+    margin-left: -18rem;
+    font-size: 13px;
+    margin-top: 3rem;
+}
+
+.footer3>.footer4{
+    display: flex;
+    margin-top: 2.8rem;
+}
+
+.footer3>.footer4>.footer5{
+    display: block;
+}
+
+.footer3>.footer4>.footer5>h6{
+    color: #D7DF23;
+}
+
+
+.footer3>.footer4>.footer6>h6{
+    color: #D7DF23;
+}
+
+
+
+.footer5>ul>li{
+    list-style: none;
+}
+
+.footer5>ul{
+    margin-left: -2rem;
+}
+
+.footer5>ul>li>a{
+    text-decoration: none;
+    color: white;
+    margin-right: 3rem;
+}
+
+.footer5>ul>li>a:hover{
+    border-bottom: 2px dashed  burlywood;
+}
+
+.footer6{
+    margin-left: 3rem;
+}
+
+.footer6>ul>li{
+    list-style: none;
+}
+
+.footer6>ul{
+    margin-left: -2rem;
+}
+
+.footer6>ul>li>a{
+    text-decoration: none;
+    color: white;
+    margin-right: 3rem;
+}
+
+.footer6>ul>li>a:hover{
+    border-bottom: 2px dashed  burlywood;
+}
+
+@media(max-width:450px) {
+    footer {
+        background-color: #05352E;
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        margin-top: 2rem;
+    }
+    
+    .footer1 {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .footer2{
+        margin-left: 1px;
+    }
+    
+    .footer1>.footer2>img {
+        margin-top: 3rem;
+        width: 33%;
+    }
+    
+    .footer1>.footer2>.paragraffooter1 {
+        color: white;
+        margin-top: 2rem;
+        max-width: 28rem;
+    }
+    
+    .footer1>.footer2>.paragraffooter2 {
+        color: #D7DF23;
+        bottom: 0;
+    }
+    
+    .footer1>.footer2>.iconsosmed {
+        display: flex;
+        gap: 10px;
+        color: white;
+        width: 20px;
+    }
+    
+    .footer3 {
+        margin-top: 1rem;
+        margin-left: 1px;
+    }
+    
+    
+    .footer3>p {
+        color: #D7DF23;
+    }
+    
+    .footer3>.inputan {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .footer3>.inputan>input {
+        width: 16rem;
+        border-radius: 1.5rem;
+    }
+    
+    .footer3>.inputan>button {
+        background-color: #D7DF23;
+        width: 6rem;
+        border-radius: 1rem;
+    }
+    
+    .footer3>.inputan>button:hover {
+        background-color: darkcyan;
+        color: white;
+    }
+    
+    .footer3>.lastfooter{
+        color: white;
+        width: 180%;
+        margin-left: 7rem;
+        font-size: 10px;
+        margin-top: 2rem;
+        max-width: 60%;
+    }
+    
+    .footer4{
+        margin-left: 6px;
+    }
+
+    .footer3>.footer4{
+        display: flex;
+        margin-top: 2.8rem;
+    }
+    
+    .footer3>.footer4>.footer5{
+        display: block;
+    }
+    
+    .footer3>.footer4>.footer5>h6{
+        color: #D7DF23;
+    }
+    
+    
+    .footer3>.footer4>.footer6>h6{
+        color: #D7DF23;
+    }
+    
+    
+    
+    .footer5>ul>li{
+        list-style: none;
+    }
+    
+    .footer5>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer5>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+        border-bottom: 2px dashed  burlywood    }
+
+    .footer5>ul>li>a:hover{
+        border-bottom: 2px dashed  burlywood;
+    }
+    
+    
+    .footer6{
+        margin-left: 3rem;
+    }
+    
+    .footer6>ul>li{
+        list-style: none;
+    }
+    
+    .footer6>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer6>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+    }
+
+    .footer6>ul>li>a:hover{
+        border-bottom: 2px dashed  burlywood;
+     }
+    
+}
+
+
+/* end footer */
+

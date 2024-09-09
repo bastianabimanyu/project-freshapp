@@ -1,18 +1,5 @@
-function loadHTML(id, url) {
-    fetch(url)
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById(id).innerHTML = data;
-      })
-      .catch(error => console.error('Error loading HTML:', error));
-  } 
-
-  // Menyesuaikan path ke folder include
-  loadHTML('navbar', 'navbar.html');
-  loadHTML('footer', 'footer.html');    
-
-
- // Select elements
+//  membuat hamburger //
+ 
  const menuIcon = document.getElementById('menu-icon');
  const navLinks = document.getElementById('nav-links');
 
@@ -20,6 +7,58 @@ function loadHTML(id, url) {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('show');
 }
+
+// membuat accordion //
+
+const accordion = document.getElementsByClassName('contentbx');
+
+    for (let i = 0; i < accordion.length; i++) {
+        accordion[i].addEventListener('click', function() {
+            this.classList.toggle('active');
+            let content = this.querySelector('.content');
+            
+            if (this.classList.contains('active')) {
+                content.style.height = content.scrollHeight + 'px';
+                content.style.transition = '0.90s';
+                content.style.overflow = 'hidden';
+            } else {
+                content.style.height = '0';
+                content.style.transition = '0.90s';
+            }
+        });
+    }
+
+
+    // membuat swiper gambar
+
+        new Swiper('.card-wrapper', {
+        loop: true,
+        spaceBetween: 30,
+      
+        // pagination bullets
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        breakpoints: {
+            0: {
+                slidesPerView: 1
+            },
+            768: {
+                slidesPerView: 2
+            },
+            1024: {
+                slidesPerView: 3
+            },
+        }
+      });
+
 
 
 

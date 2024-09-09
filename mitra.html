@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Halaman Mitra</title>
+
+    <!-- link bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    />
+    <!-- link css -->
+    <link rel="stylesheet" href="mitra.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <a href="#">
+        <img src="gambar/Frame 8 (1).png" alt="homeimage" class="gambarnav" />
+      </a>
+      <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">
+        <div class="bar" id="bar1"></div>
+        <div class="bar" id="bar2"></div>
+        <div class="bar" id="bar3"></div>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <a href="index.html"><li id="navbar">Home</li></a>
+        <a href="#"><li id="navbar">Section</li></a>
+        <a href="categories.html"><li id="navbar">Categories</li></a>
+        <a href="blog.html"><li id="navbar">Blog</li></a>
+        <a href="aboutus.html"><li id="navbar">About us</li></a>
+      </ul>
+    </nav>
+
+    <main>
+        <section>
+            <div class="judulmitra1">
+                <div class="judulmitra2">
+                        <div class="judulmitra3">
+                            <h1>Submitting Your Bussiness</h1>
+                        </div>
+                    <p>Want to show your bussiness into the FreshyApp ?</p>
+                </div>
+            </div>
+
+              <div class="gabungkotak3">
+                <div class="kotakmitra1">
+                    <div class="mitra11">
+                        <img src="gambar/mitra/gambarmitra-pencarian.svg" alt="...">
+                        <p>Your bussines will be reviewed before getting featured.</p>
+                    </div>
+                </div>
+
+                <div class="kotakmitra2">
+                    <div class="mitra22">
+                        <img src="gambar/mitra/gambarmitra-pesan.svg" alt="...">
+                        <p>Once your bussines has been reviewed and accepted we will get in touch</p>
+                    </div>
+                </div>
+
+                <div class="kotakmitra3">
+                    <div class="mitra33">
+                        <img src="gambar/mitra/gambatmitra-jam.svg" alt="...">
+                        <p>Reviewing takes a day or two. If you don’t hear from us your bussiness wasn’t selected.</p>
+                    </div>
+                </div>
+              </div>
+
+
+              <div class="inputdata">
+                  <div class="inputpertama">
+                    <div class="inputpertama2">
+                      <div class="inputnama">
+                          <div class="namadepan">
+                            <label for="namadepan">Nama Depan*</label><br>
+                            <input type="text" id="namadepan" class="namadepan2">
+                          </div>
+                          <div class="namabelakang">
+                            <label for="namabelakang">Nama Belakang*</label><br>
+                            <input type="text" id="namabelakang" class="namabelakang2">
+                          </div>
+                      </div><br>
+
+                      <label for="namausaha">Nama Usaha*</label><br>
+                      <input type="text" id="namausaha" class="namausaha"><br><br>
+
+                      <label for="alamatemail">Alamat Email*</label><br>
+                      <input type="text" id="alamatemail" class="alamatemail"><br><br>
+
+                      <label for="notelp">No. Telp*</label><br>
+                      <input type="number" id="notelp" class="notelp"><br><br>
+
+                      <label for="alamatwebite">Alamat Website*</label><br>
+                      <input type="text" id="alamatwebsite" class="alamatwebsite"><br><br>
+
+                      <label for="alamatusaha">Alamat Usaha*</label><br>
+                      <textarea id="alamatusaha" cols="30" rows="2" class="alamatusaha"></textarea><br><br>
+
+                      <label for="pilihankota">Kota Usaha*</label><br>
+                      <select id="pilihankota" name="kotausaha" class="kotausaha">
+                        <option  disabled selected>-- Pilih Kota --</option>
+                        <option value="jakarta">Jakarta</option>
+                        <option value="bogor">Bogor</option>
+                        <option value="bekasi">Bekasi</option>
+                        <option value="tangerang">Tangerang</option>
+                        <option value="Bekasi">Depok</option>
+                      </select><br><br>
+
+                      <label for="deskripsiusaha">Deskripsi Usaha*</label><br>
+                      <textarea id="deskripsiusaha" cols="30" rows="10" class="deskripsiusaha"></textarea><br><br>    
+
+                      <label for="jambukausaha">Jam Buka Usaha*</label><br>
+                      <input type="text" id="jambukausaha" class="jambukausaha"><br><br>
+
+                      <label for="kategoriusaha">Kategori Usaha*</label><br>
+                      <select id="kategoriusaha" name="kotausaha" class="katekoriusaha">
+                        <option selected disabled>-- Pilih Kategori Usaha --</option>
+                        <option value="restoran">Restoran</option>
+                        <option value="kafe">Kafe</option>
+                        <option value="warungmakan">Warung Makan</option>
+                        <option value="usahakatering">Usaha Katering </option>
+                        <option value="Bekasi">Depok</option>
+                      </select><br><br>
+
+                      <h6>Market Place:</h6><br>
+                      <label for="instagram" class="labelinstagram">Instagram</label>
+                      <input type="text" class="labelinstagram2"><br><br>
+
+                      <label for="tokopedia" class="labeltokped">Tokopedia</label>
+                      <input type="text" class="labeltokped2"><br><br>
+
+                      <label for="shopee" class="labelshopee">Shopee</label>
+                      <input type="text" class="labelshopee2"><br><br>
+
+                      <label for="website" class="labelwebsite">Website</label>
+                      <input type="text" class="labelwebsite2"><br><br>
+
+                      <div class="tombolsubmit">
+                        <a href="#">Submit</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="kotakinputfoto">
+                    <div class="inputfoto1">
+                       <h6>Upload Logo Usaha*</h6>
+                       <div class="inputfoto2">
+                         <img src="gambar/mitra/gambarinputfoto1.svg" alt="...">
+                       </div>
+                    </div>
+
+                    <div class="inputfoto3">
+                       <h6>Upload Banner Usaha*</h6>
+                       <p>1280 x 336 pixel</p>
+                       <div class="addimage1">
+                        <a href="#">Add Image</a>
+                       </div>
+                    </div>
+
+                    <div class="inputfoto3">
+                      <h6>Upload Banner Usaha*</h6>
+                      <p>Minimal 4 Gambar</p>
+                      <div class="addimage1">
+                       <a href="#">Add Image</a>
+                      </div>
+                   </div>
+                  </div>
+                  
+              </div>
+        </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer1">
+          <div class="footer2">
+            <img src="gambar/footer.svg" alt="..." />
+            <p class="paragraffooter1">
+              First Indonesian Green Food Directory, platform berusaha menjadi
+              bagian kecil yang dapat memudahkan masyarakat untuk akses
+              informasi makanan sehat serta mendukung Indonesia sebagai negara
+              lumbung pangan 2024.
+            </p>
+            <p class="paragraffooter2">Follow us On</p>
+            <div class="iconsosmed">
+              <i class="fa-brands fa-instagram sosmedig"></i>
+              <i class="fa-brands fa-facebook sosmedfb"></i>
+              <i class="fa-brands fa-twitter sosmedtwid"></i>
+              <i class="fa-brands fa-linkedin sosmedlinked"></i>
+              <i class="fa-brands fa-telegram sosmedtele"></i>
+            </div>
+          </div>
+
+          <div class="footer3">
+            <p>Subscribe to FreshyApp newsletter</p>
+            <div class="inputan">
+              <input type="text" placeholder="Email" style="padding-left: 12px;" />
+              <button href="#" class="btn">SubScribe</button>
+            </div>
+            <div class="footer4">
+              <div class="footer5">
+                <h6>Infomasi</h6>
+                <ul>
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                  <li><a href="aboutus.html">About Us</a></li>
+                </ul>
+              </div>
+              <div class="footer6">
+                <h6>Bantuan</h6>
+                <ul>
+                  <li><a href="bantuan.html">Bantuan</a></li>
+                  <li><a href="mitra.html">Jasa Mitra Whatsapp</a></li>
+                  <li><a href="faq2.html">FAQ</a></li>
+                </ul>
+              </div>
+            </div>
+            <p class="lastfooter">
+              ©2022. FreshyApp, All Rights Reservedz | Ketentuan Layanan |
+              Kebijakan Privasi | Part of Hijr Group (PT Hijr Group Global)
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- link js bootstrapp -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

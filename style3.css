@@ -1,8 +1,10 @@
-body, html {
+body,
+html {
     padding: 0;
     margin: 0;
     height: 100%;
-    overflow-x: hidden; /* Mencegah halaman bergeser secara horizontal */
+    overflow-x: hidden;
+    /* Mencegah halaman bergeser secara horizontal */
 }
 
 main {
@@ -10,39 +12,75 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Memastikan main memiliki tinggi penuh viewport */
+    min-height: 100vh;
+    /* Memastikan main memiliki tinggi penuh viewport */
 }
 
-/* navbar */
+/* start navbar */
 
-nav {
+nav{
     display: flex;
-    justify-content: center;
-    gap: 25rem;
-    margin-top: 1.5rem;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+    padding-top: 1rem;
+    transition: background-color 0.4s ease-in-out;
 }
 
-nav>a>img{
+nav.scrolled{
+    background-color: white;
+    opacity: 1;
+    position: fixed;
+}
+
+nav.scrolled2{
+    background-color: white;
+    opacity: 0.50;
+    position: fixed;
+}
+
+nav>a {
+    margin-left: 1.5rem;
+}
+
+nav>.nav-links {
+    margin-right: 2rem;
+}
+
+nav>a>img {
     width: 70%;
     margin-bottom: 1rem;
 }
 
-nav > ul {
+nav>ul {
     display: inline-block;
     margin-top: 0.5rem;
 }
 
-nav > ul > li {
+nav>ul>a>li{
     display: inline-block;
-    margin-left: 2rem;
+    margin-left: 2rem;  
+    transition: color 0.4s ease-in-out;
+    color: black;
 }
 
-nav > ul > li:hover{
-   text-decoration: underline;
-   color: darkgoldenrod;
+nav.scrolled ul li{
+    color: black;
 }
 
-.menu-icon{
+nav.scrolled2 ul li{
+    color: black;
+}
+
+nav>ul>a>li:hover {
+    text-decoration: underline;
+    color: darkgoldenrod;
+}
+
+.menu-icon {
     display: none;
     cursor: pointer;
     flex-direction: column;
@@ -51,19 +89,24 @@ nav > ul > li:hover{
     margin-top: 10px;
 }
 
-.menu-icon>.bar{
-    width: 25px;    
+.menu-icon>.bar {
+    width: 25px;
     height: 3px;
     background-color: #333;
     border-radius: 2px;
 }
 
-@media(max-width:768px) {
-    .menu-icon{
-        display: flex;
+
+@media only screen and (max-width: 450px) {
+
+    /* bagian navbar */
+
+    nav>a>img {
+        margin-bottom: 1rem;
+        margin-left: 2rem;
     }
 
-    .nav-links{
+    .nav-links {
         display: none;
         flex-direction: column;
         width: 100%;
@@ -76,13 +119,117 @@ nav > ul > li:hover{
         height: 50vh;
     }
 
-    .nav-links.show{
+    .nav-links.show {
         display: flex;
         z-index: 100;
         position: fixed;
     }
 
-    .nav-links li{
+    .nav-links li {
+        text-align: left;
+        margin: 10px 0;
+        color: white;
+    }
+
+    .menu-icon>.bar {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        border-radius: 2px;
+        margin-right: 2rem;
+    }
+
+    /* bagian slider banner */
+
+    .slides img {
+        width: 100%;
+        height: 18rem;
+    }
+
+    .prev {
+        font-size: 2rem;
+        margin-left: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
+
+    .next {
+        font-size: 2rem;
+        margin-right: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
+
+    .slide-content {
+        position: absolute;
+        top: 50%;
+        /* Posisi tengah vertikal */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Menggeser konten ke tengah */
+        color: white;
+        z-index: 1;
+        /* Agar konten berada di atas gambar */
+        width: 100%;
+    }
+
+    .slide-title {
+        font-size: 1.5rem;
+        margin: 0 0 90px;
+        /* Jarak antara judul dan teks */
+        text-align: left;
+        margin-left: 4.8rem;
+        width: 60%;
+    }
+
+    .slide-text {
+        font-size: 10px;
+        width: 70%;
+        /* Contoh width yang lebih lebar agar teks tidak terpotong */
+        text-align: left;
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+
+    .sectionpertama {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+}
+
+@media(max-width:768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    .menu-icon>.bar {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        border-radius: 2px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #05352E;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        height: 50vh;
+    }
+
+    .nav-links.show {
+        display: flex;
+        z-index: 100;
+        position: fixed;
+    }
+
+    .nav-links li {
         text-align: left;
         margin: 10px 0;
         color: white;
@@ -92,24 +239,25 @@ nav > ul > li:hover{
 /* end navbar */
 
 
+
 /* header */
 
-header{
+header {
     width: 100%;
     height: 100vh;
 }
 
-.bannerblog{
+.bannerblog {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60%;
 }
 
-.bannerblog img{
+.bannerblog img {
     max-width: 80%;
     height: auto;
-    border-radius: 1rem;    
+    border-radius: 1rem;
 }
 
 /*  end header */
@@ -118,14 +266,18 @@ header{
 
 /* blog nav */
 
-.blogbagian1{
-    margin-top: -30rem;
+.blogbagian1 {
+    margin-top: -11rem;
     display: flex;
     gap: 25rem;
 }
 
-.navblog>a{
+.navblog>a {
     margin-left: 5px;
+}
+
+.navblog>a:hover {
+    background-color: chocolate;
 }
 
 /* end blog nav */
@@ -133,95 +285,103 @@ header{
 
 /* blog section 1 */
 
-.bagiancard1{
-    margin-top: -25rem;
+.bagiancard1 {
+    margin-top: -5rem;
     display: flex;
     gap: 1rem;
 }
 
-.bagiancard1>.card1>.card{
+.bagiancard1>.card1>.card {
     border-radius: 1rem;
     border: none;
 }
 
-.bagiancard1>.card1>.card>img{
+.bagiancard1>.card1>.card:hover {
+   border:1px solid black;
+   background-color: darkkhaki;
+   color: white;
+   transition: 0.50s;
+}
+
+.bagiancard1>.card1>.card>img {
     border-radius: 1rem;
     width: 100%;
 }
 
-.bagiancard1>.card1>.card>.card-body>.paragrafcard1{
+.bagiancard1>.card1>.card>.card-body>.paragrafcard1 {
     margin-top: 2.6rem;
 }
 
-.bagiancard1>.card1>.card>.card-body>.buttoncard1{
-   margin-top: 10px;
+.bagiancard1>.card1>.card>.card-body>.buttoncard1 {
+    margin-top: 10px;
 }
 
-
-.bagiancard1{
-    margin-top: -25rem;
-    display: flex;
-    gap: 1rem;
-}
-
-.bagiancard1>.card2>.card{
+.bagiancard1>.card2>.card {
     border-radius: 1rem;
     border: none;
 }
 
-.bagiancard1>.card2>.card>img{
+.bagiancard1>.card2>.card:hover {
+    border:1px solid black;
+    background-color: darkkhaki;
+    color: white;
+    transition: 0.50s;
+ }
+
+.bagiancard1>.card2>.card>img {
     border-radius: 1rem;
     width: 100%;
 }
 
 
-.bagiancard1{
-    margin-top: -25rem;
-    display: flex;
-    gap: 1rem;
-}
-
-.bagiancard1>.card3>.card{
+.bagiancard1>.card3>.card {
     border-radius: 1rem;
     border: none;
 }
 
-.bagiancard1>.card3>.card>.card-body>.paragrafcard3{
+.bagiancard1>.card3>.card:hover {
+    border:1px solid black;
+    background-color: darkkhaki;
+    color: white;
+    transition: 0.50s;
+ }
+
+.bagiancard1>.card3>.card>.card-body>.paragrafcard3 {
     margin-top: 4rem;
 }
 
-.bagiancard1>.card3>.card>.card-body>.buttoncard1{
+.bagiancard1>.card3>.card>.card-body>.buttoncard1 {
     margin-top: 1rem;
 }
 
-.bagiancard1>.card3>.card>img{
+.bagiancard1>.card3>.card>img {
     border-radius: 1rem;
     width: 100%;
 }
 
 
 
-
-.bagiancard1{
-    margin-top: -25rem;
-    display: flex;
-    gap: 1rem;
-}
-
-.bagiancard1>.card4>.card{
+.bagiancard1>.card4>.card {
     border-radius: 1rem;
     border: none;
 }
 
-.bagiancard1>.card4>.card>.card-body>.paragrafcard4{
+.bagiancard1>.card4>.card:hover{
+    border:1px solid black;
+    background-color: darkkhaki;
+    color: white;
+    transition: 0.50s;
+ }
+
+.bagiancard1>.card4>.card>.card-body>.paragrafcard4 {
     margin-top: 2.2rem;
 }
 
-.bagiancard1>.card4>.card>.card-body>.buttoncard1{
+.bagiancard1>.card4>.card>.card-body>.buttoncard1 {
     margin-top: 1rem;
 }
 
-.bagiancard1>.card4>.card>img{
+.bagiancard1>.card4>.card>img {
     border-radius: 1rem;
     width: 100%;
 }
@@ -230,13 +390,559 @@ header{
 /* end blog section 1 */
 
 
-footer{
+
+
+
+
+
+
+
+
+
+/* blog section2 */
+
+.bagiancard2 {
+    margin-top: 5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.bagiancard2>.card5>.card {
+    border-radius: 1rem;
+    border: none;
+}
+
+.bagiancard2>.card5>.card:hover {
+    border:1px solid black;
+    background-color: darkkhaki;
+    color: white;
+    transition: 0.50s;
+ }
+
+.bagiancard2>.card5>.card>img {
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.bagiancard2>.card5>.card>.card-body>.paragrafcard1 {
+    margin-top: 2.6rem;
+}
+
+.bagiancard2>.card5>.card>.card-body>.buttoncard1 {
+    margin-top: 10px;
+}
+
+.bagiancard2>.card6>.card {
+    border-radius: 1rem;
+    border: none;
+}
+
+.bagiancard2>.card6>.card:hover {
+    border:1px solid black;
+    background-color: darkkhaki;
+    color: white;
+    transition: 0.50s;
+ }
+
+.bagiancard2>.card6>.card>img {
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.bagiancard2>.card6>.card {
+    border-radius: 1rem;
+    border: none;
+}
+
+.bagiancard2>.card6>.card>.card-body>.paragrafcard3 {
+    margin-top: 4rem;
+}
+
+.bagiancard2>.card6>.card>.card-body>.buttoncard1 {
+    margin-top: 1rem;
+}
+
+.bagiancard2>.card6>.card>img {
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.bagiancard2>.card7>.card {
+    border-radius: 1rem;
+    border: none;
+}
+
+.bagiancard2>.card7>.card:hover {
+    border:1px solid black;
+    background-color: darkkhaki;
+    color: white;
+    transition: 0.50s;
+ }
+
+.bagiancard2>.card7>.card>.card-body>.paragrafcard7 {
+    margin-top: 4.2rem;
+}
+
+.bagiancard2>.card7>.card>.card-body>.buttoncard1 {
+    margin-top: 1rem;
+}
+
+.bagiancard2>.card7>.card>img {
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.bagiancard2>.card8>.card {
+    border-radius: 1rem;
+    border: none;
+}
+
+.bagiancard2>.card8>.card:hover {
+    border:1px solid black;
+    background-color: darkkhaki;
+    color: white;
+    transition: 0.50s;
+ }
+
+.bagiancard2>.card8>.card>.card-body>.paragrafcard4 {
+    margin-top: 2.2rem;
+}
+
+.bagiancard2>.card8>.card>.card-body>.buttoncard1 {
+    margin-top: 1rem;
+}
+
+.bagiancard2>.card8>.card>img {
+    border-radius: 1rem;
+    width: 100%;
+}
+
+
+/* end blog section2 */
+
+
+
+
+
+
+
+
+
+/* blog section 3 */
+
+.bagiancard3 {
+    margin-top: 5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.bagiancard3>.card9>.card {
+    border-radius: 1rem;
+    border: none;
+}
+
+.bagiancard3>.card9>.card:hover {
+    border:1px solid black;
+    background-color: darkkhaki;
+    color: white;
+    transition: 0.50s;
+ }
+
+.bagiancard3>.card9>.card>img {
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.bagiancard3>.card9>.card>.card-body>.paragrafcard1 {
+    margin-top: 2.6rem;
+}
+
+.bagiancard3>.card9>.card>.card-body>.buttoncard1 {
+    margin-top: 10px;
+}
+
+.bagiancard3>.card10>.card {
+    border-radius: 1rem;
+    border: none;
+}
+
+.bagiancard3>.card10>.card:hover {
+    border:1px solid black;
+    background-color: darkkhaki;
+    color: white;
+    transition: 0.50s;
+ }
+
+.bagiancard3>.card10>.card>img {
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.bagiancard3>.card10>.card {
+    border-radius: 1rem;
+    border: none;
+}
+
+.bagiancard3>.card10>.card>.card-body>.paragrafcard3 {
+    margin-top: 4rem;
+}
+
+.bagiancard3>.card10>.card>.card-body>.buttoncard1 {
+    margin-top: 1rem;
+}
+
+.bagiancard3>.card10>.card>img {
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.bagiancard3>.card11>.card {
+    border-radius: 1rem;
+    border: none;
+}
+
+.bagiancard3>.card11>.card:hover {
+    border:1px solid black;
+    background-color: darkkhaki;
+    color: white;
+    transition: 0.50s;
+ }
+
+.bagiancard3>.card11>.card>.card-body>.paragrafcard7 {
+    margin-top: 4.2rem;
+}
+
+.bagiancard3>.card11>.card>.card-body>.buttoncard1 {
+    margin-top: 1rem;
+}
+
+.bagiancard3>.card11>.card>img {
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.bagiancard3>.card12>.card {
+    border-radius: 1rem;
+    border: none;
+}
+
+.bagiancard3>.card12>.card:hover {
+    border:1px solid black;
+    background-color: darkkhaki;
+    color: white;
+    transition: 0.50s;
+ }
+
+.bagiancard3>.card12>.card>.card-body>.paragrafcard4 {
+    margin-top: 2.2rem;
+}
+
+.bagiancard3>.card12>.card>.card-body>.buttoncard1 {
+    margin-top: 1rem;
+}
+
+.bagiancard3>.card12>.card>img {
+    border-radius: 1rem;
+    width: 100%;
+}
+
+
+
+/* end blog section 3 */
+
+
+
+/* start footer */
+
+footer {
     background-color: #05352E;
     width: 100%;
     height: 70vh;
-    margin-top: 4rem;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+    margin-top: 2rem;
 }
+
+.footer1 {
+    display: flex;
+    gap: 11rem;
+}
+
+.footer1>.footer2>img {
+    margin-top: 3rem;
+    width: 45%;
+}
+
+.footer1>.footer2>.paragraffooter1 {
+    color: white;
+    margin-top: 2rem;
+    max-width: 28rem;
+}
+
+.footer1>.footer2>.paragraffooter2 {
+    color: #D7DF23;
+
+}
+
+.footer1>.footer2>.iconsosmed {
+    display: flex;
+    gap: 10px;
+    color: white;
+    width: 20px;
+}
+
+.footer3 {
+    margin-top: 2.5rem;
+    margin-left: 10rem;
+}
+
+
+.footer3>p {
+    color: #D7DF23;
+}
+
+.footer3>.inputan {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer3>.inputan>input {
+    width: 16rem;
+    border-radius: 1.5rem;
+}
+
+.footer3>.inputan>button {
+    background-color: #D7DF23;
+    width: 8rem;
+    border-radius: 1rem;
+}
+
+.footer3>.inputan>button:hover {
+    background-color: darkcyan;
+    color: white;
+}
+
+.footer3>.lastfooter{
+    color: white;
+    width: 180%;
+    margin-left: -18rem;
+    font-size: 13px;
+    margin-top: 3rem;
+}
+
+.footer3>.footer4{
+    display: flex;
+    margin-top: 2.8rem;
+}
+
+.footer3>.footer4>.footer5{
+    display: block;
+}
+
+.footer3>.footer4>.footer5>h6{
+    color: #D7DF23;
+}
+
+
+.footer3>.footer4>.footer6>h6{
+    color: #D7DF23;
+}
+
+
+
+.footer5>ul>li{
+    list-style: none;
+}
+
+.footer5>ul{
+    margin-left: -2rem;
+}
+
+.footer5>ul>li>a{
+    text-decoration: none;
+    color: white;
+    margin-right: 3rem;
+}
+
+.footer5>ul>li>a:hover{
+    border-bottom: 2px dashed  burlywood;
+}
+
+.footer6{
+    margin-left: 3rem;
+}
+
+.footer6>ul>li{
+    list-style: none;
+}
+
+.footer6>ul{
+    margin-left: -2rem;
+}
+
+.footer6>ul>li>a{
+    text-decoration: none;
+    color: white;
+    margin-right: 3rem;
+}
+
+.footer6>ul>li>a:hover{
+    border-bottom: 2px dashed  burlywood;
+ }
+
+ @media(max-width:450px) {
+    footer {
+        background-color: #05352E;
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        margin-top: 2rem;
+    }
+    
+    .footer1 {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .footer2{
+        margin-left: 1px;
+    }
+    
+    .footer1>.footer2>img {
+        margin-top: 3rem;
+        width: 33%;
+    }
+    
+    .footer1>.footer2>.paragraffooter1 {
+        color: white;
+        margin-top: 2rem;
+        max-width: 28rem;
+    }
+    
+    .footer1>.footer2>.paragraffooter2 {
+        color: #D7DF23;
+        bottom: 0;
+    }
+    
+    .footer1>.footer2>.iconsosmed {
+        display: flex;
+        gap: 10px;
+        color: white;
+        width: 20px;
+    }
+    
+    .footer3 {
+        margin-top: 1rem;
+        margin-left: 1px;
+    }
+    
+    
+    .footer3>p {
+        color: #D7DF23;
+    }
+    
+    .footer3>.inputan {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .footer3>.inputan>input {
+        width: 16rem;
+        border-radius: 1.5rem;
+    }
+    
+    .footer3>.inputan>button {
+        background-color: #D7DF23;
+        width: 6rem;
+        border-radius: 1rem;
+    }
+    
+    .footer3>.inputan>button:hover {
+        background-color: darkcyan;
+        color: white;
+    }
+    
+    .footer3>.lastfooter{
+        color: white;
+        width: 180%;
+        margin-left: 7rem;
+        font-size: 10px;
+        margin-top: 2rem;
+        max-width: 60%;
+    }
+    
+    .footer4{
+        margin-left: 6px;
+    }
+
+    .footer3>.footer4{
+        display: flex;
+        margin-top: 2.8rem;
+    }
+    
+    .footer3>.footer4>.footer5{
+        display: block;
+    }
+    
+    .footer3>.footer4>.footer5>h6{
+        color: #D7DF23;
+    }
+    
+    
+    .footer3>.footer4>.footer6>h6{
+        color: #D7DF23;
+    }
+    
+    
+    
+    .footer5>ul>li{
+        list-style: none;
+    }
+    
+    .footer5>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer5>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+        border-bottom: 2px dashed  burlywood    }
+
+    .footer5>ul>li>a:hover{
+        border-bottom: 2px dashed  burlywood;
+    }
+    
+    
+    .footer6{
+        margin-left: 3rem;
+    }
+    
+    .footer6>ul>li{
+        list-style: none;
+    }
+    
+    .footer6>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer6>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+    }
+
+    .footer6>ul>li>a:hover{
+        border-bottom: 2px dashed  burlywood;
+     }
+    
+}
+
+
+/* end footer */
