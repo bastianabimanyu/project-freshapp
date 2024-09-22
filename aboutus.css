@@ -89,142 +89,200 @@ nav>ul>a>li:hover {
 }
 
 
+
 @media only screen and (max-width: 450px) {
 
     /* bagian navbar */
 
     nav>a>img {
-        margin-bottom: 1rem;
-        margin-left: 2rem;
-    }
+       margin-bottom: 1rem;
+       margin-left: 2rem;
+   }
 
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #05352E;
-        border-bottom-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
-        height: 50vh;
-    }
+   .nav-links {
+       display: none;
+       flex-direction: column;
+       width: 100%;
+       position: absolute;
+       top: 60px;
+       left: 0;
+       background-color: #05352E;
+       border-bottom-left-radius: 2rem;
+       border-bottom-right-radius: 2rem;
+       height: 50vh;
+   }
 
-    .nav-links.show {
-        display: flex;
-        z-index: 100;
-        position: fixed;
-    }
+   .nav-links.show {
+       display: flex;
+       z-index: 100;
+       position: fixed;
+   }
 
-    .nav-links li {
-        text-align: left;
-        margin: 10px 0;
-        color: white;
-    }
+   .nav-links li {
+       text-align: left;
+       margin: 10px 0;
+       color: white;
+   }
 
-    .menu-icon>.bar {
-        width: 25px;
-        height: 3px;
-        background-color: #333;
-        border-radius: 2px;
-        margin-right: 2rem;
-    }
+   .menu-icon {
+       display: flex;
+   }
 
-    /* bagian slider banner */
+   .menu-icon>.bar {
+       width: 25px;
+       height: 3px;
+       background-color: #333;
+       border-radius: 2px;
+       margin-right: 2rem;
+   }
 
-    .slides img {
-        width: 100%;
-        height: 18rem;
-    }
+   /* bagian slider banner */
 
-    .prev {
-        font-size: 2rem;
-        margin-left: 2rem;
-        background: none;
-        margin-top: 3.5rem;
-    }
+   .slides img {
+       width: 100%;
+       height: 18rem;
+   }
 
-    .next {
-        font-size: 2rem;
-        margin-right: 2rem;
-        background: none;
-        margin-top: 3.5rem;
-    }
+   .prev {
+       font-size: 2rem;
+       margin-left: 2rem;
+       background: none;
+       margin-top: 3.5rem;
+   }
 
-    .slide-content {
-        position: absolute;
-        top: 50%;
-        /* Posisi tengah vertikal */
-        left: 50%;
-        transform: translate(-50%, -50%);
-        /* Menggeser konten ke tengah */
-        color: white;
-        z-index: 1;
-        /* Agar konten berada di atas gambar */
-        width: 100%;
-    }
+   .next {
+       font-size: 2rem;
+       margin-right: 2rem;
+       background: none;
+       margin-top: 3.5rem;
+   }
 
-    .slide-title {
-        font-size: 1.5rem;
-        margin: 0 0 90px;
-        /* Jarak antara judul dan teks */
-        text-align: left;
-        margin-left: 4.8rem;
-        width: 60%;
-    }
+   .slide-content {
+       position: absolute;
+       top: 50%;
+       /* Posisi tengah vertikal */
+       left: 50%;
+       transform: translate(-50%, -50%);
+       /* Menggeser konten ke tengah */
+       color: white;
+       z-index: 1;
+       /* Agar konten berada di atas gambar */
+       width: 100%;
+   }
 
-    .slide-text {
-        font-size: 10px;
-        width: 70%;
-        /* Contoh width yang lebih lebar agar teks tidak terpotong */
-        text-align: left;
-        max-width: 100%;
-        margin-top: 2rem;
-    }
+   .slide-title {
+       font-size: 1.5rem;
+       margin: 0 0 90px;
+       /* Jarak antara judul dan teks */
+       text-align: left;
+       margin-left: 4.8rem;
+       width: 60%;
+   }
 
-    .sectionpertama {
-        grid-template-columns: repeat(3, 1fr);
-    }
+   .slide-text {
+       font-size: 10px;
+       width: 70%;
+       /* Contoh width yang lebih lebar agar teks tidak terpotong */
+       text-align: left;
+       max-width: 100%;
+       margin-top: 2rem;
+   }
 
+   .sectionpertama {
+       grid-template-columns: repeat(3, 1fr);
+   }
 
 }
 
-@media(max-width:768px) {
-    .menu-icon {
+@media(min-width:650px) and (max-width:770px) {
+    /* bagian navbar */
+
+    nav{
         display: flex;
-    }
-
-    .menu-icon>.bar {
-        width: 25px;
-        height: 3px;
-        background-color: #333;
-        border-radius: 2px;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #05352E;
-        border-bottom-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
-        height: 50vh;
-    }
-
-    .nav-links.show {
-        display: flex;
-        z-index: 100;
+        justify-content: space-between;
         position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 100;
+        padding-top: 1rem;
+        transition: background-color 0.4s ease-in-out;
     }
+    
+    nav>a {
+        margin-left: 1.5rem;
+    }
+    
+    nav>.nav-links {
+        margin-right: 2rem;
+    }
+    
+    nav>a>img {
+        width: 70%;
+        margin-bottom: 1rem;
+    }
+    
+    nav>ul {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+    
+    nav>ul>a>li{
+        display: inline-block;
+        margin-left: 2rem;  
+        transition: color 0.4s ease-in-out;
+        color: black;
+    }
+    
+    nav>ul>a>li:hover {
+        text-decoration: underline;
+        color: darkgoldenrod;
+    }
+}
 
-    .nav-links li {
-        text-align: left;
-        margin: 10px 0;
-        color: white;
+@media(min-width:790px) and (max-width:835px) {
+    /* bagian navbar */
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 100;
+        padding-top: 1rem;
+        transition: background-color 0.4s ease-in-out;
+    }
+    
+    nav>a {
+        margin-left: 1.5rem;
+    }
+    
+    nav>.nav-links {
+        margin-right: 2rem;
+    }
+    
+    nav>a>img {
+        width: 70%;
+        margin-bottom: 1rem;
+    }
+    
+    nav>ul {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+    
+    nav>ul>a>li{
+        display: inline-block;
+        margin-left: 2rem;  
+        transition: color 0.4s ease-in-out;
+        color: black;
+    }
+    
+    nav>ul>a>li:hover {
+        text-decoration: underline;
+        color: darkgoldenrod;
     }
 }
 
@@ -255,6 +313,81 @@ nav>ul>a>li:hover {
    font-family: Quicksand;
    margin-top: 3rem;
 }
+
+@media(max-width:450px) {
+    .judulaboutus2>h1{
+        font-size: 2.5rem;
+        color: #80C678;
+        font-weight: 700;
+        font-family: Quicksand;
+    }
+    
+    .judulaboutus2>p{
+       text-align: center;
+       font-size: 14px;
+       font-family: Quicksand;
+       margin-top: 3rem;
+    }
+    
+}
+
+@media(max-width:480px) {
+    .judulaboutus2>h1{
+        font-size: 2.5rem;
+        color: #80C678;
+        font-weight: 700;
+        font-family: Quicksand;
+    }
+    
+    .judulaboutus2>p{
+       text-align: center;
+       font-size: 14px;
+       font-family: Quicksand;
+       margin-top: 3rem;
+    }
+}
+
+@media(min-width:650px) and (max-width:770px) {
+    .judulaboutus2{
+        margin-top: 5rem;
+    }
+
+    .judulaboutus2>h1{
+        font-size: 3.5rem;
+        color: #80C678;
+        font-weight: 700;
+        font-family: Quicksand;
+    }
+    
+    .judulaboutus2>p{
+       text-align: center;
+       font-size: 20px;
+       font-family: Quicksand;
+       margin-top: 3rem;
+    }
+}
+
+@media(min-width:790px) and (max-width:835px) {
+    .judulaboutus2{
+        margin-top: 5rem;
+    }
+
+    .judulaboutus2>h1{
+        font-size: 3.5rem;
+        color: #80C678;
+        font-weight: 700;
+        font-family: Quicksand;
+    }
+    
+    .judulaboutus2>p{
+       text-align: center;
+       font-size: 20px;
+       font-family: Quicksand;
+       margin-top: 3rem;
+    }
+}
+
+
 
 .bagianaboutus1{
     margin-top: 4rem;
@@ -296,6 +429,115 @@ nav>ul>a>li:hover {
 }
 
 
+
+@media(max-width:480px) {
+    .bagianaboutus1{
+        margin-top: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .gambarkokiaboutus {
+        display: flex;
+        justify-content: center;
+    }
+
+    .gambarkokiaboutus>img{
+        background-color: #80C678;
+        margin-right: 2.8rem;
+        border-radius: 1rem;
+        width: 200.52px;
+        height: 270.93px;
+    }
+
+    .teksaboutus1{
+        text-align: left;
+        margin-left: 4rem;
+        margin-top: 2rem;
+    }
+    
+    .teksaboutus1>h5{
+        font-size: 1.5rem;
+        font-family: Inter;
+        font-weight: 600;
+    }
+    
+    .teksaboutus1>p{
+        font-family: Inter;
+        margin-top: 2rem;
+        font-size: 13px;
+        max-width: 80%;
+    }
+}
+
+@media(min-width:650px) and (max-width:770px) {
+    .bagianaboutus1{
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .gambarkokiaboutus>img{
+        background-color: #80C678;
+        margin-left: 3rem;
+        border-radius: 1rem;
+        width: 282.52px;
+        height: 388.93px;
+    }
+    
+    .teksaboutus1{
+        text-align: left;
+        margin-left: 4rem;
+    }
+    
+    .teksaboutus1>h5{
+        font-size: 2rem;
+        font-family: Inter;
+        font-weight: 600;
+    }
+    
+    .teksaboutus1>p{
+        font-family: Inter;
+        margin-top: 4rem;
+        font-size: 15px;
+        max-width: 80%;
+    }
+}
+
+@media(min-width:790px) and (max-width:835px) {
+    .bagianaboutus1{
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .gambarkokiaboutus>img{
+        background-color: #80C678;
+        margin-left: 3rem;
+        border-radius: 1rem;
+        width: 282.52px;
+        height: 388.93px;
+    }
+    
+    .teksaboutus1{
+        text-align: left;
+        margin-left: 4rem;
+    }
+    
+    .teksaboutus1>h5{
+        font-size: 2rem;
+        font-family: Inter;
+        font-weight: 600;
+    }
+    
+    .teksaboutus1>p{
+        font-family: Inter;
+        margin-top: 4rem;
+        font-size: 15px;
+        max-width: 80%;
+    }
+}
 /* end bagian untama about 1 */
 
 
@@ -336,6 +578,120 @@ nav>ul>a>li:hover {
     max-width: 70%;
 }
 
+@media(max-width:480px) {
+    .bagianaboutus2{
+        display: flex;
+        margin-top: 3rem;
+        flex-direction: column;
+        justify-content: center;
+     }
+     
+     .gambaraboutus2{
+         display: flex;
+         gap: 1rem;
+         justify-content: center;
+         margin-right: 3rem;
+     }
+
+     .gambaraboutus2>img{
+        width: 120px;
+     }
+     
+     .teksaboutus2{
+          margin-left: 5rem;
+          margin-top: 2rem;
+     }
+     
+     .teksaboutus2>h5{
+         font-family: Inter;
+         font-size: 1.5rem;
+         font-weight: 600;
+     }
+     
+     .teksaboutus2>p{
+         font-family: Inter;
+         margin-top: 2rem;
+         font-size: 13px;
+         max-width: 70%;
+     }
+}
+
+
+@media(min-width:650px) and (max-width:770px) {
+    .bagianaboutus2{
+        display: flex;
+        margin-top: 5rem;
+        justify-content: center;
+     }
+     
+     .gambaraboutus2{
+         display: flex;
+         gap: 1.5rem;
+         margin-left: 3rem;
+     }
+
+     .gambaraboutus2>img{
+        width: 150px;
+     }
+     
+
+     .teksaboutus2{
+          margin-left: 2rem;
+     }
+     
+     
+     .teksaboutus2>h5{
+         font-family: Inter;
+         font-size: 2rem;
+         font-weight: 600;
+     }
+     
+     .teksaboutus2>p{
+         font-family: Inter;
+         margin-top: 2rem;
+         font-size: 15px;
+         max-width: 80%;
+     }
+     
+}
+
+@media(min-width:790px) and (max-width:835px) {
+    .bagianaboutus2{
+        display: flex;
+        margin-top: 5rem;
+        justify-content: center;
+     }
+     
+     .gambaraboutus2{
+         display: flex;
+         gap: 1.5rem;
+         margin-left: 3rem;
+     }
+
+     .gambaraboutus2>img{
+        width: 150px;
+     }
+     
+
+     .teksaboutus2{
+          margin-left: 2rem;
+     }
+     
+     
+     .teksaboutus2>h5{
+         font-family: Inter;
+         font-size: 2rem;
+         font-weight: 600;
+     }
+     
+     .teksaboutus2>p{
+         font-family: Inter;
+         margin-top: 2rem;
+         font-size: 15px;
+         max-width: 80%;
+     }
+}
+
 /* end bagian untama about 2 */
 
 
@@ -363,6 +719,99 @@ nav>ul>a>li:hover {
     max-width: 81%;
 }
 
+@media(max-width:480px) {
+    .bagianaboutus3{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    .teksabout3 {
+        margin-top: 2rem;
+        margin-left: 4rem;
+    }
+    
+    .teksabout3>h5{
+        font-family: Inter;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    
+    .teksabout3>p{
+        font-family: Inter;
+        margin-top: 3rem;
+        font-size: 14px;
+        max-width: 90%;
+    }
+
+    .gambaraboutus3{
+        display: flex;
+        justify-content: center;
+    }
+
+    .gambaraboutus3>img{
+        width: 300px;
+    }
+}
+
+@media(min-width:650px) and (max-width:770px) {
+    .bagianaboutus3{
+        display: flex;
+    }
+    
+    .teksabout3 {
+        margin-top: 7rem;
+        margin-left: 4rem;
+    }
+    
+    .teksabout3>h5{
+        font-family: Inter;
+        font-size: 2rem;
+        font-weight: 600;
+        max-width: 100%;
+    }
+    
+    .teksabout3>p{
+        font-family: Inter;
+        margin-top: 3rem;
+        font-size: 15px;
+        max-width: 100%;
+    }
+
+    .gambaraboutus3>img{
+        width: 450px;
+        margin-top: 3rem;
+    }
+}
+
+@media(min-width:790px) and (max-width:835px) {
+    .bagianaboutus3{
+        display: flex;
+    }
+    
+    .teksabout3 {
+        margin-top: 7rem;
+        margin-left: 4rem;
+    }
+    
+    .teksabout3>h5{
+        font-family: Inter;
+        font-size: 2rem;
+        font-weight: 600;
+        max-width: 100%;
+    }
+    
+    .teksabout3>p{
+        font-family: Inter;
+        margin-top: 3rem;
+        font-size: 15px;
+        max-width: 100%;
+    }
+
+    .gambaraboutus3>img{
+        width: 450px;
+        margin-top: 3rem;
+    }
+}
 /* end bagian untama about 3 */
 
 
@@ -662,7 +1111,7 @@ footer {
         text-decoration: none;
         color: white;
         margin-right: 3rem;
-        border-bottom: 2px dashed  burlywood    }
+    }
 
     .footer5>ul>li>a:hover{
         border-bottom: 2px dashed  burlywood;

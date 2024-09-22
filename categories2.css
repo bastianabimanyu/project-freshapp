@@ -1,8 +1,9 @@
-body, html {
+body,
+html {
     padding: 0;
     margin: 0;
     height: 100%;
-    overflow-x: hidden; /* Mencegah halaman bergeser secara horizontal */
+    /* Mencegah halaman bergeser secara horizontal */
 }
 
 main {
@@ -10,15 +11,22 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 70vh; /* Memastikan main memiliki tinggi penuh viewport */
+    min-height: 70vh;
+    /* Memastikan main memiliki tinggi penuh viewport */
 }
+
+section{
+    width: 100%;
+    overflow: hidden;
+}
+
 
 /* start navbar */
 
-nav{
+nav {
     display: flex;
     justify-content: space-between;
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     background-color: white;
@@ -46,9 +54,9 @@ nav>ul {
     margin-top: 0.5rem;
 }
 
-nav>ul>a>li{
+nav>ul>a>li {
     display: inline-block;
-    margin-left: 2rem;  
+    margin-left: 2rem;
     transition: color 0.4s ease-in-out;
     color: black;
 }
@@ -58,7 +66,7 @@ nav>ul>a>li:hover {
     color: darkgoldenrod;
 }
 
-.menu-icon {    
+.menu-icon {
     display: none;
     cursor: pointer;
     flex-direction: column;
@@ -76,7 +84,108 @@ nav>ul>a>li:hover {
 
 
 @media only screen and (max-width: 450px) {
+        nav>a>img {
+            margin-bottom: 1rem;
+            margin-left: 2rem;
+        }
+    
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background-color: #05352E;
+            border-bottom-left-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+            height: 50vh;
+        }
+    
+        .nav-links.show {
+            display: flex;
+            z-index: 100;
+            position: fixed;
+        }
+    
+        .nav-links li {
+            text-align: left;
+            margin: 10px 0;
+            color: white;
+        }
+    
+        .menu-icon {
+            display: flex;
+        }
+    
+        .menu-icon>.bar {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            border-radius: 2px;
+            margin-right: 2rem;
+        }
+    
+        /* bagian slider banner */
+    
+        .slides img {
+            width: 100%;
+            height: 18rem;
+        }
+    
+        .prev {
+            font-size: 2rem;
+            margin-left: 2rem;
+            background: none;
+            margin-top: 3.5rem;
+        }
+    
+        .next {
+            font-size: 2rem;
+            margin-right: 2rem;
+            background: none;
+            margin-top: 3.5rem;
+        }
+    
+        .slide-content {
+            position: absolute;
+            top: 50%;
+            /* Posisi tengah vertikal */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Menggeser konten ke tengah */
+            color: white;
+            z-index: 1;
+            /* Agar konten berada di atas gambar */
+            width: 100%;
+        }
+    
+        .slide-title {
+            font-size: 1.5rem;
+            margin: 0 0 90px;
+            /* Jarak antara judul dan teks */
+            text-align: left;
+            margin-left: 4.8rem;
+            width: 60%;
+        }
+    
+        .slide-text {
+            font-size: 10px;
+            width: 70%;
+            /* Contoh width yang lebih lebar agar teks tidak terpotong */
+            text-align: left;
+            max-width: 100%;
+            margin-top: 2rem;
+        }
+    
+        .sectionpertama {
+            grid-template-columns: repeat(3, 1fr);
+        }
 
+}
+
+@media only screen and (max-width: 480px) {
+    
     /* bagian navbar */
 
     nav>a>img {
@@ -107,6 +216,10 @@ nav>ul>a>li:hover {
         text-align: left;
         margin: 10px 0;
         color: white;
+    }
+
+    .menu-icon {
+        display: flex;
     }
 
     .menu-icon>.bar {
@@ -173,48 +286,99 @@ nav>ul>a>li:hover {
         grid-template-columns: repeat(3, 1fr);
     }
 
-
 }
 
-@media(max-width:768px) {
-    .menu-icon {
+@media(min-width:650px) and (max-width:770px) {
+    /* bagian navbar */
+
+    nav{
         display: flex;
-    }
-
-    .menu-icon>.bar {
-        width: 25px;
-        height: 3px;
-        background-color: #333;
-        border-radius: 2px;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #05352E;
-        border-bottom-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
-        height: 50vh;
-    }
-
-    .nav-links.show {
-        display: flex;
-        z-index: 100;
+        justify-content: space-between;
         position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 100;
+        padding-top: 1rem;
+        transition: background-color 0.4s ease-in-out;
     }
-
-    .nav-links li {
-        text-align: left;
-        margin: 10px 0;
-        color: white;
+    
+    nav>a {
+        margin-left: 1.5rem;
+    }
+    
+    nav>.nav-links {
+        margin-right: 2rem;
+    }
+    
+    nav>a>img {
+        width: 70%;
+        margin-bottom: 1rem;
+    }
+    
+    nav>ul {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+    
+    nav>ul>a>li{
+        display: inline-block;
+        margin-left: 2rem;  
+        transition: color 0.4s ease-in-out;
+        color: black;
+    }
+    
+    nav>ul>a>li:hover {
+        text-decoration: underline;
+        color: darkgoldenrod;
     }
 }
 
-/* end navbar */
+@media(min-width:790px) and (max-width:835px) {
+    /* bagian navbar */
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 100;
+        padding-top: 1rem;
+        transition: background-color 0.4s ease-in-out;
+    }
+    
+    nav>a {
+        margin-left: 1.5rem;
+    }
+    
+    nav>.nav-links {
+        margin-right: 2rem;
+    }
+    
+    nav>a>img {
+        width: 70%;
+        margin-bottom: 1rem;
+    }
+    
+    nav>ul {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+    
+    nav>ul>a>li{
+        display: inline-block;
+        margin-left: 2rem;  
+        transition: color 0.4s ease-in-out;
+        color: black;
+    }
+    
+    nav>ul>a>li:hover {
+        text-decoration: underline;
+        color: darkgoldenrod;
+    }
+}
 
 /* banner website */
 
@@ -223,6 +387,7 @@ nav>ul>a>li:hover {
     width: 54rem;
     height: 18rem;
     border-radius: 1rem;
+    margin-top: 10rem;
 }
 
 .categoribanner>h1{
@@ -257,6 +422,178 @@ nav>ul>a>li:hover {
 
 }
 
+@media(max-width:450px) {
+    .categoribanner {
+        background-color: #80C678;
+        margin-top: 8rem;
+        width: 20rem;
+        height: 12rem;
+        border-radius: 1rem;
+    }
+
+    .categoribanner>h1 {
+        display: flex;
+        justify-content: center;
+        padding-top: 4rem;
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    .categoribanner2 {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .categoribanner2>input {
+        width: 13rem;
+        border-radius: 1rem;
+    }
+
+    .categoribanner2>a {
+        text-align: center;
+        text-decoration: none;
+        width: 4rem;
+        background-color: #05352E;
+        color: white;
+        border-radius: 1rem;
+    }
+
+    .categoribanner2>a:hover {
+        background-color: darkcyan;
+        color: white;
+        border: 1px solid black;
+    }
+}
+
+@media(max-width:480px) {
+    .categoribanner {
+        background-color: #80C678;
+        margin-top: 8rem;
+        width: 22rem;
+        height: 13rem;
+        border-radius: 1rem;
+    }
+
+    .categoribanner>h1 {
+        display: flex;
+        justify-content: center;
+        padding-top: 4rem;
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    .categoribanner2 {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .categoribanner2>input {
+        width: 13rem;
+        border-radius: 1rem;
+    }
+
+    .categoribanner2>a {
+        text-align: center;
+        text-decoration: none;
+        width: 4rem;
+        background-color: #05352E;
+        color: white;
+        border-radius: 1rem;
+    }
+
+    .categoribanner2>a:hover {
+        background-color: darkcyan;
+        color: white;
+        border: 1px solid black;
+    }
+}
+
+@media(min-width:650px) and (max-width:770px) {
+    .categoribanner {
+        background-color: #80C678;
+        width: 54rem;
+        height: 18rem;
+        border-radius: 1rem;
+        margin-top: 12rem;
+    }
+
+    .categoribanner>h1 {
+        display: flex;
+        justify-content: center;
+        padding-top: 4rem;
+        color: white;
+    }
+
+    .categoribanner2 {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .categoribanner2>input {
+        width: 18rem;
+        border-radius: 2rem;
+    }
+
+    .categoribanner2>a {
+        width: 6rem;
+        background-color: #05352E;
+        color: white;
+        border-radius: 2rem;
+    }
+
+    .categoribanner2>a:hover {
+        background-color: darkcyan;
+        color: white;
+        border: 1px solid black;
+
+    }
+}
+
+@media(min-width:790px) and (max-width:835px) {
+    .categoribanner {
+        background-color: #80C678;
+        width: 54rem;
+        height: 18rem;
+        border-radius: 1rem;
+        margin-top: 12rem;
+    }
+
+    .categoribanner>h1 {
+        display: flex;
+        justify-content: center;
+        padding-top: 4rem;
+        color: white;
+    }
+
+    .categoribanner2 {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .categoribanner2>input {
+        width: 18rem;
+        border-radius: 2rem;
+    }
+
+    .categoribanner2>a {
+        width: 6rem;
+        background-color: #05352E;
+        color: white;
+        border-radius: 2rem;
+    }
+
+    .categoribanner2>a:hover {
+        background-color: darkcyan;
+        color: white;
+        border: 1px solid black;
+
+    }
+}
+
 /* end banner website */
 
 
@@ -265,9 +602,12 @@ nav>ul>a>li:hover {
 
 .overlay-img {
     position: absolute;
-    top: 25px; /* Atur posisi atas */
-    right: 29px; /* Atur posisi kanan */
-    width: 50px; /* Ukuran gambar overlay */
+    top: 25px;
+    /* Atur posisi atas */
+    right: 29px;
+    /* Atur posisi kanan */
+    width: 50px;
+    /* Ukuran gambar overlay */
     height: auto;
 }
 
@@ -277,90 +617,1347 @@ nav>ul>a>li:hover {
 }
 
 
-.tersehat1{
+.tersehat1 {
     display: flex;
     justify-content: space-between;
     margin-top: 5rem;
 }
 
-.tersehat1>h4{
+.tersehat1>h4 {
     font-size: 2rem;
     margin-left: 1rem;
 }
 
 
 
-.tersehat2{
+.tersehat2 {
     display: flex;
     margin-top: 3rem;
-    gap: 1.5rem;    
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
 }
 
-.tersehat2{
-   text-decoration: none;
-   color: black;
+.tersehat2 {
+    text-decoration: none;
+    color: black;
 }
 
-.tersehat2>.cardsehat1>.card{
+.tersehat2>.cardsehat1>.card {
     border-radius: 1.2rem;
     background-color: #F3F4D6;
+    width: 18rem;
 }
 
-.tersehat2>.cardsehat1>.card:hover{
+.tersehat2>.cardsehat1>.card:hover {
     transition: 0.90s;
     color: white;
     background-color: salmon;
 }
 
-.tersehat2>.cardsehat1>.card:hover a{
+.tersehat2>.cardsehat1>.card:hover a {
     transition: 0.90s;
     color: white;
     text-decoration: underline white;
 }
 
 
-.tersehat2>.cardsehat1>.card>.img-wrapper>.gambar1{
+.tersehat2>.cardsehat1>.card>.img-wrapper>.gambar1 {
     width: 90%;
     margin-left: 14px;
     margin-top: 1rem;
     border-radius: 1rem;
 }
 
-.tersehat2>.cardsehat1>.card>.img-wrapper>.gambar2{
+.tersehat2>.cardsehat1>.card>.img-wrapper>.gambar2 {
     width: 90%;
     margin-left: 14px;
     margin-top: 1rem;
     border-radius: 1rem;
 }
 
-.tersehat2>.cardsehat1>.card>.img-wrapper>.gambar3{
+.tersehat2>.cardsehat1>.card>.img-wrapper>.gambar3 {
     width: 90%;
     margin-left: 14px;
     margin-top: 1rem;
     border-radius: 1rem;
 }
 
-.tersehat2>.cardsehat1>.card>.img-wrapper>.gambar4{
+.tersehat2>.cardsehat1>.card>.img-wrapper>.gambar4 {
     width: 90%;
     margin-left: 14px;
     margin-top: 1rem;
     border-radius: 1rem;
 }
 
-.card-body>a{
+.card-body>a {
     color: black;
     text-decoration-line: none;
 }
 
 
-.sehat1p{
-    margin-top: 2.5rem;
+.tittle1,
+.tittle2,
+.tittle3,
+.tittle4,
+.tittle5{
+    font-size: 20px;
+}
+
+.p1,
+.p2,
+.p3,
+.p4,
+.p5{
+    font-size: 15px;
+}
+
+.p11{
+    margin-top: 35px;
+}
+
+.p44{
+    margin-top: 34px;
+}
+
+@media(max-width:450px) {
+    .overlay-img {
+        position: absolute;
+        top: 25px;
+        /* Atur posisi atas */
+        right: 29px;
+        /* Atur posisi kanan */
+        width: 50px;
+        /* Ukuran gambar overlay */
+        height: auto;
+    }
+
+    .img-wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+
+    .tersehat1 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5rem;
+    }
+
+    .tersehat1>h4 {
+        font-size: 2rem;
+        margin-left: 1rem;
+    }
+
+
+
+    .tersehat2 {
+        display: flex;
+        margin-top: 3rem;
+        gap: 1.3rem;
+        margin-left: 1rem;
+    }
+
+    .tersehat2 {
+        text-decoration: none;
+        color: black;
+    }
+
+    .tersehat2>.cardsehat1>.card {
+        border-radius: 1.2rem;
+        background-color: #F3F4D6;
+        width: 13rem;
+        height: 16rem;
+    }
+
+    .tersehat2>.cardsehat1>.card:hover {
+        transition: 0.90s;
+        color: white;
+        background-color: salmon;
+    }
+
+    .tersehat2>.cardsehat1>.card:hover a {
+        transition: 0.90s;
+        color: white;
+        text-decoration: underline white;
+    }
+
+
+    .tersehat2>.cardsehat1>.card>.img-wrapper>.gambar1 {
+        width: 80%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+
+    .tersehat2>.cardsehat1>.card>.img-wrapper>.gambar2 {
+        width: 80%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+
+    .tersehat2>.cardsehat1>.card>.img-wrapper>.gambar3 {
+        width: 80%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+
+    .tersehat2>.cardsehat1>.card>.img-wrapper>.gambar4 {
+        width: 80%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+
+    .card-body>a {
+        color: black;
+        text-decoration-line: none;
+    }
+
+
+    .sehat1p {
+        margin-top: 2.5rem;
+    }
+
+    .tersehat22{
+        display: flex;
+        width: 100%;
+        height: max-content;
+        padding-top: 0;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+    .tersehat22::-webkit-scrollbar{
+        display: none;
+    }
+
+    .tittle1,
+    .tittle2,
+    .tittle3,
+    .tittle4,
+    .tittle5{
+        font-size: 17px;
+    }
+
+    .p1,
+    .p2,
+    .p3,
+    .p4,
+    .p5{
+        font-size: 12px;
+    }
+
+    .p11{
+        margin-top: 35px;
+    }
+
+    .p44{
+        margin-top: 34px;
+    }
+}
+
+@media(max-width:480px) {
+    .overlay-img {
+        position: absolute;
+        top: 25px;
+        /* Atur posisi atas */
+        right: 29px;
+        /* Atur posisi kanan */
+        width: 50px;
+        /* Ukuran gambar overlay */
+        height: auto;
+    }
+
+    .img-wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+
+    .tersehat1 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5rem;
+    }
+
+    .tersehat1>h4 {
+        font-size: 2rem;
+        margin-left: 1rem;
+    }
+
+
+
+    .tersehat2 {
+        display: flex;
+        margin-top: 3rem;
+        gap: 1.3rem;
+        margin-left: 1rem;
+    }
+
+    .tersehat2 {
+        text-decoration: none;
+        color: black;
+    }
+
+    .tersehat2>.cardsehat1>.card {
+        border-radius: 1.2rem;
+        background-color: #F3F4D6;
+        width: 13rem;
+        height: 16rem;
+    }
+
+    .tersehat2>.cardsehat1>.card:hover {
+        transition: 0.90s;
+        color: white;
+        background-color: salmon;
+    }
+
+    .tersehat2>.cardsehat1>.card:hover a {
+        transition: 0.90s;
+        color: white;
+        text-decoration: underline white;
+    }
+
+
+    .tersehat2>.cardsehat1>.card>.img-wrapper>.gambar1 {
+        width: 80%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+
+    .tersehat2>.cardsehat1>.card>.img-wrapper>.gambar2 {
+        width: 80%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+
+    .tersehat2>.cardsehat1>.card>.img-wrapper>.gambar3 {
+        width: 80%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+
+    .tersehat2>.cardsehat1>.card>.img-wrapper>.gambar4 {
+        width: 80%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+
+    .card-body>a {
+        color: black;
+        text-decoration-line: none;
+    }
+
+
+    .sehat1p {
+        margin-top: 2.5rem;
+    }
+
+    .tersehat22{
+        display: flex;
+        width: 100%;
+        height: max-content;
+        padding-top: 0;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+    .tersehat22::-webkit-scrollbar{
+        display: none;
+    }
+
+    .tittle1,
+    .tittle2,
+    .tittle3,
+    .tittle4,
+    .tittle5{
+        font-size: 17px;
+    }
+
+    .p1,
+    .p2,
+    .p3,
+    .p4,
+    .p5{
+        font-size: 12px;
+    }
+
+    .p11{
+        margin-top: 35px;
+    }
+
+    .p44{
+        margin-top: 34px;
+    }
+}
+
+
+@media(min-width:650px) and (max-width:770px) {
+    .overlay-img {
+        position: absolute;
+        top: 25px;
+        /* Atur posisi atas */
+        right: 29px;
+        /* Atur posisi kanan */
+        width: 50px;
+        /* Ukuran gambar overlay */
+        height: auto;
+    }
+    
+    .img-wrapper {
+        position: relative;
+        width: 100%;
+    }
+    
+    
+    .tersehat1 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5rem;
+    }
+    
+    .tersehat1>h4 {
+        font-size: 2rem;
+        margin-left: 1rem;
+    }
+    
+    
+    
+    .tersehat2 {
+        display: flex;
+        margin-top: 3rem;
+        gap: 1.5rem;
+    }
+    
+    .tersehat2 {
+        text-decoration: none;
+        color: black;
+        margin-left:1.8rem;
+    }
+    
+    .tersehat2>.cardsehat1>.card {
+        border-radius: 1.2rem;
+        background-color: #F3F4D6;
+        width: 12rem;
+    }
+    
+    .tersehat2>.cardsehat1>.card:hover {
+        transition: 0.90s;
+        color: white;
+        background-color: salmon;
+    }
+    
+    .tersehat2>.cardsehat1>.card:hover a {
+        transition: 0.90s;
+        color: white;
+        text-decoration: underline white;
+    }
+    
+    
+    .tersehat2>.cardsehat1>.card>.img-wrapper>.gambar1 {
+        width: 82%;
+        margin-left: 17px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .tersehat2>.cardsehat1>.card>.img-wrapper>.gambar2 {
+        width: 82%;
+        margin-left: 17px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .tersehat2>.cardsehat1>.card>.img-wrapper>.gambar3 {
+        width: 82%;
+        margin-left: 17px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .tersehat2>.cardsehat1>.card>.img-wrapper>.gambar4 {
+        width: 82%;
+        margin-left: 17px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .card-body>a {
+        color: black;
+        text-decoration-line: none;
+    }
+    
+    
+    .tittle1,
+    .tittle2,
+    .tittle3,
+    .tittle4,
+    .tittle5{
+        font-size: 18px;
+    }
+    
+    .p1,
+    .p2,
+    .p3,
+    .p4,
+    .p5{
+        font-size: 13px;
+    }
+
+    .p1{
+        margin-top: 30px;
+    }
+
+    .p2{
+        margin-top: 30px;
+    }
+    
+    .p11{
+        margin-top: 18px;
+    }
+    
+    .p44{
+        margin-top: 34px;
+    }
+}
+
+
+@media(min-width:790px) and (max-width:835px) {
+    .overlay-img {
+        position: absolute;
+        top: 25px;
+        /* Atur posisi atas */
+        right: 29px;
+        /* Atur posisi kanan */
+        width: 50px;
+        /* Ukuran gambar overlay */
+        height: auto;
+    }
+    
+    .img-wrapper {
+        position: relative;
+        width: 100%;
+    }
+    
+    
+    .tersehat1 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5rem;
+    }
+    
+    .tersehat1>h4 {
+        font-size: 2rem;
+        margin-left: 1rem;
+    }
+    
+    
+    
+    .tersehat2 {
+        display: flex;
+        margin-top: 3rem;
+        gap: 1.5rem;
+    }
+    
+    .tersehat2 {
+        text-decoration: none;
+        color: black;
+        margin-left: 3rem;
+    }
+    
+    .tersehat2>.cardsehat1>.card {
+        border-radius: 1.2rem;
+        background-color: #F3F4D6;
+        width: 12rem;
+    }
+    
+    .tersehat2>.cardsehat1>.card:hover {
+        transition: 0.90s;
+        color: white;
+        background-color: salmon;
+    }
+    
+    .tersehat2>.cardsehat1>.card:hover a {
+        transition: 0.90s;
+        color: white;
+        text-decoration: underline white;
+    }
+    
+    
+    .tersehat2>.cardsehat1>.card>.img-wrapper>.gambar1 {
+        width: 82%;
+        margin-left: 17px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .tersehat2>.cardsehat1>.card>.img-wrapper>.gambar2 {
+        width: 82%;
+        margin-left: 17px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .tersehat2>.cardsehat1>.card>.img-wrapper>.gambar3 {
+        width: 82%;
+        margin-left: 17px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .tersehat2>.cardsehat1>.card>.img-wrapper>.gambar4 {
+        width: 82%;
+        margin-left: 17px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .card-body>a {
+        color: black;
+        text-decoration-line: none;
+    }
+    
+    
+    .tittle1,
+    .tittle2,
+    .tittle3,
+    .tittle4,
+    .tittle5{
+        font-size: 18px;
+    }
+    
+    .p1,
+    .p2,
+    .p3,
+    .p4,
+    .p5{
+        font-size: 13px;
+    }
+
+    .p1{
+        margin-top: 30px;
+    }
+
+    .p2{
+        margin-top: 30px;
+    }
+    
+    .p11{
+        margin-top: 18px;
+    }
+    
+    .p44{
+        margin-top: 34px;
+    }
 }
 
 /* end bagian tersehat 1 */
 
 
 
+
+
+/* bagian sehat 2 */
+
+.overlay-img {
+    position: absolute;
+    top: 25px;
+    /* Atur posisi atas */
+    right: 29px;
+    /* Atur posisi kanan */
+    width: 50px;
+    /* Ukuran gambar overlay */
+    height: auto;
+}
+
+.img-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+
+.tersehat1 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5rem;
+}
+
+.tersehat1>h4 {
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+
+
+
+.tersehat3 {
+    display: flex;
+    margin-top: 3rem;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.tersehat3 {
+    text-decoration: none;
+    color: black;
+}
+
+.tersehat3>.cardsehat2>.card {
+    border-radius: 1.2rem;
+    background-color: #F3F4D6;
+    width: 18rem;
+}
+
+.tersehat3>.cardsehat2>.card:hover {
+    transition: 0.90s;
+    color: white;
+    background-color: salmon;
+}
+
+.tersehat3>.cardsehat2>.card:hover a {
+    transition: 0.90s;
+    color: white;
+    text-decoration: underline white;
+}
+
+
+.tersehat3>.cardsehat2>.card>.img-wrapper>.gambar1 {
+    width: 90%;
+    margin-left: 14px;
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
+
+.tersehat3>.cardsehat2>.card>.img-wrapper>.gambar2 {
+    width: 90%;
+    margin-left: 14px;
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
+
+.tersehat3>.cardsehat2>.card>.img-wrapper>.gambar3 {
+    width: 90%;
+    margin-left: 14px;
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
+
+.tersehat3>.cardsehat2>.card>.img-wrapper>.gambar4 {
+    width: 90%;
+    margin-left: 14px;
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
+
+.card-body>a {
+    color: black;
+    text-decoration-line: none;
+}
+
+.tittle5,
+.tittle6,
+.tittle7,
+.tittle8,
+.tittle9{
+    font-size: 20px;
+}
+
+.p5,
+.p6,
+.p7,
+.p8,
+.p9{
+    font-size: 15px;
+}
+
+.p55{
+    margin-top: 25px;
+}
+
+.p66{
+    margin-top: -7px;
+}
+
+.p77{
+    margin-top: -7px;
+}
+
+.p88{
+    margin-top: 25px;
+}
+
+
+
+@media(max-width:450px) {
+    .overlay-img {
+        position: absolute;
+        top: 25px;
+        /* Atur posisi atas */
+        right: 29px;
+        /* Atur posisi kanan */
+        width: 50px;
+        /* Ukuran gambar overlay */
+        height: auto;
+    }
+    
+    .img-wrapper {
+        position: relative;
+        width: 100%;
+    }
+    
+    
+    .tersehat1 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5rem;
+    }
+    
+    .tersehat1>h4 {
+        font-size: 2rem;
+        margin-left: 1rem;
+    }
+    
+    
+    
+    .tersehat3 {
+        display: flex;
+        margin-top: 3rem;
+        gap: 1.5rem;
+    }
+    
+    .tersehat3 {
+        text-decoration: none;
+        color: black;
+        margin-left: 1rem;
+    }
+    
+    .tersehat3>.cardsehat2>.card {
+        border-radius: 1.2rem;
+        background-color: #F3F4D6;
+        width: 13rem;
+        height: 16rem;
+    }
+    
+    .tersehat3>.cardsehat2>.card:hover {
+        transition: 0.90s;
+        color: white;
+        background-color: salmon;
+    }
+    
+    .tersehat3>.cardsehat2>.card:hover a {
+        transition: 0.90s;
+        color: white;
+        text-decoration: underline white;
+    }
+    
+    
+    .tersehat3>.cardsehat2>.card>.img-wrapper>.gambar1 {
+        width: 80%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .tersehat3>.cardsehat2>.card>.img-wrapper>.gambar2 {
+        width: 80%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .tersehat3>.cardsehat2>.card>.img-wrapper>.gambar3 {
+        width: 80%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .tersehat3>.cardsehat2>.card>.img-wrapper>.gambar4 {
+        width: 80%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .card-body>a {
+        color: black;
+        text-decoration-line: none;
+    }
+
+    .tersehat33{
+        width: 100%;
+        padding-top: 0;
+        display: flex;
+        height: max-content;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+    .tersehat33::-webkit-scrollbar{
+        display: none;
+    }
+
+    .tittle5,
+    .tittle6,
+    .tittle7,
+    .tittle8,
+    .tittle9{
+        font-size: 17px;
+    }
+
+    .p5,
+    .p6,
+    .p7,
+    .p8,
+    .p9{
+        font-size: 12px;
+    }
+
+    .p55{
+        margin-top: 25px;
+    }
+
+    .p66{
+        margin-top: -7px;
+    }
+
+    .p77{
+        margin-top: -7px;
+    }
+
+    .p88{
+        margin-top: 25px;
+    }
+    
+}
+
+
+@media(max-width:480px) {
+    .overlay-img {
+        position: absolute;
+        top: 25px;
+        /* Atur posisi atas */
+        right: 29px;
+        /* Atur posisi kanan */
+        width: 50px;
+        /* Ukuran gambar overlay */
+        height: auto;
+    }
+    
+    .img-wrapper {
+        position: relative;
+        width: 100%;
+    }
+    
+    
+    .tersehat1 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5rem;
+    }
+    
+    .tersehat1>h4 {
+        font-size: 2rem;
+        margin-left: 1rem;
+    }
+    
+    
+    
+    .tersehat3 {
+        display: flex;
+        margin-top: 3rem;
+        gap: 1.5rem;
+    }
+    
+    .tersehat3 {
+        text-decoration: none;
+        color: black;
+        margin-left: 1rem;
+    }
+    
+    .tersehat3>.cardsehat2>.card {
+        border-radius: 1.2rem;
+        background-color: #F3F4D6;
+        width: 13rem;
+        height: 16rem;
+    }
+    
+    .tersehat3>.cardsehat2>.card:hover {
+        transition: 0.90s;
+        color: white;
+        background-color: salmon;
+    }
+    
+    .tersehat3>.cardsehat2>.card:hover a {
+        transition: 0.90s;
+        color: white;
+        text-decoration: underline white;
+    }
+    
+    
+    .tersehat3>.cardsehat2>.card>.img-wrapper>.gambar1 {
+        width: 80%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .tersehat3>.cardsehat2>.card>.img-wrapper>.gambar2 {
+        width: 80%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .tersehat3>.cardsehat2>.card>.img-wrapper>.gambar3 {
+        width: 80%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .tersehat3>.cardsehat2>.card>.img-wrapper>.gambar4 {
+        width: 80%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .card-body>a {
+        color: black;
+        text-decoration-line: none;
+    }
+
+    .tersehat33{
+        width: 100%;
+        padding-top: 0;
+        display: flex;
+        height: max-content;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+    .tersehat33::-webkit-scrollbar{
+        display: none;
+    }
+
+    .tittle5,
+    .tittle6,
+    .tittle7,
+    .tittle8,
+    .tittle9{
+        font-size: 17px;
+    }
+
+    .p5,
+    .p6,
+    .p7,
+    .p8,
+    .p9{
+        font-size: 12px;
+    }
+
+    .p55{
+        margin-top: 25px;
+    }
+
+    .p66{
+        margin-top: -7px;
+    }
+
+    .p77{
+        margin-top: -7px;
+    }
+
+    .p88{
+        margin-top: 25px;
+    }
+    
+}
+
+
+@media(min-width:650px) and (max-width:770px) {
+    .overlay-img {
+        position: absolute;
+        top: 25px;
+        /* Atur posisi atas */
+        right: 29px;
+        /* Atur posisi kanan */
+        width: 50px;
+        /* Ukuran gambar overlay */
+        height: auto;
+    }
+    
+    .img-wrapper {
+        position: relative;
+        width: 100%;
+    }
+    
+    
+    .tersehat1 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5rem;
+    }
+    
+    .tersehat1>h4 {
+        font-size: 2rem;
+        margin-left: 1rem;
+    }
+    
+    
+    
+    .tersehat3 {
+        display: flex;
+        margin-top: 3rem;
+        gap: 1.5rem;
+        margin-left: 1.8rem;
+    }
+    
+    .tersehat3 {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .tersehat3>.cardsehat2>.card {
+        border-radius: 1.2rem;
+        background-color: #F3F4D6;
+        width: 12rem;
+    }
+    
+    .tersehat3>.cardsehat2>.card:hover {
+        transition: 0.90s;
+        color: white;
+        background-color: salmon;
+    }
+    
+    .tersehat3>.cardsehat2>.card:hover a {
+        transition: 0.90s;
+        color: white;
+        text-decoration: underline white;
+    }
+    
+    
+    .tersehat3>.cardsehat2>.card>.img-wrapper>.gambar1 {
+        width: 82%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .tersehat3>.cardsehat2>.card>.img-wrapper>.gambar2 {
+        width: 82%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .tersehat3>.cardsehat2>.card>.img-wrapper>.gambar3 {
+        width: 82%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .tersehat3>.cardsehat2>.card>.img-wrapper>.gambar4 {
+        width: 82%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .card-body>a {
+        color: black;
+        text-decoration-line: none;
+    }
+    
+    .tittle5,
+    .tittle6,
+    .tittle7,
+    .tittle8,
+    .tittle9{
+        font-size: 18px;
+    }
+    
+    .p6,
+    .p7,
+    .p8,
+    .p9{
+        font-size: 13px;
+    }
+
+    .p5{
+        font-size: 13px;
+        margin-top: 37px;
+    }
+
+    .p6{
+        margin-top: 35px;
+    }
+    
+    .p55{
+        margin-top: -7px;
+    }
+    
+    .p66{
+        margin-top: -9px;
+    }
+    
+    .p77{
+        margin-top: -7px;
+    }
+    
+    .p88{
+        margin-top: 25px;
+    }
+}
+
+
+@media(min-width:790px) and (max-width:835px) {
+    .overlay-img {
+        position: absolute;
+        top: 25px;
+        /* Atur posisi atas */
+        right: 29px;
+        /* Atur posisi kanan */
+        width: 50px;
+        /* Ukuran gambar overlay */
+        height: auto;
+    }
+    
+    .img-wrapper {
+        position: relative;
+        width: 100%;
+    }
+    
+    
+    .tersehat1 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5rem;
+    }
+    
+    .tersehat1>h4 {
+        font-size: 2rem;
+        margin-left: 1rem;
+    }
+    
+    
+    
+    .tersehat3 {
+        display: flex;
+        margin-top: 3rem;
+        gap: 1.5rem;
+        margin-left: 3rem;
+    }
+    
+    .tersehat3 {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .tersehat3>.cardsehat2>.card {
+        border-radius: 1.2rem;
+        background-color: #F3F4D6;
+        width: 12rem;
+    }
+    
+    .tersehat3>.cardsehat2>.card:hover {
+        transition: 0.90s;
+        color: white;
+        background-color: salmon;
+    }
+    
+    .tersehat3>.cardsehat2>.card:hover a {
+        transition: 0.90s;
+        color: white;
+        text-decoration: underline white;
+    }
+    
+    
+    .tersehat3>.cardsehat2>.card>.img-wrapper>.gambar1 {
+        width: 82%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .tersehat3>.cardsehat2>.card>.img-wrapper>.gambar2 {
+        width: 82%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .tersehat3>.cardsehat2>.card>.img-wrapper>.gambar3 {
+        width: 82%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .tersehat3>.cardsehat2>.card>.img-wrapper>.gambar4 {
+        width: 82%;
+        margin-left:21px;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .card-body>a {
+        color: black;
+        text-decoration-line: none;
+    }
+    
+    .tittle5,
+    .tittle6,
+    .tittle7,
+    .tittle8,
+    .tittle9{
+        font-size: 18px;
+    }
+    
+    .p6,
+    .p7,
+    .p8,
+    .p9{
+        font-size: 13px;
+    }
+
+    .p5{
+        font-size: 13px;
+        margin-top: 37px;
+    }
+
+    .p6{
+        margin-top: 35px;
+    }
+    
+    .p55{
+        margin-top: -7px;
+    }
+    
+    .p66{
+        margin-top: -9px;
+    }
+    
+    .p77{
+        margin-top: -7px;
+    }
+    
+    .p88{
+        margin-top: 25px;
+    }
+}
+
+
+/* end bagian sehat 2 */
 
 
 
@@ -436,7 +2033,7 @@ footer {
     color: white;
 }
 
-.footer3>.lastfooter{
+.footer3>.lastfooter {
     color: white;
     width: 180%;
     margin-left: -18rem;
@@ -444,64 +2041,64 @@ footer {
     margin-top: 3rem;
 }
 
-.footer3>.footer4{
+.footer3>.footer4 {
     display: flex;
     margin-top: 2.8rem;
 }
 
-.footer3>.footer4>.footer5{
+.footer3>.footer4>.footer5 {
     display: block;
 }
 
-.footer3>.footer4>.footer5>h6{
+.footer3>.footer4>.footer5>h6 {
     color: #D7DF23;
 }
 
 
-.footer3>.footer4>.footer6>h6{
+.footer3>.footer4>.footer6>h6 {
     color: #D7DF23;
 }
 
 
 
-.footer5>ul>li{
+.footer5>ul>li {
     list-style: none;
 }
 
-.footer5>ul{
+.footer5>ul {
     margin-left: -2rem;
 }
 
-.footer5>ul>li>a{
+.footer5>ul>li>a {
     text-decoration: none;
     color: white;
     margin-right: 3rem;
 }
 
-.footer5>ul>li>a:hover{
-    border-bottom: 2px dashed  burlywood;
+.footer5>ul>li>a:hover {
+    border-bottom: 2px dashed burlywood;
 }
 
-.footer6{
+.footer6 {
     margin-left: 3rem;
 }
 
-.footer6>ul>li{
+.footer6>ul>li {
     list-style: none;
 }
 
-.footer6>ul{
+.footer6>ul {
     margin-left: -2rem;
 }
 
-.footer6>ul>li>a{
+.footer6>ul>li>a {
     text-decoration: none;
     color: white;
     margin-right: 3rem;
 }
 
-.footer6>ul>li>a:hover{
-    border-bottom: 2px dashed  burlywood;
+.footer6>ul>li>a:hover {
+    border-bottom: 2px dashed burlywood;
 }
 
 
@@ -518,72 +2115,72 @@ footer {
         border-bottom-right-radius: 0px;
         margin-top: 2rem;
     }
-    
+
     .footer1 {
         display: flex;
         flex-direction: column;
         gap: 2rem;
     }
 
-    .footer2{
+    .footer2 {
         margin-left: 1px;
     }
-    
+
     .footer1>.footer2>img {
         margin-top: 3rem;
         width: 33%;
     }
-    
+
     .footer1>.footer2>.paragraffooter1 {
         color: white;
         margin-top: 2rem;
         max-width: 28rem;
     }
-    
+
     .footer1>.footer2>.paragraffooter2 {
         color: #D7DF23;
         bottom: 0;
     }
-    
+
     .footer1>.footer2>.iconsosmed {
         display: flex;
         gap: 10px;
         color: white;
         width: 20px;
     }
-    
+
     .footer3 {
         margin-top: 1rem;
         margin-left: 1px;
     }
-    
-    
+
+
     .footer3>p {
         color: #D7DF23;
     }
-    
+
     .footer3>.inputan {
         display: flex;
         gap: 1rem;
     }
-    
+
     .footer3>.inputan>input {
         width: 16rem;
         border-radius: 1.5rem;
     }
-    
+
     .footer3>.inputan>button {
         background-color: #D7DF23;
         width: 6rem;
         border-radius: 1rem;
     }
-    
+
     .footer3>.inputan>button:hover {
         background-color: darkcyan;
         color: white;
     }
-    
-    .footer3>.lastfooter{
+
+    .footer3>.lastfooter {
         color: white;
         width: 180%;
         margin-left: 7rem;
@@ -591,72 +2188,72 @@ footer {
         margin-top: 2rem;
         max-width: 60%;
     }
-    
-    .footer4{
+
+    .footer4 {
         margin-left: 6px;
     }
 
-    .footer3>.footer4{
+    .footer3>.footer4 {
         display: flex;
         margin-top: 2.8rem;
     }
-    
-    .footer3>.footer4>.footer5{
+
+    .footer3>.footer4>.footer5 {
         display: block;
     }
-    
-    .footer3>.footer4>.footer5>h6{
+
+    .footer3>.footer4>.footer5>h6 {
         color: #D7DF23;
     }
-    
-    
-    .footer3>.footer4>.footer6>h6{
+
+
+    .footer3>.footer4>.footer6>h6 {
         color: #D7DF23;
     }
-    
-    
-    
-    .footer5>ul>li{
+
+
+
+    .footer5>ul>li {
         list-style: none;
     }
-    
-    .footer5>ul{
+
+    .footer5>ul {
         margin-left: -2rem;
     }
-    
-    .footer5>ul>li>a{
+
+    .footer5>ul>li>a {
         text-decoration: none;
         color: white;
         margin-right: 3rem;
-        border-bottom: 2px dashed  burlywood    }
-
-    .footer5>ul>li>a:hover{
-        border-bottom: 2px dashed  burlywood;
     }
-    
-    
-    .footer6{
+
+    .footer5>ul>li>a:hover {
+        border-bottom: 2px dashed burlywood;
+    }
+
+
+    .footer6 {
         margin-left: 3rem;
     }
-    
-    .footer6>ul>li{
+
+    .footer6>ul>li {
         list-style: none;
     }
-    
-    .footer6>ul{
+
+    .footer6>ul {
         margin-left: -2rem;
     }
-    
-    .footer6>ul>li>a{
+
+    .footer6>ul>li>a {
         text-decoration: none;
         color: white;
         margin-right: 3rem;
     }
 
-    .footer6>ul>li>a:hover{
-        border-bottom: 2px dashed  burlywood;
-     }
-    
+    .footer6>ul>li>a:hover {
+        border-bottom: 2px dashed burlywood;
+    }
+
 }
 
 /* end footer */

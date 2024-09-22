@@ -293,6 +293,107 @@ nav>ul>a>li:hover {
 
 }
 
+@media(min-width:780px) and (max-width:850px) {
+    /* bagian navbar */
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 100;
+        padding-top: 1rem;
+        transition: background-color 0.4s ease-in-out;
+    }
+    
+    nav>a {
+        margin-left: 1.5rem;
+    }
+    
+    nav>.nav-links {
+        margin-right: 2rem;
+    }
+    
+    nav>a>img {
+        width: 70%;
+        margin-bottom: 1rem;
+    }
+    
+    nav>ul {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+    
+    nav>ul>a>li{
+        display: inline-block;
+        margin-left: 2rem;  
+        transition: color 0.4s ease-in-out;
+        color: black;
+    }
+    
+    nav>ul>a>li:hover {
+        text-decoration: underline;
+        color: darkgoldenrod;
+    }
+
+    /* bagian slider banner */
+
+    .slides img {
+        width: 100%;
+        height: 18rem;
+    }
+
+    .prev {
+        font-size: 2rem;
+        margin-left: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
+
+    .next {
+        font-size: 2rem;
+        margin-right: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
+
+    .slide-content {
+        position: absolute;
+        top: 50%;
+        /* Posisi tengah vertikal */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Menggeser konten ke tengah */
+        color: white;
+        z-index: 1;
+        /* Agar konten berada di atas gambar */
+        width: 100%;
+    }
+
+    .slide-title {
+        font-size: 1.5rem;
+        margin: 0 0 90px;
+        /* Jarak antara judul dan teks */
+        text-align: left;
+        margin-left: 4.8rem;
+        width: 60%;
+    }
+
+    .slide-text {
+        font-size: 10px;
+        width: 70%;
+        /* Contoh width yang lebih lebar agar teks tidak terpotong */
+        text-align: left;
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+
+    .sectionpertama {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 /* end navbar */
 
 
@@ -976,12 +1077,18 @@ nav>ul>a>li:hover {
     margin-left: 3rem;
 }
 
+
 .bagiansehat1 {
-    margin-top: 4rem;
     display: flex;
-    gap: 1.1rem;
-    margin-left: 2rem;
+    gap: 1.1rem; /* Jarak antar card */
+    align-items: center;
+    justify-content: center; /* Menempatkan card di tengah */
 }
+
+.bungkussehatcard {
+    width: 100%; /* Pastikan ini mengambil lebar penuh */
+}
+
 
 .cardmask1,
 .cardmask2,
@@ -994,6 +1101,7 @@ nav>ul>a>li:hover {
     background-color: #F3F4D6;
     border-radius: 1rem;
     width: 18rem;
+    margin-top: 1.5rem;
 }
 
 .img-wrapper {
@@ -1035,21 +1143,21 @@ nav>ul>a>li:hover {
 
 .cardimage6{
     width: 17rem;
-    padding-top: 1px;
+    padding-top: 1rem;
     padding-bottom: 3rem;
     padding-left: 1rem;
 }
 
 .cardimage7{
     width: 17rem;
-    padding-top: 1px;
+    padding-top: 1rem;
     padding-bottom: 3rem;
     padding-left: 1rem;
 }
 
 .cardimage8{
     width: 17rem;
-    padding-top: 1px;
+    padding-top: 1rem;
     padding-bottom: 3rem;
     padding-left: 1rem;
 }
@@ -2101,7 +2209,9 @@ nav>ul>a>li:hover {
 
 @media(min-width:650px) and (max-width:770px) {
     .bungkussehatcard{
-        margin-left: 2rem; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .pertama {
@@ -2239,7 +2349,9 @@ nav>ul>a>li:hover {
         height: auto;
     }
 
-
+    .bagiansehat1{
+        margin-top: 1.5rem;
+    }
 
     .cardbody1{
         width: 100%;
@@ -2484,7 +2596,9 @@ nav>ul>a>li:hover {
 
 @media(min-width:790px) and (max-width:835px) {
     .bungkussehatcard{
-        margin-left: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .pertama {
@@ -2509,6 +2623,10 @@ nav>ul>a>li:hover {
 
     .pertama>a>img{
         margin-right: 3rem;
+    }
+
+    .bagiansehat1{
+        margin-top: 1.5rem;
     }
 
     .cardmask1,
@@ -3475,7 +3593,7 @@ nav>ul>a>li:hover {
     .kategori3 {
         display: flex;
         justify-content: center;
-        gap: 2rem;
+        gap: 1rem;
         margin-top: 3.5rem;
     }
     
@@ -3483,7 +3601,7 @@ nav>ul>a>li:hover {
     .gambar-gallery {
         display: flex;
         flex-wrap: wrap;
-        gap: 2rem;
+        gap: 1rem;
         /* Jarak antara gambar */
         justify-content: center;
         /* Pusatkan gallery secara horizontal */
@@ -3796,7 +3914,7 @@ nav>ul>a>li:hover {
     .kategori3 {
         display: flex;
         justify-content: center;
-        gap: 2rem;
+        gap: 1rem;
         margin-top: 3.5rem;
     }
     
@@ -3804,7 +3922,7 @@ nav>ul>a>li:hover {
     .gambar-gallery {
         display: flex;
         flex-wrap: wrap;
-        gap: 2rem;
+        gap: 1rem;
         /* Jarak antara gambar */
         justify-content: center;
         /* Pusatkan gallery secara horizontal */
@@ -4463,6 +4581,10 @@ nav>ul>a>li:hover {
     
     .blogparagraf1{
        margin-top: 2.6rem;
+    }
+
+    .blogparagraf2{
+        margin-top:20px;
     }
     
     .blogparagraf3{
@@ -5220,6 +5342,286 @@ footer {
         border-bottom: 2px dashed  burlywood;
      }
     
+}
+
+@media(min-width:650px) and (max-width:770px) {
+    .footer {
+        background-color: #05352E;
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        margin-top: 2rem;
+    }
+
+    .footer1 {
+        display: flex;
+        gap: 3rem;
+    }
+    
+    .footer1>.footer2>img {
+        margin-top: 3rem;
+        width: 12rem;
+    }
+    
+    .footer1>.footer2>.paragraffooter1 {
+        color: white;
+        margin-top: 2rem;
+        max-width: 28rem;
+    }
+    
+    .footer1>.footer2>.paragraffooter2 {
+        color: #D7DF23;
+    
+    }
+    
+    .footer1>.footer2>.iconsosmed {
+        display: flex;
+        gap: 10px;
+        color: white;
+        width: 20px;
+    }
+    
+    .footer3 {
+        margin-top: 4rem;
+        margin-left: 10rem;
+    }
+    
+    
+    .footer3>p {
+        color: #D7DF23;
+        font-size: 17px;
+    }
+    
+    .footer3>.inputan {
+        display: flex;
+        gap: 12px;
+    }
+    
+    .footer3>.inputan>input {
+        width: 13rem;
+        border-radius: 1.5rem;
+    }
+    
+    .footer3>.inputan>button {
+        background-color: #D7DF23;
+        width: 7rem;
+        border-radius: 1rem;
+    }
+    
+    .footer3>.inputan>button:hover {
+        background-color: darkcyan;
+        color: white;
+    }
+    
+    .footer3>.lastfooter{
+        color: white;
+        width:98%;
+        margin-left: -1rem;
+        font-size: 12px;
+        margin-top: 3rem;
+    }
+    
+    .footer3>.footer4{
+        display: flex;
+        margin-top: 2.8rem;
+    }
+    
+    .footer3>.footer4>.footer5{
+        display: block;
+        width: 100%;
+        margin-top: 2px;
+    }
+    
+    .footer3>.footer4>.footer5>h6{
+        color: #D7DF23;
+    }
+    
+    
+    .footer3>.footer4>.footer6>h6{
+        color: #D7DF23;
+    }
+    
+    
+    
+    .footer5>ul>li{
+        list-style: none;
+    }
+    
+    .footer5>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer5>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+        font-size: 14px;
+    }
+    
+    .footer5>ul>li>a:hover{
+        border-bottom: 2px dashed  burlywood;
+    }
+    
+    .footer6{
+        margin-left: 3rem;
+    }
+    
+    .footer6>ul>li{
+        list-style: none;
+    }
+    
+    .footer6>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer6>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+    }
+}
+
+@media(min-width:790px) and (max-width:835px) {
+    .footer {
+        background-color: #05352E;
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        margin-top: 2rem;
+    }
+
+    .footer1 {
+        display: flex;
+        gap: 3rem;
+    }
+    
+    .footer1>.footer2>img {
+        margin-top: 3rem;
+        width: 12rem;
+    }
+    
+    .footer1>.footer2>.paragraffooter1 {
+        color: white;
+        margin-top: 2rem;
+        max-width: 28rem;
+    }
+    
+    .footer1>.footer2>.paragraffooter2 {
+        color: #D7DF23;
+    
+    }
+    
+    .footer1>.footer2>.iconsosmed {
+        display: flex;
+        gap: 10px;
+        color: white;
+        width: 20px;
+    }
+    
+    .footer3 {
+        margin-top: 4rem;
+        margin-left: 10rem;
+    }
+    
+    
+    .footer3>p {
+        color: #D7DF23;
+        font-size: 17px;
+    }
+    
+    .footer3>.inputan {
+        display: flex;
+        gap: 12px;
+    }
+    
+    .footer3>.inputan>input {
+        width: 13rem;
+        border-radius: 1.5rem;
+    }
+    
+    .footer3>.inputan>button {
+        background-color: #D7DF23;
+        width: 7rem;
+        border-radius: 1rem;
+    }
+    
+    .footer3>.inputan>button:hover {
+        background-color: darkcyan;
+        color: white;
+    }
+    
+    .footer3>.lastfooter{
+        color: white;
+        width:98%;
+        margin-left: -1rem;
+        font-size: 12px;
+        margin-top: 3rem;
+    }
+    
+    .footer3>.footer4{
+        display: flex;
+        margin-top: 2.8rem;
+    }
+    
+    .footer3>.footer4>.footer5{
+        display: block;
+        width: 100%;
+        margin-top: 2px;
+    }
+    
+    .footer3>.footer4>.footer5>h6{
+        color: #D7DF23;
+    }
+    
+    
+    .footer3>.footer4>.footer6>h6{
+        color: #D7DF23;
+    }
+    
+    
+    
+    .footer5>ul>li{
+        list-style: none;
+    }
+    
+    .footer5>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer5>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+        font-size: 14px;
+    }
+    
+    .footer5>ul>li>a:hover{
+        border-bottom: 2px dashed  burlywood;
+    }
+    
+    .footer6{
+        margin-left: 3rem;
+    }
+    
+    .footer6>ul>li{
+        list-style: none;
+    }
+    
+    .footer6>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer6>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+    }
 }
 
 /* end footer */

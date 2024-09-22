@@ -122,6 +122,10 @@ nav>ul>a>li:hover {
         color: white;
     }
 
+    .menu-icon {
+        display: flex;
+    }
+
     .menu-icon>.bar {
         width: 25px;
         height: 3px;
@@ -186,44 +190,210 @@ nav>ul>a>li:hover {
         grid-template-columns: repeat(3, 1fr);
     }
 
+}
+
+@media(min-width:650px) and (max-width:770px) {  
+     /* bagian navbar */
+
+     nav{
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 100;
+        padding-top: 1rem;
+        transition: background-color 0.4s ease-in-out;
+    }
+    
+    nav>a {
+        margin-left: 1.5rem;
+    }
+    
+    nav>.nav-links {
+        margin-right: 2rem;
+    }
+    
+    nav>a>img {
+        width: 70%;
+        margin-bottom: 1rem;
+    }
+    
+    nav>ul {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+    
+    nav>ul>a>li{
+        display: inline-block;
+        margin-left: 2rem;  
+        transition: color 0.4s ease-in-out;
+        color: black;
+    }
+    
+    nav>ul>a>li:hover {
+        text-decoration: underline;
+        color: darkgoldenrod;
+    }
+
+    /* bagian slider banner */
+
+    .slides img {
+        width: 100%;
+        height: 18rem;
+    }
+
+    .prev {
+        font-size: 2rem;
+        margin-left: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
+
+    .next {
+        font-size: 2rem;
+        margin-right: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
+
+    .slide-content {
+        position: absolute;
+        top: 50%;
+        /* Posisi tengah vertikal */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Menggeser konten ke tengah */
+        color: white;
+        z-index: 1;
+        /* Agar konten berada di atas gambar */
+        width: 100%;
+    }
+
+    .slide-title {
+        font-size: 1.5rem;
+        margin: 0 0 90px;
+        /* Jarak antara judul dan teks */
+        text-align: left;
+        margin-left: 4.8rem;
+        width: 60%;
+    }
+
+    .slide-text {
+        font-size: 10px;
+        width: 70%;
+        /* Contoh width yang lebih lebar agar teks tidak terpotong */
+        text-align: left;
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+
+    .sectionpertama {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
 }
 
-@media(max-width:768px) {
-    .menu-icon {
+@media(min-width:780px) and (max-width:850px) {
+    /* bagian navbar */
+
+    nav{
         display: flex;
-    }
-
-    .menu-icon>.bar {
-        width: 25px;
-        height: 3px;
-        background-color: #333;
-        border-radius: 2px;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #05352E;
-        border-bottom-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
-        height: 50vh;
-    }
-
-    .nav-links.show {
-        display: flex;
-        z-index: 100;
+        justify-content: space-between;
         position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 100;
+        padding-top: 1rem;
+        transition: background-color 0.4s ease-in-out;
+    }
+    
+    nav>a {
+        margin-left: 1.5rem;
+    }
+    
+    nav>.nav-links {
+        margin-right: 2rem;
+    }
+    
+    nav>a>img {
+        width: 70%;
+        margin-bottom: 1rem;
+    }
+    
+    nav>ul {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+    
+    nav>ul>a>li{
+        display: inline-block;
+        margin-left: 2rem;  
+        transition: color 0.4s ease-in-out;
+        color: black;
+    }
+    
+    nav>ul>a>li:hover {
+        text-decoration: underline;
+        color: darkgoldenrod;
     }
 
-    .nav-links li {
-        text-align: left;
-        margin: 10px 0;
+    /* bagian slider banner */
+
+    .slides img {
+        width: 100%;
+        height: 18rem;
+    }
+
+    .prev {
+        font-size: 2rem;
+        margin-left: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
+
+    .next {
+        font-size: 2rem;
+        margin-right: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
+
+    .slide-content {
+        position: absolute;
+        top: 50%;
+        /* Posisi tengah vertikal */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Menggeser konten ke tengah */
         color: white;
+        z-index: 1;
+        /* Agar konten berada di atas gambar */
+        width: 100%;
+    }
+
+    .slide-title {
+        font-size: 1.5rem;
+        margin: 0 0 90px;
+        /* Jarak antara judul dan teks */
+        text-align: left;
+        margin-left: 4.8rem;
+        width: 60%;
+    }
+
+    .slide-text {
+        font-size: 10px;
+        width: 70%;
+        /* Contoh width yang lebih lebar agar teks tidak terpotong */
+        text-align: left;
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+
+    .sectionpertama {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -335,6 +505,333 @@ nav>ul>a>li:hover {
     padding-top: 15px;
 }
 
+@media(max-width:450px) {
+    .judulmitra2>.judulmitra3>h1{
+        text-align: center;
+        font-size: 2.5rem;
+        font-family: Quicksand;
+        font-weight: 700;
+        color: #80C678;
+        max-width: 75%;
+        text-align: center;
+        margin-left: 3rem;
+    }
+
+    .judulmitra2>p{
+        font-size: 22px;
+        width: 97%;
+        font-family: Quicksand;
+        margin-top: 2rem;
+    }
+
+    
+}
+
+@media(max-width:480px) {
+    .judulmitra2>.judulmitra3>h1{
+        text-align: center;
+        font-size: 2.5rem;
+        font-family: Quicksand;
+        font-weight: 700;
+        color: #80C678;
+        max-width: 75%;
+        text-align: center;
+        margin-left: 3rem;
+    }
+
+    .judulmitra2>p{
+        font-size: 22px;
+        width: 97%;
+        font-family: Quicksand;
+        margin-top: 2rem;
+    }
+
+
+
+    .gabungkotak3 {
+        display: flex;
+        justify-content: center; /* Menempatkan kotak-kotak di tengah secara horizontal */
+        align-items: center; /* Menempatkan konten kotak-kotak di tengah secara vertikal */
+        flex-direction: column;
+        gap: 1rem; /* Memberi jarak antara kotak-kotak */
+        margin: auto; /* Menempatkan kontainer di tengah layar */
+    }
+    
+    .kotakmitra1, .kotakmitra2, .kotakmitra3 {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    
+    .mitra11{
+       display: flex;
+       justify-content: center;
+       padding: 2.5rem;
+       background-color: #D7DF23;
+       width: 20rem;
+       border-radius: 1rem;
+    }
+    
+    .mitra11>img{
+        display: flex;
+        padding-bottom: 3rem;
+    }
+    
+    .mitra11>p{
+        margin-left: 10px;
+        max-width: 65%;
+    }
+    
+    .mitra22{
+        background-color: #D7DF23;
+        display: flex;
+        justify-content: center;
+        padding: 2.45rem;
+        background-color: #D7DF23;
+        width: 20rem;
+        border-radius: 1rem;
+    }
+    
+    .mitra22>img{
+        display: flex;
+        padding-bottom: 3rem;
+    }
+    
+    .mitra22>p{
+        margin-left: 10px;
+        max-width: 70%;
+    }
+    
+    .mitra33{
+        display: flex;
+        justify-content: center;
+        padding: 1.4rem;
+        background-color: #D7DF23;
+        width: 20rem;
+        border-radius: 1rem;
+    }
+    
+    
+    .mitra33>img{
+        display: flex;
+        padding-bottom: 4rem;
+    }
+    
+    .mitra33>p{
+        margin-left: 10px;
+        max-width: 65%;
+        padding-top: 15px;
+    }
+}
+
+@media(min-width:650px) and (max-width:770px) {
+    .judulmitra1{
+        display: flex;
+        justify-content: center;
+        margin-top: 8rem;
+    }
+    
+    .judulmitra2{
+        text-align: center;
+    }
+    
+    .judulmitra2>.judulmitra3>h1{
+        text-align: center;
+        font-size: 4rem;
+        font-family: Quicksand;
+        font-weight: 700;
+        color: #80C678;
+        max-width: 95%;
+    }
+    
+    .judulmitra2>p{
+        font-size: 24.92px;
+        width: 97%;
+        font-family: Quicksand;
+        margin-top: 2rem;
+    }
+    
+    
+    
+    .gabungkotak3 {
+        display: flex;
+        justify-content: center; /* Menempatkan kotak-kotak di tengah secara horizontal */
+        align-items: center; /* Menempatkan konten kotak-kotak di tengah secara vertikal */
+        gap: 1rem; /* Memberi jarak antara kotak-kotak */
+        margin: auto; /* Menempatkan kontainer di tengah layar */
+    }
+    
+    .kotakmitra1, .kotakmitra2, .kotakmitra3 {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    
+    .mitra11{
+       display: flex;
+       justify-content: center;
+       padding: 1.3rem;
+       background-color: #D7DF23;
+       width: 15rem;
+       border-radius: 1rem;
+    }
+    
+    .mitra11>img{
+        display: flex;
+        padding-bottom: 5rem;
+    }
+    
+    .mitra11>p{
+        margin-left: 10px;
+        max-width: 75%;
+    }
+    
+    .mitra22{
+        display: flex;
+        justify-content: center;
+        padding: 1.1rem;
+        background-color: #D7DF23;
+        width: 15rem;
+        border-radius: 1rem;
+    }
+    
+    .mitra22>img{
+        display: flex;
+        padding-bottom: 5rem;
+    }
+    
+    .mitra22>p{
+        margin-left: 10px;
+        max-width: 75%;
+    }
+    
+    .mitra33{
+        display: flex;
+        justify-content: center;
+        padding: 1.1rem;
+        background-color: #D7DF23;
+        width: 15rem;
+        border-radius: 1rem;
+    }
+    
+    
+    .mitra33>img{
+        display: flex;
+        padding-bottom: 5rem;
+    }
+    
+    .mitra33>p{
+        margin-left: 10px;
+        max-width: 100%;
+        padding-top: 1px;
+    }
+}
+
+@media(min-width:780px) and (max-width:850px) {
+    .judulmitra1{
+        display: flex;
+        justify-content: center;
+        margin-top: 8rem;
+    }
+    
+    .judulmitra2{
+        text-align: center;
+    }
+    
+    .judulmitra2>.judulmitra3>h1{
+        text-align: center;
+        font-size: 4rem;
+        font-family: Quicksand;
+        font-weight: 700;
+        color: #80C678;
+        max-width: 95%;
+    }
+    
+    .judulmitra2>p{
+        font-size: 24.92px;
+        width: 97%;
+        font-family: Quicksand;
+        margin-top: 2rem;
+    }
+    
+    
+    
+    .gabungkotak3 {
+        display: flex;
+        justify-content: center; /* Menempatkan kotak-kotak di tengah secara horizontal */
+        align-items: center; /* Menempatkan konten kotak-kotak di tengah secara vertikal */
+        gap: 1rem; /* Memberi jarak antara kotak-kotak */
+        margin: auto; /* Menempatkan kontainer di tengah layar */
+    }
+    
+    .kotakmitra1, .kotakmitra2, .kotakmitra3 {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    
+    .mitra11{
+       display: flex;
+       justify-content: center;
+       padding: 1.3rem;
+       background-color: #D7DF23;
+       width: 15rem;
+       border-radius: 1rem;
+    }
+    
+    .mitra11>img{
+        display: flex;
+        padding-bottom: 5rem;
+    }
+    
+    .mitra11>p{
+        margin-left: 10px;
+        max-width: 75%;
+    }
+    
+    .mitra22{
+        display: flex;
+        justify-content: center;
+        padding: 1.1rem;
+        background-color: #D7DF23;
+        width: 15rem;
+        border-radius: 1rem;
+    }
+    
+    .mitra22>img{
+        display: flex;
+        padding-bottom: 5rem;
+    }
+    
+    .mitra22>p{
+        margin-left: 10px;
+        max-width: 75%;
+    }
+    
+    .mitra33{
+        display: flex;
+        justify-content: center;
+        padding: 1.1rem;
+        background-color: #D7DF23;
+        width: 15rem;
+        border-radius: 1rem;
+    }
+    
+    
+    .mitra33>img{
+        display: flex;
+        padding-bottom: 5rem;
+    }
+    
+    .mitra33>p{
+        margin-left: 10px;
+        max-width: 100%;
+        padding-top: 1px;
+    }
+}
 /* bagian input  */
 
 .inputpertama{
@@ -531,6 +1028,844 @@ nav>ul>a>li:hover {
     text-decoration: none;
 }
 
+@media(max-width:450px) {
+    .inputpertama22 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .kotakinputfoto1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inputpertama{
+        background-color: #F3F4D6;
+        padding: 1rem;
+        width: 20rem;
+        border-radius: 12px;
+    }
+    
+    .inputnama{
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .namadepan>.namadepan2{
+        width: 8.5rem;
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+    }
+    
+    .namabelakang>.namabelakang2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 8.5rem;
+    }
+    
+    .namausaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18rem;
+    }
+    
+    .alamatemail{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18rem;
+    }
+    
+    .notelp{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18rem;
+    }
+    
+    .alamatwebsite{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18rem;
+    }
+    
+    .alamatusaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18rem;
+    }
+    
+    .kotausaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 13rem;
+    }
+    
+    .deskripsiusaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18rem;
+    }
+    
+    .jambukausaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18rem;
+    }
+    
+    .katekoriusaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 13rem;
+    }
+    
+    .labelinstagram{
+        margin-right: 1.5rem;
+    }
+    
+    .labelinstagram2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18.5rem;
+    }
+    
+    .labeltokped{
+        margin-right: 1.5rem;
+    }
+    
+    .labeltokped2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18.5rem;
+    }
+    
+    .labelshopee{
+        margin-right: 2.7rem;
+    }
+    
+    .labelshopee2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18.5rem;
+    }
+    
+    .labelwebsite{
+        margin-right: 2.4rem;
+    }
+    
+    .labelwebsite2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18.5rem;
+    }
+    
+    .tombolsubmit{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .tombolsubmit>a{
+        width: 70%;
+        background-color: #05352E;
+        text-align: center;
+        height: 3rem;
+        color: white;
+        text-decoration: none;
+        padding-top: 10px;
+        border-radius: 14px;
+    }
+    
+    .inputdata{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 4rem;
+    }
+    
+    .inputfoto1{
+        background-color: #80C678;
+        padding: 3rem;
+        border-radius: 10px;
+        width: 80%;
+        margin-left: 2rem;
+    }
+    
+    .inputfoto1>h6{
+        text-align: center;
+        font-family: Quicksand;
+        font-weight: 700;
+        font-size: 18px;
+    }
+    
+    .inputfoto2{
+        background-color: white;
+        padding: 1rem;
+        width: 40%;
+        margin-left: 4rem;
+    }
+    
+    .inputfoto3{
+        background-color: #80C678;
+        padding: 3rem;
+        margin-top: 2rem;
+        border-radius: 10px;
+        width: 80%;
+        margin-left: 2rem;
+    }
+    
+    .inputfoto3>h6{
+        text-align: center;
+        font-family: Quicksand;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    
+    .inputfoto3>p{
+        text-align: center;
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    .addimage1{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .addimage1>a{
+        background-color: #05352E;
+        padding: 10px;
+        width: 70%;
+        text-align: center;
+        color: white;
+        border-radius: 17.84px;
+        text-decoration: none;
+    }
+    
+}
+
+@media(max-width:480px) {
+    .inputpertama22 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .kotakinputfoto1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }   
+
+    .inputpertama{
+        background-color: #F3F4D6;
+        padding: 1rem;
+        width: 20rem;
+        border-radius: 12px;
+    }
+    
+    .inputnama{
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .namadepan>.namadepan2{
+        width: 8.5rem;
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+    }
+    
+    .namabelakang>.namabelakang2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 8.5rem;
+    }
+    
+    .namausaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18rem;
+    }
+    
+    .alamatemail{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18rem;
+    }
+    
+    .notelp{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18rem;
+    }
+    
+    .alamatwebsite{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18rem;
+    }
+    
+    .alamatusaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18rem;
+    }
+    
+    .kotausaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 13rem;
+    }
+    
+    .deskripsiusaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18rem;
+    }
+    
+    .jambukausaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18rem;
+    }
+    
+    .katekoriusaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 13rem;
+    }
+    
+    .labelinstagram{
+        margin-right: 1.5rem;
+    }
+    
+    .labelinstagram2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18.5rem;
+    }
+    
+    .labeltokped{
+        margin-right: 1.5rem;
+    }
+    
+    .labeltokped2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18.5rem;
+    }
+    
+    .labelshopee{
+        margin-right: 2.7rem;
+    }
+    
+    .labelshopee2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18.5rem;
+    }
+    
+    .labelwebsite{
+        margin-right: 2.4rem;
+    }
+    
+    .labelwebsite2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18.5rem;
+    }
+    
+    .tombolsubmit{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .tombolsubmit>a{
+        width: 70%;
+        background-color: #05352E;
+        text-align: center;
+        height: 3rem;
+        color: white;
+        text-decoration: none;
+        padding-top: 10px;
+        border-radius: 14px;
+    }
+    
+    .inputdata{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 4rem;
+    }
+    
+    .inputfoto1{
+        background-color: #80C678;
+        padding: 3rem;
+        border-radius: 10px;
+        width: 80%;
+        margin-left: 2rem;
+    }
+    
+    .inputfoto1>h6{
+        text-align: center;
+        font-family: Quicksand;
+        font-weight: 700;
+        font-size: 18px;
+    }
+    
+    .inputfoto2{
+        background-color: white;
+        padding: 1rem;
+        width: 90px;
+        margin-left: 2rem;
+    }
+    
+    .inputfoto3{
+        background-color: #80C678;
+        padding: 3rem;
+        margin-top: 2rem;
+        border-radius: 10px;
+        width: 80%;
+        margin-left: 2rem;
+    }
+    
+    .inputfoto3>h6{
+        text-align: center;
+        font-family: Quicksand;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    
+    .inputfoto3>p{
+        text-align: center;
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    .addimage1{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .addimage1>a{
+        background-color: #05352E;
+        padding: 10px;
+        width: 70%;
+        text-align: center;
+        color: white;
+        border-radius: 17.84px;
+        text-decoration: none;
+    }
+    
+}
+
+@media(min-width:650px) and (max-width:770px) {   
+
+    .inputpertama{
+        background-color: #F3F4D6;
+        padding: 2rem;
+        width: 24rem ;
+        border-radius: 12px;
+    }
+
+    .inputnama{
+        display: flex;
+        gap: 1.5rem;
+    }
+    
+    .namadepan>.namadepan2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 10rem;
+    }
+    
+    .namabelakang>.namabelakang2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 10rem;
+    }
+    
+    .namausaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 21rem;
+    }
+    
+    .alamatemail{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 21rem;
+    }
+    
+    .notelp{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 21rem;
+    }
+    
+    .alamatwebsite{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 21rem;
+    }
+    
+    .alamatusaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 21rem;
+    }
+    
+    .kotausaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 13rem;
+    }
+    
+    .deskripsiusaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 21rem;
+    }
+    
+    .jambukausaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 21rem;
+    }
+    
+    .katekoriusaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 13rem;
+    }
+    
+    .labelinstagram{
+        margin-right: 1.5rem;
+    }
+    
+    .labelinstagram2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18.5rem;
+    }
+    
+    .labeltokped{
+        margin-right: 1.5rem;
+    }
+    
+    .labeltokped2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18.5rem;
+    }
+    
+    .labelshopee{
+        margin-right: 2.7rem;
+    }
+    
+    .labelshopee2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18.5rem;
+    }
+    
+    .labelwebsite{
+        margin-right: 2.4rem;
+    }
+    
+    .labelwebsite2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18.5rem;
+    }
+    
+    .tombolsubmit{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .tombolsubmit>a{
+        width: 100%;
+        background-color: #05352E;
+        text-align: center;
+        height: 3rem;
+        color: white;
+        text-decoration: none;
+        padding-top: 10px;
+        border-radius: 14px;
+    }
+    
+    .inputdata{
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 4rem;
+    }
+    
+    .inputfoto1{
+        background-color: #80C678;
+        padding: 4rem;
+        border-radius: 10px;
+        width:20rem;
+    }
+    
+    .inputfoto1>h6{
+        text-align: center;
+        font-family: Quicksand;
+        font-weight: 700;
+        font-size: 18px;
+    }
+    
+    .inputfoto2{
+        background-color: white;
+        padding: 2rem;
+        width: max-content;
+        margin-left: 2.5rem;
+        margin-top: 1rem;
+    }
+    
+    .inputfoto3{
+        background-color: #80C678;
+        padding: 3rem;
+        margin-top: 2rem;
+        border-radius: 10px;
+    }
+    
+    .inputfoto3>h6{
+        text-align: center;
+        font-family: Quicksand;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    
+    .inputfoto3>p{
+        text-align: center;
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    .addimage1{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .addimage1>a{
+        background-color: #05352E;
+        padding: 10px;
+        width: 70%;
+        text-align: center;
+        color: white;
+        border-radius: 17.84px;
+        text-decoration: none;
+    }
+    
+}
+
+@media(min-width:780px) and (max-width:850px) {
+    .inputpertama{
+        background-color: #F3F4D6;
+        padding: 2rem;
+        width: 24rem ;
+        border-radius: 12px;
+    }
+
+    .inputnama{
+        display: flex;
+        gap: 1.5rem;
+    }
+    
+    .namadepan>.namadepan2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 10rem;
+    }
+    
+    .namabelakang>.namabelakang2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 10rem;
+    }
+    
+    .namausaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 21rem;
+    }
+    
+    .alamatemail{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 21rem;
+    }
+    
+    .notelp{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 21rem;
+    }
+    
+    .alamatwebsite{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 21rem;
+    }
+    
+    .alamatusaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 21rem;
+    }
+    
+    .kotausaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 13rem;
+    }
+    
+    .deskripsiusaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 21rem;
+    }
+    
+    .jambukausaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 21rem;
+    }
+    
+    .katekoriusaha{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 13rem;
+    }
+    
+    .labelinstagram{
+        margin-right: 1.5rem;
+    }
+    
+    .labelinstagram2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18.5rem;
+    }
+    
+    .labeltokped{
+        margin-right: 1.5rem;
+    }
+    
+    .labeltokped2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18.5rem;
+    }
+    
+    .labelshopee{
+        margin-right: 2.7rem;
+    }
+    
+    .labelshopee2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18.5rem;
+    }
+    
+    .labelwebsite{
+        margin-right: 2.4rem;
+    }
+    
+    .labelwebsite2{
+        border-radius: 7px;
+        border: 2px #E6E6E6 solid;
+        width: 18.5rem;
+    }
+    
+    .tombolsubmit{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .tombolsubmit>a{
+        width: 100%;
+        background-color: #05352E;
+        text-align: center;
+        height: 3rem;
+        color: white;
+        text-decoration: none;
+        padding-top: 10px;
+        border-radius: 14px;
+    }
+    
+    .inputdata{
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 4rem;
+    }
+    
+    .inputfoto1{
+        background-color: #80C678;
+        padding: 4rem;
+        border-radius: 10px;
+        width:20rem;
+    }
+    
+    .inputfoto1>h6{
+        text-align: center;
+        font-family: Quicksand;
+        font-weight: 700;
+        font-size: 18px;
+    }
+    
+    .inputfoto2{
+        background-color: white;
+        padding: 2rem;
+        width: max-content;
+        margin-left: 2.5rem;
+        margin-top: 1rem;
+    }
+    
+    .inputfoto3{
+        background-color: #80C678;
+        padding: 3rem;
+        margin-top: 2rem;
+        border-radius: 10px;
+    }
+    
+    .inputfoto3>h6{
+        text-align: center;
+        font-family: Quicksand;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    
+    .inputfoto3>p{
+        text-align: center;
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    .addimage1{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .addimage1>a{
+        background-color: #05352E;
+        padding: 10px;
+        width: 70%;
+        text-align: center;
+        color: white;
+        border-radius: 17.84px;
+        text-decoration: none;
+    }
+    
+}
 /* end bagian input  */
 
 
@@ -800,8 +2135,8 @@ footer {
     .footer5>ul>li>a{
         text-decoration: none;
         color: white;
-        margin-right: 3rem;
-        border-bottom: 2px dashed  burlywood    }
+        margin-right: 3rem; 
+    }
 
     .footer5>ul>li>a:hover{
         border-bottom: 2px dashed  burlywood;

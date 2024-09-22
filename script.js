@@ -28,12 +28,24 @@ const accordion = document.getElementsByClassName('contentbx');
         });
     }
 
+// membuat accordion 2 //
+
+let accordions = document.querySelectorAll('.accordionautama .accordion');
+accordions.forEach((acco)=>{
+    acco.onclick = () => {
+        accordions.forEach((subcontent) => {
+            subcontent.classList.remove('active');
+        })
+        acco.classList.add('active');
+    }
+})
+
 
     // membuat swiper gambar
 
         new Swiper('.card-wrapper', {
         loop: true,
-        spaceBetween: 30,
+        spaceBetween: 20,
       
         // pagination bullets
         pagination: {

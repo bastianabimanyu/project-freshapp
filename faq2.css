@@ -94,137 +94,194 @@ nav>ul>a>li:hover {
     /* bagian navbar */
 
     nav>a>img {
-        margin-bottom: 1rem;
-        margin-left: 2rem;
-    }
+       margin-bottom: 1rem;
+       margin-left: 2rem;
+   }
 
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #05352E;
-        border-bottom-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
-        height: 50vh;
-    }
+   .nav-links {
+       display: none;
+       flex-direction: column;
+       width: 100%;
+       position: absolute;
+       top: 60px;
+       left: 0;
+       background-color: #05352E;
+       border-bottom-left-radius: 2rem;
+       border-bottom-right-radius: 2rem;
+       height: 50vh;
+   }
 
-    .nav-links.show {
-        display: flex;
-        z-index: 100;
-        position: fixed;
-    }
+   .nav-links.show {
+       display: flex;
+       z-index: 100;
+       position: fixed;
+   }
 
-    .nav-links li {
-        text-align: left;
-        margin: 10px 0;
-        color: white;
-    }
+   .nav-links li {
+       text-align: left;
+       margin: 10px 0;
+       color: white;
+   }
 
-    .menu-icon>.bar {
-        width: 25px;
-        height: 3px;
-        background-color: #333;
-        border-radius: 2px;
-        margin-right: 2rem;
-    }
+   .menu-icon {
+       display: flex;
+   }
 
-    /* bagian slider banner */
+   .menu-icon>.bar {
+       width: 25px;
+       height: 3px;
+       background-color: #333;
+       border-radius: 2px;
+       margin-right: 2rem;
+   }
 
-    .slides img {
-        width: 100%;
-        height: 18rem;
-    }
+   /* bagian slider banner */
 
-    .prev {
-        font-size: 2rem;
-        margin-left: 2rem;
-        background: none;
-        margin-top: 3.5rem;
-    }
+   .slides img {
+       width: 100%;
+       height: 18rem;
+   }
 
-    .next {
-        font-size: 2rem;
-        margin-right: 2rem;
-        background: none;
-        margin-top: 3.5rem;
-    }
+   .prev {
+       font-size: 2rem;
+       margin-left: 2rem;
+       background: none;
+       margin-top: 3.5rem;
+   }
 
-    .slide-content {
-        position: absolute;
-        top: 50%;
-        /* Posisi tengah vertikal */
-        left: 50%;
-        transform: translate(-50%, -50%);
-        /* Menggeser konten ke tengah */
-        color: white;
-        z-index: 1;
-        /* Agar konten berada di atas gambar */
-        width: 100%;
-    }
+   .next {
+       font-size: 2rem;
+       margin-right: 2rem;
+       background: none;
+       margin-top: 3.5rem;
+   }
 
-    .slide-title {
-        font-size: 1.5rem;
-        margin: 0 0 90px;
-        /* Jarak antara judul dan teks */
-        text-align: left;
-        margin-left: 4.8rem;
-        width: 60%;
-    }
+   .slide-content {
+       position: absolute;
+       top: 50%;
+       /* Posisi tengah vertikal */
+       left: 50%;
+       transform: translate(-50%, -50%);
+       /* Menggeser konten ke tengah */
+       color: white;
+       z-index: 1;
+       /* Agar konten berada di atas gambar */
+       width: 100%;
+   }
 
-    .slide-text {
-        font-size: 10px;
-        width: 70%;
-        /* Contoh width yang lebih lebar agar teks tidak terpotong */
-        text-align: left;
-        max-width: 100%;
-        margin-top: 2rem;
-    }
+   .slide-title {
+       font-size: 1.5rem;
+       margin: 0 0 90px;
+       /* Jarak antara judul dan teks */
+       text-align: left;
+       margin-left: 4.8rem;
+       width: 60%;
+   }
 
-    .sectionpertama {
-        grid-template-columns: repeat(3, 1fr);
-    }
+   .slide-text {
+       font-size: 10px;
+       width: 70%;
+       /* Contoh width yang lebih lebar agar teks tidak terpotong */
+       text-align: left;
+       max-width: 100%;
+       margin-top: 2rem;
+   }
 
+   .sectionpertama {
+       grid-template-columns: repeat(3, 1fr);
+   }
 
 }
 
-@media(max-width:768px) {
-    .menu-icon {
+@media(min-width:650px) and (max-width:770px) {
+    /* bagian navbar */
+
+    nav{
         display: flex;
-    }
-
-    .menu-icon>.bar {
-        width: 25px;
-        height: 3px;
-        background-color: #333;
-        border-radius: 2px;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #05352E;
-        border-bottom-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
-        height: 50vh;
-    }
-
-    .nav-links.show {
-        display: flex;
-        z-index: 100;
+        justify-content: space-between;
         position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 100;
+        padding-top: 1rem;
+        transition: background-color 0.4s ease-in-out;
     }
+    
+    nav>a {
+        margin-left: 1.5rem;
+    }
+    
+    nav>.nav-links {
+        margin-right: 2rem;
+    }
+    
+    nav>a>img {
+        width: 70%;
+        margin-bottom: 1rem;
+    }
+    
+    nav>ul {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+    
+    nav>ul>a>li{
+        display: inline-block;
+        margin-left: 2rem;  
+        transition: color 0.4s ease-in-out;
+        color: black;
+    }
+    
+    nav>ul>a>li:hover {
+        text-decoration: underline;
+        color: darkgoldenrod;
+    }
+}
 
-    .nav-links li {
-        text-align: left;
-        margin: 10px 0;
-        color: white;
+@media(min-width:790px) and (max-width:835px) {
+    /* bagian navbar */
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 100;
+        padding-top: 1rem;
+        transition: background-color 0.4s ease-in-out;
+    }
+    
+    nav>a {
+        margin-left: 1.5rem;
+    }
+    
+    nav>.nav-links {
+        margin-right: 2rem;
+    }
+    
+    nav>a>img {
+        width: 70%;
+        margin-bottom: 1rem;
+    }
+    
+    nav>ul {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+    
+    nav>ul>a>li{
+        display: inline-block;
+        margin-left: 2rem;  
+        transition: color 0.4s ease-in-out;
+        color: black;
+    }
+    
+    nav>ul>a>li:hover {
+        text-decoration: underline;
+        color: darkgoldenrod;
     }
 }
 
@@ -260,25 +317,97 @@ nav>ul>a>li:hover {
     margin-top: 2rem;
 }
 
+@media(max-width:480px) {
+    .judulfaq2>.judulfaq3>h1{
+        text-align: center;
+        font-size: 2.5rem;
+        font-family: Quicksand;
+        font-weight: 700;
+        color: #80C678;
+        max-width: 95%;
+    }
+    
+    .judulfaq2>p{
+        font-size: 17px;
+        width: 97%;
+        font-family: Quicksand;
+        margin-top: 2rem;
+    }
+}
+
+@media(min-width:650px) and (max-width:770px) {
+    .judulfaq1{
+        display: flex;
+        justify-content: center;
+        margin-top: 7rem;
+    }
+    
+    .judulfaq2{
+        text-align: center;
+    }
+
+    .judulfaq2>.judulfaq3>h1{
+        text-align: center;
+        font-size: 4rem;
+        font-family: Quicksand;
+        font-weight: 700;
+        color: #80C678;
+        max-width: 95%;
+    }
+    
+    .judulfaq2>p{
+        font-size: 24.92px;
+        width: 97%;
+        font-family: Quicksand;
+        margin-top: 2rem;
+    }
+}
+
+@media(min-width:790px) and (max-width:835px) {
+    .judulfaq1{
+        display: flex;
+        justify-content: center;
+        margin-top: 7rem;
+    }
+    
+    .judulfaq2{
+        text-align: center;
+    }
+
+    .judulfaq2>.judulfaq3>h1{
+        text-align: center;
+        font-size: 4rem;
+        font-family: Quicksand;
+        font-weight: 700;
+        color: #80C678;
+        max-width: 95%;
+    }
+    
+    .judulfaq2>p{
+        font-size: 24.92px;
+        width: 97%;
+        font-family: Quicksand;
+        margin-top: 2rem;
+    }
+}
 /* end bagian judul faq2 */
 
 /* bagian isi faq2 */
 
+
 .accordionautama{
     margin-top: 2rem;
-    margin-left: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
-.accordion{
-    max-width: 800px;
 
-}
 .accordion .contentbx{
     position: relative;
-    margin: 10px 20px;
     border: 2px #D7DF23 solid;
-    border-radius: 10px;
-    width: 150%;
+    border-radius: 10px;    
+    width: 40rem;
     margin-top: 1.5rem;
 }
 
@@ -339,6 +468,87 @@ nav>ul>a>li:hover {
     max-height: 150px; 
     transition: max-height 0.3s ease-out, padding 0.3s ease-out;
 }
+
+@media(max-width:480px) {
+    .accordionautama{
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    
+    .accordion .contentbx{
+        position: relative;
+        border: 2px #D7DF23 solid;
+        border-radius: 10px;    
+        width: 18rem;
+        margin-top: 1.5rem;
+    }
+    
+    .accordion .contentbx .content p{
+        margin-left: 15px;
+        padding-top: 10px;
+        font-family: Inter;
+        font-size: 10px;
+        font-weight: 500;
+    }
+    
+    .accordion .contentbx .label{
+        position: relative;
+        padding: 15px;
+        background-color: #D7DF23;
+        cursor: pointer;
+        font-family: Quicksand;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .accordion .contentbx .label1{
+        font-size: 13px;
+    }
+    
+    .accordion .contentbx .label::before{
+        content: '+';
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        font-size: 22px;
+        height: 30px;
+        width: 30px;
+        text-align: center;
+        color:#D7DF23 ;
+        background-color: black;
+        border-radius: 50%;
+    }
+    
+    .accordion .contentbx.active .label::before{
+        content: '-';
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        font-size: 22px;
+        height: 30px;
+        width: 30px;
+        text-align: center;
+        color: #D7DF23;
+        background-color: black;
+        border-radius: 50%;
+    }
+    
+    .accordion .contentbx .content{
+        position: relative;
+        height: 0;
+        overflow: hidden;
+        transition: 0.5s;
+        overflow-y: auto;
+        max-height: 150px; 
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    }
+}
+
 /* end bagian isi faq2 */
 
 

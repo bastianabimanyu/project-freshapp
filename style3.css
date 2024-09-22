@@ -3,7 +3,6 @@ html {
     padding: 0;
     margin: 0;
     height: 100%;
-    overflow-x: hidden;
     /* Mencegah halaman bergeser secara horizontal */
 }
 
@@ -16,12 +15,20 @@ main {
     /* Memastikan main memiliki tinggi penuh viewport */
 }
 
+section{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* start navbar */
 
 nav{
     display: flex;
     justify-content: space-between;
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     background-color: white;
@@ -99,9 +106,9 @@ nav>ul>a>li:hover {
 
 @media only screen and (max-width: 450px) {
 
-    /* bagian navbar */
+     /* bagian navbar */
 
-    nav>a>img {
+     nav>a>img {
         margin-bottom: 1rem;
         margin-left: 2rem;
     }
@@ -129,6 +136,10 @@ nav>ul>a>li:hover {
         text-align: left;
         margin: 10px 0;
         color: white;
+    }
+
+    .menu-icon {
+        display: flex;
     }
 
     .menu-icon>.bar {
@@ -195,44 +206,97 @@ nav>ul>a>li:hover {
         grid-template-columns: repeat(3, 1fr);
     }
 
-
 }
 
-@media(max-width:768px) {
-    .menu-icon {
+@media(min-width:650px) and (max-width:770px) {
+    /* bagian navbar */
+
+    nav{
         display: flex;
-    }
-
-    .menu-icon>.bar {
-        width: 25px;
-        height: 3px;
-        background-color: #333;
-        border-radius: 2px;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #05352E;
-        border-bottom-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
-        height: 50vh;
-    }
-
-    .nav-links.show {
-        display: flex;
-        z-index: 100;
+        justify-content: space-between;
         position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 100;
+        padding-top: 1rem;
+        transition: background-color 0.4s ease-in-out;
     }
+    
+    nav>a {
+        margin-left: 1.5rem;
+    }
+    
+    nav>.nav-links {
+        margin-right: 2rem;
+    }
+    
+    nav>a>img {
+        width: 70%;
+        margin-bottom: 1rem;
+    }
+    
+    nav>ul {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+    
+    nav>ul>a>li{
+        display: inline-block;
+        margin-left: 2rem;  
+        transition: color 0.4s ease-in-out;
+        color: black;
+    }
+    
+    nav>ul>a>li:hover {
+        text-decoration: underline;
+        color: darkgoldenrod;
+    }
+}
 
-    .nav-links li {
-        text-align: left;
-        margin: 10px 0;
-        color: white;
+@media(min-width:790px) and (max-width:835px) {
+    /* bagian navbar */
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 100;
+        padding-top: 1rem;
+        transition: background-color 0.4s ease-in-out;
+    }
+    
+    nav>a {
+        margin-left: 1.5rem;
+    }
+    
+    nav>.nav-links {
+        margin-right: 2rem;
+    }
+    
+    nav>a>img {
+        width: 70%;
+        margin-bottom: 1rem;
+    }
+    
+    nav>ul {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+    
+    nav>ul>a>li{
+        display: inline-block;
+        margin-left: 2rem;  
+        transition: color 0.4s ease-in-out;
+        color: black;
+    }
+    
+    nav>ul>a>li:hover {
+        text-decoration: underline;
+        color: darkgoldenrod;
     }
 }
 
@@ -241,25 +305,113 @@ nav>ul>a>li:hover {
 
 
 /* header */
-
 header {
     width: 100%;
-    height: 100vh;
+    height: 40vh; /* Memastikan header mengisi seluruh tinggi viewport */
 }
 
 .bannerblog {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60%;
+    height: 60%; /* Tinggi kontainer bannerblog relatif terhadap tinggi header */
+    margin-top: 14rem;
 }
 
 .bannerblog img {
     max-width: 80%;
-    height: auto;
+    height: auto; /* Menyesuaikan tinggi gambar secara otomatis */
     border-radius: 1rem;
 }
 
+@media (max-width: 450px) {
+    header {
+        width: 100%;
+        margin-top: 10rem;
+        height: 80vh; /* Memastikan header mengisi seluruh tinggi viewport */
+    }
+    
+    .bannerblog {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 6rem;
+        height: 16rem; /* Tinggi kontainer bannerblog di perangkat mobile */
+    }
+    
+    .bannerblog img {
+        width: 100%; /* Memastikan gambar mengisi lebar kontainer */
+        height: 100%; /* Memastikan gambar mengisi tinggi kontainer */
+        object-fit: cover; /* Menjaga gambar mengisi area kontainer tanpa merusak proporsi */
+        border-radius: 1rem;
+    }    
+}
+
+@media(max-width:480px) {
+    header {
+        width: 100%;
+        margin-top: 10rem;
+        height: 16rem;
+    }
+    
+    .bannerblog {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 6rem;
+        height: 16rem; /* Tinggi kontainer bannerblog di perangkat mobile */
+    }
+    
+    .bannerblog img {
+        width: 100%; /* Memastikan gambar mengisi lebar kontainer */
+        height: 100%; /* Memastikan gambar mengisi tinggi kontainer */
+        object-fit: cover; /* Menjaga gambar mengisi area kontainer tanpa merusak proporsi */
+        border-radius: 1rem;
+    }    
+}
+
+@media(min-width:650px) and (max-width:770px) {
+    header {
+        width: 100%;
+        height: 20vh; /* Memastikan header mengisi seluruh tinggi viewport */
+    }
+    
+    .bannerblog {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60%; /* Tinggi kontainer bannerblog relatif terhadap tinggi header */
+        margin-top: 15rem;
+    }
+    
+    .bannerblog img {
+        max-width: 80%;
+        height: auto; /* Menyesuaikan tinggi gambar secara otomatis */
+        border-radius: 1rem;
+    }
+    
+}
+
+@media(min-width:790px) and (max-width:835px) {
+    header {
+        width: 100%;
+        height: 20vh; /* Memastikan header mengisi seluruh tinggi viewport */
+    }
+    
+    .bannerblog {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60%; /* Tinggi kontainer bannerblog relatif terhadap tinggi header */
+        margin-top: 13rem;
+    }
+    
+    .bannerblog img {
+        max-width: 80%;
+        height: auto; /* Menyesuaikan tinggi gambar secara otomatis */
+        border-radius: 1rem;
+    }
+}
 /*  end header */
 
 
@@ -267,10 +419,11 @@ header {
 /* blog nav */
 
 .blogbagian1 {
-    margin-top: -11rem;
+    margin-top: 4rem;
     display: flex;
     gap: 25rem;
 }
+
 
 .navblog>a {
     margin-left: 5px;
@@ -280,13 +433,137 @@ header {
     background-color: chocolate;
 }
 
+@media(max-width:450px) {
+
+    .blogbagian1 {
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 3rem;
+    }
+
+    .blogbagian1>h1 {
+        margin-left: 1rem;
+    }
+
+    .navblog{
+        display: flex;
+        flex-wrap: wrap; /* Memungkinkan tombol-tombol turun ke baris berikutnya */
+        gap: 10px; /* Spasi antara tombol-tombol */
+        margin-left:1.5rem;
+    }
+    
+    .navblog>a {
+        margin-left: 5px;
+        width: 80px;
+        height: 30px;
+        font-size: 10px;
+    }
+    
+    .navblog>a:hover {
+        background-color: chocolate;
+    }
+}
+
+@media(max-width:480px) {
+    
+    .blogbagian1 {
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 3rem;
+    }
+
+    .blogbagian1>h1 {
+        margin-left: 1.5rem;
+    }
+
+
+    .navblog{
+        display: flex;
+        flex-wrap: wrap; /* Memungkinkan tombol-tombol turun ke baris berikutnya */
+        gap: 10px; /* Spasi antara tombol-tombol */
+        margin-left:1rem;
+    }
+    
+    .navblog>a {
+        margin-left: 5px;
+        width: 80px;
+        height: 30px;
+        font-size: 10px;
+    }
+    
+    .navblog>a:hover {
+        background-color: chocolate;
+    }
+}
+
+@media(min-width:650px) and (max-width:770px) {
+    .blogbagian1 {
+        margin-top: 2rem;
+        display: flex;
+        gap: 3rem;
+    }
+
+    .blogbagian1>h1 {
+        margin-left: 1rem;
+        margin-top: -8px;
+    }
+
+    .navblog{
+        display: flex;
+        gap: 10px; /* Spasi antara tombol-tombol */
+        margin-left:1.5rem;
+    }
+    
+    .navblog>a {
+        margin-left: 5px;
+        width: 90px;
+        height: 40px;
+        font-size: 12px;
+    }
+    
+    .navblog>a:hover {
+        background-color: chocolate;
+    }
+}
+
+@media(min-width:790px) and (max-width:835px) {
+    .blogbagian1 {
+        margin-top: 2rem;
+        display: flex;
+        gap: 6rem;
+    }
+
+    .blogbagian1>h1 {
+        margin-left: 1rem;
+        margin-top: -8px;
+    }
+
+    .navblog{
+        display: flex;
+        gap: 10px; /* Spasi antara tombol-tombol */
+        margin-left:1.5rem;
+    }
+    
+    .navblog>a {
+        margin-left: 5px;
+        width: 90px;
+        height: 40px;
+        font-size: 12px;
+    }
+    
+    .navblog>a:hover {
+        background-color: chocolate;
+    }
+}
 /* end blog nav */
 
 
 /* blog section 1 */
 
 .bagiancard1 {
-    margin-top: -5rem;
+    margin-top: 2rem;
     display: flex;
     gap: 1rem;
 }
@@ -294,6 +571,8 @@ header {
 .bagiancard1>.card1>.card {
     border-radius: 1rem;
     border: none;
+    width: 18rem;
+    height: auto;
 }
 
 .bagiancard1>.card1>.card:hover {
@@ -316,9 +595,14 @@ header {
     margin-top: 10px;
 }
 
+
+
+
 .bagiancard1>.card2>.card {
     border-radius: 1rem;
     border: none;
+    width: 18rem;
+    height: auto;
 }
 
 .bagiancard1>.card2>.card:hover {
@@ -334,9 +618,13 @@ header {
 }
 
 
+
+
 .bagiancard1>.card3>.card {
     border-radius: 1rem;
     border: none;
+    width: 18rem;
+    height: auto;
 }
 
 .bagiancard1>.card3>.card:hover {
@@ -364,6 +652,8 @@ header {
 .bagiancard1>.card4>.card {
     border-radius: 1rem;
     border: none;
+    width: 18rem;
+    height: auto;
 }
 
 .bagiancard1>.card4>.card:hover{
@@ -386,11 +676,718 @@ header {
     width: 100%;
 }
 
+@media(max-width:450px) {
+    .bagiancard11{
+        width: 100%;
+        display: flex;
+        padding-top: 0;
+       
+    }
+
+    .bagiancard1 {
+        margin-top: 3rem;
+        display: flex;
+        gap: 1rem;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    
+    .bagiancard1>.card1>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+        margin-left: 1rem;
+    }
+    
+    .bagiancard1>.card1>.card:hover {
+       border:1px solid black;
+       background-color: darkkhaki;
+       color: white;
+       transition: 0.50s;
+    }
+    
+    .bagiancard1>.card1>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .bagiancard1>.card1>.card>.card-body>.paragrafcard111 {
+       font-size: 12px;
+    }
+    
+    .bagiancard1>.card1>.card>.card-body>.paragrafcard1 {
+        margin-top: 2.6rem;
+        font-size: 12px;
+    }
+    
+    .bagiancard1>.card1>.card>.card-body>.buttoncard1 {
+        margin-top: 10px;
+    }
+
+    .buttoncard1{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard111{
+        width:90px;
+        height: 40px;
+        font-size: 10px
+    }
+
+
+    
+    .bagiancard1>.card2>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+    }
+    
+    .bagiancard1>.card2>.card:hover {
+        border:1px solid black;
+        background-color: darkkhaki;
+        color: white;
+        transition: 0.50s;
+     }
+    
+    .bagiancard1>.card2>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .bagiancard11>.bagiancard1>.card2>.card>.card-body>.paragrafcard22 {
+        font-size: 12px;
+     }
+
+     .bagiancard11>.bagiancard1>.card2>.card>.card-body>.paragrafcard2 {
+        margin-top: 2.6rem;
+        font-size: 12px;
+    }
+    
+    .buttoncard2{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard22{
+        width:90px;
+        height: 40px;
+        font-size: 10px
+    }
+
+
+
+    
+    .bagiancard1>.card3>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+    }
+    
+    .bagiancard1>.card3>.card:hover {
+        border:1px solid black;
+        background-color: darkkhaki;
+        color: white;
+        transition: 0.50s;
+     }
+
+     .bagiancard11>.bagiancard1>.card3>.card>.card-body>.paragrafcard33 {
+        font-size: 12px;
+     }
+    
+     .bagiancard11>.bagiancard1>.card3>.card>.card-body>.paragrafcard3 {
+        margin-top: 5rem;
+        font-size: 12px;
+    }
+    
+    .bagiancard1>.card3>.card>.card-body>.buttoncard1 {
+        margin-top: 1rem;
+    }
+
+    .buttoncard3{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard33{
+        width:90px;
+        height: 40px;
+        font-size: 10px
+    }
+
+    
+    .bagiancard1>.card3>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+    
+
+    
+    
+    .bagiancard1>.card4>.card {
+        border-radius: 1rem;
+        border: none;
+        width:13rem;
+        margin-right: 1rem;
+    }
+    
+    .bagiancard1>.card4>.card:hover{
+        border:1px solid black;
+        background-color: darkkhaki;
+        color: white;
+        transition: 0.50s;
+     }
+
+     .bagiancard11>.bagiancard1>.card4>.card>.card-body>.paragrafcard44 {
+        font-size: 12px;
+     }
+    
+     .bagiancard11>.bagiancard1>.card4>.card>.card-body>.paragrafcard4 {
+        margin-top: 3.5rem;
+    }
+    
+    .buttoncard4{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard44{
+        width:90px;
+        height: 40px;
+        font-size: 10px
+    }
+
+    .bagiancard1>.card4>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+}
+
+@media(max-width:480px) {
+    .bagiancard11{
+        width: 100%;
+        display: flex;
+        padding-top: 0;
+       
+    }
+
+    .bagiancard1 {
+        margin-top: 3rem;
+        display: flex;
+        gap: 1rem;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    
+    .bagiancard1>.card1>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+        margin-left: 1rem;
+    }
+    
+    .bagiancard1>.card1>.card:hover {
+       border:1px solid black;
+       background-color: darkkhaki;
+       color: white;
+       transition: 0.50s;
+    }
+    
+    .bagiancard1>.card1>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .bagiancard1>.card1>.card>.card-body>.paragrafcard111 {
+       font-size: 12px;
+    }
+    
+    .bagiancard1>.card1>.card>.card-body>.paragrafcard1 {
+        margin-top: 2.6rem;
+        font-size: 12px;
+    }
+    
+    .bagiancard1>.card1>.card>.card-body>.buttoncard1 {
+        margin-top: 10px;
+    }
+
+    .buttoncard1{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard111{
+        width:90px;
+        height: 40px;
+        font-size: 10px
+    }
+
+
+    
+    .bagiancard1>.card2>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+    }
+    
+    .bagiancard1>.card2>.card:hover {
+        border:1px solid black;
+        background-color: darkkhaki;
+        color: white;
+        transition: 0.50s;
+     }
+    
+    .bagiancard1>.card2>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .bagiancard11>.bagiancard1>.card2>.card>.card-body>.paragrafcard22 {
+        font-size: 12px;
+     }
+
+     .bagiancard11>.bagiancard1>.card2>.card>.card-body>.paragrafcard2 {
+        margin-top: 2.6rem;
+        font-size: 12px;
+    }
+    
+    .buttoncard2{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard22{
+        width:90px;
+        height: 40px;
+        font-size: 10px
+    }
+
+
+
+    
+    .bagiancard1>.card3>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+    }
+    
+    .bagiancard1>.card3>.card:hover {
+        border:1px solid black;
+        background-color: darkkhaki;
+        color: white;
+        transition: 0.50s;
+     }
+
+     .bagiancard11>.bagiancard1>.card3>.card>.card-body>.paragrafcard33 {
+        font-size: 12px;
+     }
+    
+     .bagiancard11>.bagiancard1>.card3>.card>.card-body>.paragrafcard3 {
+        margin-top: 5rem;
+        font-size: 12px;
+    }
+    
+    .bagiancard1>.card3>.card>.card-body>.buttoncard1 {
+        margin-top: 1rem;
+    }
+
+    .buttoncard3{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard33{
+        width:90px;
+        height: 40px;
+        font-size: 10px
+    }
+
+    
+    .bagiancard1>.card3>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+    
+
+    
+    
+    .bagiancard1>.card4>.card {
+        border-radius: 1rem;
+        border: none;
+        width:13rem;
+        margin-right: 1rem;
+    }
+    
+    .bagiancard1>.card4>.card:hover{
+        border:1px solid black;
+        background-color: darkkhaki;
+        color: white;
+        transition: 0.50s;
+     }
+
+     .bagiancard11>.bagiancard1>.card4>.card>.card-body>.paragrafcard44 {
+        font-size: 12px;
+     }
+    
+     .bagiancard11>.bagiancard1>.card4>.card>.card-body>.paragrafcard4 {
+        margin-top: 3.5rem;
+    }
+    
+    .buttoncard4{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard44{
+        width:90px;
+        height: 40px;
+        font-size: 10px
+    }
+
+    .bagiancard1>.card4>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+}
+
+
+
+
+@media(min-width:650px) and (max-width:770px) {
+    .bagiancard1 {
+        margin-top: 2.5rem;
+        display: flex;
+        margin-left: 10px;
+        gap: 15px;
+    }
+    
+    .bagiancard1>.card1>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 11rem;
+        height: auto;
+    }
+    
+    .bagiancard1>.card1>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .paragrafcard111 {
+        font-size: 12px;
+    }
+    
+    .paragrafcard1 {
+        font-size: 12px;
+        padding-top: 12px;
+    }
+
+    .buttoncard1{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard111{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+    
+    .bagiancard1>.card1>.card>.card-body>.buttoncard1 {
+        margin-top: 10px;
+    }
+
+
+
+
+    
+    .bagiancard1>.card2>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 11rem;
+        height: auto;
+    }
+
+    .bagiancard1>.card2>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .paragrafcard22{
+        font-size: 12px;
+    }
+
+    .paragrafcard2{
+        font-size: 12px;
+        padding-top: 1.1rem;
+    }
+
+    .buttoncard2 {
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard22{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+
+
+
+
+    
+    .bagiancard1>.card3>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 11rem;
+        height: auto;
+    }
+
+    .paragrafcard33{
+        font-size: 12px;
+    }
+
+    .paragrafcard3 {
+        font-size: 12px;    
+        padding-top: 20px;
+    }
+
+     .buttoncard3{
+        display: flex;
+        gap: 10px;
+        margin-top: 1.3rem;
+     }
+
+    .buttoncard33{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+    
+    
+    .bagiancard1>.card3>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+
+
+    
+    
+    
+    .bagiancard1>.card4>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 11rem;
+        height: auto;
+    }
+    
+    .bagiancard1>.card4>.card>.card-body>.paragrafcard4 {
+        margin-top: 2.2rem;
+    }
+    
+    .bagiancard1>.card4>.card>.card-body>.buttoncard1 {
+        margin-top: 1rem;
+    }
+    
+    .bagiancard1>.card4>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .paragrafcard44{
+        font-size: 12px;
+    }
+
+    .paragrafcard4{
+        font-size: 12px;
+        padding-top: 10px;
+    }
+
+
+    .buttoncard4{
+        display: flex;
+        gap: 10px;
+        margin-top: 1.3rem;
+     }
+
+    .buttoncard44{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+    
+}
+
+@media(min-width:790px) and (max-width:835px) {
+    .bagiancard1 {
+        margin-top: 2.5rem;
+        display: flex;
+        gap: 15px;
+    }
+    
+    .bagiancard1>.card1>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 12rem;
+        height: auto;
+    }
+    
+    .bagiancard1>.card1>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .paragrafcard111 {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    
+    .paragrafcard1 {
+        font-size: 12px;
+    }
+
+    .buttoncard1{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard111{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+    
+    .bagiancard1>.card1>.card>.card-body>.buttoncard1 {
+        margin-top: 10px;
+    }
+
+
+
+
+    
+    .bagiancard1>.card2>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+        height: auto;
+    }
+
+    .bagiancard1>.card2>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .paragrafcard22{
+        font-size: 12px;
+    }
+
+    .paragrafcard2{
+        font-size: 12px;
+        margin-top: 2rem;
+    }
+
+    .buttoncard2 {
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard22{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+
+
+
+
+    
+    
+    .bagiancard1>.card3>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+        height: auto;
+    }
+
+    .paragrafcard33{
+        font-size: 12px;
+    }
+
+    .paragrafcard3 {
+        font-size: 12px;    
+    }
+
+     .buttoncard3{
+        display: flex;
+        gap: 10px;
+        margin-top: 1.3rem;
+     }
+
+    .buttoncard33{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+    
+    
+    .bagiancard1>.card3>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+
+
+    
+    
+    
+    .bagiancard1>.card4>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+        height: auto;
+    }
+    
+    .bagiancard1>.card4>.card>.card-body>.paragrafcard4 {
+        margin-top: 2.2rem;
+    }
+    
+    .bagiancard1>.card4>.card>.card-body>.buttoncard1 {
+        margin-top: 1rem;
+    }
+    
+    .bagiancard1>.card4>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .paragrafcard44{
+        font-size: 12px;
+    }
+
+    .paragrafcard4{
+        font-size: 12px;
+        padding-top: 10px;
+    }
+
+
+    .buttoncard4{
+        display: flex;
+        gap: 10px;
+        margin-top: 1.3rem;
+     }
+
+    .buttoncard44{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+    
+}
+
 
 /* end blog section 1 */
-
-
-
 
 
 
@@ -410,6 +1407,7 @@ header {
 .bagiancard2>.card5>.card {
     border-radius: 1rem;
     border: none;
+    width: 18rem;
 }
 
 .bagiancard2>.card5>.card:hover {
@@ -424,17 +1422,20 @@ header {
     width: 100%;
 }
 
-.bagiancard2>.card5>.card>.card-body>.paragrafcard1 {
+.bagiancard2>.card5>.card>.card-body>.paragrafcard5 {
     margin-top: 2.6rem;
 }
 
-.bagiancard2>.card5>.card>.card-body>.buttoncard1 {
+.bagiancard2>.card5>.card>.card-body>.buttoncard5 {
     margin-top: 10px;
 }
+
+
 
 .bagiancard2>.card6>.card {
     border-radius: 1rem;
     border: none;
+    width: 18rem;
 }
 
 .bagiancard2>.card6>.card:hover {
@@ -449,16 +1450,19 @@ header {
     width: 100%;
 }
 
+
+
 .bagiancard2>.card6>.card {
     border-radius: 1rem;
     border: none;
+    width: 18rem;
 }
 
-.bagiancard2>.card6>.card>.card-body>.paragrafcard3 {
-    margin-top: 4rem;
+.bagiancard2>.card6>.card>.card-body>.paragrafcard6 {
+    margin-top: 1rem;
 }
 
-.bagiancard2>.card6>.card>.card-body>.buttoncard1 {
+.bagiancard2>.card6>.card>.card-body>.buttoncard6 {
     margin-top: 1rem;
 }
 
@@ -470,6 +1474,7 @@ header {
 .bagiancard2>.card7>.card {
     border-radius: 1rem;
     border: none;
+    width: 18rem;
 }
 
 .bagiancard2>.card7>.card:hover {
@@ -483,7 +1488,7 @@ header {
     margin-top: 4.2rem;
 }
 
-.bagiancard2>.card7>.card>.card-body>.buttoncard1 {
+.bagiancard2>.card7>.card>.card-body>.buttoncard7 {
     margin-top: 1rem;
 }
 
@@ -492,9 +1497,12 @@ header {
     width: 100%;
 }
 
+
+
 .bagiancard2>.card8>.card {
     border-radius: 1rem;
     border: none;
+    width: 18rem;
 }
 
 .bagiancard2>.card8>.card:hover {
@@ -504,17 +1512,726 @@ header {
     transition: 0.50s;
  }
 
-.bagiancard2>.card8>.card>.card-body>.paragrafcard4 {
-    margin-top: 2.2rem;
+.bagiancard2>.card8>.card>.card-body>.paragrafcard8 {
+    margin-top: 2.5rem;
+
 }
 
-.bagiancard2>.card8>.card>.card-body>.buttoncard1 {
+.bagiancard2>.card8>.card>.card-body>.buttoncard8 {
     margin-top: 1rem;
 }
 
 .bagiancard2>.card8>.card>img {
     border-radius: 1rem;
     width: 100%;
+}
+
+@media(max-width:450px) {
+    .bagiancard22{
+        width: 100%;
+        display: flex;
+        padding-top: 0;
+       
+    }
+
+    .bagiancard2 {
+        margin-top: 3rem;
+        display: flex;
+        gap: 1rem;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    
+    .bagiancard2>.card5>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+        margin-left: 1rem;
+    }
+    
+    .bagiancard2>.card5>.card:hover {
+       border:1px solid black;
+       background-color: darkkhaki;
+       color: white;
+       transition: 0.50s;
+    }
+    
+    .bagiancard2>.card5>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .bagiancard2>.card5>.card>.card-body>.paragrafcard55 {
+       font-size: 12px;
+    }
+    
+    .bagiancard2>.card5>.card>.card-body>.paragrafcard5 {
+        margin-top: 2.6rem;
+        font-size: 12px;
+    }
+    
+    .bagiancard2>.card5>.card>.card-body>.buttoncard5 {
+        margin-top: 10px;
+    }
+
+    .buttoncard5{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard55{
+        width:90px;
+        height: 40px;
+        font-size: 10px
+    }
+
+
+    
+    .bagiancard2>.card6>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+    }
+    
+    .bagiancard2>.card6>.card:hover {
+        border:1px solid black;
+        background-color: darkkhaki;
+        color: white;
+        transition: 0.50s;
+     }
+    
+    .bagiancard2>.card6>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .bagiancard22>.bagiancard2>.card6>.card>.card-body>.paragrafcard66 {
+        font-size: 12px;
+     }
+
+     .bagiancard22>.bagiancard2>.card6>.card>.card-body>.paragrafcard6 {
+        margin-top: 2.6rem;
+        font-size: 12px;
+    }
+    
+    .buttoncard6{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard66{
+        width:90px;
+        height: 40px;
+        font-size: 10px
+    }
+
+
+
+    
+    .bagiancard2>.card7>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+    }
+    
+    .bagiancard2>.card7>.card:hover {
+        border:1px solid black;
+        background-color: darkkhaki;
+        color: white;
+        transition: 0.50s;
+     }
+
+     .bagiancard22>.bagiancard2>.card7>.card>.card-body>.paragrafcard77 {
+        font-size: 12px;
+     }
+    
+     .bagiancard22>.bagiancard2>.card7>.card>.card-body>.paragrafcard7 {
+        margin-top: 5rem;
+        font-size: 12px;
+    }
+    
+    .bagiancard2>.card8>.card>.card-body>.buttoncard7 {
+        margin-top: 1rem;
+    }
+
+    .buttoncard7{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard77{
+        width:90px;
+        height: 40px;
+        font-size: 10px
+    }
+
+    
+    .bagiancard2>.card7>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+    
+
+    
+    
+    .bagiancard2>.card8>.card {
+        border-radius: 1rem;
+        border: none;
+        width:13rem;
+        margin-right: 1rem;
+    }
+    
+    .bagiancard2>.card8>.card:hover{
+        border:1px solid black;
+        background-color: darkkhaki;
+        color: white;
+        transition: 0.50s;
+     }
+
+     .bagiancard22>.bagiancard2>.card8>.card>.card-body>.paragrafcard88 {
+        font-size: 12px;
+     }
+    
+     .bagiancard22>.bagiancard2>.card8>.card>.card-body>.paragrafcard8 {
+        margin-top: 3.4rem;
+    }
+    
+    .buttoncard8{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard88{
+        width:90px;
+        height: 40px;
+        font-size: 10px
+    }
+
+    .bagiancard2>.card8>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+}
+
+@media(max-width:480px) {
+    .bagiancard22{
+        width: 100%;
+        display: flex;
+        padding-top: 0;
+       
+    }
+
+    .bagiancard2 {
+        margin-top: 3rem;
+        display: flex;
+        gap: 1rem;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    
+    .bagiancard2>.card5>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+        margin-left: 1rem;
+    }
+    
+    .bagiancard2>.card5>.card:hover {
+       border:1px solid black;
+       background-color: darkkhaki;
+       color: white;
+       transition: 0.50s;
+    }
+    
+    .bagiancard2>.card5>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .bagiancard2>.card5>.card>.card-body>.paragrafcard55 {
+       font-size: 12px;
+    }
+    
+    .bagiancard2>.card5>.card>.card-body>.paragrafcard5 {
+        margin-top: 2.6rem;
+        font-size: 12px;
+    }
+    
+    .bagiancard2>.card5>.card>.card-body>.buttoncard5 {
+        margin-top: 10px;
+    }
+
+    .buttoncard5{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard55{
+        width:90px;
+        height: 40px;
+        font-size: 10px
+    }
+
+
+    
+    .bagiancard2>.card6>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+    }
+    
+    .bagiancard2>.card6>.card:hover {
+        border:1px solid black;
+        background-color: darkkhaki;
+        color: white;
+        transition: 0.50s;
+     }
+    
+    .bagiancard2>.card6>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .bagiancard22>.bagiancard2>.card6>.card>.card-body>.paragrafcard66 {
+        font-size: 12px;
+     }
+
+     .bagiancard22>.bagiancard2>.card6>.card>.card-body>.paragrafcard6 {
+        margin-top: 2.6rem;
+        font-size: 12px;
+    }
+    
+    .buttoncard6{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard66{
+        width:90px;
+        height: 40px;
+        font-size: 10px
+    }
+
+
+
+    
+    .bagiancard2>.card7>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+    }
+    
+    .bagiancard2>.card7>.card:hover {
+        border:1px solid black;
+        background-color: darkkhaki;
+        color: white;
+        transition: 0.50s;
+     }
+
+     .bagiancard22>.bagiancard2>.card7>.card>.card-body>.paragrafcard77 {
+        font-size: 12px;
+     }
+    
+     .bagiancard22>.bagiancard2>.card7>.card>.card-body>.paragrafcard7 {
+        margin-top: 5rem;
+        font-size: 12px;
+    }
+    
+    .bagiancard2>.card8>.card>.card-body>.buttoncard7 {
+        margin-top: 1rem;
+    }
+
+    .buttoncard7{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard77{
+        width:90px;
+        height: 40px;
+        font-size: 10px
+    }
+
+    
+    .bagiancard2>.card7>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+    
+
+    
+    
+    .bagiancard2>.card8>.card {
+        border-radius: 1rem;
+        border: none;
+        width:13rem;
+        margin-right: 1rem;
+    }
+    
+    .bagiancard2>.card8>.card:hover{
+        border:1px solid black;
+        background-color: darkkhaki;
+        color: white;
+        transition: 0.50s;
+     }
+
+     .bagiancard22>.bagiancard2>.card8>.card>.card-body>.paragrafcard88 {
+        font-size: 12px;
+     }
+    
+     .bagiancard22>.bagiancard2>.card8>.card>.card-body>.paragrafcard8 {
+        margin-top: 3.4rem;
+    }
+    
+    .buttoncard8{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard88{
+        width:90px;
+        height: 40px;
+        font-size: 10px
+    }
+
+    .bagiancard2>.card8>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+}
+
+@media(min-width:650px) and (max-width:770px) {
+    .bagiancard2 {
+        margin-top: 2.5rem;
+        display: flex;
+        margin-left: 10px;
+        gap: 15px;
+    }
+    
+    .bagiancard2>.card5>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 11rem;
+        height: auto;
+    }
+    
+    .bagiancard2>.card5>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .paragrafcard55 {
+        font-size: 12px;
+    }
+    
+    .paragrafcard5 {
+        margin-top: 2.6rem;
+        font-size: 12px;
+    }
+
+    .buttoncard5{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard55{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+    
+    .bagiancard2>.card5>.card>.card-body>.buttoncard5 {
+        margin-top: 10px;
+    }
+
+
+
+
+    
+    .bagiancard2>.card6>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 11rem;
+        height: auto;
+    }
+
+    .bagiancard2>.card6>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .paragrafcard66{
+        font-size: 12px;
+    }
+
+    .paragrafcard6{
+        font-size: 12px;
+        margin-top: 1.4rem;
+    }
+
+    .buttoncard6 {
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard66{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+
+
+
+
+    
+    .bagiancard2>.card7>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 11rem;
+        height: auto;
+    }
+
+    .paragrafcard77{
+        font-size: 12px;
+    }
+
+    .paragrafcard7 {
+        font-size: 12px;  
+        padding-top: 10px; 
+    }
+
+     .buttoncard7{
+        display: flex;
+        gap: 10px;
+        margin-top: 1rem;
+     }
+
+    .buttoncard77{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+    
+    
+    .bagiancard2>.card7>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+
+
+    
+    
+    
+    .bagiancard2>.card8>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 11rem;
+        height: auto;
+    }
+    
+    .bagiancard2>.card8>.card>.card-body>.paragrafcard8 {
+        margin-top: 2.2rem;
+    }
+    
+    .bagiancard2>.card8>.card>.card-body>.buttoncard8 {
+        margin-top: 1rem;
+    }
+    
+    .bagiancard2>.card8>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .paragrafcard88{
+        font-size: 12px;
+    }
+
+    .paragrafcard8{
+        font-size: 12px;
+        padding-top: 2px;
+    }
+
+
+    .buttoncard8{
+        display: flex;
+        gap: 10px;
+        margin-top: 1.3rem;
+     }
+
+    .buttoncard88{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+}
+
+@media(min-width:780px) and (max-width:850px) {
+    .bagiancard2 {
+        margin-top: 2.5rem;
+        display: flex;
+        gap: 15px;
+    }
+    
+    .bagiancard2>.card5>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 12rem;
+        height: auto;
+    }
+    
+    .bagiancard2>.card5>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .paragrafcard55 {
+        font-size: 12px;
+    }
+    
+    .paragrafcard5 {
+        margin-top: 2.6rem;
+        font-size: 12px;
+    }
+
+    .buttoncard5{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard55{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+    
+    .bagiancard2>.card5>.card>.card-body>.buttoncard5 {
+        margin-top: 10px;
+    }
+
+
+
+
+    
+    .bagiancard2>.card6>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+        height: auto;
+    }
+
+    .bagiancard2>.card6>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .paragrafcard66{
+        font-size: 12px;
+        margin-top: -10px;
+    }
+
+    .paragrafcard6{
+        font-size: 12px;
+        margin-top: 2.7rem;
+    }
+
+    .buttoncard6 {
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard66{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+
+
+
+
+    
+    
+    .bagiancard2>.card7>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+        height: auto;
+    }
+
+    .paragrafcard77{
+        font-size: 12px;
+        margin-top: -10px;
+    }
+
+    .paragrafcard7 {
+        font-size: 12px;    
+        padding-top: 10px;
+    }
+
+    .buttoncard7{
+        display: flex;
+        gap: 10px;
+     }
+
+    .buttoncard77{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+    
+    
+    .bagiancard2>.card7>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+
+
+    
+    
+    
+    .bagiancard2>.card8>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+        height: auto;
+    }
+    
+    .bagiancard2>.card8>.card>.card-body>.paragrafcard8 {
+        margin-top: 2.2rem;
+    }
+    
+    .bagiancard2>.card8>.card>.card-body>.buttoncard8 {
+        margin-top: 1rem;
+    }
+    
+    .bagiancard2>.card8>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .paragrafcard88{
+        font-size: 12px;
+        margin-top: -10px;
+    }
+
+    .paragrafcard8{
+        font-size: 12px;
+        padding-top: 23px;
+    }
+
+
+    .buttoncard8{
+        display: flex;
+        gap: 10px;
+        margin-top: 1.3rem;
+     }
+
+    .buttoncard88{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
 }
 
 
@@ -539,6 +2256,7 @@ header {
 .bagiancard3>.card9>.card {
     border-radius: 1rem;
     border: none;
+    width: 18rem;
 }
 
 .bagiancard3>.card9>.card:hover {
@@ -553,17 +2271,18 @@ header {
     width: 100%;
 }
 
-.bagiancard3>.card9>.card>.card-body>.paragrafcard1 {
+.bagiancard3>.card9>.card>.card-body>.paragrafcard9 {
     margin-top: 2.6rem;
 }
 
-.bagiancard3>.card9>.card>.card-body>.buttoncard1 {
+.bagiancard3>.card9>.card>.card-body>.buttoncard9 {
     margin-top: 10px;
 }
 
 .bagiancard3>.card10>.card {
     border-radius: 1rem;
     border: none;
+    width: 18rem;
 }
 
 .bagiancard3>.card10>.card:hover {
@@ -578,16 +2297,17 @@ header {
     width: 100%;
 }
 
-.bagiancard3>.card10>.card {
+.bagiancard3>.card11>.card {
     border-radius: 1rem;
     border: none;
+    width: 18rem;
 }
 
-.bagiancard3>.card10>.card>.card-body>.paragrafcard3 {
+.bagiancard3>.card10>.card>.card-body>.paragrafcard11 {
     margin-top: 4rem;
 }
 
-.bagiancard3>.card10>.card>.card-body>.buttoncard1 {
+.bagiancard3>.card10>.card>.card-body>.buttoncard11 {
     margin-top: 1rem;
 }
 
@@ -599,6 +2319,7 @@ header {
 .bagiancard3>.card11>.card {
     border-radius: 1rem;
     border: none;
+    width: 18rem;
 }
 
 .bagiancard3>.card11>.card:hover {
@@ -608,11 +2329,11 @@ header {
     transition: 0.50s;
  }
 
-.bagiancard3>.card11>.card>.card-body>.paragrafcard7 {
+.bagiancard3>.card11>.card>.card-body>.paragrafcard11 {
     margin-top: 4.2rem;
 }
 
-.bagiancard3>.card11>.card>.card-body>.buttoncard1 {
+.bagiancard3>.card11>.card>.card-body>.buttoncard11 {
     margin-top: 1rem;
 }
 
@@ -624,6 +2345,7 @@ header {
 .bagiancard3>.card12>.card {
     border-radius: 1rem;
     border: none;
+    width: 18rem;
 }
 
 .bagiancard3>.card12>.card:hover {
@@ -633,11 +2355,11 @@ header {
     transition: 0.50s;
  }
 
-.bagiancard3>.card12>.card>.card-body>.paragrafcard4 {
+.bagiancard3>.card12>.card>.card-body>.paragrafcard12 {
     margin-top: 2.2rem;
 }
 
-.bagiancard3>.card12>.card>.card-body>.buttoncard1 {
+.bagiancard3>.card12>.card>.card-body>.buttoncard12 {
     margin-top: 1rem;
 }
 
@@ -646,6 +2368,714 @@ header {
     width: 100%;
 }
 
+@media(max-width:450px) {
+    .bagiancard33{
+        width: 100%;
+        display: flex;
+        padding-top: 0;
+       
+    }
+
+    .bagiancard3 {
+        margin-top: 3rem;
+        display: flex;
+        gap: 1rem;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    
+    .bagiancard3>.card9>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+        margin-left: 1rem;
+    }
+    
+    .bagiancard3>.card9>.card:hover {
+       border:1px solid black;
+       background-color: darkkhaki;
+       color: white;
+       transition: 0.50s;
+    }
+    
+    .bagiancard3>.card9>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .bagiancard3>.card9>.card>.card-body>.paragrafcard99 {
+       font-size: 12px;
+    }
+    
+    .bagiancard3>.card9>.card>.card-body>.paragrafcard9 {
+        margin-top: 2.6rem;
+        font-size: 12px;
+    }
+    
+    .bagiancard3>.card9>.card>.card-body>.buttoncard9 {
+        margin-top: 10px;
+    }
+
+    .buttoncard9{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard99{
+        width:90px;
+        height: 40px;
+        font-size: 10px
+    }
+
+
+    
+    .bagiancard3>.card10>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+    }
+    
+    .bagiancard3>.card10>.card:hover {
+        border:1px solid black;
+        background-color: darkkhaki;
+        color: white;
+        transition: 0.50s;
+     }
+    
+    .bagiancard3>.card10>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .bagiancard33>.bagiancard3>.card10>.card>.card-body>.paragrafcard1010 {
+        font-size: 12px;
+     }
+
+     .bagiancard33>.bagiancard3>.card10>.card>.card-body>.paragrafcard10 {
+        margin-top: 2.6rem;
+        font-size: 12px;
+    }
+    
+    .buttoncard10{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard1010{
+        width:90px;
+        height: 40px;
+        font-size: 10px
+    }
+
+
+
+    
+    .bagiancard3>.card11>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+    }
+    
+    .bagiancard3>.card11>.card:hover {
+        border:1px solid black;
+        background-color: darkkhaki;
+        color: white;
+        transition: 0.50s;
+     }
+
+    .bagiancard33>.bagiancard3>.card11>.card>.card-body>.paragrafcard1111 {
+        font-size: 12px;
+    }
+    
+    .bagiancard33>.bagiancard3>.card11>.card>.card-body>.paragrafcard11 {
+        margin-top: 5rem;
+        font-size: 12px;
+    }
+    
+    .bagiancard3>.card11>.card>.card-body>.buttoncard11 {
+        margin-top: 1rem;
+    }
+
+    .buttoncard11{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard1111{
+        width:90px;
+        height: 40px;
+        font-size: 10px;
+    }
+    
+    .bagiancard3>.card11>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+    
+
+    
+    
+    .bagiancard3>.card12>.card {
+        border-radius: 1rem;
+        border: none;
+        width:13rem;
+        margin-right: 1rem;
+    }
+    
+    .bagiancard3>.card12>.card:hover{
+        border:1px solid black;
+        background-color: darkkhaki;
+        color: white;
+        transition: 0.50s;
+     }
+
+     .bagiancard33>.bagiancard3>.card12>.card>.card-body>.paragrafcard1212 {
+        font-size: 12px;
+     }
+    
+     .bagiancard33>.bagiancard3>.card12>.card>.card-body>.paragrafcard12 {
+        margin-top: 3.4rem;
+    }
+    
+    .buttoncard12{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard1212{
+        width:90px;
+        height: 40px;
+        font-size: 10px;
+    }
+
+    .bagiancard3>.card12>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+}
+
+@media(max-width:480px) {
+    .bagiancard33{
+        width: 100%;
+        display: flex;
+        padding-top: 0;
+       
+    }
+
+    .bagiancard3 {
+        margin-top: 3rem;
+        display: flex;
+        gap: 1rem;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    
+    .bagiancard3>.card9>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+        margin-left: 1rem;
+    }
+    
+    .bagiancard3>.card9>.card:hover {
+       border:1px solid black;
+       background-color: darkkhaki;
+       color: white;
+       transition: 0.50s;
+    }
+    
+    .bagiancard3>.card9>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .bagiancard3>.card9>.card>.card-body>.paragrafcard99 {
+       font-size: 12px;
+    }
+    
+    .bagiancard3>.card9>.card>.card-body>.paragrafcard9 {
+        margin-top: 2.6rem;
+        font-size: 12px;
+    }
+    
+    .bagiancard3>.card9>.card>.card-body>.buttoncard9 {
+        margin-top: 10px;
+    }
+
+    .buttoncard9{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard99{
+        width:90px;
+        height: 40px;
+        font-size: 10px
+    }
+
+
+    
+    .bagiancard3>.card10>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+    }
+    
+    .bagiancard3>.card10>.card:hover {
+        border:1px solid black;
+        background-color: darkkhaki;
+        color: white;
+        transition: 0.50s;
+     }
+    
+    .bagiancard3>.card10>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .bagiancard33>.bagiancard3>.card10>.card>.card-body>.paragrafcard1010 {
+        font-size: 12px;
+     }
+
+     .bagiancard33>.bagiancard3>.card10>.card>.card-body>.paragrafcard10 {
+        margin-top: 2.6rem;
+        font-size: 12px;
+    }
+    
+    .buttoncard10{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard1010{
+        width:90px;
+        height: 40px;
+        font-size: 10px
+    }
+
+
+
+    
+    .bagiancard3>.card11>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+    }
+    
+    .bagiancard3>.card11>.card:hover {
+        border:1px solid black;
+        background-color: darkkhaki;
+        color: white;
+        transition: 0.50s;
+     }
+
+    .bagiancard33>.bagiancard3>.card11>.card>.card-body>.paragrafcard1111 {
+        font-size: 12px;
+    }
+    
+    .bagiancard33>.bagiancard3>.card11>.card>.card-body>.paragrafcard11 {
+        margin-top: 5rem;
+        font-size: 12px;
+    }
+    
+    .bagiancard3>.card11>.card>.card-body>.buttoncard11 {
+        margin-top: 1rem;
+    }
+
+    .buttoncard11{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard1111{
+        width:90px;
+        height: 40px;
+        font-size: 10px;
+    }
+    
+    .bagiancard3>.card11>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+    
+
+    
+    
+    .bagiancard3>.card12>.card {
+        border-radius: 1rem;
+        border: none;
+        width:13rem;
+        margin-right: 1rem;
+    }
+    
+    .bagiancard3>.card12>.card:hover{
+        border:1px solid black;
+        background-color: darkkhaki;
+        color: white;
+        transition: 0.50s;
+     }
+
+     .bagiancard33>.bagiancard3>.card12>.card>.card-body>.paragrafcard1212 {
+        font-size: 12px;
+     }
+    
+     .bagiancard33>.bagiancard3>.card12>.card>.card-body>.paragrafcard12 {
+        margin-top: 3.4rem;
+    }
+    
+    .buttoncard12{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard1212{
+        width:90px;
+        height: 40px;
+        font-size: 10px;
+    }
+
+    .bagiancard3>.card12>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+}
+
+@media(min-width:650px) and (max-width:770px) {
+    .bagiancard3 {
+        margin-top: 2.5rem;
+        display: flex;
+        margin-left: 10px;
+        gap: 15px;
+    }
+    
+    .bagiancard3>.card9>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 11rem;
+        height: auto;
+    }
+    
+    .bagiancard3>.card9>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .paragrafcard99{
+        font-size: 12px;
+    }
+    
+    .paragrafcard9{
+        margin-top: 2.6rem;
+        font-size: 12px;
+    }
+
+    .buttoncard9{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard99{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+    
+    .bagiancard3>.card9>.card>.card-body>.buttoncard9 {
+        margin-top: 10px;
+    }
+
+
+
+
+    
+    .bagiancard3>.card10>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 11rem;
+        height: auto;
+    }
+
+    .bagiancard3>.card10>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .paragrafcard1010{
+        font-size: 12px;
+    }
+
+    .paragrafcard10{
+        font-size: 12px;
+        margin-top: 1.4rem;
+    }
+
+    .buttoncard10 {
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard1010{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+
+
+
+
+    
+    .bagiancard3>.card11>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 11rem;
+        height: auto;
+    }
+
+    .paragrafcard1111{
+        font-size: 12px;
+    }
+
+    .paragrafcard11 {
+        font-size: 12px;    
+        padding-top: 3.5rem;
+        margin-bottom: -1rem;
+    }
+
+     .buttoncard11{
+        display: flex;
+        gap: 10px;
+        margin-top: 2rem;
+     }
+
+    .buttoncard1111{
+        width:90px;
+        height: 40px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+    
+    
+    .bagiancard3>.card11>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+
+
+    
+    
+    
+    .bagiancard3>.card12>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 11rem;
+        height: auto;
+    }
+    
+    .bagiancard3>.card12>.card>.card-body>.paragrafcard12 {
+        margin-top: 2.2rem;
+    }
+    
+    .bagiancard3>.card12>.card>.card-body>.buttoncard12 {
+        margin-top: 1rem;
+    }
+    
+    .bagiancard3>.card12>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .paragrafcard1212{
+        font-size: 12px;
+    }
+
+    .paragrafcard12{
+        font-size: 12px;
+        padding-top: 2px;
+    }
+
+
+    .buttoncard12{
+        display: flex;
+        gap: 10px;
+        margin-top: 1.3rem;
+     }
+
+    .buttoncard1212{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+}
+
+@media(min-width:780px) and (max-width:850px) {
+    .bagiancard3 {
+        margin-top: 2.5rem;
+        display: flex;
+        gap: 15px;
+    }
+    
+    .bagiancard3>.card9>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 12rem;
+        height: auto;
+    }
+    
+    .bagiancard3>.card9>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .paragrafcard99 {
+        font-size: 12px;
+    }
+    
+    .paragrafcard9 {
+        margin-top: 2.6rem;
+        font-size: 12px;
+    }
+
+    .buttoncard9{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard99{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+    
+    .bagiancard3>.card9>.card>.card-body>.buttoncard9 {
+        margin-top: 10px;
+    }
+
+
+
+
+    
+    .bagiancard3>.card10>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+        height: auto;
+    }
+
+    .bagiancard3>.card10>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .paragrafcard1010{
+        font-size: 12px;
+        margin-top: -10px;
+    }
+
+    .paragrafcard10{
+        font-size: 12px;
+        margin-top: 2.6rem;
+    }
+
+    .buttoncard10 {
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttoncard1010{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+
+
+
+
+    
+    
+    .bagiancard3>.card11>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+        height: auto;
+    }
+
+    .paragrafcard1111{
+        font-size: 12px;
+        margin-top: -10px;
+    }
+
+    .paragrafcard11 {
+        font-size: 12px;   
+        margin-top: 5.5rem; 
+    }
+
+     .buttoncard11{
+        display: flex;
+        gap: 10px;
+        margin-top: -7px;
+     }
+
+    .buttoncard1111{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+    
+    
+    .bagiancard3>.card11>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+
+
+    
+    
+    
+    .bagiancard3>.card12>.card {
+        border-radius: 1rem;
+        border: none;
+        width: 13rem;
+        height: auto;
+    }
+    
+    .bagiancard3>.card12>.card>.card-body>.paragrafcard12 {
+        margin-top: 2.2rem;
+    }
+    
+    .bagiancard3>.card12>.card>.card-body>.buttoncard12 {
+        margin-top: 1rem;
+    }
+    
+    .bagiancard3>.card12>.card>img {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .paragrafcard1212{
+        font-size: 12px;
+        margin-top: -10px;
+    }
+
+    .paragrafcard12{
+        font-size: 12px;
+        padding-top: 25px;
+    }
+
+
+    .buttoncard12{
+        display: flex;
+        gap: 10px;
+        margin-top: 1.3rem;
+     }
+
+    .buttoncard1212{
+        padding: 10px;
+        font-size: 9px;
+        font-weight: 500;
+    }
+}
 
 
 /* end blog section 3 */

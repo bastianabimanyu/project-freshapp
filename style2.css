@@ -759,7 +759,8 @@ nav>ul>a>li:hover {
     display: flex;
     margin-top: 3rem;
     gap: 1.5rem; 
-    margin-left: 1.4rem;   
+    justify-content: center;
+    align-items: center;
 }
 
 .tersehat2{
@@ -836,8 +837,7 @@ nav>ul>a>li:hover {
     .img-wrapper {
         position: relative;
         width: 100%;
-    }
-    
+    }   
 
     .tersehat2{
         display: flex;
@@ -1323,7 +1323,8 @@ nav>ul>a>li:hover {
     display: flex;
     margin-top: 3rem;
     gap: 1.5rem;    
-    margin-left: 1.5rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .tersehat3>.cardsehat2>.card{
@@ -1884,7 +1885,8 @@ nav>ul>a>li:hover {
     display: flex;
     margin-top: 3rem;
     gap: 1.5rem;    
-    margin-left: 1.5rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .tersehat4>.cardsehat3>.card{
@@ -2463,7 +2465,8 @@ nav>ul>a>li:hover {
     display: flex;
     margin-top: 3rem;
     gap: 1.5rem;  
-    margin-left:1.5rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .tersehat5>.cardsehat4>.card{
@@ -2988,7 +2991,8 @@ nav>ul>a>li:hover {
     display: flex;
     margin-top: 3rem;
     gap: 1.5rem;    
-    margin-left: 1.5rem;  
+    justify-content: center;
+    align-items: center;
 }
 
 .tersehat6>.cardsehat5>.card{

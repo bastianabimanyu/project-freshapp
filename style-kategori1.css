@@ -84,9 +84,10 @@ nav>ul>a>li:hover {
     border-radius: 2px;
 }
 
-@media(max-width:768px) {
-    .menu-icon {
-        display: flex;
+@media only screen and (max-width: 450px) {
+    nav>a>img {
+        margin-bottom: 1rem;
+        margin-left: 2rem;
     }
 
     .nav-links {
@@ -113,28 +114,621 @@ nav>ul>a>li:hover {
         margin: 10px 0;
         color: white;
     }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .menu-icon>.bar {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        border-radius: 2px;
+        margin-right: 2rem;
+    }
+
+    /* bagian slider banner */
+
+    .slides img {
+        width: 100%;
+        height: 18rem;
+    }
+
+    .prev {
+        font-size: 2rem;
+        margin-left: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
+
+    .next {
+        font-size: 2rem;
+        margin-right: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
+
+    .slide-content {
+        position: absolute;
+        top: 50%;
+        /* Posisi tengah vertikal */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Menggeser konten ke tengah */
+        color: white;
+        z-index: 1;
+        /* Agar konten berada di atas gambar */
+        width: 100%;
+    }
+
+    .slide-title {
+        font-size: 1.5rem;
+        margin: 0 0 90px;
+        /* Jarak antara judul dan teks */
+        text-align: left;
+        margin-left: 4.8rem;
+        width: 60%;
+    }
+
+    .slide-text {
+        font-size: 10px;
+        width: 70%;
+        /* Contoh width yang lebih lebar agar teks tidak terpotong */
+        text-align: left;
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+
+    .sectionpertama {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+
+/* bagian navbar */
+
+nav>a>img {
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #05352E;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    height: 50vh;
+}
+
+.nav-links.show {
+    display: flex;
+    z-index: 100;
+    position: fixed;
+}
+
+.nav-links li {
+    text-align: left;
+    margin: 10px 0;
+    color: white;
+}
+
+.menu-icon {
+    display: flex;
+}
+
+.menu-icon>.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    margin-right: 2rem;
+}
+
+/* bagian slider banner */
+
+.slides img {
+    width: 100%;
+    height: 18rem;
+}
+
+.prev {
+    font-size: 2rem;
+    margin-left: 2rem;
+    background: none;
+    margin-top: 3.5rem;
+}
+
+.next {
+    font-size: 2rem;
+    margin-right: 2rem;
+    background: none;
+    margin-top: 3.5rem;
+}
+
+.slide-content {
+    position: absolute;
+    top: 50%;
+    /* Posisi tengah vertikal */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Menggeser konten ke tengah */
+    color: white;
+    z-index: 1;
+    /* Agar konten berada di atas gambar */
+    width: 100%;
+}
+
+.slide-title {
+    font-size: 1.5rem;
+    margin: 0 0 90px;
+    /* Jarak antara judul dan teks */
+    text-align: left;
+    margin-left: 4.8rem;
+    width: 60%;
+}
+
+.slide-text {
+    font-size: 10px;
+    width: 70%;
+    /* Contoh width yang lebih lebar agar teks tidak terpotong */
+    text-align: left;
+    max-width: 100%;
+    margin-top: 2rem;
+}
+
+.sectionpertama {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+}
+
+@media(min-width:650px) and (max-width:770px) {
+/* bagian navbar */
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+    padding-top: 1rem;
+    transition: background-color 0.4s ease-in-out;
+}
+
+nav>a {
+    margin-left: 1.5rem;
+}
+
+nav>.nav-links {
+    margin-right: 2rem;
+}
+
+nav>a>img {
+    width: 70%;
+    margin-bottom: 1rem;
+}
+
+nav>ul {
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+nav>ul>a>li{
+    display: inline-block;
+    margin-left: 2rem;  
+    transition: color 0.4s ease-in-out;
+    color: black;
+}
+
+nav>ul>a>li:hover {
+    text-decoration: underline;
+    color: darkgoldenrod;
+}
+}
+
+@media(min-width:790px) and (max-width:835px) {
+/* bagian navbar */
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+    padding-top: 1rem;
+    transition: background-color 0.4s ease-in-out;
+}
+
+nav>a {
+    margin-left: 1.5rem;
+}
+
+nav>.nav-links {
+    margin-right: 2rem;
+}
+
+nav>a>img {
+    width: 70%;
+    margin-bottom: 1rem;
+}
+
+nav>ul {
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+nav>ul>a>li{
+    display: inline-block;
+    margin-left: 2rem;  
+    transition: color 0.4s ease-in-out;
+    color: black;
+}
+
+nav>ul>a>li:hover {
+    text-decoration: underline;
+    color: darkgoldenrod;
+}
+
 }
 
 /* end navbar */
 
 /* header */
 
-header {
+.bannerdetailkategori1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    width: 100%;
+    height: 100%;
+}
+
+.bannerdetailkategori1>img {
+    width: 90%;
+    height: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.bannerdetailkategori1{
+    position: relative;
     width: 100%;
 }
+
+.bannerdetailkategori1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    width: 100%;
+    height: auto; /* Atur tinggi tetap di sini */
+    position: relative;
+}
+
+.bannerdetailkategori1>img {
+    width: 90%;
+    height: 100%; /* Buat gambar mengikuti tinggi kontainer */
+    object-fit: cover; /* Ini menjaga proporsi gambar */
+    border-radius: 1rem;
+}
+
+.bannerdetailkategori1>h1 {
+    position: absolute;
+    color: white;
+    font-size: 3rem;
+}
+
+.bannerdetailkategori1>p {
+    position: absolute;
+    color: white;
+    top: 11rem;
+}
+
+.bannerdetailkategori1>a {
+    position: absolute;
+    color: black;
+    top: 15rem; /* Menggunakan top daripada margin-top untuk posisi yang lebih baik */
+    text-decoration: none;
+    background-color: #D7DF23;
+    padding: 7px;
+    border-radius: 10px;
+}
+
+.bannerdetailkategori1>a:hover {
+    background-color: #05352E;
+    color: white;
+}
+
+@media(max-width:450px) {
 
 .bannerdetailkategori1{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60%;
+    margin-top: 4rem;
+    width: 100%;
+    height: 100%;
 }
 
 .bannerdetailkategori1>img {
-    max-width: 90%;
+    width: 90%;
+    height: 100%;
     height: auto;
     border-radius: 1rem;
 }
+
+.bannerdetailkategori1{
+    position: relative;
+    width: 100%;
+}
+
+.bannerdetailkategori1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    width: 100%;
+    height: 500px; /* Atur tinggi tetap di sini */
+    position: relative;
+}
+
+.bannerdetailkategori1>img {
+    width: 90%;
+    height: 100%; /* Buat gambar mengikuti tinggi kontainer */
+    object-fit: cover; /* Ini menjaga proporsi gambar */
+    border-radius: 1rem;
+}
+
+.bannerdetailkategori1>h1 {
+    position: absolute;
+    color: white;
+    font-size: 3rem;
+}
+
+.bannerdetailkategori1>p {
+    position: absolute;
+    color: white;
+    top: 11rem;
+}
+
+.bannerdetailkategori1>a {
+    position: absolute;
+    color: black;
+    top: 15rem; /* Menggunakan top daripada margin-top untuk posisi yang lebih baik */
+    text-decoration: none;
+    background-color: #D7DF23;
+    padding: 7px;
+    border-radius: 10px;
+}
+
+.bannerdetailkategori1>a:hover {
+    background-color: #05352E;
+    color: white;
+}
+
+}
+
+@media(max-width:480px) {
+    .bannerdetailkategori1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4rem;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .bannerdetailkategori1>img {
+        width: 90%;
+        height: 100%;
+        height: auto;
+        border-radius: 1rem;
+    }
+    
+    .bannerdetailkategori1{
+        position: relative;
+        width: 100%;
+    }
+    
+    .bannerdetailkategori1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4rem;
+        width: 100%;
+        height: 200px; /* Atur tinggi tetap di sini */
+        position: relative;
+    }
+    
+    .bannerdetailkategori1>img {
+        width: 90%;
+        height: 100%; /* Buat gambar mengikuti tinggi kontainer */
+        object-fit: cover; /* Ini menjaga proporsi gambar */
+        border-radius: 1rem;
+    }
+    
+    .bannerdetailkategori1>h1 {
+        position: absolute;
+        color: white;
+        font-size: 2rem;
+    }
+    
+    .bannerdetailkategori1>p {
+        position: absolute;
+        color: white;
+        top: 7rem;
+        font-size: 12px;
+    }
+    
+    .bannerdetailkategori1>a {
+        position: absolute;
+        color: black;
+        top: 9rem; /* Menggunakan top daripada margin-top untuk posisi yang lebih baik */
+        text-decoration: none;
+        background-color: #D7DF23;
+        padding: 5px;
+        border-radius: 10px;
+        font-size: 11px;
+    }
+    
+    .bannerdetailkategori1>a:hover {
+        background-color: #05352E;
+        color: white;
+    }
+
+}
+
+    @media(min-width:650px) and (max-width:770px) {
+        .bannerdetailkategori1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 4rem;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .bannerdetailkategori1>img {
+            width: 90%;
+            height: 100%;
+            height: auto;
+            border-radius: 1rem;
+            margin-top: 9rem;
+        }
+        
+        .bannerdetailkategori1{
+            position: relative;
+            width: 100%;
+        }
+        
+        .bannerdetailkategori1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 4rem;
+            width: 100%;
+            height: 220px; /* Atur tinggi tetap di sini */
+            position: relative;
+        }
+        
+        .bannerdetailkategori1>img {
+            width: 90%;
+            height: 100%; /* Buat gambar mengikuti tinggi kontainer */
+            object-fit: cover; /* Ini menjaga proporsi gambar */
+            border-radius: 1rem;
+        }
+        
+        .bannerdetailkategori1>h1 {
+            position: absolute;
+            color: white;
+            font-size: 3rem;
+            top:9rem;
+        }
+        
+        .bannerdetailkategori1>p {
+            position: absolute;
+            color: white;
+            top: 13rem;
+        }
+        
+        .bannerdetailkategori1>a {
+            position: absolute;
+            color: black;
+            top: 15rem; /* Menggunakan top daripada margin-top untuk posisi yang lebih baik */
+            text-decoration: none;
+            background-color: #D7DF23;
+            padding: 7px;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+        
+        .bannerdetailkategori1>a:hover {
+            background-color: #05352E;
+            color: white;
+        }
+    }
+    
+    @media(min-width:790px) and (max-width:835px) {
+        .bannerdetailkategori1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 4rem;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .bannerdetailkategori1>img {
+            width: 90%;
+            height: 100%;
+            height: auto;
+            border-radius: 1rem;
+            margin-top: 9rem;
+        }
+        
+        .bannerdetailkategori1{
+            position: relative;
+            width: 100%;
+        }
+        
+        .bannerdetailkategori1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 4rem;
+            width: 100%;
+            height: 220px; /* Atur tinggi tetap di sini */
+            position: relative;
+        }
+        
+        .bannerdetailkategori1>img {
+            width: 90%;
+            height: 100%; /* Buat gambar mengikuti tinggi kontainer */
+            object-fit: cover; /* Ini menjaga proporsi gambar */
+            border-radius: 1rem;
+        }
+        
+        .bannerdetailkategori1>h1 {
+            position: absolute;
+            color: white;
+            font-size: 3rem;
+            top:9rem;
+        }
+        
+        .bannerdetailkategori1>p {
+            position: absolute;
+            color: white;
+            top: 13rem;
+        }
+        
+        .bannerdetailkategori1>a {
+            position: absolute;
+            color: black;
+            top: 15rem; /* Menggunakan top daripada margin-top untuk posisi yang lebih baik */
+            text-decoration: none;
+            background-color: #D7DF23;
+            padding: 7px;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+        
+        .bannerdetailkategori1>a:hover {
+            background-color: #05352E;
+            color: white;
+        }
+    }
 
 /*  end header */
 
@@ -374,14 +968,1107 @@ header {
     transition: 0.50s;
 }
 
+@media(max-width:450px) {
+    .boxkategori{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 4rem;
+    }
+    
+    
+    .boxkategori1{
+        background-color: #F3F4D6;
+        padding: 1rem;
+        max-width: 20rem;
+        border-radius: 1rem;
+    }
+    
+    .boxkategori1>.datakategori1{
+        display: flex;
+        margin-top: -4.6rem;
+    }
+    
+    .boxkategori1>img{
+        padding-left:25px;
+        border-radius: 10px;
+    }
+    
+    .boxkategori1>.datakategori1>p{
+        margin-left: 10px;
+        margin-top: 5.5rem;
+        max-width: 100%;
+        font-weight: bold;
+    }
+    
+    .boxkategori1>.datakategori2{
+        display: flex;
+        margin-top: -0.8rem;
+    }
+    
+    .boxkategori1>.datakategori2>p{
+       margin-top: 1rem;
+       margin-left: 0.5rem;
+    }
+    
+    .boxkategori1>.datakategori3{
+        display: flex;
+        margin-top: -1.2rem;
+    }
+    
+    .boxkategori1>.datakategori3>p{
+       margin-top: 1rem;
+       margin-left: 0.5rem;
+    }
+    
+    
+    .boxkategori1>.datakategori4{
+        display: flex;
+        margin-top: -1.2rem;
+    }
+    
+    .boxkategori1>.datakategori4>p{
+       margin-top: 1rem;
+       margin-left: 0.5rem;
+       font-weight: bold;
+    }
+    
+    
+    
+    .boxkategori3{
+        background-color: #05352E;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        width: 20rem;
+        border-radius: 1rem;
+        height: 32rem;
+        margin-right: 2rem;
+        margin-top: 3rem;
+    }
+    
+    .boxkategori3>.boxkategori4>p{
+        max-width: 80%;
+        font-size: 12px;
+        top: 1px;
+    }
+    
+    .boxkategori4{
+        margin-left: 3rem;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1rem;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.waktu{
+        display: flex;
+        margin-top: -1.5rem;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.waktu>img{
+        width: 25px;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.waktu>p{
+        padding-top: 1.2rem;
+        padding-left: 10px;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.bintang{
+        display: flex;
+        padding-right: 5rem;
+        margin-top: -2rem;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.bintang>img{
+        width: 25px;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.bintang>p{
+        padding-top: 1.5rem;
+        padding-left: 10px;
+    }
+    
+    
+    
+    .boxkategori5{
+        background-color: #80C678;
+        margin-top: 2rem;
+        border-radius: 1rem;
+        width: 20rem;
+        height: 25rem;
+    }
+    
+    .boxkategori5>h5{
+        text-align: center;
+        padding-top: 2rem;
+        color: white;
+    }
+    
+    .boxkategori5>.detailsosmed-button{
+        display: flex;
+        margin-left: 1rem;
+        flex-direction: column;
+        margin-top: 3rem;
+        justify-content: center;
+        align-items: center;
+        margin-right: 4rem;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat1{
+        margin-left: 1rem;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat2{
+        margin-left: 1rem;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat3{
+        margin-left: 1rem;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat4{
+        margin-left: 1rem;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat1>.website-detailbutton{
+        display: flex;
+        color: white;
+        justify-content: center;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat2>.website-detailbutton{
+        display: flex;
+        color: white;
+        justify-content: center;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat3>.website-detailbutton{
+        display: flex;
+        color: white;
+        justify-content: center;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat4>.website-detailbutton{
+        display: flex;
+        color: white;
+        justify-content: center;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat1>.website-detailbutton>p{
+       margin-left: 10px;
+       margin-top: 10px;
+       color: white;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat2>.website-detailbutton>p{
+       margin-left: 10px;
+       margin-top: 10px;
+       color: white;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat3>.website-detailbutton>p{
+       margin-left: 10px;
+       margin-top: 10px;
+       color: white;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat4>.website-detailbutton>p{
+       margin-left: 10px;
+       margin-top: 10px;
+       color: white;
+    }
 
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat1{
+        text-decoration: none;
+        background-color: #05352E;
+        border-radius: 2rem;
+        width: 9rem;
+        height: 3rem;
+        margin-left: 3rem;
+    }
+
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat2{
+        text-decoration: none;
+        background-color: #05352E;
+        border-radius: 2rem;
+        width: 9rem;
+        height: 3rem;
+        margin-left: 3rem;
+        margin-top: 18px;
+    }
+
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat3{
+        text-decoration: none;
+        background-color: #05352E;
+        border-radius: 2rem;
+        width: 9rem;
+        height: 3rem;
+        margin-left: 3rem;
+        margin-top: 18px;
+    }
+
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat4{
+        text-decoration: none;
+        background-color: #05352E;
+        border-radius: 2rem;
+        width: 9rem;
+        height: 3rem;
+        margin-left: 3rem;
+        margin-top: 18px;
+    }
+
+    .detaildeskripsi {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .detaildeskripsi>p {
+        font-size: 13px;
+    }
+
+    .waktu>p{
+        font-size: 13px;
+    }
+
+    .bintang{
+        padding-top: 10px;
+    }
+
+    .bintang>p{
+        font-size: 13px;
+    }
+}
+
+@media(max-width:480px) {
+    .boxkategori{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 4rem;
+    }
+    
+    
+    .boxkategori1{
+        background-color: #F3F4D6;
+        padding: 1rem;
+        max-width: 20rem;
+        border-radius: 1rem;
+    }
+    
+    .boxkategori1>.datakategori1{
+        display: flex;
+        margin-top: -4.6rem;
+    }
+    
+    .boxkategori1>img{
+        padding-left:25px;
+        border-radius: 10px;
+    }
+    
+    .boxkategori1>.datakategori1>p{
+        margin-left: 10px;
+        margin-top: 5.5rem;
+        max-width: 100%;
+        font-weight: bold;
+    }
+    
+    .boxkategori1>.datakategori2{
+        display: flex;
+        margin-top: -0.8rem;
+    }
+    
+    .boxkategori1>.datakategori2>p{
+       margin-top: 1rem;
+       margin-left: 0.5rem;
+    }
+    
+    .boxkategori1>.datakategori3{
+        display: flex;
+        margin-top: -1.2rem;
+    }
+    
+    .boxkategori1>.datakategori3>p{
+       margin-top: 1rem;
+       margin-left: 0.5rem;
+    }
+    
+    
+    .boxkategori1>.datakategori4{
+        display: flex;
+        margin-top: -1.2rem;
+    }
+    
+    .boxkategori1>.datakategori4>p{
+       margin-top: 1rem;
+       margin-left: 0.5rem;
+       font-weight: bold;
+    }
+    
+    
+    
+    .boxkategori3{
+        background-color: #05352E;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        width: 20rem;
+        border-radius: 1rem;
+        height: 32rem;
+        margin-right: 2rem;
+        margin-top: 3rem;
+    }
+    
+    .boxkategori3>.boxkategori4>p{
+        max-width: 80%;
+        font-size: 12px;
+        top: 1px;
+    }
+    
+    .boxkategori4{
+        margin-left: 3rem;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1rem;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.waktu{
+        display: flex;
+        margin-top: -1.5rem;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.waktu>img{
+        width: 25px;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.waktu>p{
+        padding-top: 1.2rem;
+        padding-left: 10px;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.bintang{
+        display: flex;
+        padding-right: 5rem;
+        margin-top: -2rem;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.bintang>img{
+        width: 25px;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.bintang>p{
+        padding-top: 1.5rem;
+        padding-left: 10px;
+    }
+    
+    
+    
+    .boxkategori5{
+        background-color: #80C678;
+        margin-top: 2rem;
+        border-radius: 1rem;
+        width: 20rem;
+        height: 25rem;
+    }
+    
+    .boxkategori5>h5{
+        text-align: center;
+        padding-top: 2rem;
+        color: white;
+    }
+    
+    .boxkategori5>.detailsosmed-button{
+        display: flex;
+        margin-left: 1rem;
+        flex-direction: column;
+        margin-top: 3rem;
+        justify-content: center;
+        align-items: center;
+        margin-right: 4rem;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat1{
+        margin-left: 1rem;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat2{
+        margin-left: 1rem;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat3{
+        margin-left: 1rem;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat4{
+        margin-left: 1rem;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat1>.website-detailbutton{
+        display: flex;
+        color: white;
+        justify-content: center;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat2>.website-detailbutton{
+        display: flex;
+        color: white;
+        justify-content: center;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat3>.website-detailbutton{
+        display: flex;
+        color: white;
+        justify-content: center;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat4>.website-detailbutton{
+        display: flex;
+        color: white;
+        justify-content: center;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat1>.website-detailbutton>p{
+       margin-left: 10px;
+       margin-top: 10px;
+       color: white;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat2>.website-detailbutton>p{
+       margin-left: 10px;
+       margin-top: 10px;
+       color: white;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat3>.website-detailbutton>p{
+       margin-left: 10px;
+       margin-top: 10px;
+       color: white;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat4>.website-detailbutton>p{
+       margin-left: 10px;
+       margin-top: 10px;
+       color: white;
+    }
+
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat1{
+        text-decoration: none;
+        background-color: #05352E;
+        border-radius: 2rem;
+        width: 9rem;
+        height: 3rem;
+        margin-left: 3rem;
+    }
+
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat2{
+        text-decoration: none;
+        background-color: #05352E;
+        border-radius: 2rem;
+        width: 9rem;
+        height: 3rem;
+        margin-left: 3rem;
+        margin-top: 18px;
+    }
+
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat3{
+        text-decoration: none;
+        background-color: #05352E;
+        border-radius: 2rem;
+        width: 9rem;
+        height: 3rem;
+        margin-left: 3rem;
+        margin-top: 18px;
+    }
+
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat4{
+        text-decoration: none;
+        background-color: #05352E;
+        border-radius: 2rem;
+        width: 9rem;
+        height: 3rem;
+        margin-left: 3rem;
+        margin-top: 18px;
+    }
+
+    .detaildeskripsi {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .detaildeskripsi>p {
+        font-size: 13px;
+    }
+
+    .waktu>p{
+        font-size: 13px;
+    }
+
+    .bintang{
+        padding-top: 10px;
+    }
+
+    .bintang>p{
+        font-size: 13px;
+    }
+}
+
+
+
+
+@media(min-width:650px) and (max-width:770px) {
+    .boxkategori{
+        display: flex;
+        justify-content: center;
+        margin-top: 8rem;
+    }
+    
+    
+    .boxkategori1{
+        background-color: #F3F4D6;
+        padding: 1rem;
+        max-width: 18rem;
+        width: 15rem;
+        border-radius: 1rem;
+        margin-left: 1rem;
+    }
+    
+    .boxkategori1>.datakategori1{
+        display: flex;
+        margin-top: -4.6rem;
+    }
+    
+    .boxkategori1>img{
+        padding-left: 10px;
+        width: 200px;
+    }
+
+    .boxkategori1>.datakategori1>img{
+        margin-top: 1.2rem;
+    }
+    
+    .boxkategori1>.datakategori1>p{
+        margin-left: 10px;
+        margin-top: 5.5rem;
+        max-width: 100%;
+        font-weight: bold;
+        font-size: 12px;
+    }
+    
+    .boxkategori1>.datakategori2{
+        display: flex;
+        margin-top: -0.8rem;
+    }
+    
+    .boxkategori1>.datakategori2>p{
+       margin-top: 1rem;
+       margin-left: 0.5rem;
+       font-size: 12px;
+    }
+    
+    .boxkategori1>.datakategori3{
+        display: flex;
+        margin-top: -1.2rem;
+    }
+    
+    .boxkategori1>.datakategori3>p{
+       margin-top: 1rem;
+       margin-left: 0.5rem;
+       font-size: 12px;
+    }
+    
+    
+    .boxkategori1>.datakategori4{
+        display: flex;
+        margin-top: -1.2rem;
+    }
+    
+    .boxkategori1>.datakategori4>p{
+       margin-top: 1rem;
+       margin-left: 0.5rem;
+       font-weight: bold;
+       font-size: 12px;
+    }
+    
+    
+    
+    .boxkategori3{
+        background-color: #05352E;
+        color: white;
+        max-width: 50rem;
+        width: 30rem;
+        margin-left: 1rem;
+        border-radius: 1rem;
+        height: 17rem;
+    }
+    
+    .boxkategori3>.boxkategori4>p{
+        max-width: 80%;
+        font-size: 12px;
+    }
+    
+    .boxkategori4{
+        margin-left: 3rem;
+        padding-top: 1rem;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1rem;
+    }
+
+    .boxkategori3>.boxkategori4>.detaildeskripsi>p{
+        padding-top: 8px;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.waktu{
+        display: flex;
+        margin-top: -1.5rem;
+        max-width: max-content;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.waktu>img{
+        width: 25px;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.waktu>p{
+        padding-top: 1.9rem;
+        padding-left: 10px;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.bintang{
+        display: flex;
+        padding-right: 5rem;
+        margin-top: -2rem;
+        max-width: max-content;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.bintang>img{
+        width: 25px;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.bintang>p{
+        padding-top: 2.5rem;
+        padding-left: 10px;
+    }
+    
+    
+    
+    .boxkategori5{
+        background-color: #80C678;
+        margin-left: 1rem;
+        margin-top: 2rem;
+        border-radius: 1rem;
+        height: 12rem;
+        width: 30rem;
+    }
+    
+    .boxkategori5>h5{
+        text-align: center;
+        padding-top: 2rem;
+        color: white;
+    }
+    
+    .boxkategori5>.detailsosmed-button{
+        display: flex;
+        margin-right: 2rem;
+        margin-top: 3rem;
+        justify-content: center;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat1{
+        margin-left: 1rem;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat2{
+        margin-left: 1rem;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat3{
+        margin-left: 1rem;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat4{
+        margin-left: 1rem;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat1>.website-detailbutton{
+        display: flex;
+        color: white;
+        justify-content: center;
+        width: 15px;
+        font-size: 13px;
+        margin-left: 2.6rem;
+        margin-top: 3px;
+    }
+
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat1>.website-detailbutton>img{
+        margin-bottom: 8px;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat2>.website-detailbutton{
+        display: flex;
+        color: white;
+        justify-content: center;
+        width: 15px;
+        font-size: 13px;
+        margin-left: 2.6rem;
+        margin-top: 3px;
+    }
+
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat2>.website-detailbutton>img{
+        margin-bottom: 8px;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat3>.website-detailbutton{
+        display: flex;
+        color: white;
+        justify-content: center;
+        width: 15px;
+        font-size: 13px;
+        margin-left: 2.6rem;
+        margin-top: 3px;;
+    }
+
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat3>.website-detailbutton>img{
+        margin-bottom: 8px;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat4>.website-detailbutton{
+        display: flex;
+        color: white;
+        justify-content: center;
+        width: 15px;
+        font-size: 13px;
+        margin-left: 2.6rem;
+        margin-top: 3px;;
+    }
+
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat4>.website-detailbutton>img{
+        margin-bottom: 8px;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat1>.website-detailbutton>p{
+       margin-left: 10px;
+       margin-top: 10px;
+       color: white;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat2>.website-detailbutton>p{
+       margin-left: 10px;
+       margin-top: 10px;
+       color: white;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat3>.website-detailbutton>p{
+       margin-left: 10px;
+       margin-top: 10px;
+       color: white;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat4>.website-detailbutton>p{
+       margin-left: 10px;
+       margin-top: 10px;
+       color: white;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat1,.buttonsosmed-kat2,.buttonsosmed-kat3,.buttonsosmed-kat4{
+        text-decoration: none;
+        background-color: #05352E;
+        border-radius: 2rem;
+        width: 9rem;
+        height: 3rem;
+    }
+}
+
+@media(min-width:790px) and (max-width:835px) {
+    .boxkategori{
+        display: flex;
+        justify-content: center;
+        margin-top: 8rem;
+    }
+    
+    
+    .boxkategori1{
+        background-color: #F3F4D6;
+        padding: 1rem;
+        max-width: 18rem;
+        width: 15rem;
+        border-radius: 1rem;
+        margin-left: 1rem;
+    }
+    
+    .boxkategori1>.datakategori1{
+        display: flex;
+        margin-top: -4.6rem;
+    }
+    
+    .boxkategori1>img{
+        padding-left: 10px;
+        width: 200px;
+    }
+
+    .boxkategori1>.datakategori1>img{
+        margin-top: 1.2rem;
+    }
+    
+    .boxkategori1>.datakategori1>p{
+        margin-left: 10px;
+        margin-top: 5.5rem;
+        max-width: 100%;
+        font-weight: bold;
+        font-size: 12px;
+    }
+    
+    .boxkategori1>.datakategori2{
+        display: flex;
+        margin-top: -0.8rem;
+    }
+    
+    .boxkategori1>.datakategori2>p{
+       margin-top: 1rem;
+       margin-left: 0.5rem;
+       font-size: 12px;
+    }
+    
+    .boxkategori1>.datakategori3{
+        display: flex;
+        margin-top: -1.2rem;
+    }
+    
+    .boxkategori1>.datakategori3>p{
+       margin-top: 1rem;
+       margin-left: 0.5rem;
+       font-size: 12px;
+    }
+    
+    
+    .boxkategori1>.datakategori4{
+        display: flex;
+        margin-top: -1.2rem;
+    }
+    
+    .boxkategori1>.datakategori4>p{
+       margin-top: 1rem;
+       margin-left: 0.5rem;
+       font-weight: bold;
+       font-size: 12px;
+    }
+    
+    
+    
+    .boxkategori3{
+        background-color: #05352E;
+        color: white;
+        max-width: 50rem;
+        width: 30rem;
+        margin-left: 1rem;
+        border-radius: 1rem;
+        height: 17rem;
+    }
+    
+    .boxkategori3>.boxkategori4>p{
+        max-width: 80%;
+        font-size: 12px;
+    }
+    
+    .boxkategori4{
+        margin-left: 3rem;
+        padding-top: 1rem;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1rem;
+    }
+
+    .boxkategori3>.boxkategori4>.detaildeskripsi>p{
+        padding-top: 8px;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.waktu{
+        display: flex;
+        margin-top: -1.5rem;
+        max-width: max-content;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.waktu>img{
+        width: 25px;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.waktu>p{
+        padding-top: 1.9rem;
+        padding-left: 10px;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.bintang{
+        display: flex;
+        padding-right: 5rem;
+        margin-top: -2rem;
+        max-width: max-content;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.bintang>img{
+        width: 25px;
+    }
+    
+    .boxkategori3>.boxkategori4>.detaildeskripsi>.bintang>p{
+        padding-top: 2.5rem;
+        padding-left: 10px;
+    }
+    
+    
+    
+    .boxkategori5{
+        background-color: #80C678;
+        margin-left: 1rem;
+        margin-top: 2rem;
+        border-radius: 1rem;
+        height: 12rem;
+        width: 30rem;
+    }
+    
+    .boxkategori5>h5{
+        text-align: center;
+        padding-top: 2rem;
+        color: white;
+    }
+    
+    .boxkategori5>.detailsosmed-button{
+        display: flex;
+        margin-right: 2rem;
+        margin-top: 3rem;
+        justify-content: center;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat1{
+        margin-left: 1rem;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat2{
+        margin-left: 1rem;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat3{
+        margin-left: 1rem;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat4{
+        margin-left: 1rem;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat1>.website-detailbutton{
+        display: flex;
+        color: white;
+        justify-content: center;
+        width: 15px;
+        font-size: 13px;
+        margin-left: 2.6rem;
+        margin-top: 3px;
+    }
+
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat1>.website-detailbutton>img{
+        margin-bottom: 8px;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat2>.website-detailbutton{
+        display: flex;
+        color: white;
+        justify-content: center;
+        width: 15px;
+        font-size: 13px;
+        margin-left: 2.6rem;
+        margin-top: 3px;
+    }
+
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat2>.website-detailbutton>img{
+        margin-bottom: 8px;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat3>.website-detailbutton{
+        display: flex;
+        color: white;
+        justify-content: center;
+        width: 15px;
+        font-size: 13px;
+        margin-left: 2.6rem;
+        margin-top: 3px;;
+    }
+
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat3>.website-detailbutton>img{
+        margin-bottom: 8px;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat4>.website-detailbutton{
+        display: flex;
+        color: white;
+        justify-content: center;
+        width: 15px;
+        font-size: 13px;
+        margin-left: 2.6rem;
+        margin-top: 3px;;
+    }
+
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat4>.website-detailbutton>img{
+        margin-bottom: 8px;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat1>.website-detailbutton>p{
+       margin-left: 10px;
+       margin-top: 10px;
+       color: white;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat2>.website-detailbutton>p{
+       margin-left: 10px;
+       margin-top: 10px;
+       color: white;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat3>.website-detailbutton>p{
+       margin-left: 10px;
+       margin-top: 10px;
+       color: white;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat4>.website-detailbutton>p{
+       margin-left: 10px;
+       margin-top: 10px;
+       color: white;
+    }
+    
+    .boxkategori5>.detailsosmed-button>.buttonsosmed-kat1,.buttonsosmed-kat2,.buttonsosmed-kat3,.buttonsosmed-kat4{
+        text-decoration: none;
+        background-color: #05352E;
+        border-radius: 2rem;
+        width: 9rem;
+        height: 3rem;
+    }
+}
 /* end bagian detail kategori */
 
 
 /* galleri detail kategori */
 
 .card-wrapper{
-    padding-left: 25px;
+    padding-left: 22px;
 }
 
 .card-list{
@@ -417,6 +2104,34 @@ header {
     margin-left: 5rem;
     margin-top: 2rem;
     font-size: 2rem;
+}
+
+@media(min-width:390px) and (max-width:450px) {
+    .card-link>img{
+        margin-left: 10px;
+    }
+}
+
+
+@media(min-width:340px) and (max-width:380px) {
+    .card-link>img{
+        width: 230px;
+        margin-left: 20px;
+    }
+}
+
+@media(max-width:320px) {
+    .card-link>img{
+        width: 200px;
+        margin-left: 5px;
+    }
+}
+
+@media(min-width:650px) and (max-width:770px) {
+}
+
+@media(min-width:790px) and (max-width:835px) {
+
 }
 /* end galleri detail kategori */
 
@@ -680,7 +2395,7 @@ footer {
         text-decoration: none;
         color: white;
         margin-right: 3rem;
-        border-bottom: 2px dashed  burlywood    }
+    }
 
     .footer5>ul>li>a:hover{
         border-bottom: 2px dashed  burlywood;

@@ -75,35 +75,199 @@ nav>ul>a>li:hover {
     background-color: #333;
     border-radius: 2px;
 }
+@media only screen and (max-width: 450px) {
 
-@media(max-width:768px) {
-    .menu-icon {
+    /* bagian navbar */
+
+    nav>a>img {
+       margin-bottom: 1rem;
+       margin-left: 2rem;
+   }
+
+   .nav-links {
+       display: none;
+       flex-direction: column;
+       width: 100%;
+       position: absolute;
+       top: 60px;
+       left: 0;
+       background-color: #05352E;
+       border-bottom-left-radius: 2rem;
+       border-bottom-right-radius: 2rem;
+       height: 50vh;
+   }
+
+   .nav-links.show {
+       display: flex;
+       z-index: 100;
+       position: fixed;
+   }
+
+   .nav-links li {
+       text-align: left;
+       margin: 10px 0;
+       color: white;
+   }
+
+   .menu-icon {
+       display: flex;
+   }
+
+   .menu-icon>.bar {
+       width: 25px;
+       height: 3px;
+       background-color: #333;
+       border-radius: 2px;
+       margin-right: 2rem;
+   }
+
+   /* bagian slider banner */
+
+   .slides img {
+       width: 100%;
+       height: 18rem;
+   }
+
+   .prev {
+       font-size: 2rem;
+       margin-left: 2rem;
+       background: none;
+       margin-top: 3.5rem;
+   }
+
+   .next {
+       font-size: 2rem;
+       margin-right: 2rem;
+       background: none;
+       margin-top: 3.5rem;
+   }
+
+   .slide-content {
+       position: absolute;
+       top: 50%;
+       /* Posisi tengah vertikal */
+       left: 50%;
+       transform: translate(-50%, -50%);
+       /* Menggeser konten ke tengah */
+       color: white;
+       z-index: 1;
+       /* Agar konten berada di atas gambar */
+       width: 100%;
+   }
+
+   .slide-title {
+       font-size: 1.5rem;
+       margin: 0 0 90px;
+       /* Jarak antara judul dan teks */
+       text-align: left;
+       margin-left: 4.8rem;
+       width: 60%;
+   }
+
+   .slide-text {
+       font-size: 10px;
+       width: 70%;
+       /* Contoh width yang lebih lebar agar teks tidak terpotong */
+       text-align: left;
+       max-width: 100%;
+       margin-top: 2rem;
+   }
+
+   .sectionpertama {
+       grid-template-columns: repeat(3, 1fr);
+   }
+
+}
+
+@media(min-width:650px) and (max-width:770px) {
+    /* bagian navbar */
+
+    nav{
         display: flex;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #05352E;
-        border-bottom-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
-        height: 50vh;
-    }
-
-    .nav-links.show {
-        display: flex;
-        z-index: 100;
+        justify-content: space-between;
         position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 100;
+        padding-top: 1rem;
+        transition: background-color 0.4s ease-in-out;
     }
+    
+    nav>a {
+        margin-left: 1.5rem;
+    }
+    
+    nav>.nav-links {
+        margin-right: 2rem;
+    }
+    
+    nav>a>img {
+        width: 70%;
+        margin-bottom: 1rem;
+    }
+    
+    nav>ul {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+    
+    nav>ul>a>li{
+        display: inline-block;
+        margin-left: 2rem;  
+        transition: color 0.4s ease-in-out;
+        color: black;
+    }
+    
+    nav>ul>a>li:hover {
+        text-decoration: underline;
+        color: darkgoldenrod;
+    }
+}
 
-    .nav-links li {
-        text-align: left;
-        margin: 10px 0;
-        color: white;
+@media(min-width:790px) and (max-width:835px) {
+    /* bagian navbar */
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 100;
+        padding-top: 1rem;
+        transition: background-color 0.4s ease-in-out;
+    }
+    
+    nav>a {
+        margin-left: 1.5rem;
+    }
+    
+    nav>.nav-links {
+        margin-right: 2rem;
+    }
+    
+    nav>a>img {
+        width: 70%;
+        margin-bottom: 1rem;
+    }
+    
+    nav>ul {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+    
+    nav>ul>a>li{
+        display: inline-block;
+        margin-left: 2rem;  
+        transition: color 0.4s ease-in-out;
+        color: black;
+    }
+    
+    nav>ul>a>li:hover {
+        text-decoration: underline;
+        color: darkgoldenrod;
     }
 }
 
@@ -130,43 +294,148 @@ header {
     border-radius: 1rem;
 }
 
+@media(max-width:450px) {
+    
+header {
+    width: 100%;
+    margin-top: 10px;
+    height: 40vh; /* Memastikan header mengisi seluruh tinggi viewport */
+}
+
+.bannerdetailkategori1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+    height: 16rem; /* Tinggi kontainer bannerblog di perangkat mobile */
+}
+
+.bannerdetailkategori1>img {
+    width: 100%; /* Memastikan gambar mengisi lebar kontainer */
+    height: 100%; /* Memastikan gambar mengisi tinggi kontainer */
+    object-fit: cover; /* Menjaga gambar mengisi area kontainer tanpa merusak proporsi */
+    border-radius: 1rem;
+}
+
+}
+
+@media(max-width:480px) {
+    header {
+        width: 100%;
+        margin-top: 10px;
+        height: 40vh; /* Memastikan header mengisi seluruh tinggi viewport */
+    }
+    
+    .bannerdetailkategori1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 6rem;
+        height: 16rem; /* Tinggi kontainer bannerblog di perangkat mobile */
+    }
+    
+    .bannerdetailkategori1>img {
+        width: 100%; /* Memastikan gambar mengisi lebar kontainer */
+        height: 100%; /* Memastikan gambar mengisi tinggi kontainer */
+        object-fit: cover; /* Menjaga gambar mengisi area kontainer tanpa merusak proporsi */
+        border-radius: 1rem;
+    }
+}
+
+@media(min-width:650px) and (max-width:770px) {
+    header {
+        width: 100%;
+    }
+    
+    .bannerdetailkategori1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60%;
+        margin-top: 10rem;
+    }
+    
+    .bannerdetailkategori1>img {
+        max-width: 90%;
+        height: auto;
+        border-radius: 1rem;
+    }   
+}
+
+@media(min-width:790px) and (max-width:835px) {
+    header {
+        width: 100%;
+    }
+    
+    .bannerdetailkategori1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60%;
+        margin-top: 10rem;
+    }
+    
+    .bannerdetailkategori1>img {
+        max-width: 90%;
+        height: auto;
+        border-radius: 1rem;
+    }   
+}
 /* end banner detail-blog */
 
 
 
 /* start detail blog */
 
-.bagian1detail-blog{
-    margin-left: 19rem;
+.bagian11detail-blog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.bagian1detail-blog {
     margin-top: 3rem;
- }
- 
- .bagian1detail-blog>h2{
-     font-size: 2.2rem;
-     max-width: 70%;
- }
- 
- .paragraf1-detailblog{
-     font-size: 1.1rem;
-     margin-top: 2rem;
-     max-width: 65%;
- }
- 
- .paragraf2-detailblog{
-     font-size: 1.1rem;
-     margin-top: 2rem;
-     max-width: 65%;
- }
- 
- .gambar1-detailblog{
-     width: 65%;
-     border-radius: 1rem;
- }
+    width: 100%; /* Pastikan ini menggunakan lebar penuh */
+}
+
+.paragraf11-detailblog{
+    margin-left: 14rem;
+}
+
+.bagian1detail-blog > h2 {
+    font-size: 2.2rem;
+    max-width: 65%;
+    margin: 0 auto; /* Tambahkan margin auto untuk centering */
+}
+
+.bagian11detail-blog>.bagian1detail-blog>.paragraf1-detailblog{
+    font-size: 1.1rem;
+    padding-top: 2rem;
+    max-width: 65%;
+    margin: 0 auto; /* Tambahkan margin auto untuk centering */
+}
+
+.bagian11detail-blog>.bagian1detail-blog>.paragraf2-detailblog {
+    font-size: 1.1rem;
+    padding-top: 1rem;
+    max-width: 65%;
+    margin: 0 auto; /* Tambahkan margin auto untuk centering */
+}
+
+.gambar1-detailblog {
+    width: 65%;
+    border-radius: 1rem;
+    display: block; /* Agar gambar dianggap block element */
+    margin: 0 auto; /* Tambahkan margin auto untuk centering */
+    padding-top: 1rem;
+}
  
 .bagian2detail-blog{
      display: flex;
      justify-content: center;
      gap: 1rem;
+     padding-top: 1.5rem;
 }
  
 .bagian2detail-blog>img{
@@ -207,24 +476,29 @@ header {
 .card-detailblog{
     display: flex;
     justify-content: center;
+    width: 100%;
     gap: 1rem;
     margin-top: 2rem;
 }
 
 .card-detailblog>.card1{
     background-color: #F3F4D6;
+    width: 15rem;
 }
 
 .card-detailblog>.card2{
     background-color: #F3F4D6;
+    width: 15rem;
 }
 
 .card-detailblog>.card3{
     background-color: #F3F4D6;
+    width: 15rem;
 }
 
 .card-detailblog>.card4{
     background-color: #F3F4D6;
+    width: 15rem;
 }
 
 .card-detailblog>.card>img{
@@ -252,25 +526,25 @@ header {
     width: 100%;
 }
 
-.card-detailblog>.card1>.img-wrapper>.image-detailblog1{
+.card-detailblog>.card1>.img-wrapper>.bungkusgambarcard-detail>.image-detailblog1{
     padding-left: 10px;
     padding-top: 10px;
     width: 230px;
 }
 
-.card-detailblog>.card2>.img-wrapper>.image-detailblog2{
+.card-detailblog>.card2>.img-wrapper>.bungkusgambarcard-detail>.image-detailblog2{
     padding-left: 10px;
     padding-top: 10px;
     width: 230px;
 }
 
-.card-detailblog>.card3>.img-wrapper>.image-detailblog3{
+.card-detailblog>.card3>.img-wrapper>.bungkusgambarcard-detail>.image-detailblog3{
     padding-left: 10px;
     padding-top: 10px;
     width: 230px;
 }
 
-.card-detailblog>.card4>.img-wrapper>.image-detailblog4{
+.card-detailblog>.card4>.img-wrapper>.bungkusgambarcard-detail>.image-detailblog4{
     padding-left: 10px;
     padding-top: 10px;
     width: 230px;
@@ -285,6 +559,584 @@ header {
     height: auto;
 }
 
+
+
+
+@media(max-width:480px) {
+    
+.bagian11detail-blog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.bagian1detail-blog {
+    margin-top: 5rem;
+    width: 100%; /* Pastikan ini menggunakan lebar penuh */
+}
+
+.paragraf11-detailblog{
+    width: max-content;
+    margin-left: 33px;
+}
+
+.bagian1detail-blog > h2 {
+    font-size: 1.5rem;
+    max-width: 85%;
+    margin: 0 auto; /* Tambahkan margin auto untuk centering */
+}
+
+.paragraf1-detailblog, .paragraf2-detailblog {
+    font-size: 13px;
+    margin-top: 2rem;
+    max-width: 85%;
+    padding-top: 1rem;
+    margin: 0 auto; /* Tambahkan margin auto untuk centering */
+}
+
+.gambar1-detailblog {
+    width: 85%;
+    border-radius: 1rem;
+    display: block; /* Agar gambar dianggap block element */
+    margin: 0 auto; /* Tambahkan margin auto untuk centering */
+    padding-top: 1.5rem;
+}
+ 
+.bagian2detail-blog{
+     display: flex;
+     justify-content: center;
+     gap: 1rem;
+}
+ 
+.bagian2detail-blog>img{
+     width: 150px;
+     padding-top: 1.5rem;
+     border-radius: 1rem;
+}
+
+.sosmed-detailblog{
+    display: flex;
+    margin-left: 2.6rem;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.gambarsosmed-detailblog{
+    display: flex;
+    gap: 10px;
+}
+
+.gambarsosmed-detailblog>img{
+    width: 25px;
+}
+
+.bagian3detail-blogjudul{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+
+.bagian3detail-blogjudul>h2{
+    margin-right: 5rem;
+    font-size: 1.1rem;
+    margin-left: 1rem;
+}
+
+.bagian3detail-blogjudul>img{
+    width: 30px;
+    margin-right: 1rem;
+}
+
+.card-detailblog1{
+    padding-top: 0;
+    overflow-x: scroll;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.card-detailblog{
+    width: 250%;
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+
+.card-detailblog>.card>img{
+    padding-left: 10px;
+    padding-top: 10px;
+    width: 230px;
+}
+
+.card-detailblog>.card4>img{
+    padding-left: 10px;
+    padding-top: 10px;
+    width: 230px;
+}
+
+.card-detailblog>.card1>.card-body>.textdetailblog1{
+    margin-top: 2.5rem;
+}
+
+.card-detailblog>.card4>.card-body>.textdetailblog4{
+    margin-top: 2.5rem;
+}
+
+.img-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.bungkusgambarcard-detail{
+    display: flex;
+    justify-content: center;
+}
+
+.card-detailblog>.card1>.img-wrapper>.bungkusgambarcard-detail>.image-detailblog1{
+    padding-left: 13px;
+    padding-right: 15px;
+    padding-top: 10px;
+    width: 180px;
+}
+
+.card-detailblog>.card2>.img-wrapper>.bungkusgambarcard-detail>.image-detailblog2{
+    padding-left: 13px;
+    padding-right: 15px;
+    padding-top: 10px;
+    width: 180px;
+}
+
+.card-detailblog>.card3>.img-wrapper>.bungkusgambarcard-detail>.image-detailblog3{
+    padding-left: 13px;
+    padding-right: 15px;
+    padding-top: 10px;
+    width: 180px;
+}
+
+.card-detailblog>.card4>.img-wrapper>.bungkusgambarcard-detail>.image-detailblog4{
+    padding-left: 13px;
+    padding-right: 15px;
+    padding-top: 10px;
+    width: 180px;
+}
+  
+
+.overlay-img {
+    position: absolute;
+    top: 25px; /* Atur posisi atas */
+    right: 40px; /* Atur posisi kanan */
+    width: 40px; /* Ukuran gambar overlay */
+    height: auto;
+}
+
+}
+
+
+@media(min-width:650px) and (max-width:770px) {
+    .bagian11detail-blog {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .bagian1detail-blog {
+        margin-top: 3rem;
+        width: 100%; /* Pastikan ini menggunakan lebar penuh */
+    }
+    
+    .paragraf11-detailblog{
+        margin-left: 9rem;
+    }
+    
+    .bagian1detail-blog > h2 {
+        font-size: 1.8rem;
+        max-width: 65%;
+        margin: 0 auto; /* Tambahkan margin auto untuk centering */
+    }
+
+    .bagian1detail-blog>.paragraf1-detailblog{
+        margin-top: 1rem;
+    }
+    
+    .bagian1detail-blog >.paragraf2-detailblog {
+        font-size: 1.1rem;
+        padding-top: 2rem;
+        max-width: 65%;
+        margin: 0 auto; /* Tambahkan margin auto untuk centering */
+    }
+    
+    .gambar1-detailblog {
+        width: 65%;
+        border-radius: 1rem;
+        display: block; /* Agar gambar dianggap block element */
+        margin: 0 auto; /* Tambahkan margin auto untuk centering */
+        margin-top: 1.5rem;
+    }
+     
+    .bagian2detail-blog{
+         display: flex;
+         justify-content: center;
+         gap: 1rem;
+         margin-top: 1.7rem;
+    }
+     
+    .bagian2detail-blog>img{
+         width: 316px;
+         border-radius: 1rem;
+    }
+    
+    .sosmed-detailblog{
+        display: flex;
+        margin-left: 4em;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .gambarsosmed-detailblog{
+        display: flex;
+        gap: 10px;
+    }
+    
+    .gambarsosmed-detailblog>img{
+        width: 25px;
+    }
+
+    .card-detailblog>.card1>.img-wrapper>.bungkusgambarcard-detail>.image-detailblog1{
+        padding-left: 10px;
+        padding-right: 15px;
+        padding-top: 10px;
+        width: 180px;
+    }
+    
+    .card-detailblog>.card2>.img-wrapper>.bungkusgambarcard-detail>.image-detailblog2{
+        padding-left: 10px;
+        padding-right: 15px;
+        padding-top: 10px;
+        width: 180px;
+    }
+    
+    .card-detailblog>.card3>.img-wrapper>.bungkusgambarcard-detail>.image-detailblog3{
+        padding-left: 10px;
+        padding-right: 15px;
+        padding-top: 10px;
+        width: 180px;
+    }
+    
+    .card-detailblog>.card4>.img-wrapper>.bungkusgambarcard-detail>.image-detailblog4{
+        padding-left: 10px;
+        padding-right: 15px;
+        padding-top: 10px;
+        width: 180px;
+    }
+    
+    .bagian3detail-blogjudul{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+    }
+    
+    .bagian3detail-blogjudul>h2{
+        margin-right: 20rem;
+        margin-left: 2rem;
+    }
+    
+    .bagian3detail-blogjudul>img{
+        width: 50px;
+        margin-right: 2rem;
+    }
+    
+    .card-detailblog{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 14px;
+        margin-top: 2rem;
+    }
+    
+    .card-detailblog>.card1{
+        background-color: #F3F4D6;
+        width: 11rem;
+        border-radius: 10px;
+    }
+    
+    .card-detailblog>.card2{
+        background-color: #F3F4D6;
+        width: 11rem;
+        border-radius: 10px;
+    }
+    
+    .card-detailblog>.card3{
+        background-color: #F3F4D6;
+        width: 11rem;
+        border-radius: 10px;
+    }
+
+    .card-titlecard{
+        width:10px;
+        width: max-content;
+    }
+    
+    .card-detailblog>.card4{
+        background-color: #F3F4D6;
+        width: 11rem;
+        border-radius: 10px;
+    }
+    
+    .card-detailblog>.card>img{
+        padding-left: 10px;
+        padding-top: 10px;
+        width: 230px;
+    }
+    
+    .card-detailblog>.card4>img{
+        padding-left: 10px;
+        padding-top: 10px;
+        width: 230px;
+    }
+    
+    .card-detailblog>.card1>.card-body>.textdetailblog1{
+        margin-top: 2.5rem;
+    }
+    
+    .card-detailblog>.card4>.card-body>.textdetailblog4{
+        margin-top: 4rem;
+    }
+
+    .cardtext3{
+        margin-top:2.5rem;
+    }
+    
+    .img-wrapper {
+        position: relative;
+        width: 100%;
+    }
+      
+    
+    .overlay-img {
+        position: absolute;
+        top: 20px; /* Atur posisi atas */
+        right: 29px; /* Atur posisi kanan */
+        width: 50px; /* Ukuran gambar overlay */
+        height: auto;
+    }   
+}
+
+@media(min-width:790px) and (max-width:835px) {
+    .bagian11detail-blog {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .bagian1detail-blog {
+        margin-top: 3rem;
+        width: 100%; /* Pastikan ini menggunakan lebar penuh */
+    }
+    
+    .paragraf11-detailblog{
+        margin-left: 9rem;
+    }
+    
+    .bagian1detail-blog > h2 {
+        font-size: 1.8rem;
+        max-width: 65%;
+        margin: 0 auto; /* Tambahkan margin auto untuk centering */
+    }
+
+    .bagian1detail-blog>.paragraf1-detailblog{
+        margin-top: 1rem;
+    }
+    
+    .bagian1detail-blog >.paragraf2-detailblog {
+        font-size: 1.1rem;
+        padding-top: 2rem;
+        max-width: 65%;
+        margin: 0 auto; /* Tambahkan margin auto untuk centering */
+    }
+    
+    .gambar1-detailblog {
+        width: 65%;
+        border-radius: 1rem;
+        display: block; /* Agar gambar dianggap block element */
+        margin: 0 auto; /* Tambahkan margin auto untuk centering */
+        margin-top: 1.5rem;
+    }
+     
+    .bagian2detail-blog{
+         display: flex;
+         justify-content: center;
+         gap: 1rem;
+         margin-top: 1.7rem;
+    }
+     
+    .bagian2detail-blog>img{
+         width: 316px;
+         border-radius: 1rem;
+    }
+    
+    .sosmed-detailblog{
+        display: flex;
+        margin-left: 6rem;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .gambarsosmed-detailblog{
+        display: flex;
+        gap: 10px;
+    }
+    
+    .gambarsosmed-detailblog>img{
+        width: 25px;
+    }
+
+    .card-detailblog>.card1>.img-wrapper>.bungkusgambarcard-detail>.image-detailblog1{
+        padding-left: 10px;
+        padding-right: 15px;
+        padding-top: 10px;
+        width: 180px;
+    }
+    
+    .card-detailblog>.card2>.img-wrapper>.bungkusgambarcard-detail>.image-detailblog2{
+        padding-left: 10px;
+        padding-right: 15px;
+        padding-top: 10px;
+        width: 180px;
+    }
+    
+    .card-detailblog>.card3>.img-wrapper>.bungkusgambarcard-detail>.image-detailblog3{
+        padding-left: 10px;
+        padding-right: 15px;
+        padding-top: 10px;
+        width: 180px;
+    }
+    
+    .card-detailblog>.card4>.img-wrapper>.bungkusgambarcard-detail>.image-detailblog4{
+        padding-left: 10px;
+        padding-right: 15px;
+        padding-top: 10px;
+        width: 180px;
+    }
+    
+    .bagian3detail-blogjudul{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+    }
+    
+    .bagian3detail-blogjudul>h2{
+        margin-right: 20rem;
+        margin-left: 2rem;
+    }
+    
+    .bagian3detail-blogjudul>img{
+        width: 50px;
+        margin-right: 2rem;
+    }
+    
+    .card-detailblog{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 14px;
+        margin-top: 2rem;
+    }
+    
+    .card-detailblog>.card1{
+        background-color: #F3F4D6;
+        width: 11rem;
+        border-radius: 10px;
+    }
+    
+    .card-detailblog>.card2{
+        background-color: #F3F4D6;
+        width: 11rem;
+        border-radius: 10px;
+    }
+    
+    .card-detailblog>.card3{
+        background-color: #F3F4D6;
+        width: 11rem;
+        border-radius: 10px;
+    }
+
+    .card-titlecard{
+        width:10px;
+        width: max-content;
+    }
+    
+    .card-detailblog>.card4{
+        background-color: #F3F4D6;
+        width: 11rem;
+        border-radius: 10px;
+    }
+    
+    .card-detailblog>.card>img{
+        padding-left: 10px;
+        padding-top: 10px;
+        width: 230px;
+    }
+    
+    .card-detailblog>.card4>img{
+        padding-left: 10px;
+        padding-top: 10px;
+        width: 230px;
+    }
+    
+    .card-detailblog>.card1>.card-body>.textdetailblog1{
+        margin-top: 2.5rem;
+    }
+    
+    .card-detailblog>.card4>.card-body>.textdetailblog4{
+        margin-top: 4rem;
+    }
+
+    .cardtext3{
+        margin-top:2.5rem;
+    }
+    
+    .img-wrapper {
+        position: relative;
+        width: 100%;
+    }
+    
+    .card-detailblog>.card1>.img-wrapper>.image-detailblog1{
+        padding-left: 10px;
+        padding-top: 10px;
+        width: 170px;
+    }
+    
+    .card-detailblog>.card2>.img-wrapper>.image-detailblog2{
+        padding-left: 10px;
+        padding-top: 10px;
+        width: 170px;
+    }
+    
+    .card-detailblog>.card3>.img-wrapper>.image-detailblog3{
+        padding-left: 10px;
+        padding-top: 10px;
+        width: 170px;
+    }
+    
+    .card-detailblog>.card4>.img-wrapper>.image-detailblog4{
+        padding-left: 10px;
+        padding-top: 10px;
+        width: 170px;
+    }
+      
+    
+    .overlay-img {
+        position: absolute;
+        top: 20px; /* Atur posisi atas */
+        right: 29px; /* Atur posisi kanan */
+        width: 50px; /* Ukuran gambar overlay */
+        height: auto;
+    }   
+}
 /* end detail blog */
 
 
@@ -551,7 +1403,7 @@ footer {
         text-decoration: none;
         color: white;
         margin-right: 3rem;
-        border-bottom: 2px dashed  burlywood    }
+    }
 
     .footer5>ul>li>a:hover{
         border-bottom: 2px dashed  burlywood;
@@ -580,6 +1432,286 @@ footer {
         border-bottom: 2px dashed  burlywood;
      }
     
+}
+
+@media(min-width:650px) and (max-width:770px) {
+    .footer {
+        background-color: #05352E;
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        margin-top: 2rem;
+    }
+
+    .footer1 {
+        display: flex;
+        gap: 3rem;
+    }
+    
+    .footer1>.footer2>img {
+        margin-top: 3rem;
+        width: 12rem;
+    }
+    
+    .footer1>.footer2>.paragraffooter1 {
+        color: white;
+        margin-top: 2rem;
+        max-width: 28rem;
+    }
+    
+    .footer1>.footer2>.paragraffooter2 {
+        color: #D7DF23;
+    
+    }
+    
+    .footer1>.footer2>.iconsosmed {
+        display: flex;
+        gap: 10px;
+        color: white;
+        width: 20px;
+    }
+    
+    .footer3 {
+        margin-top: 4rem;
+        margin-left: 10rem;
+    }
+    
+    
+    .footer3>p {
+        color: #D7DF23;
+        font-size: 17px;
+    }
+    
+    .footer3>.inputan {
+        display: flex;
+        gap: 12px;
+    }
+    
+    .footer3>.inputan>input {
+        width: 13rem;
+        border-radius: 1.5rem;
+    }
+    
+    .footer3>.inputan>button {
+        background-color: #D7DF23;
+        width: 7rem;
+        border-radius: 1rem;
+    }
+    
+    .footer3>.inputan>button:hover {
+        background-color: darkcyan;
+        color: white;
+    }
+    
+    .footer3>.lastfooter{
+        color: white;
+        width:98%;
+        margin-left: -1rem;
+        font-size: 12px;
+        margin-top: 3rem;
+    }
+    
+    .footer3>.footer4{
+        display: flex;
+        margin-top: 2.8rem;
+    }
+    
+    .footer3>.footer4>.footer5{
+        display: block;
+        width: 100%;
+        margin-top: 2px;
+    }
+    
+    .footer3>.footer4>.footer5>h6{
+        color: #D7DF23;
+    }
+    
+    
+    .footer3>.footer4>.footer6>h6{
+        color: #D7DF23;
+    }
+    
+    
+    
+    .footer5>ul>li{
+        list-style: none;
+    }
+    
+    .footer5>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer5>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+        font-size: 14px;
+    }
+    
+    .footer5>ul>li>a:hover{
+        border-bottom: 2px dashed  burlywood;
+    }
+    
+    .footer6{
+        margin-left: 3rem;
+    }
+    
+    .footer6>ul>li{
+        list-style: none;
+    }
+    
+    .footer6>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer6>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+    }
+}
+
+@media(min-width:790px) and (max-width:835px) {
+    .footer {
+        background-color: #05352E;
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        margin-top: 2rem;
+    }
+
+    .footer1 {
+        display: flex;
+        gap: 3rem;
+    }
+    
+    .footer1>.footer2>img {
+        margin-top: 3rem;
+        width: 12rem;
+    }
+    
+    .footer1>.footer2>.paragraffooter1 {
+        color: white;
+        margin-top: 2rem;
+        max-width: 28rem;
+    }
+    
+    .footer1>.footer2>.paragraffooter2 {
+        color: #D7DF23;
+    
+    }
+    
+    .footer1>.footer2>.iconsosmed {
+        display: flex;
+        gap: 10px;
+        color: white;
+        width: 20px;
+    }
+    
+    .footer3 {
+        margin-top: 4rem;
+        margin-left: 10rem;
+    }
+    
+    
+    .footer3>p {
+        color: #D7DF23;
+        font-size: 17px;
+    }
+    
+    .footer3>.inputan {
+        display: flex;
+        gap: 12px;
+    }
+    
+    .footer3>.inputan>input {
+        width: 13rem;
+        border-radius: 1.5rem;
+    }
+    
+    .footer3>.inputan>button {
+        background-color: #D7DF23;
+        width: 7rem;
+        border-radius: 1rem;
+    }
+    
+    .footer3>.inputan>button:hover {
+        background-color: darkcyan;
+        color: white;
+    }
+    
+    .footer3>.lastfooter{
+        color: white;
+        width:98%;
+        margin-left: -1rem;
+        font-size: 12px;
+        margin-top: 3rem;
+    }
+    
+    .footer3>.footer4{
+        display: flex;
+        margin-top: 2.8rem;
+    }
+    
+    .footer3>.footer4>.footer5{
+        display: block;
+        width: 100%;
+        margin-top: 2px;
+    }
+    
+    .footer3>.footer4>.footer5>h6{
+        color: #D7DF23;
+    }
+    
+    
+    .footer3>.footer4>.footer6>h6{
+        color: #D7DF23;
+    }
+    
+    
+    
+    .footer5>ul>li{
+        list-style: none;
+    }
+    
+    .footer5>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer5>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+        font-size: 14px;
+    }
+    
+    .footer5>ul>li>a:hover{
+        border-bottom: 2px dashed  burlywood;
+    }
+    
+    .footer6{
+        margin-left: 3rem;
+    }
+    
+    .footer6>ul>li{
+        list-style: none;
+    }
+    
+    .footer6>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer6>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+    }
 }
 
 /* end footer */
