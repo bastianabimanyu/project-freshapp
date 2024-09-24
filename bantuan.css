@@ -83,198 +83,309 @@ nav>ul>a>li:hover {
     /* bagian navbar */
 
     nav>a>img {
-       margin-bottom: 1rem;
-       margin-left: 2rem;
-   }
+        margin-bottom: 1rem;
+        margin-left: 2rem;
+    }
 
-   .nav-links {
-       display: none;
-       flex-direction: column;
-       width: 100%;
-       position: absolute;
-       top: 60px;
-       left: 0;
-       background-color: #05352E;
-       border-bottom-left-radius: 2rem;
-       border-bottom-right-radius: 2rem;
-       height: 50vh;
-   }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #05352E;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        height: 50vh;
+    }
 
-   .nav-links.show {
-       display: flex;
-       z-index: 100;
-       position: fixed;
-   }
+    .nav-links.show {
+        display: flex;
+        z-index: 100;
+        position: fixed;
+    }
 
-   .nav-links li {
-       text-align: left;
-       margin: 10px 0;
-       color: white;
-   }
+    .nav-links li {
+        text-align: left;
+        margin: 10px 0;
+        color: white;
+    }
 
-   .menu-icon {
-       display: flex;
-   }
+    .menu-icon {
+        display: flex;
+    }
 
-   .menu-icon>.bar {
-       width: 25px;
-       height: 3px;
-       background-color: #333;
-       border-radius: 2px;
-       margin-right: 2rem;
-   }
+    .menu-icon>.bar {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        border-radius: 2px;
+        margin-right: 2rem;
+    }
 
-   /* bagian slider banner */
+    /* bagian slider banner */
 
-   .slides img {
-       width: 100%;
-       height: 18rem;
-   }
+    .slides img {
+        width: 100%;
+        height: 18rem;
+    }
 
-   .prev {
-       font-size: 2rem;
-       margin-left: 2rem;
-       background: none;
-       margin-top: 3.5rem;
-   }
+    .prev {
+        font-size: 2rem;
+        margin-left: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
 
-   .next {
-       font-size: 2rem;
-       margin-right: 2rem;
-       background: none;
-       margin-top: 3.5rem;
-   }
+    .next {
+        font-size: 2rem;
+        margin-right: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
 
-   .slide-content {
-       position: absolute;
-       top: 50%;
-       /* Posisi tengah vertikal */
-       left: 50%;
-       transform: translate(-50%, -50%);
-       /* Menggeser konten ke tengah */
-       color: white;
-       z-index: 1;
-       /* Agar konten berada di atas gambar */
-       width: 100%;
-   }
+    .slide-content {
+        position: absolute;
+        top: 50%;
+        /* Posisi tengah vertikal */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Menggeser konten ke tengah */
+        color: white;
+        z-index: 1;
+        /* Agar konten berada di atas gambar */
+        width: 100%;
+    }
 
-   .slide-title {
-       font-size: 1.5rem;
-       margin: 0 0 90px;
-       /* Jarak antara judul dan teks */
-       text-align: left;
-       margin-left: 4.8rem;
-       width: 60%;
-   }
+    .slide-title {
+        font-size: 1.5rem;
+        margin: 0 0 90px;
+        /* Jarak antara judul dan teks */
+        text-align: left;
+        margin-left: 4.8rem;
+        width: 60%;
+    }
 
-   .slide-text {
-       font-size: 10px;
-       width: 70%;
-       /* Contoh width yang lebih lebar agar teks tidak terpotong */
-       text-align: left;
-       max-width: 100%;
-       margin-top: 2rem;
-   }
+    .slide-text {
+        font-size: 10px;
+        width: 70%;
+        /* Contoh width yang lebih lebar agar teks tidak terpotong */
+        text-align: left;
+        max-width: 100%;
+        margin-top: 2rem;
+    }
 
-   .sectionpertama {
-       grid-template-columns: repeat(3, 1fr);
-   }
+    .sectionpertama {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
 }
 
-@media(min-width:650px) and (max-width:770px) {
-   /* bagian navbar */
+@media(min-width:650px) and (max-width:770px) {  
+     /* bagian navbar */
 
-   nav{
-       display: flex;
-       justify-content: space-between;
-       position: fixed;
-       top: 0;
-       width: 100%;
-       background-color: white;
-       z-index: 100;
-       padding-top: 1rem;
-       transition: background-color 0.4s ease-in-out;
-   }
-   
-   nav>a {
-       margin-left: 1.5rem;
-   }
-   
-   nav>.nav-links {
-       margin-right: 2rem;
-   }
-   
-   nav>a>img {
-       width: 70%;
-       margin-bottom: 1rem;
-   }
-   
-   nav>ul {
-       display: inline-block;
-       margin-top: 0.5rem;
-   }
-   
-   nav>ul>a>li{
-       display: inline-block;
-       margin-left: 2rem;  
-       transition: color 0.4s ease-in-out;
-       color: black;
-   }
-   
-   nav>ul>a>li:hover {
-       text-decoration: underline;
-       color: darkgoldenrod;
-   }
+     nav{
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 100;
+        padding-top: 1rem;
+        transition: background-color 0.4s ease-in-out;
+    }
+    
+    nav>a {
+        margin-left: 1.5rem;
+    }
+    
+    nav>.nav-links {
+        margin-right: 2rem;
+    }
+    
+    nav>a>img {
+        width: 70%;
+        margin-bottom: 1rem;
+    }
+    
+    nav>ul {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+    
+    nav>ul>a>li{
+        display: inline-block;
+        margin-left: 2rem;  
+        transition: color 0.4s ease-in-out;
+        color: black;
+    }
+    
+    nav>ul>a>li:hover {
+        text-decoration: underline;
+        color: darkgoldenrod;
+    }
+
+    /* bagian slider banner */
+
+    .slides img {
+        width: 100%;
+        height: 18rem;
+    }
+
+    .prev {
+        font-size: 2rem;
+        margin-left: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
+
+    .next {
+        font-size: 2rem;
+        margin-right: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
+
+    .slide-content {
+        position: absolute;
+        top: 50%;
+        /* Posisi tengah vertikal */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Menggeser konten ke tengah */
+        color: white;
+        z-index: 1;
+        /* Agar konten berada di atas gambar */
+        width: 100%;
+    }
+
+    .slide-title {
+        font-size: 1.5rem;
+        margin: 0 0 90px;
+        /* Jarak antara judul dan teks */
+        text-align: left;
+        margin-left: 4.8rem;
+        width: 60%;
+    }
+
+    .slide-text {
+        font-size: 10px;
+        width: 70%;
+        /* Contoh width yang lebih lebar agar teks tidak terpotong */
+        text-align: left;
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+
+    .sectionpertama {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
 }
 
-@media(min-width:790px) and (max-width:835px) {
-   /* bagian navbar */
+@media(min-width:780px) and (max-width:850px) {
+    /* bagian navbar */
 
-   nav{
-       display: flex;
-       justify-content: space-between;
-       position: fixed;
-       top: 0;
-       width: 100%;
-       background-color: white;
-       z-index: 100;
-       padding-top: 1rem;
-       transition: background-color 0.4s ease-in-out;
-   }
-   
-   nav>a {
-       margin-left: 1.5rem;
-   }
-   
-   nav>.nav-links {
-       margin-right: 2rem;
-   }
-   
-   nav>a>img {
-       width: 70%;
-       margin-bottom: 1rem;
-   }
-   
-   nav>ul {
-       display: inline-block;
-       margin-top: 0.5rem;
-   }
-   
-   nav>ul>a>li{
-       display: inline-block;
-       margin-left: 2rem;  
-       transition: color 0.4s ease-in-out;
-       color: black;
-   }
-   
-   nav>ul>a>li:hover {
-       text-decoration: underline;
-       color: darkgoldenrod;
-   }
+    nav{
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 100;
+        padding-top: 1rem;
+        transition: background-color 0.4s ease-in-out;
+    }
+    
+    nav>a {
+        margin-left: 1.5rem;
+    }
+    
+    nav>.nav-links {
+        margin-right: 2rem;
+    }
+    
+    nav>a>img {
+        width: 70%;
+        margin-bottom: 1rem;
+    }
+    
+    nav>ul {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+    
+    nav>ul>a>li{
+        display: inline-block;
+        margin-left: 2rem;  
+        transition: color 0.4s ease-in-out;
+        color: black;
+    }
+    
+    nav>ul>a>li:hover {
+        text-decoration: underline;
+        color: darkgoldenrod;
+    }
+
+    /* bagian slider banner */
+
+    .slides img {
+        width: 100%;
+        height: 18rem;
+    }
+
+    .prev {
+        font-size: 2rem;
+        margin-left: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
+
+    .next {
+        font-size: 2rem;
+        margin-right: 2rem;
+        background: none;
+        margin-top: 3.5rem;
+    }
+
+    .slide-content {
+        position: absolute;
+        top: 50%;
+        /* Posisi tengah vertikal */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Menggeser konten ke tengah */
+        color: white;
+        z-index: 1;
+        /* Agar konten berada di atas gambar */
+        width: 100%;
+    }
+
+    .slide-title {
+        font-size: 1.5rem;
+        margin: 0 0 90px;
+        /* Jarak antara judul dan teks */
+        text-align: left;
+        margin-left: 4.8rem;
+        width: 60%;
+    }
+
+    .slide-text {
+        font-size: 10px;
+        width: 70%;
+        /* Contoh width yang lebih lebar agar teks tidak terpotong */
+        text-align: left;
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+
+    .sectionpertama {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
-
-
 /* end navbar */
 
 
@@ -1046,6 +1157,7 @@ footer {
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
         margin-top: 2rem;
+        overflow-x: hidden;
     }
     
     .footer1 {
@@ -1123,6 +1235,7 @@ footer {
     
     .footer4{
         margin-left: 6px;
+        width: max-content;
     }
 
     .footer3>.footer4{
@@ -1157,7 +1270,8 @@ footer {
         text-decoration: none;
         color: white;
         margin-right: 3rem;
-        border-bottom: 2px dashed  burlywood    }
+        font-size: 13px;
+    }
 
     .footer5>ul>li>a:hover{
         border-bottom: 2px dashed  burlywood;
@@ -1186,6 +1300,295 @@ footer {
         border-bottom: 2px dashed  burlywood;
      }
     
+}
+
+@media(min-width:650px) and (max-width:770px) {
+    .footer {
+        background-color: #05352E;
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        margin-top: 2rem;
+    }
+
+    .footer1 {
+        display: flex;
+        gap: 3rem;
+    }
+    
+    .footer1>.footer2>img {
+        margin-top: 3rem;
+        width: 12rem;
+    }
+    
+    .footer1>.footer2>.paragraffooter1 {
+        color: white;
+        margin-top: 2rem;
+        max-width: 28rem;
+    }
+    
+    .footer1>.footer2>.paragraffooter2 {
+        color: #D7DF23;
+    
+    }
+    
+    .footer1>.footer2>.iconsosmed {
+        display: flex;
+        gap: 10px;
+        color: white;
+        width: 20px;
+    }
+    
+    .footer3 {
+        margin-top: 4rem;
+        margin-left: 10rem;
+    }
+    
+    
+    .footer3>p {
+        color: #D7DF23;
+        font-size: 17px;
+    }
+    
+    .footer3>.inputan {
+        display: flex;
+        gap: 12px;
+    }
+    
+    .footer3>.inputan>input {
+        width: 13rem;
+        border-radius: 1.5rem;
+    }
+    
+    .footer3>.inputan>button {
+        background-color: #D7DF23;
+        width: 7rem;
+        border-radius: 1rem;
+    }
+    
+    .footer3>.inputan>button:hover {
+        background-color: darkcyan;
+        color: white;
+    }
+    
+    .footer3>.lastfooter{
+        color: white;
+        width:98%;
+        margin-left: -1rem;
+        font-size: 12px;
+        margin-top: 3rem;
+    }
+    
+    .footer3>.footer4{
+        display: flex;
+        margin-top: 2.8rem;
+    }
+    
+    .footer3>.footer4>.footer5{
+        display: block;
+        width: 100%;
+        margin-top: 2px;
+    }
+    
+    .footer3>.footer4>.footer5>h6{
+        color: #D7DF23;
+    }
+    
+    
+    .footer3>.footer4>.footer6>h6{
+        color: #D7DF23;
+    }
+    
+    
+    
+    .footer5>ul>li{
+        list-style: none;
+        width: max-content;
+    }
+    
+    .footer5>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer5>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+        font-size: 14px;
+        width: max-content;
+    }
+    
+    .footer5>ul>li>a:hover{
+        border-bottom: 2px dashed  burlywood;
+    }
+    
+    .footer6{
+        margin-left: 3rem;
+        width: max-content;
+    }
+    
+    .footer6>ul>li{
+        list-style: none;
+        width: max-content;
+    }
+    
+    .footer6>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer6>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+    }
+}
+
+@media(min-width:790px) and (max-width:835px) {
+    .footer {
+        background-color: #05352E;
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        margin-top: 2rem;
+    }
+
+    .footer1 {
+        display: flex;
+        gap: 3rem;
+    }
+    
+    .footer1>.footer2>img {
+        margin-top: 3rem;
+        width: 12rem;
+    }
+    
+    .footer1>.footer2>.paragraffooter1 {
+        color: white;
+        margin-top: 2rem;
+        max-width: 28rem;
+    }
+    
+    .footer1>.footer2>.paragraffooter2 {
+        color: #D7DF23;
+    
+    }
+    
+    .footer1>.footer2>.iconsosmed {
+        display: flex;
+        gap: 10px;
+        color: white;
+        width: 20px;
+    }
+    
+    .footer3 {
+        margin-top: 4rem;
+        margin-left: 10rem;
+    }
+    
+    
+    .footer3>p {
+        color: #D7DF23;
+        font-size: 17px;
+    }
+    
+    .footer3>.inputan {
+        display: flex;
+        gap: 12px;
+    }
+    
+    .footer3>.inputan>input {
+        width: 13rem;
+        border-radius: 1.5rem;
+    }
+    
+    .footer3>.inputan>button {
+        background-color: #D7DF23;
+        width: 7rem;
+        border-radius: 1rem;
+    }
+    
+    .footer3>.inputan>button:hover {
+        background-color: darkcyan;
+        color: white;
+    }
+    
+    .footer3>.lastfooter{
+        color: white;
+        width:98%;
+        margin-left: -1rem;
+        font-size: 12px;
+        margin-top: 3rem;
+    }
+    
+    .footer3>.footer4{
+        display: flex;
+        margin-top: 2.8rem;
+        width: max-content;
+    }
+    
+    .footer3>.footer4>.footer5{
+        display: block;
+        width: 100%;
+        margin-top: 2px;
+    }
+    
+    .footer3>.footer4>.footer5>h6{
+        color: #D7DF23;
+    }
+    
+    
+    .footer3>.footer4>.footer6>h6{
+        color: #D7DF23;
+    }
+    
+    
+    
+    .footer5>ul>li{
+        list-style: none;
+        width: max-content;
+    }
+    
+    .footer5>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer5>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+        font-size: 14px;
+        width: max-content;
+    }
+    
+    .footer5>ul>li>a:hover{
+        border-bottom: 2px dashed  burlywood;
+    }
+    
+    .footer6{
+        margin-left: 3rem;
+    }
+    
+    .footer6>ul>li{
+        list-style: none;
+        width: max-content;
+    }
+    
+    .footer6>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer6>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+        width: max-content;
+    }
 }
 
 /* end footer */

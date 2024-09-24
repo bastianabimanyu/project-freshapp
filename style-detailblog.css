@@ -1292,6 +1292,7 @@ footer {
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
         margin-top: 2rem;
+        overflow-x: hidden;
     }
     
     .footer1 {
@@ -1369,6 +1370,7 @@ footer {
     
     .footer4{
         margin-left: 6px;
+        width: max-content;
     }
 
     .footer3>.footer4{
@@ -1403,6 +1405,7 @@ footer {
         text-decoration: none;
         color: white;
         margin-right: 3rem;
+        font-size: 13px;
     }
 
     .footer5>ul>li>a:hover{
@@ -1538,6 +1541,7 @@ footer {
     
     .footer5>ul>li{
         list-style: none;
+        width: max-content;
     }
     
     .footer5>ul{
@@ -1549,6 +1553,7 @@ footer {
         color: white;
         margin-right: 3rem;
         font-size: 14px;
+        width: max-content;
     }
     
     .footer5>ul>li>a:hover{
@@ -1557,10 +1562,12 @@ footer {
     
     .footer6{
         margin-left: 3rem;
+        width: max-content;
     }
     
     .footer6>ul>li{
         list-style: none;
+        width: max-content;
     }
     
     .footer6>ul{
@@ -1657,6 +1664,7 @@ footer {
     .footer3>.footer4{
         display: flex;
         margin-top: 2.8rem;
+        width: max-content;
     }
     
     .footer3>.footer4>.footer5{
@@ -1678,6 +1686,7 @@ footer {
     
     .footer5>ul>li{
         list-style: none;
+        width: max-content;
     }
     
     .footer5>ul{
@@ -1689,6 +1698,7 @@ footer {
         color: white;
         margin-right: 3rem;
         font-size: 14px;
+        width: max-content;
     }
     
     .footer5>ul>li>a:hover{
@@ -1701,6 +1711,7 @@ footer {
     
     .footer6>ul>li{
         list-style: none;
+        width: max-content;
     }
     
     .footer6>ul{
@@ -1711,11 +1722,12 @@ footer {
         text-decoration: none;
         color: white;
         margin-right: 3rem;
+        width: max-content;
     }
 }
 
-/* end footer */
-
-
 
 /* end footer */
+
+
+

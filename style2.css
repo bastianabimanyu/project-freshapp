@@ -845,7 +845,7 @@ nav>ul>a>li:hover {
         justify-content: space-between;
         text-decoration: none;
         color: black;
-
+        margin-left: 1rem;
     }
     
     .tersehat22>.tersehat2>.cardsehat1>.card{
@@ -952,7 +952,7 @@ nav>ul>a>li:hover {
         justify-content: space-between;
         text-decoration: none;
         color: black;
-
+        margin-left: 1rem;
     }
     
     .tersehat22>.tersehat2>.cardsehat1>.card{
@@ -1074,8 +1074,7 @@ nav>ul>a>li:hover {
     .tersehat2{
         display: flex;
         margin-top: 3rem;
-        gap: 1.5rem; 
-        margin-left: 2rem;   
+        gap: 1.5rem;   
     }
     
     .tersehat2{
@@ -1188,8 +1187,7 @@ nav>ul>a>li:hover {
     .tersehat2{
         display: flex;
         margin-top: 3rem;
-        gap: 1.5rem; 
-        margin-left: 3rem;   
+        gap: 1.5rem;   
     }
     
     .tersehat2{
@@ -1428,6 +1426,7 @@ nav>ul>a>li:hover {
         display: flex;
         margin-top: 3rem;
         gap: 1.5rem;    
+        margin-left: 29.3rem;
     }
     
     .tersehat3>.cardsehat2>.card{
@@ -1550,7 +1549,8 @@ nav>ul>a>li:hover {
     .tersehat3{
         display: flex;
         margin-top: 3rem;
-        gap: 1.5rem;    
+        gap: 1.5rem;   
+        margin-left: 29.3rem; 
     }
     
     .tersehat3>.cardsehat2>.card{
@@ -1660,7 +1660,6 @@ nav>ul>a>li:hover {
         display: flex;
         margin-top: 3rem;
         gap: 1.5rem; 
-        margin-left: 2.2rem;   
     }
     
     .tersehat3{
@@ -1770,7 +1769,6 @@ nav>ul>a>li:hover {
         display: flex;
         margin-top: 3rem;
         gap: 1.5rem; 
-        margin-left: 3.2rem;   
     }
     
     .tersehat3{
@@ -1997,7 +1995,7 @@ nav>ul>a>li:hover {
         display: flex;
         margin-top: 3rem;
         gap: 1.5rem;    
-        margin-left: 1.5rem;
+        width: 250%;
     }
     
     .tersehat4>.cardsehat3>.card{
@@ -2128,6 +2126,7 @@ nav>ul>a>li:hover {
         margin-top: 3rem;
         gap: 1.5rem;    
         margin-left: 1.5rem;
+        width: max-content;
     }
     
     .tersehat4>.cardsehat3>.card{
@@ -2254,7 +2253,6 @@ nav>ul>a>li:hover {
     .tersehat4{
        text-decoration: none;
        color: black;
-       margin-left:2.2rem;
     }
     
     .tersehat4>.cardsehat3>.card{
@@ -2270,28 +2268,28 @@ nav>ul>a>li:hover {
         background-color: salmon;
     }
     
-    .tersehat4>.cardsehat3>.card>.img-wrapper>.gambar5{
+    .tersehat4>.cardsehat3>.card>.img-wrapper>.gambar9{
         width: 80%;
         margin-left: 19px;
         margin-top: 1rem;
         border-radius: 1rem;
     }
     
-    .tersehat4>.cardsehat3>.card>.img-wrapper>.gambar6{
+    .tersehat4>.cardsehat3>.card>.img-wrapper>.gambar10{
         width: 80%;
         margin-left: 19px;
         margin-top: 1rem;
         border-radius: 1rem;
     }
     
-    .tersehat4>.cardsehat3>.card>.img-wrapper>.gambar7{
+    .tersehat4>.cardsehat3>.card>.img-wrapper>.gambar11{
         width: 80%;
         margin-left: 19px;
         margin-top: 1rem;
         border-radius: 1rem;
     }
     
-    .tersehat4>.cardsehat3>.card>.img-wrapper>.gambar8{
+    .tersehat4>.cardsehat3>.card>.img-wrapper>.gambar12{
         width: 80%;
         margin-left: 19px;
         margin-top: 1rem;
@@ -2359,7 +2357,6 @@ nav>ul>a>li:hover {
     .tersehat4{
        text-decoration: none;
        color: black;
-       margin-left: 3rem;
     }
     
     .tersehat4>.cardsehat3>.card{
@@ -2375,28 +2372,28 @@ nav>ul>a>li:hover {
         background-color: salmon;
     }
     
-    .tersehat4>.cardsehat3>.card>.img-wrapper>.gambar5{
+    .tersehat4>.cardsehat3>.card>.img-wrapper>.gambar9{
         width: 80%;
         margin-left: 19px;
         margin-top: 1rem;
         border-radius: 1rem;
     }
     
-    .tersehat4>.cardsehat3>.card>.img-wrapper>.gambar6{
+    .tersehat4>.cardsehat3>.card>.img-wrapper>.gambar10{
         width: 80%;
         margin-left: 19px;
         margin-top: 1rem;
         border-radius: 1rem;
     }
     
-    .tersehat4>.cardsehat3>.card>.img-wrapper>.gambar7{
+    .tersehat4>.cardsehat3>.card>.img-wrapper>.gambar11{
         width: 80%;
         margin-left: 19px;
         margin-top: 1rem;
         border-radius: 1rem;
     }
     
-    .tersehat4>.cardsehat3>.card>.img-wrapper>.gambar8{
+    .tersehat4>.cardsehat3>.card>.img-wrapper>.gambar12{
         width: 80%;
         margin-left: 19px;
         margin-top: 1rem;
@@ -2555,7 +2552,8 @@ nav>ul>a>li:hover {
         display: flex;
         margin-top: 3rem;
         gap: 1.5rem;  
-        margin-left: 1.5rem;  
+        margin-left: 1.5rem; 
+        width: max-content;
     }
     
     .tersehat5>.cardsehat4>.card{
@@ -2666,6 +2664,7 @@ nav>ul>a>li:hover {
         margin-top: 3rem;
         gap: 1.5rem;  
         margin-left: 1.5rem;  
+        width: max-content;
     }
     
     .tersehat5>.cardsehat4>.card{
@@ -2779,7 +2778,6 @@ nav>ul>a>li:hover {
     .tersehat5{
        text-decoration: none;
        color: black;
-       margin-left: 2rem;
     }
     
     .tersehat5>.cardsehat4>.card{
@@ -2795,28 +2793,28 @@ nav>ul>a>li:hover {
         background-color: salmon;
     }
     
-    .tersehat5>.cardsehat4>.card>.img-wrapper>.gambar5{
+    .tersehat5>.cardsehat4>.card>.img-wrapper>.gambar13{
         width: 80%;
         margin-left: 19px;
         margin-top: 1rem;
         border-radius: 1rem;
     }
     
-    .tersehat5>.cardsehat4>.card>.img-wrapper>.gambar6{
+    .tersehat5>.cardsehat4>.card>.img-wrapper>.gambar14{
         width: 80%;
         margin-left: 19px;
         margin-top: 1rem;
         border-radius: 1rem;
     }
     
-    .tersehat5>.cardsehat4>.card>.img-wrapper>.gambar7{
+    .tersehat5>.cardsehat4>.card>.img-wrapper>.gambar15{
         width: 80%;
         margin-left: 19px;
         margin-top: 1rem;
         border-radius: 1rem;
     }
     
-    .tersehat5>.cardsehat4>.card>.img-wrapper>.gambar8{
+    .tersehat5>.cardsehat4>.card>.img-wrapper>.gambar16{
         width: 80%;
         margin-left: 19px;
         margin-top: 1rem;
@@ -2884,7 +2882,6 @@ nav>ul>a>li:hover {
     .tersehat5{
        text-decoration: none;
        color: black;
-       margin-left: 3rem;
     }
     
     .tersehat5>.cardsehat4>.card{
@@ -2900,28 +2897,28 @@ nav>ul>a>li:hover {
         background-color: salmon;
     }
     
-    .tersehat5>.cardsehat4>.card>.img-wrapper>.gambar5{
+    .tersehat5>.cardsehat4>.card>.img-wrapper>.gambar13{
         width: 80%;
         margin-left: 19px;
         margin-top: 1rem;
         border-radius: 1rem;
     }
     
-    .tersehat5>.cardsehat4>.card>.img-wrapper>.gambar6{
+    .tersehat5>.cardsehat4>.card>.img-wrapper>.gambar14{
         width: 80%;
         margin-left: 19px;
         margin-top: 1rem;
         border-radius: 1rem;
     }
     
-    .tersehat5>.cardsehat4>.card>.img-wrapper>.gambar7{
+    .tersehat5>.cardsehat4>.card>.img-wrapper>.gambar15{
         width: 80%;
         margin-left: 19px;
         margin-top: 1rem;
         border-radius: 1rem;
     }
     
-    .tersehat5>.cardsehat4>.card>.img-wrapper>.gambar8{
+    .tersehat5>.cardsehat4>.card>.img-wrapper>.gambar16{
         width: 80%;
         margin-left: 19px;
         margin-top: 1rem;
@@ -2931,7 +2928,6 @@ nav>ul>a>li:hover {
     .sehat-4p{
         margin-top: 3.5rem;
     }
-    
     
     .sehat-4pp{
         margin-top: 2.5rem;
@@ -3113,7 +3109,8 @@ nav>ul>a>li:hover {
     .tersehat6{
         display: flex;
         margin-top: 3rem;
-        gap: 1.5rem;    
+        gap: 1.5rem;   
+        width: 230%; 
     }
     
     .tersehat6>.cardsehat5>.card{
@@ -3264,7 +3261,9 @@ nav>ul>a>li:hover {
     .tersehat6{
         display: flex;
         margin-top: 3rem;
-        gap: 1.5rem;    
+        gap: 1.5rem; 
+        margin-left: 1.3rem;
+        width: max-content;   
     }
     
     .tersehat6>.cardsehat5>.card{
@@ -3420,7 +3419,6 @@ nav>ul>a>li:hover {
     .tersehat6{
        text-decoration: none;
        color: black;
-       margin-left: 2rem;
     }
     
     .tersehat6>.cardsehat5>.card{
@@ -3540,7 +3538,6 @@ nav>ul>a>li:hover {
     .tersehat6{
        text-decoration: none;
        color: black;
-       margin-left: 3rem;
     }
     
     .tersehat6>.cardsehat5>.card{
@@ -3780,6 +3777,7 @@ footer {
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
         margin-top: 2rem;
+        overflow-x: hidden;
     }
     
     .footer1 {
@@ -3857,6 +3855,7 @@ footer {
     
     .footer4{
         margin-left: 6px;
+        width: max-content;
     }
 
     .footer3>.footer4{
@@ -3891,6 +3890,7 @@ footer {
         text-decoration: none;
         color: white;
         margin-right: 3rem;
+        font-size: 13px;
     }
 
     .footer5>ul>li>a:hover{
@@ -3922,4 +3922,292 @@ footer {
     
 }
 
+@media(min-width:650px) and (max-width:770px) {
+    .footer {
+        background-color: #05352E;
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        margin-top: 2rem;
+    }
+
+    .footer1 {
+        display: flex;
+        gap: 3rem;
+    }
+    
+    .footer1>.footer2>img {
+        margin-top: 3rem;
+        width: 12rem;
+    }
+    
+    .footer1>.footer2>.paragraffooter1 {
+        color: white;
+        margin-top: 2rem;
+        max-width: 28rem;
+    }
+    
+    .footer1>.footer2>.paragraffooter2 {
+        color: #D7DF23;
+    
+    }
+    
+    .footer1>.footer2>.iconsosmed {
+        display: flex;
+        gap: 10px;
+        color: white;
+        width: 20px;
+    }
+    
+    .footer3 {
+        margin-top: 4rem;
+        margin-left: 10rem;
+    }
+    
+    
+    .footer3>p {
+        color: #D7DF23;
+        font-size: 17px;
+    }
+    
+    .footer3>.inputan {
+        display: flex;
+        gap: 12px;
+    }
+    
+    .footer3>.inputan>input {
+        width: 13rem;
+        border-radius: 1.5rem;
+    }
+    
+    .footer3>.inputan>button {
+        background-color: #D7DF23;
+        width: 7rem;
+        border-radius: 1rem;
+    }
+    
+    .footer3>.inputan>button:hover {
+        background-color: darkcyan;
+        color: white;
+    }
+    
+    .footer3>.lastfooter{
+        color: white;
+        width:98%;
+        margin-left: -1rem;
+        font-size: 12px;
+        margin-top: 3rem;
+    }
+    
+    .footer3>.footer4{
+        display: flex;
+        margin-top: 2.8rem;
+    }
+    
+    .footer3>.footer4>.footer5{
+        display: block;
+        width: 100%;
+        margin-top: 2px;
+    }
+    
+    .footer3>.footer4>.footer5>h6{
+        color: #D7DF23;
+    }
+    
+    
+    .footer3>.footer4>.footer6>h6{
+        color: #D7DF23;
+    }
+    
+    
+    
+    .footer5>ul>li{
+        list-style: none;
+        width: max-content;
+    }
+    
+    .footer5>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer5>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+        font-size: 14px;
+        width: max-content;
+    }
+    
+    .footer5>ul>li>a:hover{
+        border-bottom: 2px dashed  burlywood;
+    }
+    
+    .footer6{
+        margin-left: 3rem;
+        width: max-content;
+    }
+    
+    .footer6>ul>li{
+        list-style: none;
+        width: max-content;
+    }
+    
+    .footer6>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer6>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+    }
+}
+
+@media(min-width:790px) and (max-width:835px) {
+    .footer {
+        background-color: #05352E;
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        margin-top: 2rem;
+    }
+
+    .footer1 {
+        display: flex;
+        gap: 3rem;
+    }
+    
+    .footer1>.footer2>img {
+        margin-top: 3rem;
+        width: 12rem;
+    }
+    
+    .footer1>.footer2>.paragraffooter1 {
+        color: white;
+        margin-top: 2rem;
+        max-width: 28rem;
+    }
+    
+    .footer1>.footer2>.paragraffooter2 {
+        color: #D7DF23;
+    
+    }
+    
+    .footer1>.footer2>.iconsosmed {
+        display: flex;
+        gap: 10px;
+        color: white;
+        width: 20px;
+    }
+    
+    .footer3 {
+        margin-top: 4rem;
+        margin-left: 10rem;
+    }
+    
+    
+    .footer3>p {
+        color: #D7DF23;
+        font-size: 17px;
+    }
+    
+    .footer3>.inputan {
+        display: flex;
+        gap: 12px;
+    }
+    
+    .footer3>.inputan>input {
+        width: 13rem;
+        border-radius: 1.5rem;
+    }
+    
+    .footer3>.inputan>button {
+        background-color: #D7DF23;
+        width: 7rem;
+        border-radius: 1rem;
+    }
+    
+    .footer3>.inputan>button:hover {
+        background-color: darkcyan;
+        color: white;
+    }
+    
+    .footer3>.lastfooter{
+        color: white;
+        width:98%;
+        margin-left: -1rem;
+        font-size: 12px;
+        margin-top: 3rem;
+    }
+    
+    .footer3>.footer4{
+        display: flex;
+        margin-top: 2.8rem;
+        width: max-content;
+    }
+    
+    .footer3>.footer4>.footer5{
+        display: block;
+        width: 100%;
+        margin-top: 2px;
+    }
+    
+    .footer3>.footer4>.footer5>h6{
+        color: #D7DF23;
+    }
+    
+    
+    .footer3>.footer4>.footer6>h6{
+        color: #D7DF23;
+    }
+    
+    
+    
+    .footer5>ul>li{
+        list-style: none;
+        width: max-content;
+    }
+    
+    .footer5>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer5>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+        font-size: 14px;
+        width: max-content;
+    }
+    
+    .footer5>ul>li>a:hover{
+        border-bottom: 2px dashed  burlywood;
+    }
+    
+    .footer6{
+        margin-left: 3rem;
+    }
+    
+    .footer6>ul>li{
+        list-style: none;
+        width: max-content;
+    }
+    
+    .footer6>ul{
+        margin-left: -2rem;
+    }
+    
+    .footer6>ul>li>a{
+        text-decoration: none;
+        color: white;
+        margin-right: 3rem;
+        width: max-content;
+    }
+}
 /* end footer */
